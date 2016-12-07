@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/require.js"></script>
+		<script>
+			require(["./js/a"],function(a){
+				var h1=document.querySelector(".mytitle");
+				h1.onclick=function(){
+					a.fun1();
+//					alert(a.money);
+				}
+				
+			})
+		</script>
+	</head>
+	<body>
+		<h1 class="mytitle">AMD规范</h1>
+	</body>
+</html>

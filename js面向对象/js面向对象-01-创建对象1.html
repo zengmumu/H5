@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h1>创建对象</h1>
+		<script>
+		/*	var cat1 = {};
+			cat1.name = "大毛";
+			cat1["color"] = "黄色";
+			
+			var cat2 ={};
+			cat2.name = "二毛";
+			cat2.color = "pink";
+			
+			console.log(cat1);
+			console.info(cat2);*/
+			
+			function Cat (name, color) {
+				this.name = name;
+				this.color = color;
+			}
+			
+			var cat1 = new Cat("大毛", "黄色");
+			var cat2 = new Cat("二毛", "pink");
+//			console.log(cat1);
+//			console.log(cat2);
+//			console.log(cat1.constructor == Cat);
+//			console.log(cat2.constructor == Cat);
+//			console.log(cat2.constructor == cat1.constructor);
+			console.log(cat1 instanceof Cat);
+			console.log(cat2 instanceof Cat);
+			
+			// Cat 类（对象）
+			// cat1 ，cat2 是 Cat 的实例 通过 new 方法来创建的
+			// Cat 类里面 this 指向的是 Cat 的实例【cat1，cat2】
+			// cat1, cat2都会有个 constructor 属性 指向 他的类 Cat
+			
+		</script>
+	</body>
+</html>

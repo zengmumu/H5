@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h1>prototype公用方法和属性</h1>
+		<script>
+		
+			
+			function Cat (name, color) {
+				this.name = name;
+				this.color = color;				
+			}
+			Cat.prototype.type = "猫科";
+			Cat.prototype.eat = function(){ alert("吃老鼠！")}
+			
+			var cat1 = new Cat("大毛", "黄色");
+			var cat2 = new Cat("二毛", "pink");
+			cat1.eat = function(){
+				alert("我天生是吃鱼,你就是个铲屎官");
+			}
+			
+//			delete(cat1.eat);
+//			console.log(Cat.prototype.isPrototypeOf(cat1))
+//			console.log(cat1.hasOwnProperty("name"));
+//			console.log(cat1.hasOwnProperty("type"));
+//			alert(cat1.type);
+			// 实例是否有自己的name属性
+			/*console.log("name" in cat1);
+			console.log("type" in cat1);*/
+			
+			for(var k in window){
+				console.log(k+"-------"+window[k]);
+			}
+			
+		
+			
+			
+			// Cat 类（对象）
+			// cat1 ，cat2 是 Cat 的实例 通过 new 方法来创建的
+			// Cat 类里面 this 指向的是 Cat 的实例【cat1，cat2】
+			// cat1, cat2都会有个 constructor 属性 指向 他的类 Cat
+			// prototype 是实例 的公用方法和属性
+			// 当prototype 的属性和方法，和实例的属性方法冲突时，用 实例的；
+			// 实例属性和方法是可以删除/添加
+			// prototype的属性和方法是不能被删除的
+			// Cat.prototype.isPrototypeOf(cat1)
+			// cat1的公用方法是否是继承来源于 Cat的prototype
+			// hasOwnProperty 判断实例是否有某个自己的属性/方法
+			// in 判断对象是否有某个属性（自己的和继承的都算）
+			// for in 语法来循环遍历对象
+			
+		</script>
+	</body>
+</html>

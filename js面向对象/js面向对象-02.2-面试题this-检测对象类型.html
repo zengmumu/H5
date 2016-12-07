@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h1>prototype公用方法和属性</h1>
+		<script>
+		
+			
+/*			function Cat (name, color) {
+				this.name = name;
+				this.color = color;	
+				console.log(this);
+			}
+			var  c1 = new Cat("大毛","black");
+			var  c2 = Cat("小黄","yellow");
+			
+			console.log(c1);
+			console.log(c2);
+			*/
+			//如何判断对象类型
+			/* 
+			 1,typeof   	简单数据类型
+			 2,instanceof	只能判断是实例 但是不一定是爹还是爷
+			 3,constructor  // 自定义的类
+			 4,toString*/
+			// 如果 判断对象是 数组对象 还是对象 
+			function checkType(obj){
+				var str = Object.prototype.toString.apply(obj,null);
+				var type = str.substring(8,str.length-1);
+				return type;
+			}
+			console.log(checkType([]));
+			console.log(checkType({}));
+			console.log(checkType("123"));
+			console.log(checkType(function(){}));
+		
+		
+			
+		</script>
+	</body>
+</html>

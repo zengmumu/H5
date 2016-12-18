@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div>
+			<p>昵称 <input type="text" onblur=validate(this.value) /><span id="tip">新的昵称</span></p>
+		</div>
+		<script>
+			function validate(val){
+				// 通过ajax 询问 后台要信息 并把 val
+				var xhr = new XMLHttpRequest();
+				xhr.open("get","server01.php",true);
+				xhr.send();
+				
+				xhr.onreadystatechange=function(){
+					if(xhr.status==200&&xhr.readyState==4){
+						//后台返回的数据
+						tip.innerHTML=xhr.responseText//
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

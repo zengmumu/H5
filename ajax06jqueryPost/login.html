@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body{ 
+				margin: 0;
+				padding: 0;
+				
+			}
+			body,html{ height: 100%; width: 100%;}
+			.mask{ 
+				position: absolute;
+				left:0;
+				top:0;
+				height: 100%; 
+				width: 100%; 
+				background-color: rgba(0,0,0,.4);
+				display: none;
+				}
+			.login{
+				width: 350px;
+				height: 300px;
+				position: fixed;
+				left:50%;
+				top:50%;
+				background-color: #fff;
+				transform:translate(-50%,-50%);
+				display: none;
+			}
+			/*input{ height: 35px; line-height: 35px; width: 90%;}*/
+			/*#myname{ display: none;}*/
+		</style>
+	</head>
+	<body>
+		<div class="nav">
+			<div class="logBox">			
+			<!--<span id="myname">				
+				<span id="logout">退出</span>
+			</span>			
+			<span onclick="showModel()" id="login">登陆</span>-->
+			</div>
+		<div class="mask"></div>
+		<div class="module login">
+			<h3>登陆  <span class="closeModule">&times;</span></h3>
+			<p>用户名: <input type="text" id="uname"/></p>
+			<p>密码：<input type="password" id="upass"/></p>
+			<button id="sub">登陆</button>
+			<p id="tip"></p>
+		</div>
+		<script src="jquery-2.0.2.js"></script>
+		<script>
+		$(function(){
+			$.ajax({
+				url:"server.php",
+				type:"POST",
+				dataType:"json",
+				data:{"action":"getUser"},
+				success:function(res){
+					if(res.status){
+						var str ='<span id="myname">'+res.data.user+'<span id="logout">退出</span></span>';
+					}else{
+						var str='<span  id="login">登陆</span>';
+					}
+					$(".logBox").html("").append($(str));
+				}
+			})
+			/*$("#login").click(function(){
+				alert("in");
+				$(".mask,.module").show();
+			})*/
+			$(".logBox").on("click","#login",function(){
+				$(".mask,.module").show();
+			})
+			$(".closeModule").click(function(){
+				$(".mask,.module").hide();
+			})
+			$("#sub").click(function(){
+				$.ajax({
+				url:"server.php",
+				type:"POST",
+				dataType:"json",
+				data:{action:"login",name:$("#uname").val(),password:$("#upass").val()},
+				success:function(res){
+					if(res.status){
+						var str ='<span id="myname">'+res.data.user+'<span id="logout">退出</span></span>';
+						$(".mask,.module").hide();
+					}else{
+						var str='<span  id="login">登陆</span>';
+						$("#tip").html(res.msg);
+						
+					}
+					$(".logBox").html("").append($(str));
+				}
+			})
+		})
+		$(".logBox").on("click","#logout",function(){
+			
+				$.ajax({
+				url:"server.php",
+				type:"POST",
+				dataType:"json",
+				data:{"action":"logout"},
+				success:function(res){
+					if(res.status){
+						var str ='<span id="myname">'+res.data.user+'<span id="logout">退出</span></span>';
+					}else{
+						var str='<span  id="login">登陆</span>';
+					}
+					$(".logBox").html("").append($(str));
+				}
+			
+			})
+		});
+			
+			
+			
+			
+	})
+		</script>
+	</body>
+</html>

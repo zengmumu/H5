@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-2.0.2.js">		
+		</script>
+	
+	</head>
+	<body>
+		<button id="mybtn"> 跨域获取</button>
+		<div id="wrap">
+			
+		</div>
+		<script type="text/javascript">
+			$(function(){
+				$("#mybtn").click(function(){
+					
+					$.ajax({
+						url:"http://127.0.0.1/myajax/ajax-12-jsonp/demo2.php?name=好mumu",
+						type:"get",
+						dataType:"jsonp",
+						jsonp: "callback",
+						success:function(data){
+						$("#wrap").html(data.name+"已经"+data.age+"了");
+						}
+					})
+				})
+			})
+		</script>
+	</body>
+</html>

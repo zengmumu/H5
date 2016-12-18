@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+			function myback(data){
+				console.log(data);
+				var wrap=document.getElementById("wrap");
+				wrap.innerHTML=data.name+"已经"+data.age+"了";
+				var mys=document.getElementById("mys");
+				mys.parentNode.removeChild(mys);
+				
+			
+			}
+			
+			function jsonP(url,fun){
+				var script = document.createElement("script");
+				script.src=url;
+				script.id="mys";
+				document.getElementsByTagName("head")[0].appendChild(script);					
+			}
+			
+			window.onload=function(){
+				var mybtn=document.getElementById("mybtn");
+				mybtn.onclick=function(){
+					jsonP("http://127.0.0.1/myajax/ajax-12-jsonp/demo2.php?callback=myback&name=zql")
+				}
+			}
+		</script>
+		<!--<script src="http://127.0.0.1/myajax/ajax-12-jsonp/demo2.php?callback=myback&name=曾庆林">
+			
+		</script>-->
+	</head>
+	<body>
+		<button id="mybtn"> 跨域获取</button>
+		<div id="wrap">
+			
+		</div>
+		
+	</body>
+</html>

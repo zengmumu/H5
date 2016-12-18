@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-2.0.2.js"></script>
+		
+	</head>
+	<body>
+		<button>动态加载js</button>
+<script>
+	$(function(){
+		$("button").click(function(){
+			$.getScript("regist.js")
+			.success(
+				function (res,status,xhr){
+				console.log(res);
+				console.log(status);
+				console.log(xhr);
+					}
+				)
+		})
+	})
+</script>
+		
+	</body>
+	
+</html>

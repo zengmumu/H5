@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.err{ color: hotpink; background-color: rgb(255,240,240);}
+		</style>
+	</head>
+	<body>
+		<div>
+			<p>昵称 <input type="text" onblur=validate(this.value) /><span id="tip">新的昵称</span></p>
+		</div>
+		<script>
+			function validate(val){
+				// 通过ajax 询问 后台要信息 并把 val
+				var xhr = new XMLHttpRequest();
+				var url = "server02.php?nicName="+val;
+				xhr.open("get",url,true);
+				xhr.send();
+				
+				xhr.onreadystatechange=function(){
+					if(xhr.status==200&&xhr.readyState==4){
+						//后台返回的数据
+						var res=JSON.parse(xhr.responseText);
+						if(res.code==100000){
+							tip.clasName="";
+						}else{
+							tip.className="err"
+						}
+						tip.innerHTML=res.msg;
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

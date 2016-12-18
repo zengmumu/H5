@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-2.0.2.js"></script>
+		
+	</head>
+	<body>
+		
+		<ul class="lists">
+			
+		</ul>
+		<button>加载更多</button>
+<script>
+	$(function(){
+		$.getJSON("data.json")
+		.success(function(res){
+			var str="";
+			$.each(res,function(index,elem){
+				str+='<li><span class="l">';
+				str+=elem.name;
+				str+='</span><span class="r">'
+				str+=elem.min_price;
+				str+='</span></li>'
+				
+			})
+			$(".lists").append($(str));
+		})
+	})
+</script>
+		
+	</body>
+	
+</html>

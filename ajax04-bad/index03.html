@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<script src="js/jquery.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<style>
+			.form-group .success{ color:limegreen;}
+			.form-group .danger{ color:hotpink}
+		</style>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	</head>
+	<body>
+		<div class="container">
+			<div class="row text-center"><h1>登陆</h1></div>
+			
+				<form action="https://www.baidu.com/s" id="myform">
+					<div class="form-group row ">
+						<label class="col-md-2 text-right">用户名</label>
+						<div class="col-md-6">
+							<input type="text" name="uname" id="uname" class="form-control" />
+						</div>
+						<div class="col-md-4 text-left  " id="uname-tip" >
+						 <i class="  glyphicon "></i>	<span class="tip">长度4~12个字符</span>
+						</div>
+					</div>
+					<div class="form-group row ">
+						<label class="col-md-2 text-right">密码</label>
+						<div class="col-md-6">
+							<input type="password" name="upass" id="upass" class="form-control" />
+						</div>
+						<div class="col-md-4 text-left  " id="upass-tip" >
+						 <i class="  glyphicon  "></i>	<span class="tip">密码必须由字母和数字组成</span>
+						</div>
+					</div>
+					<div class="row">
+						
+						
+						<div class="col-md-6 col-md-offset-2">
+							<input type="submit" class="btn btn-danger btn-block" value="登陆" />
+						</div>
+					</div>
+				</form>
+			
+		</div>
+		<script>
+			$(function(){
+				// 表单是否提交数据 关键看submit  return 值
+				// 通过 return true
+				//  不通过return false
+				// 验证表单格式  如果都通过 才让它提交数据
+				$("#myform").submit(checkAll);
+				$("#myform").keydown(function(e){
+					if(e.keyCode==13){
+						$("#myform").trigger("submit");
+					}
+				})
+				function checkAll(){
+					var re1=checkName();
+					var re2=checkPwd();
+					return re1&&re2;
+				}
+				
+				$("#uname").bind("keyup",function(){
+					checkName();
+				})
+				$("#uname,#upass").bind("focus",function(){
+					
+					clearClass($(this));
+				})
+				
+				$("#upass").bind("keyup",function(){
+					checkPwd();
+				})
+				
+				function checkPwd(){
+					var val=$.trim($("#upass").val());
+					if(val.length<6){
+						$("#upass-tip .tip").html("密码长度最少6位")
+						  setFalseClass("#upass","#upass-tip");
+						 return false;
+					}
+					var reg1=/[a-z]/;
+					var reg2=/[0-9]/;
+					var reg3=/[A-Z]/;
+					if(reg1.test(val)&&reg2.test(val)&&reg3.test(val)){
+						$("#upass-tip .tip").html("正确");
+						setTrueClass("#upass","#upass-tip");
+						return true;
+					}else{
+						$("#upass-tip .tip").html("密码是数字字母组成且有一个大写字母")
+						 setFalseClass("#upass","#upass-tip");
+						 return false;
+					}
+					
+				}
+				function clearClass(el){
+					el.select();
+					el.parent().removeClass("has-success has-error");
+					el.parent().next().removeClass("success danger");
+					el.parent().next().find(".glyphicon").removeClass("glyphicon-ok glyphicon-remove");
+				}
+				function checkName(){
+					var val=$.trim($("#uname").val());
+					if(val.length<4||val.length>16){
+						$("#uname-tip .tip").html("用户名长度要大于4小于16位");
+						setFalseClass("#uname","#uname-tip")
+						return false;
+					}else{
+						$("#uname-tip .tip").html("正确");
+						setTrueClass("#uname","#uname-tip")
+						return true;
+					}
+				}
+				
+				function setFalseClass(el,tip){
+						$(el).parent().removeClass("has-success")
+						.addClass("has-error")
+						$(tip).removeClass("success")
+						.addClass("danger");
+						$(tip+" .glyphicon").removeClass("glyphicon-ok")
+						.addClass("glyphicon-remove");
+					}
+					function setTrueClass(el,tip){
+						$(el).parent().addClass("has-success")
+						.removeClass("has-error")
+						$(tip).addClass("success")
+						.removeClass("danger");
+						$(tip+" .glyphicon").addClass("glyphicon-ok")
+						.removeClass("glyphicon-remove");
+						
+					}
+			})
+		</script>
+	</body>
+</html>

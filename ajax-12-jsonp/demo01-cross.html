@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-2.0.2.js"></script>
+	</head>
+	<body>
+		<button>获取河南新闻</button>
+		<div class="wrap"></div>
+		<script type="text/javascript">
+			$(function(){
+				$.get("http://www.qq.com/ninja/newsHenanContent_public.htm")
+				.success(function(res){
+					console.log(res)
+				})
+				.error(function(err){
+					console.log(err);
+				})
+			})
+		</script>
+	</body>
+</html>

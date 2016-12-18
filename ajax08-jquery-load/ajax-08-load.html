@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-2.0.2.js"></script>
+	</head>
+	<body>
+		<button>加载其他页面</button>
+		<div class="wrap"></div>
+		<script>
+/*			$(function(){
+				$("button").click(function() {
+					$(".wrap").load("beload.html .box2",function(xhr){
+						alert("加载完毕");
+						console.log(xhr);
+					});
+					
+				})
+			})*/
+			$(function(){
+				$("button").click(function() {
+					$(".wrap").load("server1.php",{name:"好mumu"},function(data,status,xhr){
+						console.log(data);
+						console.log(status);
+						console.log(xhr);
+					});
+					
+				
+					
+				})
+			})
+		</script>
+	</body>
+</html>

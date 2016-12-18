@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../ ajax10/js/jquery-2.0.2.js"></script>
+	</head>
+	<body>
+		<button>get get</button>
+		<div class="wrap">
+			
+		</div>
+		<script>
+		// promise 
+			$("button").click(function(){
+				$.get("server.php",{"name":"badGay"})
+				/*.success(function(res){
+					$(".wrap").html(res);
+				})
+				.error(function(err){
+					console.log(err);
+				})*/
+				/*.then(
+					function(res){
+						$(".wrap").html(res);
+					},
+					
+					function(err){
+						console.log(err);
+					}
+				)*/
+				.done(function(res){					
+					$(".wrap").html(res);
+				})
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.err{ color: hotpink; background-color: rgb(255,240,240);}
+		</style>
+	</head>
+	<body>
+		<div>
+			<p>昵称 <input type="text"  /><span id="tip">新的昵称</span></p>
+		</div>
+		<script src="jquery-2.0.2.js"></script>
+		<script>
+			$(function(){
+				$("p input").blur(function(){
+					var val=$(this).val();
+					$.ajax({
+						url:"server02.php?nicName="+val,
+						type:"GET",
+						dataType:"json",
+						success:function(res){
+							 if(res.code==100000){
+							 	$("#tip").removeClass();
+							 }else{
+							 	$("#tip").addClass("err");
+							 }
+							 $("#tip").html(res.msg);
+						}
+						
+					})
+				})
+			})
+		</script>
+	</body>
+</html>

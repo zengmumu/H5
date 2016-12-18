@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../ ajax10/js/jquery-2.0.2.js"></script>
+	</head>
+	<body>
+		<button>get get</button>
+		<div class="wrap">
+			
+		</div>
+		<script>
+			$("button").click(function(){
+				$.get("server2.php",{"name":"badGay"})
+				
+				.done(function(ress){
+					alert(ress);
+				})
+				.success(function(res){
+					alert(res+"succ");
+				})
+				.error(function(res){
+					console.log(res);
+				})
+				.then(function(res){
+					$(".wrap").html(res);
+				},function(err){
+					console.log(err)
+				})
+			})
+		</script>
+	</body>
+</html>

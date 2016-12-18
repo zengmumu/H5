@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{ 
+				margin: 0;
+				padding: 0;
+				 box-sizing: border-box;
+			}
+			.container{
+				width: 1200px;
+				margin: 0 auto;
+			}
+			.nav{
+				height: 30px;
+				line-height: 30px;
+				background-color: #e0e0e0;
+			}
+			html,body{ height: 100%; width: 100%;}
+			.module{ display: none;}
+			.module-mask{
+				position: fixed;
+				left:0;
+				top:0;
+				width: 100%;
+				height: 100%;
+				background-color: rgba(0,0,0,.4);
+			}
+			.module-content{ 
+				position: fixed;
+				left:30%;
+				right:30%;
+				top:25%;
+				bottom:25%;
+				background-color: #fff;
+				}
+			.module-title{
+				position:relative;
+				line-height: 50px;
+				height: 50px;
+				text-align: center;
+				background-color: #f0f0f0;
+			}
+			.closeModule{
+				
+				position:absolute;
+				right:0;
+				width: 50px;
+				height: 50px;
+				line-height: 50px;
+				text-align: center;
+			}
+			.module-content label{ 
+				display: inline-block;
+				width: 30%;
+				text-align: right;
+				height: 35px;
+				line-height: 35px;
+				float: left;
+				}
+			.module-content input{
+				width:65%;
+				padding-left: 3px;
+				height: 35px;
+				line-height: 35px;
+				float: left;;
+			}
+			.module-content p{ margin-bottom: 10px;}
+			.module-content p:after{
+				content: "";
+				clear: both;
+				display: block;
+			}
+			#sub{ margin-left: 30%;}
+		</style>
+	</head>
+	<body>
+		<div class="nav">
+			<div class="container">	
+				
+				<div class="logBox">
+					<!--<span class="user">
+						用户名
+						<span class="logout">退出</span>
+					</span>
+					<span class="login">
+						登陆
+					</span>-->
+				</div>
+			</div>
+		</div>
+		
+		<div class="module">
+			<div class="module-mask"></div>
+			<div class="module-content">
+				<h3 class="module-title">登陆<span class="closeModule">&times;</span></h3>
+				<div class="module-body">
+					<p class="form-tip"></p>
+					<p><label>用户名:</label> <input type="text" id="uname" /></p>
+					<p><label>密码：</label> <input type="password" id="upass" /></p>
+					<p><input type="button" value="登陆" id="sub" /></p>
+				</div>
+			</div>
+		</div>
+		<script src="js/jquery-2.0.2.js"></script>
+		<script src="js/mock.js"></script>
+		<script>
+		Mock.mock("http://www.ajax.com/login",function(opt){
+				
+			 var options={}
+			 opt.body.split("&").forEach(function (item) {  //js的forEach()方法
+                            item = item.split('=');                            
+                            var str='{"'+item[0]+'":"'+item[1]+'"}';
+                            options[item[0]]=item[1];                          
+                        });
+			
+			return	(
+					{
+				"status":1,	
+				"msg":'登陆成功',
+				"data":{
+					"user":options.name?options.name:Mock.mock('@cname'),
+		                }
+		        	}
+				)
+			}
+    	)
+		Mock.mock("http://www.ajax.com/logout",{
+			"status":0,	
+			"msg":'退出成功',
+			"data":{
+				"user":Mock.mock('@cname'),
+	                }
+	        }
+    	)
+		</script>
+		<script>
+		//$.param( { name:"CodePlayer", age:18 } ); // "name=CodePlayer&age=18"
+		//var params = $("#myform").serializeObject();
+			$(function(){
+			// 默认拿用户名
+			$.ajax({
+				url:"http://www.ajax.com/login",
+				type:"POST",
+				dataType:"json",
+				data:{"action":"getUser"},
+				success:function(res){
+					if(res.status){
+						var str='<span class="user">'+res.data.user+'<span class="logout">退出</span></span>';
+					}else{
+						var str='<span class="login">登陆</span>';
+					}
+					$(".logBox").html(str);
+					
+				}
+			})
+			// 单击登陆
+			// live
+			/*$(".login").click(function(){
+				alert("abc");
+			})
+				*/
+			$(".logBox").on("click",".login",function(){
+				$(".module").show();
+			})
+			$(".closeModule").click(function(){
+				$(".module").hide();
+			})
+			
+			// 登陆
+			$("#sub").click(function(){
+			
+				$.ajax({
+					url:"http://www.ajax.com/login",
+					type:"POST",
+					dataType:"json",
+					data:{"action":"login","name":$("#uname").val(),"password":$("#upass").val()},
+					success:function(res){
+							
+						console.log(res);
+						if(res.status){
+							var str='<span class="user">'+res.data.user+'<span class="logout">退出</span></span>';
+							$(".module").hide();
+						}else{
+							var str='<span class="login">登陆</span>';
+							$(".form-tip").html(res.msg);
+							
+						}
+						$(".logBox").html(str);
+						
+					}
+				})
+				
+			})
+			// 退出	
+			$(".logBox").on("click",".logout",function(){
+					
+					$.ajax({
+					url:"http://www.ajax.com/logout",
+					type:"POST",
+					dataType:"json",
+					data:{"action":"logout"},
+					success:function(res){
+						if(res.status=="0"){
+							
+							var str='<span class="login">登陆</span>';
+							$(".logBox").html(str);
+						}
+						
+					}
+				})
+			})
+		})
+		</script>
+	</body>
+</html>

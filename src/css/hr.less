@@ -1,0 +1,209 @@
+// @变量
+// reset.less
+body,h1,h2,h3,h4,h5,h6,div,p,ul,li,ol,span,i,a,img,footer{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+article,section,aside,nav,footer,figure,figcaption{
+    display: block;
+}
+
+// 颜色
+// 警告颜色
+@alert-c:#fa9d33;
+// 成功颜色
+@success-c:#3dbf03;
+// 黑色（标题）
+@black-c:#333333;
+// 灰色(文本)
+@gray-c:#999999;
+// 灰白 （背景）
+@gray-white:#f4f4f4;
+// 亮灰色 （边框）
+@gray-light:#d7d7d7;
+
+// 距离
+@gap:10px;
+@item-height:44px;
+
+// 文字
+
+@f-body-size:13px;
+@f-title-size:18px;
+@f-medium-size:15px;
+@bw:0.4px;
+//---基本reset
+body{
+    font-family:"微软雅黑",sans-serif; 
+    font-size: @f-body-size;
+    background-color: @gray-white;
+}
+
+a{
+    text-decoration: none;
+    }
+ul,ol{
+    list-style: none;
+}
+h3{ margin-bottom: @gap;}
+.l{ float: left;}
+.r{ float: right;}
+.text-success{color: @success-c;}
+
+.round(@r:6px){
+    border-radius: @r;
+}
+.round{
+    .round;
+}
+.m10{ margin: 10px;}
+.pl-10{ padding-left: 10px;}
+.pr-10{ padding-right: 10px;}
+.mt-10{ margin-top: 10px;}
+.fixed{ overflow: hidden;}
+// 颜色
+.text-alert{ color:@alert-c;}
+.f-title{ font-size: @f-title-size;}
+.bg-alert{
+    background-color: @alert-c;
+    color:#fff;
+}
+
+
+// list 组件
+.list{ 
+    background: #fff;
+   
+    }
+
+.list .item-body{ line-height: inherit;}
+.list .item:last-child{ border-bottom: none;}
+.list .item{
+    border-bottom: @bw solid @gray-light;
+    min-height: @item-height;
+    line-height: @item-height;
+    padding: @gap;
+    padding-top:0 ;
+    padding-bottom: 0;
+    position: relative;
+    &:after{
+        content:"";
+        display: block;
+        clear: both;
+    }
+    .item-label{
+        width: 20%;
+        float: left;
+        color:@gray-c;
+        text-align: right;
+        padding-right: @gap+5px;
+    }
+   &.has-label .item-content{
+       width: 80%;
+       float: left;
+       color:@black-c;
+       text-align: left;
+   }
+    .item-note{
+        position: absolute;
+        right:25px;
+        top:50%;
+        transform: translate(0,-50%);
+        &:after{
+            content:"";
+            height: 10px;
+            width: 10px;
+            display: inline-block;
+            border-top:1px solid #fff;
+            border-right:1px solid #fff;
+            transform: rotate(45deg) translate(50%,-30%) ;
+            
+        }
+        
+    }
+   &.has-note{ padding-right: 100px;}
+   &.item-body{line-height: 1.7em; padding: @gap;}
+}
+
+.header{
+    .list .item;
+    position: relative;
+    background-color:#fff ;
+    .title{
+        font-size: @f-title-size;
+        text-align: center;
+        position: absolute;
+        left:0;
+        top:0;
+        width: 100%;
+        margin-bottom: 0;
+    }
+    & .btn:nth-child(1){
+        position: absolute;
+        left:@gap;
+        top:@gap;
+        
+    }
+    & .btn.btn-right{
+        position: absolute;
+        right:@gap;
+        top:@gap
+    }
+    &.logo{ 
+        position: absolute; 
+        left:50px; 
+        top:14px; 
+        height: 18px;
+        width: 18px;
+        background-size: 100% auto;
+        background-image: url(../img/logo.png);
+        }
+    
+    
+}
+
+
+// 按钮
+
+.btn{
+    
+    font-size: @f-medium-size;
+    padding: 4px 6px;
+    }
+.icon-back:after{
+    content:"";
+    height: 12px;
+    width: 12px;
+    display: inline-block;
+    border-top:2px solid @gray-c;
+    border-left:2px solid @gray-c;
+    transform: rotate(-45deg) translate(50%,-75%) ;
+}
+.btn-block{ display: block; text-align: center;}
+
+.footer{
+    position: fixed;
+    left:0px;
+    bottom: 0px;
+    width: 100%;
+    height: @item-height;
+    line-height: @item-height;
+    
+    background-color: #fff;
+  
+    
+    
+    
+}
+.has-footer{ padding-bottom:@item-height;}
+
+// 格栅系统
+.col-30{ width: 30%; float: left;}
+.col-70{ width: 70%; float:left; }
+
+.love{ color:blue; width:100px;}
+.bad{color:black;}
+.bad{ font-size: 14px; background-color:red;background-position: center center;}
+.bad{ margin-left:50px; margin-right: 50px; margin-top: 100px; margin-bottom: 100px;}
+h5{ color:blue;}

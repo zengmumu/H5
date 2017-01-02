@@ -1,0 +1,52 @@
+.header{
+    .list .item;
+    position: relative;
+    background-color:#fff ;
+    .title{
+        font-size: @f-title-size;
+        text-align: center;
+        position: absolute;
+        left:0;
+        top:0;
+        width: 100%;
+        margin-bottom: 0;
+    }
+    & .btn:nth-child(1){
+        position: absolute;
+        left:@gap;
+        top:@gap;
+        
+    }
+    & .btn.btn-right{
+        position: absolute;
+        right:@gap;
+        top:@gap
+    }
+    & .logo{ 
+        position: absolute; 
+        left:50px; 
+        top:14px; 
+        height: 18px;
+        width: 18px;
+        background-size: 100% auto;
+        background-image: url(../img/logo.png);
+        }
+    
+    
+}
+
+.footer{
+    position: fixed;
+    left:0px;
+    bottom: 0px;
+    width: 100%;
+    height: @item-height;
+    line-height: @item-height;
+    
+    background-color: #fff;
+  
+    
+    
+    
+}
+.has-footer{ padding-bottom:@item-height;}

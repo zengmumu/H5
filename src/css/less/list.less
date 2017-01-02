@@ -1,0 +1,55 @@
+
+// list 组件
+.list{ 
+    background: #fff;
+   
+    }
+
+.list .item-body{ line-height: inherit;}
+.list .item:last-child{ border-bottom: none;}
+.list .item{
+    border-bottom: @bw solid @gray-light;
+    min-height: @item-height;
+    line-height: @item-height;
+    padding: @gap;
+    padding-top:0 ;
+    padding-bottom: 0;
+    position: relative;
+    &:after{
+        content:"";
+        display: block;
+        clear: both;
+    }
+    .item-label{
+        width: 20%;
+        float: left;
+        color:@gray-c;
+        text-align: right;
+        padding-right: @gap+5px;
+    }
+   &.has-label .item-content{
+       width: 80%;
+       float: left;
+       color:@black-c;
+       text-align: left;
+   }
+    .item-note{
+        position: absolute;
+        right:25px;
+        top:50%;
+        transform: translate(0,-50%);
+        &:after{
+            content:"";
+            height: 10px;
+            width: 10px;
+            display: inline-block;
+            border-top:1px solid #fff;
+            border-right:1px solid #fff;
+            transform: rotate(45deg) translate(50%,-30%) ;
+            
+        }
+        
+    }
+   &.has-note{ padding-right: 100px;}
+   &.item-body{line-height: 1.7em; padding: @gap;}
+}

@@ -1,0 +1,30 @@
+// reset.less
+body,h1,h2,h3,h4,h5,h6,div,p,ul,li,ol,span,i,a,img,footer{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+article,section,aside,nav,footer,figure,figcaption{
+    display: block;
+}
+
+
+//---基本reset
+body{
+    font-family:"微软雅黑",sans-serif; 
+    font-size: @f-body-size;
+    background-color: @gray-white;
+}
+
+a{
+    text-decoration: none;
+    }
+ul,ol{
+    list-style: none;
+}
+h3{ margin-bottom: @gap;}
+
+@media (max-width: 320px) {
+    body{ font-size: @f-body-size*0.7;}
+    
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+         <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+       <meta charset="UTF-8"/>
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" href="../css/mui.css" />
+        <style>
+        	.dataImg img { display: none; width: 100px; height: auto;}
+        	.dataImg{ height: 100px; width: 100px; margin-left: auto; overflow: hidden; margin-right: auto; background-color: burlywood; border-radius: 50%;}
+        </style>
+        
+        <title>摄像头信息</title>
+    </head>
+    <body>
+        <div class="mui-bar mui-bar-nav">
+        	<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+        	<h1 class="mui-title">扫描二位码</h1>
+        </div>
+        <div class="mui-content mui-content-padded">
+        	<div class="mui-table-view">
+        		<div class="mui-table-view-cell" onclick="scan()">扫描二位码</div>
+        	</div>
+        	
+        	
+        </div>
+       <!--<script type="text/javascript" src="cordova.js"></script>-->
+        <script type="text/javascript" src="../cordova.js"></script>
+        <script src="../js/mui.js"></script>
+		<script>
+			mui.init({
+				swipeBack:true //启用右滑关闭功能
+			});
+			
+			document.addEventListener("backbutton",onBack,false);
+        	function onBack(){
+        		window.history.back();        		
+        	}
+        	
+        	function scan(){
+	        	cordova.plugins.barcodeScanner.scan(
+	      			function (result) {
+	      		       
+		       			/////////////////////////////////////////下载
+		      			var ref = cordova.InAppBrowser.open(result.text, '_blank', 'location=yes');
+		       			
+		      	
+					    alert("我们拿到一个二位码\n" +
+				                "结果: " + result.text + "\n" +
+				                "格式: " + result.format + "\n" +
+				                "Cancelled: " + result.cancelled);
+		      			}, 
+					function (error) {
+					        alert("Scanning failed: " + error);
+					    }
+				    
+	  			 )
+        	}
+        
+		</script>
+     
+    </body>
+</html>

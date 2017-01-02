@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+         <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+       <meta charset="UTF-8"/>
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" href="../css/mui.css" />
+        
+        <title>地理位置</title>
+    </head>
+    <body>
+        <div class="mui-bar mui-bar-nav">
+        	<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+        	<h1 class="mui-title">地理位置</h1>
+        </div>
+        <div class="mui-content mui-content-padded">
+        	<div class="mui-table-view">
+        		<div class="mui-table-view-cell" onclick="getGps()">获取 GPS 信息</div>
+        	</div>
+        	<div class="mui-table-view">
+        		<div class="mui-table-view-cell" onclick="getMap()">打开地图</div>
+        	</div>
+        	<div class="mui-table-view">
+        		<div class="mui-table-view-cell" onclick="shareMap()">分享地图</div>
+        	</div>
+        	<div class="device">
+        		
+        	</div>
+        	
+        </div>
+       <!--<script type="text/javascript" src="cordova.js"></script>-->
+        <script type="text/javascript" src="../cordova.js"></script>
+        <script src="../js/mui.js"></script>
+		<script>
+			mui.init({
+				swipeBack:true //启用右滑关闭功能
+			});
+			document.addEventListener("backbutton",onBack,false);
+        	function onBack(){
+        		window.history.back();
+        	}
+        	
+        	var onSuccess = function(position) {
+		        alert('Latitude: '          + position.coords.latitude          + '\n' +
+		              'Longitude: '         + position.coords.longitude         + '\n' +
+		              '海拔: '          		+ position.coords.altitude          + '\n' +
+		              'accuracy: '          + position.coords.accuracy          + '\n' +
+		              'altitudeAccuracy: '  + position.coords.altitudeAccuracy  + '\n' +
+		              'Heading: '           + position.coords.heading           + '\n' +
+		              '速度: '             	+ position.coords.speed             + '\n' +
+		              '时间戳: '         	+ position.timestamp                + '\n');
+    			};
+
+    
+		    function onError(error) {
+		        alert('code: '    + error.code    + '\n' +
+		              'message: ' + error.message + '\n');
+		    }
+		    
+		    function getGps(){
+		    	navigator.geolocation.getCurrentPosition(onSuccess, onError);
+		    }
+		    
+		    function getMap() {
+		    navigator.geolocation.getCurrentPosition(onPositionSuccess, onError);
+		   
+		    
+		    }
+		    function onPositionSuccess(position) {
+		          var opt={};
+		          opt.src="http://m.amap.com/around/?locations="+position.coords.latitude+","+position.coords.longitude+"&keywords=美食,KTV,地铁站,公交站&defaultIndex=3&defaultView=&searchRadius=5000&key=36585fd2f93bcd1d131edf73c715972c";
+			      opt.top=150;
+			      opt.left=0;
+			      opt.width="auto";
+			      opt.height="auto";
+			      openFrame(opt);
+	    	 }
+		    function openFrame(option){
+		        if(option.width == "auto") {
+		        	option.width = "100%"
+		        }
+		        if(option.height == "auto"){
+		           option.height = window.innerHeight-option.top
+		        }
+		       var i=document.createElement("iframe");
+			    i.src=option.src
+			    i.width=option.width;
+			    i.id="test";
+			    i.frameBorder="0";
+			    i.style.position="absolute";
+			    i.style.left=option.left+"px";
+			    i.style.top=option.top+"px"
+			    i.style.height=(window.innerHeight-option.top)+"px";
+			    document.body.appendChild(i);	
+		        
+		    }
+		    function shareMap(){
+			    navigator.geolocation.getCurrentPosition(function(position){
+			      var link = "http://m.amap.com/navi/?dest="+position.coords.latitude+","+position.coords.longitude+"&destName=我的位置&hideRouteIcon=1&key=36585fd2f93bcd1d131edf73c715972c";
+	//			 window.plugins.socialsharing.share('链接和图片', null, null, link)
+	openFrame({src: link,
+			   width: "auto",
+			   height: "auto",
+			   top: 200,
+			   left: 0
+		})
+				 window.plugins.socialsharing.share('我的位置', null, 'http://img3.imgtn.bdimg.com/it/u=3601551477,3020591902&fm=21&gp=0.jpg', link);
+			    
+			    
+			    }, onError);
+		  
+		    }
+		        	
+        	
+        	
+		</script>
+     
+    </body>
+</html>

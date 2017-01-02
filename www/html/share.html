@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+         <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+       <meta charset="UTF-8"/>
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" href="../css/mui.css" />
+        
+        <title>qq登陆</title>
+    </head>
+    <body>
+        <div class="mui-bar mui-bar-nav">
+        	<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+        	<h1 class="mui-title">分享</h1>
+        </div>
+        <div class="mui-content mui-content-padded">
+        	<div class="mui-table-view">
+        		
+        		<div  class="mui-table-view-cell" onclick="window.plugins.socialsharing.share('Message only')">分享信息</div>
+				<div  class="mui-table-view-cell" onclick="window.plugins.socialsharing.share(null, null, 'http://www.baidu.com/img/bdlogo.gif', null)">分享图片</div>
+				<div  class="mui-table-view-cell" onclick="window.plugins.socialsharing.shareViaSMS('My cool message', null, function(msg) {console.log('ok: ' + msg)}, function(msg) {alert('error: ' + msg)})">Share via SMS</div>
+	        	
+        	 </div>
+        	 <div class="mui-content-padded">
+					<button onclick="window.plugins.socialsharing.share(null, null, null, 'http://www.qingkt.com')">link only</button>
+					<button onclick="window.plugins.socialsharing.share('链接和图片', null, null, 'http://www.qingkt.com')">message and link</button>
+					<button onclick="window.plugins.socialsharing.share(null, null, 'http://www.baidu.com/img/bdlogo.gif', null)">分享图片</button>
+					 <!--Beware: passing a base64 file as 'data:' is not supported on Android 2.x: https://code.google.com/p/android/issues/detail?id=7901#c43-->
+					<!--Hint: when sharing a base64 encoded file on Android you can set the filename by passing it as the subject (second param)-->
+					<button onclick="window.plugins.socialsharing.share(null, 'Android filename', 'data:image/png;base64,R0lGODlhDAAMALMBAP8AAP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAUKAAEALAAAAAAMAAwAQAQZMMhJK7iY4p3nlZ8XgmNlnibXdVqolmhcRQA7', null)">base64 图片</button>
+					<!--Hint: you can share multiple files by using an array as thirds param: ['file 1','file 2', ..], but beware of this Android Kitkat Facebook issue: [#164]-->
+					<button onclick="window.plugins.socialsharing.share('信息图片图片', null, 'http://www.baidu.com/img/bdlogo.gif', null)">信息与图片</button>
+					<button onclick="window.plugins.socialsharing.share('信息,图片与链接', null, 'http://img5.imgtn.bdimg.com/it/u=3244871815,3906864698&fm=21&gp=0.jpg', 'http://www.qingkt.com/a/interview/')">信息, 图片 and 链接</button>
+					<button onclick="window.plugins.socialsharing.share('信息, 主题,图片与链接', 'The主题', 'http://a1.jikexueyuan.com/home/201506/01/abed/556bbdce6f009.jpg', 'http://www.qingkt.com/a/interview/')">信息, 主题, 图片与链接</button>
+	        </div>
+        	
+        
+        </div>
+       <!--<script type="text/javascript" src="cordova.js"></script>-->
+        <script type="text/javascript" src="../cordova.js"></script>
+        <script src="../js/mui.js"></script>
+        <script src="../js/jquery-2.0.2.js"></script>
+		<script>
+			mui.init({
+				swipeBack:true //启用右滑关闭功能
+			});
+			
+			document.addEventListener("backbutton",onBack,false);
+        	function onBack(){
+        		window.history.back();
+        		
+        	}
+        	
+				</script>
+     
+    </body>
+</html>

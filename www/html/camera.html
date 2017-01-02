@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+         <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+       <meta charset="UTF-8"/>
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" href="../css/mui.css" />
+        <style>
+        	.dataImg img { display: none; width: 100px; height: auto;}
+        	.dataImg{ height: 100px; width: 100px; margin-left: auto; overflow: hidden; margin-right: auto; background-color: burlywood; border-radius: 50%;}
+        </style>
+        
+        <title>摄像头信息</title>
+    </head>
+    <body>
+        <div class="mui-bar mui-bar-nav">
+        	<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+        	<h1 class="mui-title">摄像头</h1>
+        </div>
+        <div class="mui-content mui-content-padded">
+        	<div class="mui-table-view">
+        		<div class="mui-table-view-cell" onclick="loadImage()">拍照获取图片</div>
+        	</div>
+        	<div class=" mui-content mui-content-padded">
+        		<div  class="dataImg"><img src="" alt="" id="getImage" /></div>
+        	</div>
+        	<div class="mui-table-view">
+        		<div class="mui-table-view-cell" onclick="loadImageLocal()">拍照获取图片</div>
+        	</div>
+        	<div class=" mui-content mui-content-padded">
+        		<div  class="dataImg"><img src="" alt="" id="getImageLocal" /></div>
+        	</div>
+        	<div class="mui-table-view">
+        		<div class="mui-table-view-cell" onclick="shareImg()">拍照分享照片</div>
+        	</div>
+        	<div class="mui-table-view">
+        		<div class="mui-table-view-cell" onclick="loadImageUpload()">上传照片</div>
+        	</div>
+        	
+        	
+        	<div class=" mui-content mui-content-padded">
+        		<div  class="dataImg"><img src="" alt="" id="getImageUpload" /></div>
+        	</div>
+        	<div class="mui-table-view">
+        		<div class="mui-table-view-cell" 
+        		onclick = "download('http://file.market.xiaomi.com/download/AppStore/039814c144bd6ff01ebff0a1d0e1254d178432842/com.zengmumu.html5.apk')">
+        		下载</div>
+        	</div>
+        	
+        </div>
+       <!--<script type="text/javascript" src="cordova.js"></script>-->
+        <script type="text/javascript" src="../cordova.js"></script>
+        <script src="../js/mui.js"></script>
+		<script>
+			mui.init({
+				swipeBack:true //启用右滑关闭功能
+			});
+			
+			document.addEventListener("backbutton",onBack,false);
+        	function onBack(){
+        		window.history.back();
+        		
+        	}
+        	
+        function loadImage() {
+            //拍照并显示在屏幕            
+            navigator.camera.getPicture(onLoadImageSuccess, onLoadImageFail, {destinationType: Camera.DestinationType.DATA_URL});
+        }
+        //拍照成功后回调
+        function onLoadImageSuccess(imageURI) {
+            //这里的图片经过了base64编码
+            var src = "data:image/jpeg;base64," + imageURI;
+            var img=document.getElementById("getImage");
+            img.src=src;
+            img.style.display="inline";
+            
+         
+        }
+          function onLoadImageFail(message) {
+            navigator.notification.alert("拍照失败，原因：" + message, null, "警告");
+        }
+          
+          
+        function loadImageLocal() {
+            //获取本地图片并显示在屏幕
+            navigator.camera.getPicture(onLoadImageLocalSuccess, onLoadImageFail, {
+                destinationType: Camera.DestinationType.FILE_URI,
+                sourceType: Camera.PictureSourceType.PHOTOLIBRARY
+            });
+        }
+        //本地图片选择成功后回调此函数
+        function onLoadImageLocalSuccess(imageURI) {
+        	var img = document.getElementById("getImageLocal");
+            img.src = imageURI
+            img.style.display = "inline";
+        }
+        //本地图片选择成功后分享照片
+        function shareImg() {
+        	navigator.camera.getPicture(onSuccess, onLoadImageFail, {
+                destinationType: Camera.DestinationType.FILE_URI,
+                sourceType: Camera.PictureSourceType.PHOTOLIBRARY
+            });
+        	function onSuccess(imageURI) {
+        		PhotoViewer.show(imageURI, '学习Cordova', {share:true});
+        	}
+        }
+        
+        function loadImageUpload() {
+            //拍照上传并显示在屏幕
+            navigator.camera.getPicture(onLoadImageUploadSuccess, onLoadImageFail, {
+                destinationType: Camera.DestinationType.FILE_URI
+            });
+        }
+        
+        //图片拍照成功后回调此函数
+        function onLoadImageUploadSuccess(imageURI) {
+        	
+            //此处执行文件上传的操作，上传成功后执行下面代码
+            var options = new FileUploadOptions(); //文件参数选项	
+            options.fileKey = "file";//向服务端传递的file参数的parameter name
+            options.fileName = imageURI.substr(imageURI.lastIndexOf('/') + 1);//文件名
+            options.mimeType = "image/jpeg";//文件格式，默认为image/jpeg
+            var ft = new FileTransfer();//文件上传类
+            ft.onprogress = function (progressEvt) {//显示上传进度条
+                if (progressEvt.lengthComputable) {
+                    navigator.notification.progressValue(Math.round(( progressEvt.loaded / progressEvt.total ) * 100));
+                }
+            }
+            navigator.notification.progressStart("提醒", "当前上传进度");            
+            ft.upload(imageURI, encodeURI('http://qingkt.com/up/ajax.php'), function () {
+                navigator.notification.progressStop();//停止进度条                
+                var img = document.getElementById("getImageUpload");
+	            img.src = imageURI
+	            img.style.display = "inline";
+            	navigator.notification.alert("文件上传成功！", null, "提醒");
+            },function(e){
+            	alert(JSON.stringify(e));
+            }, options);
+        }
+        
+        
+    function download(path){  
+	    var fileTransfer = new FileTransfer();  
+	    var uri = encodeURI(path);
+	    var po=path.lastIndexOf("/")+1;
+	    var name=path.substr(po);
+	    var fileURL = "/mnt/sdcard/download/"+name;  
+	    fileTransfer.onprogress = function (progressEvt) {//显示上传进度条
+                if (progressEvt.lengthComputable) {
+                    navigator.notification.progressValue(Math.round(( progressEvt.loaded / progressEvt.total ) * 100));
+                }
+            }
+            navigator.notification.progressStart("提醒", "当前上传进度");    
+	    fileTransfer.download(  
+	        uri,  
+	        fileURL,  
+	        function(entry) {  
+	            console.log("download complete: " + entry.fullPath);  
+	           navigator.notification.progressStop();//停止进度条             
+	            alert("下载成功，文件位置："+ entry.fullPath);  
+	            if (!confirm("是否打开文件？")) {  
+	                window.event.returnValue = false;  
+	            }else{ 
+	            //window.plugins.fileOpener.open(entry.fullPath);
+	            cordova.plugins.fileOpener2.open(
+			    entry.fullPath, 
+			    fileMIMEType, 
+			    {
+			        error : function(){ }, 
+			        success : function(){ } 
+			    } 
+			);
+
+	            }  
+	        },  
+	        function(error) {  
+	            console.log("download error source " + error.source);  
+	            console.log("download error target " + error.target);  
+	            console.log("upload error code" + error.code);  
+	            navigator.notification.progressStop();   
+	            alert("下载文件错误！");    
+	        },  
+	        false,  
+	        {  
+	            headers: {  
+	                "Authorization": "Basic dGVzdHVzZXJuYW1lOnRlc3RwYXNzd29yZA=="  
+	            }  
+	        }  
+	    );  
+}  
+
+//https://github.com/andischerer/cordova-plugin-openfilenative
+//打开文件  
+ function OpenFile(path){   
+        //   alert('OpenFile');   
+        var openFilePlugin=cordova.require('com.gzx.open.OpenFile');  
+        openFilePlugin.openFile("/mnt/sdcard"+path, {},  
+        function (result) {  
+                alert(result);                
+            }, function (error) {  
+                alert("打开文件错误！");    
+            });  
+   }  
+		</script>
+     
+    </body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+         <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
+       <meta charset="UTF-8"/>
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" href="../css/mui.css" />
+        
+        <title>qq登陆</title>
+    </head>
+    <body>
+        <div class="mui-bar mui-bar-nav">
+        	<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+        	<h1 class="mui-title">qq登陆</h1>
+        </div>
+        <div class="mui-content mui-content-padded">
+        	<div class="mui-table-view">
+        		<div class="mui-table-view-cell" onclick="qqLog()">QQ登陆</div>
+        	</div>
+        	<div class="mui-table-view">
+        		<div class="mui-table-view-cell" onclick="qqLogout()">QQ注销</div>
+        	</div>
+        	<p id="uqq">
+        			<img src="" alt="" id="upic"/>
+					<em class="uname"></em>
+			</p>
+        </div>
+       <!--<script type="text/javascript" src="cordova.js"></script>-->
+        <script type="text/javascript" src="../cordova.js"></script>
+        <script src="../js/mui.js"></script>
+        <script src="../js/jquery-2.0.2.js"></script>
+		<script>
+			mui.init({
+				swipeBack:true //启用右滑关闭功能
+			});
+			
+			document.addEventListener("backbutton",onBack,false);
+        	function onBack(){
+        		window.history.back();
+        		
+        	}
+        	function qqLog(){
+    			var checkClientIsInstalled = 1;//default is 0,only for iOS
+				YCQQ.ssoLogin(function(args){	
+					$.ajax({
+						url:"https://graph.qq.com/user/get_user_info?oauth_consumer_key=1105508081&access_token="+args.access_token+"&openid="+args.userid+"&format=json",
+						type:"GET",
+						dataType:"json",
+						success:function(res){
+							alert("good");
+							$("#uqq").show();
+							$("#uqq img").attr("src",res.figureurl_qq_1);
+							$("#uqq em").html(res.nickname);
+							alert(JSON.stringify(res));
+							
+						}
+					})
+	      
+		    	},function(failReason){
+		       		console.log(failReason);
+				},checkClientIsInstalled);
+		    }
+        	
+		    function qqLogout(){
+		    	YCQQ.checkClientInstalled(function(){
+		    		alert("注销");
+		    		$("#uqq").hide();
+		     		console.log('client is installed');
+				},function(){
+		    
+		    	console.log('client is not installed');
+				});
+		    }
+				</script>
+     
+    </body>
+</html>

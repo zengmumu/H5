@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>ionic指令
+		</title>
+		<link rel="stylesheet" href="css/ionic.css" />
+		<script src="js/ionic.bundle.js"></script>
+		<style>
+			
+		</style>
+	</head>
+	<body ng-controller="mainCtrl">
+		<ion-header-bar align-title="center" class="bar-positive">
+			<div class="buttons buttons-left">
+				<button class="button">主要的按钮</button>
+				<button class="button">次要的按钮</button>
+			</div>
+			<h1 class="title">ionic指令</h1>
+		</ion-header-bar>	
+		
+		<ion-content>
+			
+		</ion-content>
+		
+		<ion-footer-bar>
+			<h1 class="title">ionic指令 footer</h1>
+		</ion-footer-bar>
+		
+		
+		<script>
+			angular.module("myapp",["ionic"])
+			.controller("mainCtrl",["$scope",function($scope){
+				
+			}])
+		</script>
+	</body>
+</html>

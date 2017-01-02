@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>ionic指令
+		</title>
+		<link rel="stylesheet" href="css/ionic.css" />
+		<script src="js/ionic.bundle.js"></script>
+		<style>
+			
+		</style>
+	</head>
+	<body ng-controller="mainCtrl">
+		<ion-header-bar align-title="center" class="bar-positive">
+			
+			<h1 class="title">多选指令</h1>
+		</ion-header-bar>	
+		
+		<ion-content>
+			<ion-list>
+				<ion-checkbox class="item-checkbox-right" ng-model="item.checked" ng-checked="item.checked" ng-repeat="item in items">
+					{{item.text}}
+				</ion-checkbox>
+				<div class="item">
+					{{items|json}}
+				</div>
+			</ion-list>			
+		</ion-content>
+		
+	
+		
+		<script>
+			angular.module("myapp",["ionic"])
+			.controller("mainCtrl",["$scope",function($scope){
+				
+				$scope.items= [
+              				{ text: "HTML5",checked:true},
+              				{ text: "CSS3",checked:true },
+              				{ text: "JavaScript",checked:false}
+            			];
+			}])
+		</script>
+	</body>
+</html>

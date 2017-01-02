@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>网格系统</title>
+		<link rel="stylesheet" href="css/ionic.css" />
+		<script src="js/ionic.bundle.js"></script>
+		<style>
+			.bar-header .item-input-inset{
+				flex: 1;
+				background-color: transparent;
+				border: none;
+			}
+			.bar-header .item-input-wrapper{
+				background-color: rgba(0,0,0,.1);
+			}
+			.bar-header input[type="search"],.item-input-wrapper input{
+				flex: 1;
+			}
+			.col,.row>div{ border: 1px solid green;}
+			.col-30{
+				flex:0 0 30%;
+				max-width:30%;
+			}
+			.col-70{
+				flex:0 0 70%;
+				max-width:70%;
+			}
+			.myrow{ height: 300px; border: 1px solid pink;}
+			.pink{  border: 1px solid red;background-color: pink;}
+			.row.col{ display: flex;}
+		</style>
+	</head>
+	<body ng-controller="mainCtrl">
+		<div class="bar bar-header bar-positive">
+			<div class="item item-input-inset ">
+				<div class="item-input-wrapper">
+					<i class="icon ion-ios-search placeholder-icon"></i>
+					<input type="search" />
+					
+				</div>
+				<button class="button">搜索</button>
+			</div>
+			
+		</div>
+		<!--
+			row 里面的col 是等分的
+			.col-10,20,25,33/34,40,50,60,67/66,75,80,90
+		-->
+		<ion-content class="has-header has-footer">
+			<div class="row text-center">
+				<div class="col">col1</div>
+				<div class="col">col2</div>
+				<div class="col">col3</div>
+				<div class="col">col4</div>
+				<div class="col">col5</div>
+				<div class="col">col6</div>
+			</div>
+			<div class="row text-center">
+				<div class="col-20">20</div>
+				<div class="col-80">80</div>
+			</div>
+			<div class="row">
+				<div class="col-33">30</div>
+				<div class="col-67">70</div>
+			</div>
+			<div class="row">
+				<div class="col-25">25</div>
+				<div class="col-75">70</div>
+			</div>
+			<div class="row">
+				<div class="col-33">33</div>
+				<div class="col-33">33</div>
+				<div class="col-33">33</div>
+			</div>
+			<div class="row">
+				<div class="col-30">30</div>
+				<div class="col-70">70</div>
+				
+			</div>
+			
+			<div class="row myrow">
+				<div class="col col-bottom">col1</div>
+				<div class="col col-center">col2</div>
+				<div class="col col-top">col3</div>
+				<div class="col">col4</div>
+			</div>
+			<div class="row myrow row-bottom">
+				<div class="col text-center">col1</div>
+				<div class="col">col2</div>
+				<div class="col">col3</div>
+				<div class="col">col4</div>
+			</div>
+			<div class="row myrow">
+				<div class="col row">
+						<div class="pink col col-center">mypink</div>
+				</div>
+				<div class="col">col2</div>
+				<div class="col">col3</div>
+			</div>
+			
+			
+		</ion-content>
+		
+		
+		
+		
+		<script>
+			angular.module("myapp",["ionic"])
+			.controller("mainCtrl",["$scope",function($scope){
+				
+			}])
+		</script>
+	</body>
+</html>

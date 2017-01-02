@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>ionic指令
+		</title>
+		<link rel="stylesheet" href="css/ionic.css" />
+		<script src="js/ionic.bundle.js"></script>
+		<style>
+			
+		</style>
+	</head>
+	<body ng-controller="mainCtrl">
+		<ion-header-bar align-title="center" class="bar-positive">
+			
+			<h1 class="title">下拉刷新</h1>
+		</ion-header-bar>	
+		
+		<ion-content>
+			    <ion-refresher pulling-text="下拉刷新" on-refresh="doRefresh()"></ion-refresher>
+			 <ion-list>			 	
+			 	<ion-item ng-repeat="item in items">
+			 		{{item.text}}
+			 	</ion-item>			 	
+			 </ion-list>		
+		</ion-content>
+		
+	
+		
+		<script>
+			angular.module("myapp",["ionic"])
+			.controller("mainCtrl",["$scope",function($scope){
+			
+				$scope.items=[
+					{text: "Angular"},
+					{text: "React"},
+					{text: "Ionic"},
+					{text: "JQuery"},
+					{text: "Vue"},
+					{text: "ReactNative"},
+					{text: "mui"},
+					{text: "backbone"},
+					{text: "underScore"},
+				]
+				$scope.num=1;
+				$scope.doRefresh=function(){
+					for(var i=0;i<10;i++){
+						$scope.num++;
+						$scope.items.unshift({text:"item"+$scope.num})
+					}
+					 $scope.$broadcast('scroll.refreshComplete');
+				}
+			
+			}])
+		</script>
+	</body>
+</html>

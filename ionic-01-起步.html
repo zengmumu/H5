@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>ionic 起步</title>
+		<link rel="stylesheet" href="css/ionic.css" />
+		<script src="js/ionic.bundle.js"></script>
+	</head>
+	<body ng-controller="mainCtrl">
+		<div class="bar bar-header bar-positive">
+			<button class="button ">首页</button>
+			<h1 class="title">first Ioinc 项目</h1>
+			<button class="button">菜单</button>
+		</div>
+		<ion-content class="has-header">
+			<h2 >我是内容</h2>
+		</ion-content>
+		
+		
+		<script>
+			angular.module("myapp",["ionic"])
+			.controller("mainCtrl",["$scope",function($scope){
+				
+			}])
+		</script>
+	</body>
+</html>

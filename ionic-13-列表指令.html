@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>ionic指令
+		</title>
+		<link rel="stylesheet" href="css/ionic.css" />
+		<script src="js/ionic.bundle.js"></script>
+		<style>
+			
+		</style>
+	</head>
+	<body ng-controller="mainCtrl">
+		<ion-header-bar align-title="center" class="bar-positive">
+			<button class="button"
+				ng-click="flag=!flag"
+				>
+				<span ng-show="flag">删除</span>
+				<span ng-show="!flag">取消</span>
+			</button>
+			<h1 class="title">列表指令</h1>
+		</ion-header-bar>	
+		
+		<ion-content>
+			<ion-list show-delete="!flag" show-reorder="!flag">
+				<ion-item 
+					ng-repeat="item in items"
+					on-hold="changeFlag()"
+					>
+					{{item.text}}
+				 <ion-delete-button 
+				 	class="ion-minus-circled"
+				 	ng-click="removeItem(item)"
+				 	>				 	
+				 </ion-delete-button>
+				 <ion-reorder-button class="ion-navicon"
+                on-reorder="moveItem(item, $fromIndex, $toIndex)">
+    </ion-reorder-button>
+				</ion-item>
+			</ion-list>			
+		</ion-content>
+		
+	
+		
+		<script>
+			angular.module("myapp",["ionic"])
+			.controller("mainCtrl",["$scope",function($scope){
+				$scope.flag=true;
+				$scope.items=[
+					{text: "Angular"},
+					{text: "React"},
+					{text: "Ionic"},
+					{text: "JQuery"},
+					{text: "Vue"},
+					{text: "ReactNative"},
+					{text: "mui"},
+					{text: "backbone"},
+					{text: "underScore"},
+				]
+				$scope.removeItem=function(item){
+					var index=$scope.items.indexOf(item);
+					$scope.items.splice(index,1);
+				}
+				$scope.moveItem=function(item,from,to){
+					console.log(item,from,to);
+					$scope.items.splice(from,1);
+					$scope.items.splice(to,0,item);
+					
+				}
+				$scope.changeFlag=function(){
+					console.log("goo");
+					$scope.flag=!$scope.flag;
+				}
+			}])
+		</script>
+	</body>
+</html>

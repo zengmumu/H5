@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>弹出框
+		</title>
+		<link rel="stylesheet" href="css/ionic.css" />
+		<script src="js/ionic.bundle.js"></script>
+		<style>
+			
+		</style>
+	</head>
+	<body ng-controller="mainCtrl">
+		<ion-header-bar align-title="center" class="bar-positive">
+			
+			<h1 class="title">弹出框</h1>
+			<button 
+				class="button button-icon icon ion-ios-plus-empty"
+				ng-click="popover.show($event)"
+				></button>
+		</ion-header-bar>	
+		
+		<ion-content>
+			  
+			 <ion-list>			 	
+			 	<ion-item 
+			 		ng-repeat="item in items"
+			 		ng-click="popover.show($event)"
+			 		
+			 		>
+			 		{{item.text}}
+			 	</ion-item>			 	
+			 </ion-list>	
+			
+		</ion-content>
+		
+	
+		
+		<script>
+			angular.module("myapp",["ionic"])
+			.controller("mainCtrl",["$scope","$ionicPopover",function($scope,$ionicPopover){
+			
+				$scope.items=[
+					{text: "Angular"},
+					{text: "React"},
+					{text: "Ionic"},
+					{text: "JQuery"},
+					{text: "Vue"},
+					{text: "ReactNative"},
+					{text: "mui"},
+					{text: "backbone"},
+					{text: "underScore"},
+				]
+				
+				$ionicPopover.fromTemplateUrl("tpls/popover1.html",{scope:$scope})
+				.then(function(popover){
+					$scope.popover=popover;
+				})
+				
+				
+			
+			}])
+		</script>
+	</body>
+</html>

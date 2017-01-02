@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>页眉页脚</title>
+		<link rel="stylesheet" href="css/ionic.css" />
+		<style>
+			.ionic-scroll .bar{ position: relative;}
+		</style>
+		<script src="js/ionic.bundle.js"></script>
+	</head>
+	<body ng-controller="mainCtrl">
+		<div class="bar bar-header bar-positive">
+			<button class="button ">首页</button>
+			<h1 class="title">first Ioinc 项目</h1>
+			<button class="button">菜单</button>
+		</div>
+		<div class="bar bar-subheader bar-positive  ">
+			<h3 class="title">副标题</h3>
+		</div>
+		<ion-content class="has-header has-footer has-subheader has-subfooter">
+			<h2 >我是内容</h2>
+			<div>
+				<div class="bar bar-positive">bar-positive 积极的蓝色</div>
+			</div>
+			<div>
+				<div class="bar bar-assertive">bar-assertive 激动的 红色</div>
+			</div>
+			<div>
+				<div class="bar bar-balanced">bar-balanced平衡的 绿色</div>
+			</div>
+			<div class="bar bar-energized">bar-energized有能量的  橙色</div>
+			<div class="bar bar-royal">bar-royal皇家的  紫色</div>
+			<div class="bar bar-stable">bar-stable 稳定的 白灰色</div>
+			<div class="bar bar-dark"> bar-dark 黑色的</div>
+			<div class="bar bar-light">bar-light亮色的</div>
+		</ion-content>
+		<div class="bar bar-subfooter bar-assertive  ">
+			<h3 class="title">副页脚</h3>
+		</div>
+		<div class="bar bar-footer bar-assertive">
+			<h2 class="title">页脚</h2>
+		</div>
+		
+		
+		<script>
+			angular.module("myapp",["ionic"])
+			.controller("mainCtrl",["$scope",function($scope){
+				
+			}])
+		</script>
+	</body>
+</html>

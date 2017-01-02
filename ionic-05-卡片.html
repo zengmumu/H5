@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>列表</title>
+		<link rel="stylesheet" href="css/ionic.css" />
+		<script src="js/ionic.bundle.js"></script>
+		<style>
+			.item-thumbnail-left p{ 
+				-webkit-line-clamp: 2;
+				text-overflow: ellipsis;
+				white-space: normal !important;
+				display: -webkit-box;
+				-webkit-box-orient:vertical;
+				}
+			.tabs .tab-item.active{
+				/*background-color: dodgerblue;
+				color:#fff;*/
+				color: dodgerblue;
+			}
+		</style>
+	</head>
+	<body ng-controller="mainCtrl">
+		<div class="bar bar-header bar-positive">
+			<button class="button button-icon icon ion-ios-arrow-back "></button>
+			<h1 class="title">卡片</h1>
+			<button class="button button-icon icon ion-navicon"></button>
+		</div>
+		
+		<ion-content class="has-header has-footer">
+			<div class="list list-inset">
+				<div class="item">item</div>
+				<div class="item">item</div>
+			</div>
+			<div class="list card">
+				<div class="item">item</div>
+				<div class="item">item</div>
+			</div>
+			<div class="list card">
+				<div class="item item-title">卡片的标题</div>
+				<div class="item item-body">
+					<img src="images/muwu.jpg" width="100%"/>
+					<div class="">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta corporis ipsum reprehenderit consequuntur nemo laboriosam pariatur minus quidem excepturi eius aut fugit illo ipsa quam eveniet ratione ad alias neque.
+					</div>
+				</div>
+				<div class="item tabs tabs-icon-top tabs-color-assertive tabs-color-active-assertive">
+					<div class="tab-item "><i class="icon ion-share"></i>分享</div>
+					<div class="tab-item active"><i class="icon ion-thumbsup"></i>点赞</div>
+					<div class="tab-item"><i class="icon ion-heart"></i>收藏</div>
+				</div>
+			</div>
+			
+		</ion-content>
+		<div class="tabs tabs-icon-top tabs-positive">
+					<div class="tab-item "><i class="icon ion-share"></i>分享</div>
+					<div class="tab-item "><i class="icon ion-thumbsup"></i>点赞</div>
+					<div class="tab-item"><i class="icon ion-heart"></i>收藏</div>
+		</div>
+		
+		
+		
+		
+		<script>
+			angular.module("myapp",["ionic"])
+			.controller("mainCtrl",["$scope",function($scope){
+				
+			}])
+		</script>
+	</body>
+</html>

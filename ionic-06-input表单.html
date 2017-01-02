@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>表单</title>
+		<link rel="stylesheet" href="css/ionic.css" />
+		<script src="js/ionic.bundle.js"></script>
+		<style>
+			
+		</style>
+	</head>
+	<body ng-controller="mainCtrl">
+		<div class="bar bar-header bar-positive">
+			<button class="button button-icon icon ion-ios-arrow-back "></button>
+			<h1 class="title">表单</h1>
+			<button class="button button-icon icon ion-navicon"></button>
+		</div>
+		
+		<ion-content class="has-header has-footer">
+			<h1>登陆</h1>
+			<div class="list my">
+				<div class="item item-input">
+					<input type="text" placeholder="用户名" />
+				</div>
+				<div class="item item-input">
+					<input type="password" placeholder="密码" />
+				</div>
+			</div>
+			<div class="padding">
+				<input type="submit"  value="马上挣钱" class="button button-assertive button-block  " />
+			</div>
+			
+			<div class="list">
+				<div class="item item-input">
+					<label class="input-label text-right">用户名</label>
+					<input type="text" placeholder="请输入用户名" />
+				</div>
+				<div class="item item-input">
+					<label class="input-label text-right">密码</label>
+					<input type="password" placeholder="请输入密码" />
+				</div>
+			</div>
+			<div class="padding">
+				<input type="submit"  value="马上涨薪" class="button button-energized button-block  " />
+			</div>
+			<div class="list">
+				<div class="item item-input item-stacked-label">
+					<label class="input-label ">用户名</label>
+					<input type="text" placeholder="请输入用户名" />
+				</div>
+				<div class="item item-input item-stacked-label">
+					<label class="input-label ">密码</label>
+					<input type="password" placeholder="请输入密码" />
+				</div>
+			</div>
+			<div class="padding">
+				<input type="submit"  value="马上有情" class="button button-energized button-block  " />
+			</div>
+			<div class="list">
+				<div class="item item-input item-floating-label">
+					<label class="input-label ">用户名</label>
+					<input type="text" placeholder="请输入用户名" />
+				</div>
+				<div class="item item-input  item-floating-label">
+					<label class="input-label ">密码</label>
+					<input type="password" placeholder="请输入密码" />
+				</div>
+			</div>
+			<div class="padding">
+				<input type="submit"  value="马上升官" class="button button-dark button-block  " />
+			</div>
+		</ion-content>
+		
+		
+		
+		
+		<script>
+			angular.module("myapp",["ionic"])
+			.controller("mainCtrl",["$scope",function($scope){
+				
+			}])
+		</script>
+	</body>
+</html>

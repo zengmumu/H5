@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>模态框
+		</title>
+		<link rel="stylesheet" href="css/ionic.css" />
+		<script src="js/ionic.bundle.js"></script>
+		<style>
+			.active .modal-backdrop-bg {
+    		opacity: 0.5;
+    		background-color: #000;
+   			 }
+   			 .modal.myModal {
+		    top: 50%;
+		    right: 20%;
+		    bottom: 20%;
+		    left: 20%;   
+		    width: 60%;
+		    min-height: 129px;
+		    background-color: transparent;
+		    transform:translate(0,-50%);
+			}
+		</style>
+	</head>
+	<body ng-controller="mainCtrl">
+		<ion-header-bar align-title="center" class="bar-positive">
+			
+			<h1 class="title">模态框</h1>
+		</ion-header-bar>	
+		
+		<ion-content>
+			  
+			 <ion-list>			 	
+			 	<ion-item 
+			 		ng-repeat="item in items"
+			 		on-hold="showModal(item)"
+			 		>
+			 		{{item.text}}
+			 	</ion-item>			 	
+			 </ion-list>	
+			
+		</ion-content>
+		
+	
+		
+		<script>
+			angular.module("myapp",["ionic"])
+			.controller("mainCtrl",["$scope","$ionicModal",function($scope,$ionicModal){
+			
+				$scope.items=[
+					{text: "Angular"},
+					{text: "React"},
+					{text: "Ionic"},
+					{text: "JQuery"},
+					{text: "Vue"},
+					{text: "ReactNative"},
+					{text: "mui"},
+					{text: "backbone"},
+					{text: "underScore"},
+				]
+				$ionicModal.fromTemplateUrl("tpls/modal1.html",{scope:$scope})
+				.then(function(modal){
+					$scope.modal=modal;
+				})
+				$scope.showModal=function(item){
+					// 设置当前的item
+					$scope.currentItem=item;
+					// 显示modal
+					$scope.modal.show();
+				}
+				$scope.deleteItem=function(){
+					var index=$scope.items.indexOf($scope.currentItem);
+					$scope.items.splice(index,1);
+					$scope.modal.hide();
+				}
+				
+				$scope.toTopItem=function(){
+					var index=$scope.items.indexOf($scope.currentItem);
+					$scope.items.splice(index,1);
+					$scope.items.unshift($scope.currentItem);
+					$scope.modal.hide();
+				}
+				
+				
+				
+			
+			}])
+		</script>
+	</body>
+</html>

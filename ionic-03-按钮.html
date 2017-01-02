@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>页眉页脚</title>
+		<link rel="stylesheet" href="css/ionic.css" />
+		<style>
+			.ionic-scroll .bar{ position: relative;}
+		</style>
+		<script src="js/ionic.bundle.js"></script>
+	</head>
+	<body ng-controller="mainCtrl">
+		<div class="bar bar-header bar-positive">
+			<button class="button button-icon icon ion-ios-arrow-back "></button>
+			<h1 class="title">按钮</h1>
+			<button class="button button-icon icon ion-navicon"></button>
+		</div>
+		
+		<ion-content class="has-header has-footer padding">
+			<a href="" class="button ">a 的默认按钮</a>
+			<button class="button button-assertive">button 的红色按钮</button>
+			<input type="button" class="button button-balanced" value="input 的绿色按钮" />
+			<input type="submit" class="button button-energized" value="submit 的橙色按钮" />
+			<input type="submit" class="button button-royal button-block button-full" value="登陆" />
+			<input type="submit" class="button button-dark button-block" value="登陆" />
+			<button class="button button-positive button-outline">我只有边框</button>
+			<button class="button button-assertive button-clear">没有边框</button>
+			<button class="button button-positive  icon  ion-ios-alarm"> button</button>
+			<button class="button button-energized"><i class="icon ion-android-arrow-back"></i> 返回</button>
+			<button class="button button-positive">默认按钮</button>
+			<button class="button button-small button-positive">小按钮</button>
+			<button class="button button-large button-positive">大按钮</button>
+			
+			<div class="button-bar button-small ">
+					  <a class="button button-positive button-outline  button-small">First</a>
+					  <a class="button  button-positive button-outline  button-small active">Second</a>
+					  <a class="button button-positive button-outline button-small">Third</a>
+					   <a class="button button-positive button-outline button-small">Third</a>
+					   
+			</div>
+			
+		</ion-content>
+		
+		<div class="bar bar-footer bar-assertive">
+			<h2 class="title">页脚</h2>
+		</div>
+		
+		
+		<script>
+			angular.module("myapp",["ionic"])
+			.controller("mainCtrl",["$scope",function($scope){
+				
+			}])
+		</script>
+	</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>网格系统</title>
+		<link rel="stylesheet" href="css/ionic.css" />
+		<script src="js/ionic.bundle.js"></script>
+		<style>
+			.brand-row>.col img{ border:1px solid #f0f0f0;}
+			.brand-row>.col{ padding: 5px;}
+			a{ text-decoration: none; color: #777;}
+		</style>
+	</head>
+	<body ng-controller="mainCtrl">
+		<div class="bar bar-header">
+			<button class="button button-icon icon ion-ios-chatbubble-outline"></button>			
+			<div class="title">首页</div>
+			<button class="button button-icon icon ion-ios-plus-empty"></button>			
+			
+		</div>
+		<ion-content class="has-header">
+			<ion-slide-box>
+				<ion-slide>
+					<a href="">
+						<img src="images/banner_01.jpg" width="100%" alt="" />
+					</a>
+				</ion-slide>
+				<ion-slide>
+					<a href="">
+						<img src="images/banner_02.jpg"  width="100%" alt="" />
+					</a>
+				</ion-slide>
+			</ion-slide-box>
+			<h3 class="text-center">-最新品牌-</h3>
+			<div class="row brand-row text-center">
+				<div class="col"><a href=""> <img src="images/brand_01.png" width="100%">link</a></div>
+				<div class="col"><a href=""> <img src="images/brand_02.png" width="100%">link</a></div>
+				<div class="col"><a href=""> <img src="images/brand_03.png" width="100%">link</a></div>
+				<div class="col"><a href=""> <img src="images/brand_04.png" width="100%">link</a></div>
+				<div class="col"><a href=""> <img src="images/brand_01.png" width="100%">link</a></div>
+			</div>
+			<div class="row brand-row text-center">
+				<div class="col"><a href=""> <img src="images/brand_01.png" width="100%">link</a></div>
+				<div class="col"><a href=""> <img src="images/brand_02.png" width="100%">link</a></div>
+				<div class="col"><a href=""> <img src="images/brand_03.png" width="100%">link</a></div>
+				<div class="col"><a href=""> <img src="images/brand_04.png" width="100%">link</a></div>
+				<div class="col"><a href=""> <img src="images/brand_01.png" width="100%">link</a></div>
+			</div>
+			
+		</ion-content>
+	
+		
+		
+		
+		
+		<script>
+			angular.module("myapp",["ionic"])
+			.controller("mainCtrl",["$scope",function($scope){
+				
+			}])
+		</script>
+	</body>
+</html>

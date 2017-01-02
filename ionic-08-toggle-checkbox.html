@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>表单</title>
+		<link rel="stylesheet" href="css/ionic.css" />
+		<script src="js/ionic.bundle.js"></script>
+		<style>
+			.bar-header .item-input-inset{
+				flex: 1;
+				background-color: transparent;
+				border: none;
+			}
+			.bar-header .item-input-wrapper{
+				background-color: rgba(0,0,0,.1);
+			}
+			.bar-header input[type="search"],.item-input-wrapper input{
+				flex: 1;
+			}
+		</style>
+	</head>
+	<body ng-controller="mainCtrl">
+		<div class="bar bar-header bar-positive">
+			<div class="item item-input-inset ">
+				<div class="item-input-wrapper">
+					<i class="icon ion-ios-search placeholder-icon"></i>
+					<input type="search" />
+					
+				</div>
+				<button class="button">搜索</button>
+			</div>
+			
+		</div>
+		
+		<ion-content class="has-header has-footer">
+			<div class="list">
+				<div class="item item-toggle">
+					开启手势密码
+					<label class="toggle toggle-positive">						
+						<input type="checkbox" checked="checked" />
+						<div class="track">
+							<div class="handle"></div>
+						</div>
+					</label>
+					
+				</div>
+				<div class="item item-divider">爱好</div>
+				<div class="item item-checkbox item-checkbox-right">
+					LOL
+					<label class="checkbox">
+						<input type="checkbox" name="love" />
+					</label>
+				</div>
+				<div class="item item-checkbox item-checkbox-right">
+					看书
+					<label class="checkbox">
+						<input type="checkbox" name="love" />
+					</label>
+				</div>
+				<div class="item item-checkbox item-checkbox-right">
+					游泳
+					<label class="checkbox ">
+						<input type="checkbox" name="love" />
+					</label>
+				</div>
+				<div class="item item-divider">学历</div>
+				<label class="item item-radio">
+					<input type="radio" name="level" />
+					<div class="radio-content">
+						<div class="item-content">胎教</div>
+						<i class="icon ion-checkmark-circled radio-icon  balanced"></i>
+					</div>
+				</label>
+				
+				<label class="item item-radio">
+					<input type="radio" name="level" ng-model="level" value="0" />
+					<div class="radio-content">
+						<div class="item-content">家教</div>
+						<i class="icon ion-checkmark-circled radio-icon  balanced"></i>
+					</div>
+				</label>
+				<label class="item item-radio">
+					<input type="radio" name="level" ng-model="level" value="1" />
+					<div class="radio-content">
+						<div class="item-content">完小</div>
+						<i class="icon ion-checkmark-circled radio-icon  balanced"></i>
+					</div>
+				</label>
+				<label class="item item-radio">
+					<input type="radio" name="level" />
+					<div class="radio-content">
+						<div class="item-content">初中</div>
+						<i class="icon ion-checkmark-circled radio-icon balanced"></i>
+					</div>
+				</label>
+				
+			</div>
+		</ion-content>
+		
+		
+		
+		
+		<script>
+			angular.module("myapp",["ionic"])
+			.controller("mainCtrl",["$scope",function($scope){
+				
+			}])
+		</script>
+	</body>
+</html>

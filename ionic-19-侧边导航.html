@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>模态框
+		</title>
+		<link rel="stylesheet" href="css/ionic.css" />
+		<script src="js/ionic.bundle.js"></script>
+		<style>
+			
+		</style>
+	</head>
+	<body ng-controller="mainCtrl">
+		<ion-side-menus>
+			<ion-side-menu side="left">
+				<div class="bar">我是左侧边栏目</div>
+			</ion-side-menu>
+			<ion-side-menu-content>
+				<div class="bar bar-header bar-positive">
+					<button class="button button-icon icon ion-navicon" menu-toggle="left"></button>
+					<h1 class="title">我是内容页面</h1>
+					<button class="button button-icon icon ion-navicon" menu-toggle="right"></button>
+				</div>
+				<ion-content class="has-header">
+						<div class="list">
+							<div class="item item-avatar">
+								<img src="images/cbd.jpg" alt="" ng-click="showAction()" />
+								我是我不一样的。。。。
+							</div>
+							<div class="item item-button-left">
+								<button class="button"  menu-toggle="left" ><span ng-show="menuC.isOpenLeft()">关闭</span><span ng-show="!menuC.isOpenLeft()">开启</span></button>
+								我是忧伤的
+							</div>
+						</div>
+					
+				</ion-content>
+				
+			</ion-side-menu-content>
+			<ion-side-menu side="right">
+					<div class="bar bar-assertive">我是右侧侧边栏目</div>
+					<ion-content>
+						<button class="button button-assertive has-header" menu-toggle="right">X</button>
+					</ion-content>
+					
+			</ion-side-menu>
+		</ion-side-menus>
+		
+	
+		
+		<script>
+			angular.module("myapp",["ionic"])
+			.controller("mainCtrl",["$scope","$ionicSideMenuDelegate","$ionicActionSheet",function($scope,$ionicSideMenuDelegate,$ionicActionSheet){
+			$scope.menuC=$ionicSideMenuDelegate;
+			
+			$scope.showAction=function(){
+				
+				var action=$ionicActionSheet.show({
+					titleText:"<h4>编辑头像</h4>",
+					buttons:[{text:"从相册"},{text:"拍照选择"}],
+					cancelText:"取消",
+					destructiveText:"删除",
+					buttonClicked:function(index){
+						if(index==0){
+							alert("打开相册");
+						}else{
+							alert("打开相机");
+						}
+						action();
+					},
+					destructiveButtonClicked:function(){
+						alert("我要删除");
+						action();
+					}
+				})
+				
+				
+			}
+				
+				
+			
+			}])
+		</script>
+	</body>
+</html>

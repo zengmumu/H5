@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>列表</title>
+		<link rel="stylesheet" href="css/ionic.css" />
+		<script src="js/ionic.bundle.js"></script>
+		<style>
+			.item-thumbnail-left p{ 
+				-webkit-line-clamp: 2;
+				text-overflow: ellipsis;
+				white-space: normal !important;
+				display: -webkit-box;
+				-webkit-box-orient:vertical;
+				}
+		</style>
+	</head>
+	<body ng-controller="mainCtrl">
+		<div class="bar bar-header bar-positive">
+			<button class="button button-icon icon ion-ios-arrow-back "></button>
+			<h1 class="title">列表</h1>
+			<button class="button button-icon icon ion-navicon"></button>
+		</div>
+		
+		<ion-content class="has-header has-footer">
+			<div class="list">
+				<div class="item item-icon-right">
+					item1
+					<i class="icon ion-ios-arrow-right"></i>
+				
+				</div>
+				<div class="item item-icon-right">
+					item2
+					<span class="item-note">理财</span>
+					<i class="icon ion-ios-arrow-right"></i>
+				</div>
+				<div class="item item-divider">我是小标题</div>
+				<div class="item item-button-left">
+					<button class="button button-small button-positive">同意</button>
+					<div class="item-content">
+						item 4
+					</div>
+				</div>
+				<div class="item item-button-right">item5
+					<button class="button button-small button-assertive">删除</button>
+				</div>
+				<div class="item item-button-right item-button-left">
+					<button class="button button-small button-positive">同意</button>
+					item6
+					<button class="button button-small button-assertive">删除</button>
+				</div>
+				<div class="item item-icon-left">
+					<i class="icon balanced ion-ios-telephone"></i>
+					item7
+				</div>
+				<div class="item item-avatar">
+					<img src="images/shuijiao.jpg" alt="" />
+					<h3>曾木木</h3>
+					<p>老鼠爱吃大米</p>
+				</div>
+				<div class="item item-thumbnail-left ">
+						<img src="images/cbd.jpg"/>
+						<h3>卢大大</h3>
+						<p >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora iusto atque architecto nobis pariatur quas saepe explicabo deleniti facilis quaerat sit placeat sint temporibus veniam error corporis est ex nisi.</p>
+				</div>
+			</div>
+			
+		</ion-content>
+		
+		
+		
+		
+		<script>
+			angular.module("myapp",["ionic"])
+			.controller("mainCtrl",["$scope",function($scope){
+				
+			}])
+		</script>
+	</body>
+</html>

@@ -1,0 +1,184 @@
+<html><head>
+  <title>注册表单</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+  <meta charset="utf-8">
+  <style type="text/css">
+		body{
+			font:14px/28px "微软雅黑";
+		}
+		.contact *:focus{outline :none;}
+		.contact{
+			width: 700px;
+			height: auto;
+			background: #f6f6f6;
+			margin: 40px auto;
+			padding: 10px;
+		}
+		.contact ul {
+			width: 650px;
+			margin: 0 auto;
+		}
+		.contact ul li{
+			border-bottom: 1px solid #dfdfdf;
+			list-style: none;
+			padding: 12px;
+		}
+		.contact ul li label {
+			width: 120px;
+			display: inline-block;
+			float: left;
+		}
+		.contact ul li input[type=text],.contact ul li input[type=password]{
+			width: 220px;
+			height: 25px;
+			border :1px solid #aaa;
+			padding: 3px 8px;
+			border-radius: 5px;
+		}
+		.contact ul li input:focus{
+			border-color: #990;
+			
+		}
+		.contact ul li input[type=text]{
+			transition: padding .25s;
+			-o-transition: padding  .25s;
+			-moz-transition: padding  .25s;
+			-webkit-transition: padding  .25s;
+		}
+		.contact ul li input[type=password]{
+			transition: padding  .25s;
+			-o-transition: padding  .25s;
+			-moz-transition: padding  .25s;
+			-webkit-transition: padding  .25s;
+		}
+		.contact ul li input:focus{
+			padding-right: 70px;
+		}
+		.btn{
+			position: relative;
+			left: 300px;
+		}
+		.tips{
+			color: rgba(0, 0, 0, 0.5);
+			padding-left: 10px;
+		}
+		.tips_true,.tips_false{
+			padding-left: 10px;
+		}
+		.tips_true{
+			color: green;
+		}
+		.tips_false{
+			color: red;
+		}
+		.right{ color: green;}
+		.wrong{ color:red;}
+  </style>
+  <script src="购物网站/scripts/jquery-1.3.1.js"></script>
+  <script type="text/javascript">
+//	 验证用户名
+function vadName(){
+	var tip=document.getElementById("divname");
+	var val=document.form1.yourname.value;
+	var reg=/^\S{4,12}$/
+	if(reg.test(val)){
+		tip.innerHTML="<span class='right'>正确</span>";
+		return true;
+	}else{
+		tip.innerHTML="<span class='wrong'>长度4~12个字符</span>";
+		return false;
+	}
+}
+//	   验证密码
+function vadPwd(){
+	var tip=document.getElementById("divpassword1");
+	var val=document.form1.yourpass.value;
+	var reg=/\d/;
+	var reg2=/[a-zA-Z]/;
+	var reg3=/^\S{6,18}$/;
+	if(reg.test(val)&&reg2.test(val)&&reg3.test(val)){
+		
+		tip.innerHTML="<span class='right'>正确</span>";
+		return true;
+	}else{
+		tip.innerHTML="<span class='wrong'>密码必须由6-18位字母和数字组成</span>";
+		return false;
+	}
+	
+}
+//	   验证密码2
+function vadPwd2(){
+	var tip=document.getElementById("divpassword2");
+	var val=document.form1.yourpass.value;
+	var val2=document.form1.yourpass2.value;
+	if(val==val2&&val2!=""){
+		tip.innerHTML="<span class='right'>正确</span>";
+		return true;
+	}else{
+		tip.innerHTML="<span class='wrong'>两次密码要一致</span>";
+		return false;
+	}
+	
+}
+//	   验证邮箱
+function vadEmail(){
+	var tip=document.getElementById("divmail");
+	var val=document.form1.youremail.value;
+	var reg=/\w[-\w.+]*@([A-Za-z0-9][-A-Za-z0-9]+\.)+[A-Za-z]{2,14}/;
+	if(reg.test(val)){
+		tip.innerHTML="<span class='right'>正确</span>";
+		return true;
+		
+	}else{
+		tip.innerHTML="<span class='wrong'>邮箱格式有误!</span>";
+		return false;
+	}
+}
+//	   //\w[-\w.+]*@([A-Za-z0-9][-A-Za-z0-9]+\.)+[A-Za-z]{2,14}
+//	 验证所有
+		function vad(){
+			var v1=vadName();
+			var v2=vadPwd();
+			var v3=vadPwd2();
+			var v4=vadEmail();
+			if(v1&&v2&&v3&&v4){
+				return true;
+			}else{
+				return false;
+			}
+			
+		}
+  </script>
+</head>
+<body>
+	<div class="contact">
+		<form name="form1"onSubmit="return vad()" method="post" action="http://www.baidu.com">
+			<ul>
+				<li>
+					<label>姓名：</label>
+					<input type="text" name="yourname" placeholder="请输入用户名" onblur="vadName()" ><span class="tips" id="divname">长度4~12个字符</span>
+				</li>
+				<li>
+					<label>密码：</label>
+					<input type="password" name="yourpass" placeholder="请输入你的密码" onblur="vadPwd()" ><span class="tips" id="divpassword1">密码必须由字母和数字组成</span>
+					
+				</li>
+				<li>
+					<label>确认密码：</label>
+					<input type="password" name="yourpass2" placeholder="请再次输入你的密码" onblur="vadPwd2()" ><span class="tips" id="divpassword2">两次密码需要相同</span>
+				</li>
+				<li>
+					<label>电子邮箱：</label>
+					<input type="text" name="youremail" placeholder="请输入你的邮箱" onblur="vadEmail()" ><span class="tips" id="divmail"></span>
+				</li>
+			</ul>
+			<b class="btn"><input type="submit" value="提交">
+			<input type="reset" value="取消"></b>
+		</form>
+	</div>
+
+
+
+</body></html>

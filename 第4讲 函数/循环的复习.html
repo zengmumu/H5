@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>webrx-title</title>
+<meta name="description" content="简介">
+<meta name="keywords" content="关键字">
+<link rel="stylesheet" type="text/css" href="index.css"/>
+<script>
+window.onload=init;
+function init(){
+	var ps=document.body.getElementsByTagName("p");
+	var len=ps.length;
+	//循环的操作 输出画面中p的文本内容
+	//循环的初始化 从第0个开始
+	//循环的结束时 不能超过页面中p的个数  < len
+	//循环变更 每次要输出一个
+	document.body.onclick=function (){
+	for(var i=0;i<len;i++){		
+		alert(ps[i].innerHTML);
+		}
+	}
+	//alert(ps[0].innerHTML);
+	
+	
+	}
+</script>
+</head>
+
+<body>
+<!--<h1 onClick="alert2()" id="hh">我的女朋友的男朋友</h1>-->
+<h1  id="hh">我的女朋友的男朋友</h1>
+<p>我一个p</p>
+<p>我第2个p</p>
+<p>我第3个p</p>
+<p>我第4个p</p>
+</body>
+</html>

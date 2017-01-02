@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>步进器-normal</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="简介">
+<meta name="keywords" content="关键字">
+<style>
+ul,ol{ list-style: none;}
+li{ margin-bottom: 35px;}
+</style>
+<body>
+	<ul>
+		<li>
+			<div class="steper">
+				<input type="text" class="num" value="0" />
+				<input type="button" value="+" class="plus" />
+			</div>
+		</li>
+		<li>
+			<div class="steper">
+				<input type="text" class="num" value="0" />
+				<input type="button" value="+" class="plus" />
+			</div>
+		</li>
+	</ul>
+
+<script>
+//1单击按钮 plus
+//2父亲元素下面的 num 让它 值加1
+
+//var  plus0=document.getElementsByClassName("plus")[0];
+//plus0.onclick=plusNum;
+var  pluss=document.getElementsByClassName("plus");
+for(var i=0;i<pluss.length;i++){
+	pluss[i].onclick=plusNum;
+}
+
+function plusNum(){
+	var parent=this.parentNode;//找到父亲元素
+	var num=parent.getElementsByClassName("num")[0];
+		num.value=parseInt(num.value)+1;
+	
+	
+}
+
+</script>
+
+
+</body>
+
+
+</html>

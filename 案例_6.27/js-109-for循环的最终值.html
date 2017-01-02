@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+		/*	for(var i=0;i<5;i++){
+				// nothing
+			}
+			alert(i);*/
+			window.onload=init;
+			function init(){
+				var lis=document.getElementsByTagName("li");
+			/*	for(var i=0;i<lis.length;i++){
+					(function(){
+						var j=i;
+					 lis[j].onclick=function (){ alert (j)}	
+						
+					})()
+					
+					
+				}*/
+				/*lis[0].onclick=function(){alert(0)};
+				lis[1].onclick=function(){alert(1)};
+				lis[2].onclick=function(){alert(2)};
+				lis[3].onclick=function(){alert(3)};*/
+				/*for(var i=0;i<lis.length;i++){
+					lis[i].onclick=function(){alert(i)};
+				}*/
+//				for 循环完毕后 i的值是最终值
+				for(var i=0;i<lis.length;i++){
+						(function(){
+							var j=i;
+							lis[j].onclick=function(){alert(j)};
+							
+						})()
+				}	
+			}
+			
+		</script>
+	</head>
+	<body>
+			<ul>
+				<li>this is 1 个li</li>
+				<li>this is 2 个li</li>
+				<li>this is 3 个li</li>
+				<li>this is 4 个li</li>
+			</ul>
+	</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>全选效果</title>
+<style type="text/css">
+.bg{
+	background-image: url(images/list_bg.gif);
+	background-repeat: no-repeat;
+	width: 730px;
+}
+td{text-align:center;
+font-size:13px;
+line-height:25px;
+}
+body{margin:0}
+</style>
+ <script type="text/JavaScript">
+
+window.onload=init;
+function init(){
+	var self=document.getElementsByTagName("div")[0];
+//	alert(self.parentNode);//parentNode  父亲节点
+	var son=self.firstChild;//firstChild 第一个子元素
+//	alert(son.innerHTML); 
+	var brother=son.nextSibling;//nextSibling 下一个兄元素节点
+//	alert(brother.innerHTML);
+	var lastson=self.lastChild;// lastChild  最后一个子元素
+//	alert(lastson.innerHTML);
+    var preBrother=lastson.previousSibling; //previousSibling 前一个兄弟元素
+//  alert(preBrother.innerHTML);//	
+	var sons=self.childNodes;// childNodes 父亲元素下面子元素的集合
+//	alert(sons[7].innerHTML);
+
+
+}
+</script>
+</head>
+
+<body>
+	<div><p>我是一个p元素</p><h3>我是标题</h3><p>我是他兄弟<a href=""><em>我是百度他哥</em></a></p><p>p1</p><p>p2</p><p>p3</p><p>p4</p><p>p5</p></div>
+	<div>
+		我是第二个div
+	</div>
+	
+
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<style>
+		*{margin: 0;
+		padding: 0;}
+		ul{list-style: none;}
+		.banner{ width: 1000px; height: 215px; margin: 50px auto; position: relative;}
+		.banner .content li{ position: absolute; left: 0; top: 0;  transition:opacity 1s;}
+		.thumnail{ position: absolute; right:50px; bottom: 50px; z-index: 100;}
+		.thumnail li{ height: 30px; width: 30px;text-align: center; line-height: 30px; background-color: rgba(100,100,0,.4); margin-bottom: 3px;}
+		.thumnail li:hover{ background-color: #f80; color:#fff;}
+	</style>
+	<script>
+		window.onload=init;
+		function init(){
+			new Slider("banner");
+		}
+		//1 先所有的图片透明度0  init
+		//2 index 指示当前是第几张图片显示
+		//3 goSlider 显示 第几张
+		function Slider(opt){
+			var dom=document.getElementById(opt);//获取到范围
+			var content=dom.getElementsByClassName("content")[0];//获取内容
+			var sliders=content.getElementsByTagName("li");//切换的幻灯片
+			var thumnail=dom.getElementsByClassName("thumnail")[0];//获取控制点
+			var thus=thumnail.getElementsByTagName("li");//每一个控制点
+			var index=0; //但却需要显示的图片
+			var interId;
+			init();
+			function init(){
+				//让所有的隐藏
+				//让index 对应的图片显示
+				for(var i=0;i<sliders.length;i++){
+					sliders[i].style.opacity=0;
+				}
+				sliders[index].style.opacity=1;
+			}
+			function goSlider(num){
+//				alert(num);
+				//让以前的隐藏
+				sliders[index].style.opacity=0;
+				sliders[num].style.opacity=1;
+				//显示第num张图片
+//				更新index
+				index=num;
+			}
+			//自动
+			function auto(){
+				index++;
+				if(index>sliders.length){ index=0}
+				goSlider(index);
+			}
+			function animate(){
+				interId=setInterval(function(){auto()},3000)
+			}
+			animate();
+			dom.onmouseover=function(){
+				clearInterval(interId);
+			}
+			dom.onmouseout=function(){
+			animate();	
+			}
+			
+			//thus单击事件
+			for(var i=0;i<thus.length;i++){
+				(function(){
+					var j=i;
+					thus[j].onclick=function(){goSlider(j)};//单击第几个显示第几张图片
+				})()
+			}
+			
+		}
+		
+	</script>
+</head>
+<body>
+		<div class="banner" id="banner">
+			<ul class="content">
+				<li><img src="images/banner_1.jpg" alt="" width="100%" /></li>
+				<li><img src="images/banner_2.jpg" alt="" width="100%" /></li>
+				<li><img src="images/banner_3.jpg" alt="" width="100%" /></li>
+				<li><img src="images/banner_4.jpg" alt=""width="100%"  /></li>
+			</ul>
+			<ul class="thumnail">
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+			</ul>
+			
+		</div>
+		
+</body>
+</html>

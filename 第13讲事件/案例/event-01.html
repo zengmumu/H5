@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<script>
+window.onunload=function(){
+	alert("你却定要关闭！");
+}
+function clickMe(){
+	alert("good");
+	window.close();
+}
+
+		</script>
+	</head>
+	<body onunload="alert('The onunload event was triggered')">
+	<h1 onclick="clickMe()">click me</h1>	
+	</body>
+	</html>	

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box {
+				height: 50px;
+				width: 50px;
+				position: absolute;
+				top: 50px;
+				background-color: yellow;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<h1>WHY ARRAY</h1> vcd     
+		
+		</form>
+		<script>
+//		var str="The God is a girl";
+//			var arr=str.split(" ");
+//			console.log(arr);
+//		var arr=[]
+		var arr=["我","爱","我","的","祖","国",250,380,245];
+//		arr.push("100年");
+//		alert(arr);
+
+//		for(var i=0;i<arr.length;i++){
+//			if(arr[i]=="我"){
+//				arr.splice(i,1);
+//			}
+//		}
+//alert(arr);
+
+		function deleteArr(Arr,obj){
+			for(var i=0;i<Arr.length;i++){
+				if(Arr[i]==obj){
+					Arr.splice(i,1);
+				}
+			}
+			console.log(Arr)
+		}
+deleteArr(arr,"我");
+deleteArr(arr,250);
+deleteArr(arr,"的");
+		</script>
+	</body>
+
+</html>

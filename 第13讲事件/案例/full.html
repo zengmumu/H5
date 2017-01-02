@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+			<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title></title>
+		<style>
+			*{ margin: 0; padding: 0;}
+			body{ padding-top:50px ; overflow: hidden;}
+			ul{ list-style: none;}
+			.nav{ position: fixed; height: 50px; line-height: 50px; color: #777;border-bottom: 1px solid #f0f0f0; width: 100%; z-index: 100; background-color:#fff ; left:0; top: 0;}
+			.nav li{ float:left; width: 13%; text-align: center; border-left:1px solid #f0f0f0;}
+.section{ width: 100%; height: 400px;}
+.section:nth-of-type(2n+1){ background-color:yellow ; clear: both;}
+#full{transition: all 0.7s;}
+
+		</style>
+		
+<script>
+	
+	function fullPage(opt){
+		this.dom=document.getElementById(opt.dom);//要滚动的元素
+		this.nav=document.getElementsByClassName(opt.nav)[0];//导航
+		this.navCtrls=this.nav.getElementsByTagName("li");//导航li
+		this.len=this.navCtrls.length;//li的多少/屏数的多少
+		this.pages=this.dom.getElementsByClassName(opt.pages);//每一屏页面
+		this.winH;
+		this.index=0;//当前第几页
+		this.init();//初始化
+		this.bindDom();//绑定事件
+		
+	}
+	fullPage.prototype.init=function(){
+		var winH=document.documentElement.clientHeight;//一屏的高度
+		this.winH=winH;
+		for(var i=0;i<this.len;i++){
+			this.pages[i].style.height=winH+"px";//设置每一屏元素的高度为一屏的高度
+		}
+		
+	}
+	fullPage.prototype.bindDom=function(){//绑定事件
+		var main=this;
+		document.addEventListener("mousewheel",mWheel,false)
+		//绑定滚动事件
+		
+		function mWheel(e){
+			e.preventDefault();
+			if(e.wheelDelta==-120){//向下滑动
+				main.index++; //让屏数++
+			}else{
+				main.index--;
+			}
+			if(main.index>=main.len){main.index=0};//控制屏数不超出范围
+			if(main.index<0){main.index=main.len-1};//控制屏数不超出范围
+			main.goPage();//
+		}//mWheel
+		
+		for(var i=0;i<main.len;i++){//给每一个控制li添加点击事件
+			(function(){
+				var j=i;
+				main.navCtrls[j].addEventListener("click",function(){
+					main.index=j;//设置index
+					main.goPage();//转到第index页面
+					
+				},false)
+			})()
+		}//控制滚动
+	
+		var startY=0;
+	
+		var offsetY=0;
+		document.addEventListener("touchstart",startHd,false);
+		document.addEventListener("touchmove",moveHd,false);
+		document.addEventListener("touchend",endHd,false);
+		function startHd(evt){
+			startY=evt.targetTouches[0].pageY;			
+		}
+		function moveHd(evt){
+			offsetY=evt.targetTouches[0].pageY-startY;
+			
+			
+		
+			main.dom.style.transition="none";
+			main.dom.style.transform="translateY("+(offsetY+main.index*main.winH)+"px)";
+			
+		}
+		function endHd(evt){
+				
+			if(offsetY>120){
+				main.index++;
+			}
+			if(offsetY<-120){
+				main.index--;
+			}
+			main.dom.style.transition="all 1s";
+			main.dom.style.transform="translateY("+main.index*main.winH+"px)";
+			offsetY=0;
+			startY=0;
+		}
+		
+	}
+	fullPage.prototype.goPage=function(){
+//		alert("第"+(this.index+1));
+//		this.dom.style.transform="translate(0,"+(this.index*this.winH)*-1+"px)";
+this.dom.style.transform="translateY("+this.index*this.winH*-1+"px"+")";
+
+		//设置this.dom的transform 属性 和index相匹配
+	};
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	window.addEventListener("load",init,false)
+	function init(){
+		new fullPage({dom:"full",nav:"nav",pages:"section"})
+		
+	}
+</script>
+	</head>
+	<body>
+		<ul class="nav">
+			<li>link1</li>
+			<li>link2</li>
+			<li>link3</li>
+			<li>link4</li>
+			<li>link5</li>
+			<li>link6</li>
+			<li>link7</li>
+		</ul>
+		<div id="full">
+			<div class="section">section1</div>
+			<div class="section">section2</div>
+			<div class="section">section3</div>
+			<div class="section">section4</div>
+			<div class="section">section5</div>
+			<div class="section">section6</div>
+			<div class="section">section7</div>
+		</div>
+	</body>
+</html>

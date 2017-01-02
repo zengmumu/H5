@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>webrx-title</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="简介">
+<meta name="keywords" content="关键字">
+<style>
+*{ margin: 0; padding: 0; box-sizing:border-box;}
+
+.showbox{ width: 100vw; height: 30vh; display: flex;}
+#show{ flex:1; font-size: 7vw; background-color: rgb(227,231,234); border: none; padding:7vw;}	
+.buttons{ width: 100vw; display: flex; flex-wrap:wrap;}
+.buttons input{flex:0 0 25vw; height: 25vw; font-size: 7vw;}
+.buttons .zero{ flex:0 0 50vw;}
+.buttons .equal{ height: 50vw; margin-top: -25vw; background-color: rgb(250,116,45); color: #fff; border: none;}
+.buttons .equal:active{
+	background-color: rgb(230,100,35);
+}
+
+@media screen and (min-width:768px){
+
+	.calc{transform:scale(0.3,0.3);
+transform-origin:0 0;
+	}
+	.showbox{ height: 70vh;}
+
+}
+</style>
+
+
+
+<body>
+<div class="calc">
+	<div class="showbox">
+		<input type="text" id="show">
+	</div>
+	<div class="buttons">
+		<input type="button" value="c" id="clear">
+		<input type="button" value="←" id="back">
+		<input type="button" value="/" id="nc">
+		<input type="button" value="*" id="nx">
+
+	
+		<input type="button" value="7" id="n7">
+		<input type="button" value="8" id="n8">
+		<input type="button" value="9" id="n9">
+		<input type="button" value="-" id="n-">
+	
+		<input type="button" value="4"  id="n4">
+		<input type="button" value="5"  id="n5">
+		<input type="button" value="6"  id="n6">
+		<input type="button" value="+"  id="n+">
+		<input type="button" value="1"  id="n1">
+		<input type="button" value="2"  id="n2">
+		<input type="button" value="3"  id="n3">
+		
+		<input type="button" value="0" class="zero"  id="n0" >
+		<input type="button" value="."  id="np">
+		<input type="button" value="=" class="equal"  id="equal">
+	</div>
+
+</div>
+
+<script>
+	var show=document.getElementById("show");
+	var n7=document.getElementById("n7");
+	var n8=document.getElementById("n8");
+	var n9=document.getElementById("n9");
+	var n1=document.getElementById("n1");
+	var n2=document.getElementById("n2");
+	var n3=document.getElementById("n3");
+	var n4=document.getElementById("n4");
+	var n5=document.getElementById("n5");
+	var n6=document.getElementById("n6");
+	var n0=document.getElementById("n0");
+	var plus=document.getElementById("n+");
+	var minus=document.getElementById("n-");
+	var times=document.getElementById("nx");
+	var divis=document.getElementById("nc");
+	var np=document.getElementById("np");
+	var equal=document.getElementById("equal");
+	var clear=document.getElementById("clear");
+	var back=document.getElementById("back");
+// [1]单击数字按钮让 show值为show以前的值加上 按钮的值
+   /* n7.onclick=function(){
+    	show.value=show.value+this.value;
+    }
+    n8.onclick=function(){
+    	show.value=show.value+this.value;
+    }*/
+    np.onclick=changeIt;
+    n0.onclick=changeIt;
+    n1.onclick=changeIt;
+    n2.onclick=changeIt;
+    n3.onclick=changeIt;
+    n4.onclick=changeIt;
+    n5.onclick=changeIt;
+    n6.onclick=changeIt;
+    n7.onclick=changeIt;
+    n8.onclick=changeIt;
+    n9.onclick=changeIt;
+    plus.onclick=changeIt;
+    minus.onclick=changeIt;
+    times.onclick=changeIt;
+    divis.onclick=changeIt;
+
+    function changeIt(){
+    	show.value=show.value+this.value;
+    }
+   // [2] 单击等于  show的值等于以前show的值运算过后的结果
+   equal.onclick=function(){
+   	show.value=eval(show.value);
+   	//eval 把字符串当js执行（会运算）;
+   }
+   //[3] 单击 clear 让show 里面的值为空
+   clear.onclick=function(){
+   	show.value="";
+   }
+   // [4] 单击back  让show里面的value 等于show里面的value从0个取到最后减一个（删除最后一个）
+   back.onclick=function(){
+   	var len=show.value.length;//show里面value的长度
+   	show.value=show.value.substring(0,len-1);
+   }
+</script>
+</body>
+</html>

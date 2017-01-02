@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>webrx-title</title>
+<meta name="description" content="简介">
+<meta name="keywords" content="关键字">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<style>
+*{ margin:0; padding:0; box-sizing:border-box;}
+body{ padding:1em; font-family:"Microsoft YaHei"; font-size:14px;}
+a{ text-decoration:none;}
+ul{ list-style:none;}
+div{ clear:both; padding:1em;}
+.title{ width:90%; margin: 0 auto; height:46px; border:1px solid #f80; border-radius:6px; overflow:hidden; }
+.title li{ float:left; width:50%; height:46px; line-height:46px; font-size:20px; color:#777;}
+.title li a{ display:block; color:#777; text-align:center;}
+.title li.on a{ background-color:#f80; color:#fff;}
+.item{ height:48px; line-height:48px;  display:block; color:#333; border-top:1px solid #eee; border-bottom:1px solid #eee; position:relative;}
+.item:after{ content:""; display:block; height:10px ; width:10px; position:absolute; right:1em; top:50%; border:1px solid #bbb; transform:translate(0,-50%) rotate(45deg); border-left:none; border-bottom:none;}
+.item_list{ display: none;}
+.item.expand:after{ transform:translate(0,-50%) rotate(135deg); }
+.item_list li{ height:48px; padding-left:2em; color:#777; line-height:48px; border-bottom:1px solid #eee;}
+.yellow{background-color: yellow;}
+</style>
+<script >
+
+
+
+</script>
+</head>
+
+<body>
+
+
+ 
+
+
+<div class="slideDown"><a href="javascript:void(0)" class="item" >热水器</a>
+<ul class="item_list" >
+		<li>电热水器</li>
+        <li>燃气水器</li>
+         <li>空气能热水器</li>
+</ul>
+</div>
+<!--href 默认跳转页面  javascript:void(0) 默认返回错误  、、取消默认的跳转事件-->
+<div class="slideDown"><a href="javascript:void(0)" class="item" >热水器</a>
+<ul class="item_list" >
+		<li>电热水器</li>
+        <li>燃气水器</li>
+         <li>空气能热水器</li>
+</ul>
+</div>
+<script>
+	function mydown(slide){
+	this.slide=slide;//获取到要控制的一个html内容整体
+	var item=slide.getElementsByClassName("item")[0];
+	//从这个整体里面查找 单机的元素
+	var item_list=slide.getElementsByClassName("item_list")[0];
+    //从这个整体的元素里面查找要隐藏显示的元素
+	item.onclick=function(){//当党建时
+		if(item_list.style.display!="block"){
+//			如果要隐藏或者显示的元素 display属性不为block （在行内容没有写 style="display:none;"）也是符合display 属性不为block 这个条件[说明这个颜色是隐藏的]
+			
+			item_list.style.display="block";//让这个元素显示
+		   item.className="item expand";//给这个单击的元素添加一个expand class （三角形 向下）
+			
+		}else{
+			item_list.style.display="none";
+			item.className="item";
+		   
+		}
+	}
+	
+		
+	}
+	
+	var slides=document.getElementsByClassName("slideDown");
+	var p1=new mydown(slides[0]);
+	var p1=new mydown(slides[1]);
+//	p1.slide.style.backgroundColor="yellow";
+	console.log(p1);
+	
+	
+	
+	
+</script>
+</body>
+</html>

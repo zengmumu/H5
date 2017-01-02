@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+		
+	
+	
+	
+	
+	
+	
+	
+			window.onload=init;
+			function init(){
+				
+			new Tab();
+			}
+			
+			function Tab(){
+				
+				var lis=document.getElementsByTagName("li");
+				for(var i=0;i<lis.length;i++){
+					var j=i;
+					alert(j);
+					lis[j].onclick=function(){
+						alert("我是第"+j+"li元素");
+					}
+				}
+				
+			}
+		</script>
+	</head>
+	<body>
+		<ul>
+			<li>li1</li>
+			<li>li2</li>
+			<li>li3</li>
+			<li>li4</li>
+		</ul>
+	</body>
+</html>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>webrx-title</title>
+		<meta name="description" content="简介">
+		<meta name="keywords" content="关键字">
+
+	</head>
+
+	<body>
+		<p>你第<span id="times"></span>次打开</p>
+		<script>
+		
+	
+//		window.localStorage.clear();		
+	
+	if(window.localStorage.t){//如果以前存过值
+		//取出来加1显示到 times  需要把字符串转换为 json
+		var myt=parseInt(window.localStorage.t)+1;
+		document.getElementById("times").innerHTML=myt;
+			//加1存起来   json  转换为字符串
+		window.localStorage.t=myt;
+	}else{//第一次
+		document.getElementById("times").innerHTML=1;
+	   window.localStorage.t=1;	
+	}
+
+		</script>
+	</body>
+		
+</html>

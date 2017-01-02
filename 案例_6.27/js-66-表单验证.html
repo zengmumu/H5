@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box {
+				height: 50px;
+				width: 50px;
+				position: absolute;
+				top: 50px;
+				background-color: yellow;
+			}
+			.container{ width: 1000px; background-color: #fff; margin: 0 auto;}
+		</style>
+
+	</head>
+
+	<body>
+		<div class="container">
+		<h1>用户登录</h1>
+		<form action="server.html" method="post" onsubmit="return checkAll()">
+			<p>用户名：<input type="text" name="uname" onblur="checkName()" /></p>
+			<p>邮箱：<input type="text" name="uemail" onblur="checkemail()"  /></p>
+			<p>密 码：<input type="password" name="upass"  onblur="checkPwd()" /></p>
+			<p><input type="submit" value="登陆" /></p>
+		</form>
+		
+		<script>
+			function checkAll() {
+				//				return checkName();
+				//				return true
+				var re1 = checkName();
+				var re2 = checkPwd();
+				var re3 = checkemail();
+				return re1 && re2&&re3;
+			}
+			//[1]用户名侧长度不能小于2
+			//[2]密码的长度不能小于6
+
+			function checkName() {
+				var uname = document.getElementsByName("uname")[0].value;
+				if(uname == "") {
+					alert("用户名不能为空！");
+					return false;
+				}
+				if(uname.length < 2) {
+					alert("用户名长度不能小于2位");
+					return false;
+				} else {
+					return true;
+				}
+			}
+
+			function checkPwd() {
+				var pwd = document.getElementsByName("upass")[0].value;
+				if(pwd == "") {
+					alert("密码不能为空");
+					return false;
+				}
+				if(pwd.length < 6) {
+					alert("密码太短，容易破解");
+					return false;
+				} else {
+					return true;
+				}
+			}
+			
+			function checkemail() {
+				var email = document.getElementsByName("uemail")[0].value;
+				if(email.indexOf(".")==-1||email.indexOf("@")==-1){
+					alert("邮箱格式错误！");
+					return false;
+				}else{
+					return true;
+				}
+			}
+		</script>
+		<p>item1</p>
+		<p>item2</p>
+		<p>item3</p>
+		<p>item4</p>
+		<p>item5</p>
+		<p>item6</p>
+		<p>item7</p>
+		<p>item8</p>
+		<p>item9</p>
+		<p>item10</p>
+		<p>item11</p>
+		<p>item12</p>
+		<p>item13</p>
+		<p>item14</p>
+		<p>item15</p>
+		<p>item16</p>
+		<p>item17</p>
+		<p>item18</p>
+		<p>item19</p>
+		<p>item20</p>
+		<p>item21</p>
+		<p>item22</p>
+		<p>item23</p>
+		<p>item24</p>
+		<p>item25</p>
+		<p>item26</p>
+		<p>item27</p>
+		<p>item28</p>
+		<p>item29</p>
+		<p>item30</p>
+		<p>item31</p>
+		<p>item32</p>
+		<p>item33</p>
+		<p>item34</p>
+		<p>item35</p>
+		<p>item36</p>
+		<p>item37</p>
+		<p>item38</p>
+		<p>item39</p>
+		<p>item40</p>
+		<p>item41</p>
+		<p>item42</p>
+		<p>item43</p>
+		<p>item44</p>
+		<p>item45</p>
+		<p>item46</p>
+		<p>item47</p>
+		<p>item48</p>
+		<p>item49</p>
+		<p>item50</p>
+		<p>item51</p>
+		<p>item52</p>
+		<p>item53</p>
+		<p>item54</p>
+		<p>item55</p>
+		<p>item56</p>
+		<p>item57</p>
+		<p>item58</p>
+		<p>item59</p>
+		<p>item60</p>
+		<p>item61</p>
+		<p>item62</p>
+		<p>item63</p>
+		<p>item64</p>
+		<p>item65</p>
+		<p>item66</p>
+		<p>item67</p>
+		<p>item68</p>
+		<p>item69</p>
+		<p>item70</p>
+		<p>item71</p>
+		<p>item72</p>
+		<p>item73</p>
+		<p>item74</p>
+		<p>item75</p>
+		<p>item76</p>
+		<p>item77</p>
+		<p>item78</p>
+		<p>item79</p>
+		<p>item80</p>
+		<p>item81</p>
+		<p>item82</p>
+		<p>item83</p>
+		<p>item84</p>
+		<p>item85</p>
+		<p>item86</p>
+		<p>item87</p>
+		<p>item88</p>
+		<p>item89</p>
+		<p>item90</p>
+		<p>item91</p>
+		<p>item92</p>
+		<p>item93</p>
+		<p>item94</p>
+		<p>item95</p>
+		<p>item96</p>
+		<p>item97</p>
+		<p>item98</p>
+		<p>item99</p>
+		<p>item100</p>
+		</div>
+	</body>
+
+</html>

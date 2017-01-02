@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+		alert(this);
+			window.onload=init;
+			function init(){
+				alert(this);
+			 new Tab();
+			}
+			
+			function Tab(){
+				console.log(this);
+				var lis=document.getElementsByTagName("li");
+				lis[0].onclick=fn1;
+				lis[1].onclick=fn1;
+				function fn1(){
+					alert(this.innerHTML);
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<ul>
+			<li>li1</li>
+			<li>li2</li>
+			<li>li3</li>
+			<li>li4</li>
+		</ul>
+	</body>
+</html>

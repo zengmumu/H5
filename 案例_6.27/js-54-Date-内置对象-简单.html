@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+
+	</head>
+
+	<body>
+		<h1>内置对象-Date</h1>
+		
+		<p>现在时间为: <span id="time"></span></p>
+	
+	<script>
+	var  time=document.getElementById("time");
+
+function showTime(){
+	var date=new Date();
+	time.innerHTML=date.toLocaleDateString()+" "+date.toLocaleTimeString();
+
+}
+
+setInterval(function(){
+	showTime();
+},1000)
+		
+	</script>
+	</body>
+
+</html>

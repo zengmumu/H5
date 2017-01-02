@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+
+.hui{ color:red; width:300px; background:#dfdfdf; border:1px solid dedede; height:300px; position:fixed; top:0; left:0;}
+#box .cl{ display:block; float:right; color:#F00; border:1px solid #666; width:20px; height:20px; line-height:20px; text-align:center; cursor:pointer;}
+#navP{ background:#F90; height:35px; line-height:35px; width:100%; position:fixed; top:0; left:0; display:none; box-shadow:0px 3px 5px #bbb;}
+</style>
+<script type="text/javascript">
+
+
+
+
+window.onload=init;
+function init(){
+
+//获得页面的大小
+//宽
+function getPageWidth(){	
+	return document.documentElement.scrollWidth;
+	}
+function getPageHeight(){
+	return document.documentElement.scrollHeight;
+	}
+
+//
+//获得视口的大小
+
+function getViewWidth(){
+	var de=document.documentElement;
+	return de&&de.clientWidth||document.body.clientWidth;
+	}
+function getViewHeight(){
+	var de=document.documentElement;
+	return de&&de.clientHeight||document.body.Height;
+	}
+//滚动条的距离
+function getSrollT(){
+return document.documentElement.scrollTop||document.body.scrollTop;
+}
+function getScrollL(){
+return document.documentElement.scrollLeft||document.body.scrollLeft;
+}
+
+/
+
+
+var box=document.getElementById("box");
+
+function adjust(){
+//中间box.style.top=getViewHeight()*0.5-150+"px";
+//box.style.left=getViewWidth()*0.5-150+"px";
+
+
+//alert(box.style.height);//通过Style属性来得到元素的  属性  如果以前设置过的才能够得到 
+box.style.top=getViewHeight()-300+"px";
+box.style.left=getViewWidth()-300+"px";
+}
+adjust();
+window.onresize=adjust;
+
+
+var cl=document.getElementById("cl");
+cl.onclick=function(){
+	cl.parentNode.style.display="none";
+	}
+var navP=document.getElementById("navP");
+window.onscroll=function(){
+	if( getSrollT()>200){
+		navP.style.display="block";
+		}
+	if(getSrollT()<=200){
+		navP.style.display="none";
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+ 
+	
+	
+}
+</script>
+</head>
+<body>
+
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+<div class="hui cu" id="box"> 小会会<span class="cl" id="cl">×</span></div>
+<div id="navP"> 这里是 导航  加一点点</div>
+
+</body>
+</html>

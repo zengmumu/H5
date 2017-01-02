@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>webrx-title</title>
+<meta name="description" content="简介">
+<meta name="keywords" content="关键字">
+<link rel="stylesheet" type="text/css" href="index.css"/>
+</head>
+
+<body>
+<ul id="list">
+<li>name:Bob</li>
+<li>age:40</li>
+</ul>
+<script >
+window.onload=init;
+function init(){
+var data = {'name':'Bob','age':40};
+var str=""; 
+for(var k in data){	
+	str +="<li>"+k+":"+data[k]+"</li>";
+		}
+	
+
+	
+	
+	var list=document.getElementById("list");
+list.innerHTML=str;	
+}
+</script>
+</body>
+</html>

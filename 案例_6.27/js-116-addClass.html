@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<style>
+		p,div,h3{ font-size: 25px;}
+		.active{ background-color: yellow;}
+	</style>
+</head>
+<body>
+	<h3 class="mya">this is yellow</h3>
+	<p class="good mya">this is p</p>
+	<p> 我是间谍没有class 更没有mya</p>
+	<div class="conmyatainer right active">this is div</div>
+	<span class="mya test left">wo shi left</span>
+	
+	<script>
+// className+=“ ”+name
+function addClass(elem,name){
+	elem.className+=" "+name;
+}
+function removeClass(elem,name){
+	
+	var cName=elem.className;
+	var reg=new RegExp("(\\s|^)"+name+"(\\s|$)","g");
+	elem.className=cName.replace(reg,"");
+	if(name==undefined){
+		elem.className="";
+	}
+	
+}
+
+var myh=document.getElementsByTagName("h3")[0];
+addClass(myh,"active");
+
+var  mydiv=document.getElementsByTagName("div")[0];
+//removeClass(mydiv,"active");
+  removeClass(mydiv,"active");
+	</script>
+	
+</body>
+</html>

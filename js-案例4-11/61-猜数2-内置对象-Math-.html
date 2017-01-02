@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+
+	<body>
+		<p>
+			<input type="text" id="person" />
+			<button id="cai">猜一下</button>
+			<p id="times">0</p>
+			
+		</p>
+		<script type="text/javascript">
+//		[0] 猜错了记录次数  显示记录次数
+//		[1] 猜对了 记录次数清零    电脑重新出一个数 框 清零
+			var com = Math.ceil(Math.random() * 100);
+			var cai = document.getElementById("cai");
+			var person = document.getElementById("person");
+			var times=document.getElementById("times");
+			cai.onclick = function() {
+				times.innerHTML=parseInt(times.innerHTML)+1;
+				var val = parseInt(person.value);
+				if (val > com) {
+					alert("大了");
+				} else if (val < com) {
+					alert("小了");
+				} else {
+					alert("恭喜你对了");
+					times.innerHTML=0;
+					com = Math.ceil(Math.random() * 100);
+					person.value="";
+					
+				}
+			}
+		</script>
+	</body>
+
+</html>

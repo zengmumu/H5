@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>循环</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="简介">
+<meta name="keywords" content="关键字">
+<style>
+</style>
+<body>
+
+<script>
+// 1X9=9; 2X9=18; 3X9=27; 4X9=36; 5X9=45; 6X9=54; 7X9=63;8X9=72; 9x9=81
+/*[0] 循环初始化 1
+  [1] 循环结束   i<=9
+  [2] 循环操作  iX9=ix9*/
+  // for(var i=1;i<=9;i++){
+  //  document.write(i+"X9="+i*9+"\t\t");
+  // }
+  for(var j=1;j<=9;j++){
+ 
+     for(var i=1;i<=j;i++){
+       document.write(j+"X"+i+"="+j*i+"\t\t");
+     }
+
+   document.write("<br/>");
+
+  }
+</script>
+</body>
+</html>

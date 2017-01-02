@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			
+			
+			body{ background-color:yellow ;}
+		</style>
+	</head>
+	
+	<body>
+		我是广告窗口
+		<span id="col"> 关闭</span>
+		<script>
+			
+			var col=document.getElementById("col");
+			col.onclick=function(){
+				var re=window.confirm("你确定要关闭吗");
+				if(re){
+					window.close();
+				}
+				
+			}
+//			window.onclose=function(){
+//				
+//		window.confirm("你确定要关闭吗");
+//			}
+			
+			
+			
+			
+		</script>
+	</body>
+</html>

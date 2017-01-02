@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>webrx-title</title>
+<meta name="description" content="简介">
+<meta name="keywords" content="关键字">
+<link rel="stylesheet" type="text/css" href="index.css"/>
+<!--<script>
+window.attachEvent("onload",init)
+function init(){
+var myp=document.getElementsByTagName("p")[0];
+	myp.attachEvent("onclick",function(evt){
+		alert(evt.type+":"+evt.clientX);
+	});
+	
+}
+function fn1(){
+	alert("我是fn1")
+	alert(this.innerHTML);
+}-->
+
+
+
+
+
+</script>
+<style>
+div{ padding:100px; border:2px solid green; background-color: #E9F1BA; border: 1px solid #F2B5A9}
+p{ background-color: yellow; height: 50px;}
+</style>
+</head>
+
+<body>
+
+<div >
+	<p id="myp">我是个P 标签</p>
+</div>
+<script>
+	var myp=document.getElementsByTagName("p")[0];
+	myp.onclick=function (evt){
+		alert(evt.type+":"+evt.offsetX);
+	}
+/*	myp.attachEvent("onclick",function(evt){
+		alert(evt.type+":"+evt.offsetX);
+	})*/
+	
+</script>
+</body>
+</html>

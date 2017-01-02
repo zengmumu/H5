@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+#con{
+	width:20px;
+	height:20px;
+	background-color:#F00;
+}
+body{ width:100%; border:1px solid red;}
+</style>
+
+</head>
+
+<body>
+<input type="button" name="check" id="check" value="增加" onclick="addLen()" />
+<div id="con" style="width:20px"> </div>
+<div id="Num" style="text-align:center; font-size:24px; color:#F00;"></div>
+<script type="text/javascript">
+
+var con=document.getElementById("con")
+var y=0;
+ function addLen(){
+	 var x=con.style.width;
+	     x=parseInt(x)+1 ;	
+	     y=y+1;
+
+		 con.style.width=y+"%";
+		 
+	     document.getElementById("Num").innerHTML=y+"%";
+		 if(y>=100){
+			 clearInterval(id);
+			 }
+ }
+document.body.onclick=function(){
+	  clearInterval(id);
+	 }
+ var id=setInterval("addLen()",100);
+</script>
+</body>
+</html>

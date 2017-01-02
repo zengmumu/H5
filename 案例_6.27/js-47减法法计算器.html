@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+
+	</head>
+
+	<body>
+		<h1>计算器</h1>
+		<p>第一个数  <input type="text" id="pre" /></p>
+		<p>第二个数  <input type="text" id="next" /></p>
+		<p><input type="button" id="plus" value="+" /> <input type="button" id="reduce" value="-" /></p>
+		<p>结果 <input type="text" id="result" /></p>
+	<script>
+//	[0] 当按一下加号 把第一个框里的数+第二个框里面的数给 第三个框
+//	[1]选择到第123个框里面的值
+//  [2]单击执行sum命令集合
+var plus=document.getElementById("plus");
+var reduce=document.getElementById("reduce");
+plus.onclick=sum;
+reduce.onclick=minus;
+
+function sum(){
+var pre=document.getElementById("pre").value
+var next=document.getElementById("next").value;
+var result=document.getElementById("result");
+    result.value=parseFloat(pre)+parseFloat(next);
+}
+
+function minus(){
+var pre=document.getElementById("pre").value
+var next=document.getElementById("next").value;
+var result=document.getElementById("result");
+    result.value=parseFloat(pre)-parseFloat(next);
+}
+	
+		
+	</script>
+	</body>
+
+</html>

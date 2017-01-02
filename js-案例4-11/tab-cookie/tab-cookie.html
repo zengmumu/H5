@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<style>
+		*{ margin: 0; padding: 0;}
+		body{ background-color:#f5f5f5 ; padding: 50px;}
+		ul{list-style: none;}
+			.t_title{float: left; width: 80px; height: 35px; line-height:35px; border: 1px solid gray; margin-right:10px; background-color:#fff;text-align:center; position: relative; z-index: 20;}
+			.t_title.active{ color: #f80; border-bottom: 1px solid #fff;}
+			.t_content{height: 350px; width: 400px; border: 1px solid gray;background-color:#fff; clear: both; display: none; position: relative; top:-1px; z-index: 10;}
+			.t_content.active{ display: block;}
+			ul{height: 35px; }
+		#tab2{ margin-top:50px;}
+	#tab2 .t_content{ width: 320px; height: 180px;}
+	#tab2 .t_title{ width: 50px;}
+		</style>
+		<script src="cookie.js"></script>
+		<script src="jquery-1.7.1.min.js"></script>
+		<script src="jquery.cookie.js"></script>
+		<script>
+		
+		$(function(){
+			$.cookie('the_cookie', 'the_value', { expires: 7 });
+		})
+		
+	
+			window.onload=init;
+			function init(){			
+			var tab1=document.getElementById("tab1");
+		
+			new Tab(tab1);
+			
+			}	
+		function Tab(obj){
+			
+			//1点击li对应的div显示
+			//2之前div显示的现在隐藏  之前的li高亮 不高亮
+			//3现在显示的div是显示的  现在单击的li是高亮
+			//4 如果单击的li是高亮的让下面的不执行
+			var lis=obj.getElementsByClassName("t_title");
+			//得到li的集合
+			var divs=obj.getElementsByClassName("t_content");
+			//得到div的集合
+		
+			if(getCookie("tabI")){
+				var tabIndex=getCookie("tabI");
+			var h_li=lis[tabIndex];//高亮的li
+			var h_div=divs[tabIndex];//默认显示的第	
+			}else{
+			var h_li=lis[0];//高亮的li
+			var h_div=divs[0];//默认显示的第
+			}
+			h_li.className="t_title active";
+			h_div.style.display="block";
+			for(var i=0;i<lis.length;i++){
+				(function(){
+				var j=i;
+				lis[j].onclick=function(){
+					//4 如果单击的li是高亮的让下面的不执行
+					if(lis[j]==h_li){return}
+				//1点击li对应的div显示
+				divs[j].style.display="block";
+				//2之前div显示的现在隐藏  之前的li高亮 不高亮
+				h_div.style.display="none";
+				h_li.className="t_title";
+				//3现在显示的div是显示的  现在单击的li是高亮
+				h_div=divs[j];
+				lis[j].className="t_title active";
+				h_li=lis[j];
+				setCookie("tabI",j,30);
+				}
+				})()
+			}
+			
+		}
+		</script>
+	</head>
+	<body>
+		<div id="tab1">
+		<ul>
+			<li class="t_title">标题1</li>
+			<li class="t_title">标题2</li>
+			<li class="t_title">标题3</li>
+			<li class="t_title">标题4</li>
+		</ul>
+		<div class="t_content">内容1</div>
+		<div class="t_content">内容2</div>
+		<div class="t_content">内容3</div>
+		<div class="t_content">内容4</div>
+		</div>
+		
+		
+		
+	</body>
+</html>

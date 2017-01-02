@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>增加节点</title>
+<style>
+	article{ display: block;}
+</style>
+<script type="text/javascript">
+function newNode(){
+	var img=document.createElement("img");
+	img.setAttribute("src","images/newimg.jpg");
+	document.body.appendChild(img);
+	
+		
+}
+document.createElement("article");
+
+function copyNode(){
+	var oldNode=document.getElementById("sixty1");
+	var newNode=oldNode.cloneNode();
+	var mydiv=document.getElementById("mydiv");
+	mydiv.appendChild(newNode);
+}
+
+function deleteNode(){
+	var imgs=document.getElementsByTagName("img");
+	imgs[0].parentNode.removeChild(imgs[0]);
+	
+}
+
+function replaceNode(){
+	var sixty2=document.getElementById("sixty2");
+	var h3=document.createElement("h3");
+		h3.innerHTML="我没有流量，只能看文字了";
+		document.body.replaceChild(h3,sixty2);
+}
+function before(){
+	var sixty2=document.getElementById("sixty2");
+	var h3=document.createElement("h3");
+		h3.innerHTML="我是第三者"+Math.random();
+		document.body.insertBefore(h3,sixty2);
+}
+</script>
+</head>
+
+<body>
+<div id="mydiv">
+	<h3>我爱水果</h3>
+
+</div>
+<h2>喜欢的水果</h2>
+<input id="b4" type="button" value="在最后一张图片前面插入一个标题" onclick="before()" />
+<input id="b0" type="button" value="替换成标题" onclick="replaceNode()" />
+<input id="b3" type="button" value="删除一张图片" onclick="deleteNode()" />
+<input id="b1" type="button" value="增加一幅图片" onclick="newNode()" />
+<input id="b2" type="button" value="复制原图" onclick="copyNode()" /><br />
+ <img src="images/sixty1.jpg" id="sixty1" alt="水果" />
+<img src="images/sixty2.jpg" id="sixty2" alt="果篮" />
+
+</body>
+</html>

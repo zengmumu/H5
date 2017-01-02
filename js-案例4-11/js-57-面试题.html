@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>scope</title>
+</head>
+<body>
+<script>
+/*for(i=0, j=0; i<10, j<6; i++, j++){
+
+  k = i + j;
+
+}
+alert(k);*/
+/*function hi(){
+var a;
+alert(a);
+}
+hi();*/
+/*function hi(){
+var a = null;
+alert(a);
+}
+hi();*/
+// 输出所有满足下列条件的四位整数.条件:个位数字加百位数字等于千位数字加上十位数字,且该四位数为奇数.
+
+// 循环的初始化 1000
+// 结束条件 9999
+// 取任意数的 个 十 百  千 位
+//  个+百==千+十
+//  并且该为基数 %2!=0;
+// //  9762
+// alert(parseInt(9.762));
+// // 9*1000;=9000;
+// 9762-9000=762;
+/*for(var i=1000;i<=9999;i++){
+
+	var q=parseInt(i/1000);
+	var b=parseInt((i-q*1000)/100);
+	var s=parseInt((i-(q*1000)-(b*100))/10);
+	var g=i-(q*1000)-(b*100)-(s*10);
+	// alert(q+""+b+""+s+""+g);
+	 if(g+b==q+s&&i%2!=0){
+	 	document.write(i+"<br/>");
+	 }
+}
+*/
+/*.在页面上编程输出1_1000之间的所有能同时被3,5,7整除的整数,并要求每行显示6个这样的数.
+循环的初始化 i=1,j=1
+
+ 结束条件1000
+ 更新  i++,jj
+ i%3==0&&i%5==0&&i%7==0;
+ var j=1;
+  j%6==0  */
+// var j=0;
+// for(var i=1;i<=1000;i++){
+
+//    if(i%3==0&&i%5==0&&i%7==0){
+//   	document.write(i+"  ");
+// 	j++;
+// 	if(j%6==0){
+//  	document.write("<br/>");
+//     }
+
+//  }
+//  
+// 用输入对话框,输入行数和列数,在页面上输出由行数和列数组成的表格
+// 循环的初始化 i=1,j=1
+
+//  结束条件i=用户输入,j=用户输入
+
+//  out for tr
+//  in  for  td
+/*var row=parseInt(window.prompt("请输入行",10));
+var col=parseInt(window.prompt("请输入列",10));
+
+document.write("<table width='90%' align='center' border='1'>")
+for(var i=1;i<=row;i++ ){
+document.write("<tr>");
+	for(var j=1;j<=col;j++){
+		document.write("<td>"+i+"---"+j+"</td>");
+				
+	}
+document.write("</tr>");
+}
+
+document.write("</table>")*/
+</script>
+
+
+<div style="text-align:center">
+<script>
+/*for(var i=6;i>=1;i--)
+{
+		for(var j=1;j<=i;j++){
+			document.write("\u263a");
+		}
+		document.write("<br/>");
+}*/
+</script>
+</div>
+<script>
+var w=0;
+
+
+	for(var i=10;i>=1;i--){
+		if(i>5){
+
+		w+=50;
+
+		}else if(i==5){
+
+		}else{
+		w-=50;	
+		}
+			
+		
+
+		document.write("<hr style='width:"+(500-w)+"px;'>");
+		document.write("<br/>");
+	}
+
+</script>
+</body>
+</html>

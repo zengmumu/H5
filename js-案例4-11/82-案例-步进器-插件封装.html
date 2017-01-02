@@ -1,0 +1,104 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>步进器-normal</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="简介">
+<meta name="keywords" content="关键字">
+<style>
+ul,ol{ list-style: none;}
+li{ margin-bottom: 35px;}
+</style>
+<body>
+	<ul>
+		<li>
+			<div class="steper">
+				<input type="text" class="num" value="2" />
+				<input type="button" value="+" class="plus" />
+			</div>
+		</li>
+		<li>
+			<div class="steper">
+				<input type="text" class="num" value="0" />
+				<input type="button" value="+" class="plus" />
+			</div>
+		</li>
+		<li>
+			<div class="steper">
+				<input type="text" class="num" value="0" />
+				<input type="button" value="+" class="plus" />
+			</div>
+		</li>
+		<li>
+			<div class="steper">
+				<input type="text" class="num" value="0" />
+				<input type="button" value="+" class="plus" />
+			</div>
+		</li>
+		<li>
+			<div class="steper">
+				<input type="text" class="num" value="0" />
+				<input type="button" value="+" class="plus" />
+			</div>
+		</li>
+		<li>
+			<div class="steper">
+				<input type="text" class="num" value="0" />
+				<input type="button" value="+" class="plus" />
+			</div>
+		</li>
+			<li>
+			<div class="" id="myst">
+				<input type="text" class="num" value="0" />
+				<input type="button" value="+" class="plus" />
+			</div>
+		</li>
+	</ul>
+
+<script>
+	// 当单机steper 里面的plus 让steper 里面的num 加1
+		/*var step=document.getElementsByClassName("steper")[0];
+
+	var plus=step.getElementsByClassName("plus")[0];
+	var num=step.getElementsByClassName("num")[0];
+	plus.onclick=fn_plus;
+	
+	function fn_plus(){
+		var val=parseInt(num.value);
+		num.value=val+1;
+		
+	}*/
+	var step=document.getElementsByClassName("steper")[0];
+	function Steper(step){
+		this.step=step;
+		this.plus=step.getElementsByClassName("plus")[0];
+		this.num=step.getElementsByClassName("num")[0];
+		var plus=this.plus;
+		var num=this.num;
+		
+		this.plus.onclick=function(){
+		
+		 var val=parseInt(num.value);
+		      num.value=val+1;
+		}
+	}
+	var stepers=document.getElementsByClassName("steper");
+	//找到页面中所有的class名为 steper 的对象 集合
+	
+	for(var i=0;i<stepers.length;i++){//循环 stepers里面的内容
+		
+		new Steper (stepers[i]);//每循环一个创建一个新的步进器；
+	}
+	
+	var myst=document.getElementById("myst");
+	new Steper(myst);
+
+	
+</script>
+
+
+</body>
+
+
+</html>

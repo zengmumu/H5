@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>scope</title>
+</head>
+<body>
+<script>
+var b=5;
+function parent(){
+	var b=12;
+	var a=18;
+	// alert(a);
+	// alert(b);
+	c=9;
+	c++;
+	// alert(c);
+}
+parent();
+// alert(b);
+// alert(a);
+// alert(c);
+// alert(window.c);
+// alert(window.b);
+c++
+alert(c);
+
+</script>
+
+
+</body>
+</html>

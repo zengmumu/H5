@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body{ text-align: center;}
+			
+		</style>
+		<script>
+		var a=15;
+		a>16?alert("比16大"):alert("比16小");
+		
+
+
+//[1] 循环初始条件      i=1000	  
+//[2] 循环的结束条件   i<=9999	
+//[3] 循环的操作	得出特殊的数    必须是基数
+//[4] 循环的变更	i++；
+
+for(var i=1000;i<=9999;i++){
+//	个位数字加百位数字等于千位数字加上十位数字
+	
+	var q=parseInt(i/1000);//千位
+	var b=parseInt(i%1000/100);//百位
+	var s=parseInt(i%100/10);//十位
+	var g=parseInt(i%10);//十位】
+	if((g+b==q+s)&&i%2!=0){
+		document.write(i+" ");
+	}
+}
+
+
+	</script>
+	</head>
+	<body>
+	
+	</body>
+</html>

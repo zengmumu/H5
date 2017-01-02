@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body{ padding: 0;margin: 0;}
+				#time{width:50px; height:50px; background-color: yellow; position:relative; left: 0;}
+		</style>
+	</head>
+
+	<body>
+		<p id="time" style="left:0"></p>
+		<button style="margin-top:100px;" id="toggle">停止</button>
+		<script type="text/javascript">
+			//[1] 选择 time
+			//[2] 获取到 time left  在设置time left=原来left+2
+			//[3] 每隔60毫秒调用一次
+			//[4] 得到窗口的宽度  0  document.body.clientWidth-50
+			 //                  窗口的宽度=body宽度
+			// [5]单击toggle 停止 setInterval()   clearInterval();
+			                   
+			var speed=10;//动画的速度
+			var time=document.getElementById("time");
+			var toggle=document.getElementById("toggle");
+			
+			function move (){
+				var l=parseInt(time.style.left);//获取time的style的left值
+					 if(l>document.body.clientWidth-50||l<0){
+					 	//如果 time到右边或者最左边的边界 让速度取反方向；
+					 	speed*=-1;
+					 }
+				 time.style.left=l+speed+"px";
+				 //设置time的st样式yle的left值为 l+speed
+//				 #time{left:..+"px"}
+				 
+			
+			}//执行动画的函数
+			var inter=setInterval(function(){move()},16);
+			//间隔调用动画的函数 并且停止控制权交给 inter；
+			
+					toggle.onclick=function(){//当按钮被单机
+						if(toggle.innerHTML=="停止"){//如果按钮的文字是停止
+							clearInterval(inter);//停止间隔函数
+							toggle.innerHTML="開始";//设置文本为开始
+						}else{//否则
+							inter=setInterval(function(){move()},16)
+							//又从新开始间隔 函数调用 并且把停止权交给 inter
+							toggle.innerHTML="停止";//设置文字为停止
+							
+						}
+					}
+		</script>
+	</body </html>

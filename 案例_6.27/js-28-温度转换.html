@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+
+//[2] 循环的结束条件  条目不超过10条  温度不超过250
+//[3] 循环的操作	   华氏温度 = 摄氏温度 * 9 / 5.0 + 32 
+//[4] 循环的变更	  20度      条目加1
+var  T=0;//摄氏度
+var  times=1;//条目
+
+
+do{
+	document.write((T * 9 / 5.0 + 32)+"华氏度="+T+"摄氏温度<br/>");
+	times++;
+	T+=20;
+	
+}while(T<=250&&times<=10)
+
+//[1] 循环初始条件	  从第一根开始     初始化宽为500    默认差值是50
+//[2] 循环的结束条件     不能超过10根
+//[3] 循环的操作	   让线的宽度发生变化  一开始递减到第六根递增
+//[4] 循环的变更            绘制的线加1	  
+
+var i=1;//第几根线
+var dis=500;//初始宽度
+var  cha=50;//差值
+while(i<=10){
+	if(i==6){cha*=-1;}
+	dis-=cha;
+	document.write("<hr width='"+dis+"'/>");
+	i++;
+}
+/*"<hr width='"
++
+450
++
+"'/>"
+*/
+
+	</script>
+	</head>
+	<body>
+	<hr width="450">
+	</body>
+</html>

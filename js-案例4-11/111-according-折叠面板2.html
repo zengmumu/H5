@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			*{ margin: 0; padding: 0;}
+			body{ padding: 50px;}
+			.acc1{ width: 500px;}
+			.acc_title{ height: 35px; line-height: 35px; border: 1px solid #BBBBBB; text-align: center;}
+			.acc_title.active{ background-color:#f80; color: #FFF;}
+			.acc_content{ height: 350px;border: 1px solid #BBBBBB;transition:height 1s ease; -webkit-transition:all 1s ease; overflow: hidden; }
+			.acc_content.hide{ height: 0px; border: 0px; transition:height 1s ease; -webkit-transition:all 1s ease; }
+		</style>
+		<script>
+			window.onload=init;
+			function init(){
+				new according(
+					{elem:"acc1",
+					 title:"acc_title",
+					 content:"acc_content",
+					 Default:2
+					}
+				);
+			}
+			function according(obj){			
+				
+				var dom=document.getElementsByClassName(obj.elem)[0];
+				var heads=dom.getElementsByClassName(obj.title);//获取h标签
+				var contents=dom.getElementsByClassName(obj.content);
+				var De=obj.Default;//获取默认的高亮元素
+				var h_head;//以前单击的元素（默认单击）
+				var h_content;//以前默认显示的元素
+			
+				//[1] 单击标题 让对应的div显示
+				//[2] 让以前显示的显示隐藏 
+				//      让以前高亮的现在不高亮 让现在高亮
+				//[3]  让单击的变成高亮的元素 让现在显示的变成 显示的元素
+				//[4]  如果单击的就是高亮的 往下不执行
+				      
+				//---------------------------默认
+				for(var i=0;i<heads.length;i++){
+				if(De==i){
+					heads[i].className=obj.title+" active";
+					contents[i].style.display="block";
+					h_head=heads[i];
+					h_content=contents[i];
+				}else{
+				heads[i].className=obj.title;
+					contents[i].style.display="none";
+				}
+			}
+				//---------------------------默认1
+				
+			for(var i=0;i<heads.length;i++){
+				(function(){
+					var j=i;
+					heads[j].onclick=function(){
+					contents[j].style.display="block";	
+					//当前单击的元素变亮
+					heads[j].className=obj.title+" active";
+					//2 以前显示的现在隐藏
+					h_content.style.display="none";
+					//以前高亮的 不高亮
+					h_head.className=obj.title;
+					
+					//让现在单击的元素变成高亮
+					h_head=heads[j];
+					h_content=contents[j];
+					}
+					
+				})()//ni ed
+				
+			}//for ed
+				
+				
+			}
+			
+		</script>
+	</head>
+	<body>
+			<div class="acc1">
+				<h3 class="acc_title">标题1</h3>
+				<div class="acc_content">内容1</div>
+				<h3 class="acc_title">标题2</h3>
+				<div class="acc_content">内容2</div>
+				<h3 class="acc_title">标题3</h3>
+				<div class="acc_content">内容3</div>
+			</div>
+	</body>
+</html>

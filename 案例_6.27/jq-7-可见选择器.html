@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<title>Document</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			body {
+				padding: 50px;
+			}
+			
+			ul {
+				list-style: none;
+			}
+			
+			.tabs .tab-title {
+				height: 35px;
+				line-height: 35px;
+				border: 1px solid #aaa;
+				padding-left: 15px;
+				padding-right: 15px;
+				float: left;
+				margin-right: 15px;
+				position: relative;
+				z-index: 10;
+			}
+			
+			.tabs .active{border-bottom-color:#fff; color: #F80;}
+			.tabs .tab-content {
+				clear: both;
+				border: 1px solid #aaa;
+				padding: 25px;
+				width: 450px;
+				height: 300px;
+				display: none;
+				position: relative;
+				top: -1px;
+				z-index: 0;
+			}
+			#tab2 .tab-content{width: 800px;}
+		</style>
+	</head>
+
+	<body>
+		<div id="tab1" class="tabs">
+			<ul>
+				<li class="tab-title active">li1</li>
+				<li class="tab-title">li2</li>
+				<li class="tab-title">li3</li>
+			</ul>
+			<div class="tab-content" style="display: block;">内容1</div>
+			<div class="tab-content" >内容2</div>
+			<div class="tab-content">内容3</div>
+		</div>
+	
+		<script>
+			//1，限定范围 
+			//tab object 对象 该有哪些属性
+			 // lis  被单击切换按钮
+			 // divs  被切换的内容
+			 // index 当前是第几个div显示
+			//3 单击 lis的没一个 执行 qie切换的方法
+			//4 切换方法里面
+			//4.1 是第几个li被单击
+			//4.2 把以前显示的div（第index 个div） 隐藏 +去掉index 对应的li的active			
+			//4.3 显示现在单击对应的div+加上num 对应的li的active		
+			//4.4 更新一下显示是显示的第 几个div index
+			
+		
+		</script>
+
+	</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.wrong{ color: red;}
+			.right{ color: green;}
+		</style>
+	</head>
+
+	<body>
+		<form action="http://www.baidu.com" onsubmit="checkAll()">
+			<p>用户名
+				<input type="text" id="uname" /> <span id="uname_tip">4-12位</span></p>
+			<p>
+				<input type="submit" id="sub" value="提交" />
+			</p>
+		</form>
+		<script>
+			//		表单验证
+			//	当用户单击submit 如果验证成功 就把信息提交给 action 的地址
+			//	如果不成功的不提交信息。
+							function checkAll(){
+								
+								return checkName();
+							}
+							var uname=document.getElementById("uname");
+							var uname_tip=document.getElementById("uname_tip");
+							uname.onblur=checkName;
+							function checkName(){
+								var len=uname.value.length;
+								if(len<4||len>12){
+									uname_tip.innerHTML="<span class='wrong'>用户名长度错误</span>"
+									return false;
+								}else{
+									uname_tip.innerHTML="<span class='right'>正确</span>"
+									return true;
+								}
+							}
+		</script>
+	</body>
+	<script>
+	</script>
+
+</html>

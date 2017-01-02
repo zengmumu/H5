@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>webrx-title</title>
+<meta name="description" content="简介">
+<meta name="keywords" content="关键字">
+
+
+<body>
+<input type="text"  id="show"/>
+<input type="button" value="1" id="n1" />
+<input type="button" value="2" id="n2" />
+<input type="button" value="+" id="nplus" />
+<input type="button" value="=" id="nequal" />
+
+
+<script >
+var n1=document.getElementById("n1");
+var n2=document.getElementById("n2");
+var nplus=document.getElementById("nplus");
+var nequal=document.getElementById("nequal");
+var show=document.getElementById("show");
+var pre;
+var next;
+//[1]单击那个框里面显示哪儿
+n1.onclick=function(){
+	 show.value= show.value+n1.value;
+}
+n2.onclick=function(){
+	 show.value= show.value+n2.value;
+}
+//[2] 按运算符号记住运算符号前的数字  //并清空
+nplus.onclick=function(){
+	pre=show.value;
+	show.value="";
+}
+
+//[3] 按等于号记住等于号前面的数字 在前后想 按符号来
+nequal.onclick=function(){
+	next=show.value;
+	show.value=parseFloat(pre)+parseFloat(next);
+}
+</script>
+</body>
+</html>

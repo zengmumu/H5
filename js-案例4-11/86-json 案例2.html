@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>webrx-title</title>
+		<meta name="description" content="简介">
+		<meta name="keywords" content="关键字">
+
+	</head>
+
+	<body>
+		<ul id="list">
+			<!--	<li>
+    <p><span>name</span><span>shenmiweiyi</span></p>
+      <p><span>QQ</span><span>306451129</span></p>
+    </li>
+    <li></li>-->
+		</ul>
+
+		<script type="text/javascript">
+			var user ={
+			    "employees":
+			[
+			      {
+			            "name":"shenmiweiyi",
+			            "QQ":306451129,
+			            "email":"shenmiweiyi@163.com",
+			            "address":
+			            [
+			                  {"City":"ZhengZhou","ZipCode":"450000"},
+			                  {"City":"BeiJing","ZipCode":"100000"}
+			            ]
+			      },
+			      {
+			            "name":"kehao",
+			            "QQ":254892313,
+			            "email":"kehao@163.com",
+			            "address":
+			            [
+			                  {"City":"ShangHai","ZipCode":"200000"},
+			                  {"City":"GuangZhou","ZipCode":"510000"}
+			            ]
+			       }
+			      ]}
+			var str="";
+			var data=user.employees;
+			for(var k in data){
+			var obj=data[k];
+			str+="<li>";
+			//console.log(obj);
+			str+="名字:"+obj.name+"<br/>QQ:"+obj.QQ+"<br/>邮箱:"+obj.email+"<br/>地址:";
+								var add=obj.address;			
+								for(var j in add){//解析地址
+									str+="<br/>--城市:"+add[j].City+"<br/>--邮编："+add[j].ZipCode;
+								}
+			str+="</li>";
+				
+			}
+			var list=document.getElementById("list");
+			list.innerHTML=str;
+			console.log(str);
+		</script>
+	</body>
+
+</html>

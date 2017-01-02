@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>scope</title>
+</head>
+<body>
+<script>
+var a=7;
+function parent(){
+ var a=15;
+ return    function (){ 	var b=3; 	alert(a+b); }
+
+}
+
+// function (){ 	var b=3; 	alert(a+b); }();
+// parent()();
+var result=parent();
+result();//18//a=15  b=3 18
+// function (){ 	var b=3; 	alert(a+b); }()//a=7 b=3  10
+for(i=0, j=0; i<10, j<6; i++, j++){
+
+  k = i + j;
+
+}
+alert(k);
+</script>
+
+
+</body>
+</html>

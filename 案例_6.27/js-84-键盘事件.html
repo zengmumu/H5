@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>webrx-title</title>
+<meta name="description" content="简介">
+<meta name="keywords" content="关键字">
+<style>
+	#box{ height: 50px; width: 50px; position: absolute;   background-color:gold;}
+</style>
+<script>
+
+
+window.onload=init;
+function init(){
+	var box=document.getElementById("box");
+	
+	window.onkeydown=function(e){
+	
+	console.log(e);
+	var l=parseInt(box.style.left);
+	var t=parseInt(box.style.top);
+	if(e.keyCode==39){
+		box.style.left=(l+1)+"px";
+	}
+   if(e.keyCode==37){
+		box.style.left=(l-1)+"px";
+	}
+   if(e.shiftKey&&e.keyCode==39){
+   	    box.style.left=(l+10)+"px";
+   }
+   if(e.shiftKey&&e.keyCode==37){
+   	    box.style.left=(l-10)+"px";
+   }
+   if(e.keyCode==32){
+   	   box.style.top=(t-25)+"px";
+   }
+}
+	
+	setInterval(function(){
+	var l=parseInt(box.style.left);
+	var t=parseInt(box.style.top);
+//	 box.style.left=(l-2)+"px";
+	  box.style.top=(t+4)+"px";
+	},50)
+	
+	
+	
+}
+</script>
+ 
+</head>
+
+
+<body>
+	<div id="box" style="left: 250px; top:150px"></div>
+
+
+</body>
+</html>

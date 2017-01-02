@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>全选效果</title>
+		<style type="text/css">
+			.bg {
+				background-image: url(images/list_bg.gif);
+				background-repeat: no-repeat;
+				width: 730px;
+			}
+			
+			td {
+				text-align: center;
+				font-size: 13px;
+				line-height: 25px;
+			}
+			
+			body {
+				margin: 0
+			}
+		</style>
+		<script type="text/JavaScript">
+
+			window.onload=init; 
+			function init(){ 
+				var self=document.getElementsByTagName("div")[0];
+//				var son=self.firstChild;
+//				//node type==3
+//				var son2=son.nextSibling;
+//				console.log(son);
+//				console.log(son2);
+		var nextOne=next(self);
+		alert(nextOne.innerHTML);
+			
+			}
+			
+			function next(elem){
+//				elem=elem.nextSibling;
+//				if(elem.nodeType==3){//你要是文本节点那么我找这个文本节点的下个元素
+//					elem=elem.nextSibling;
+//				}
+//				return elem;
+				do{
+					elem=elem.nextSibling
+				}while(elem&&elem.nodeType!=1)
+				//先找一次该元素的下一个元素，只有元素节点不为1 都不是我想要的继续找下一个，
+				return elem;
+			}
+		</script>
+	</head>
+
+	<body>
+		<div>
+			
+			<p>我是一个p元素</p>
+			<h3>我是标题</h3>
+			<p>我是他兄弟
+				<a href=""><em>我是百度他哥</em></a>
+			</p>
+			<p>p1</p>
+			<p>p2</p>
+			<p>p3</p>
+			<p>p4</p>
+			<p>p5</p>
+		</div>
+		
+		<!--wo shi ge -->
+		<!--wo shi deaee-->
+		<div>
+			我是第二个div
+		</div>
+
+	</body>
+
+</html>

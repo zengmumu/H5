@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box {
+				height: 50px;
+				width: 50px;
+				position: absolute;
+				top: 50px;
+				background-color: yellow;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<h1>用户登录</h1>
+		<form action="server.html" method="post" onsubmit="return checkAll()">
+			<p>用户名：<input type="text" name="uname" /></p>
+			<p>密 码：<input type="password" name="upass" /></p>
+			<p><input type="submit" value="登陆" /></p>
+		</form>
+		<script>
+			function checkAll(){
+//				return checkName();
+//				return true
+				var re1=checkName();
+				var re2=checkPwd();
+				return re1&&re2;
+			}
+			//[1]用户名侧长度不能小于2
+			//[2]密码的长度不能小于6
+			
+			function checkName(){
+				var uname=document.getElementsByName("uname")[0].value;
+				if(uname==""){
+					alert("用户名不能为空！");
+					return false;
+				}
+				if(uname.length<2){
+					alert("用户名长度不能小于2位");
+					return false;
+				}else{
+					return true;
+				}
+			}
+			function checkPwd(){
+			var pwd=document.getElementsByName("upass")[0].value;
+			if(pwd==""){
+				alert("密码不能为空");
+				return false;
+			}
+			if(pwd.length<6){
+				alert("密码太短，容易破解");
+				return false;
+			}else{
+				return true;
+			}
+			}
+		</script>
+	</body>
+
+</html>

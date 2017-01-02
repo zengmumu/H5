@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>webrx-title</title>
+<meta name="description" content="简介">
+<meta name="keywords" content="关键字">
+<link rel="stylesheet" type="text/css" href="index.css"/>
+<style>
+*{ margin: 0; padding: 0;}
+body{ padding-top: 50px;}
+#fullpage{ transition:all 1s;}
+.section{ height: 400px; width: 100%; clear: both;}
+.section:nth-child(2n+1),.odd{background: yellow;}
+.nav{ list-style:none;width: 100%; height: 50px; line-height: 50px; position:fixed; left: 0; top: 0;box-shadow: 0 2px 1px #666; background-color:#fff ; z-index: 100;  }
+.nav li{ width: 120px; color: #777; border-left: 1px solid #f0f0f0; text-align: center; float: left;}
+</style>
+<script>
+
+
+function addEvent(elem,type,fn){
+	if(elem.addEventListener){
+		elem.addEventListener(type,fn,false);
+	}else{
+		elem.attachEvent("on"+type,fn);
+	}
+}
+function removeEvent(elem,type,fn){
+	if(elem.removeEventListener){
+		elem.removeEventListener(type,fn,false);
+	}else{
+		elem.detachEvent("on"+type,fn);
+	}
+}
+function getTarget(evt){
+	if(evt.target){
+		return evt.target;
+	}else{
+		return window.event.srcElement;
+	}
+}
+function prevDefault(evt){
+	var e=evt||window.event;
+	if(e.preventDefault){
+		e.preventDefault();
+	}else{
+		e.returnValue=false;
+	}
+}
+function cBuble(evt){
+	var e=evt||window.event;
+	if(e.cancelBubble){
+		e.cancelBubble;
+	}else{
+		e.stopPropagation()
+	}
+}
+
+addEvent(window,"load",init);
+var index=0;
+function init(){
+	var winH=document.documentElement.clientHeight;
+    var fullpage=document.getElementById("fullpage")
+    sections=fullpage.getElementsByTagName("div")
+//	sections=document.getElementsByClassName("section");
+	for(var i=0;i<sections.length;i++){
+	sections[i].style.height=winH+"px";	
+	
+	}
+addEvent(document,"mousewheel",scroll);
+	
+}
+function scroll(evt){
+	
+	var e=evt||window.event;
+	prevDefault(evt)
+
+
+	if(e.wheeDelta){
+		index--;
+		alert("xiao yu")
+	}else{
+		index++;
+		alert("da  yu")
+	}
+	alert(index);
+	if(index>=7){
+		index=0;
+	}
+	var winH=document.documentElement.clientHeight;
+//	alert(document.body.scrollTop);
+  
+var fullpage=document.getElementById("fullpage")
+
+fullpage.style.transform="translate(0,"+index*-1*winH+"px)";
+}
+
+
+</script>
+<style>
+
+</style>
+</head>
+
+<body>
+	<ul class="nav">
+		<li >nav1</li>
+		<li>nav2</li>
+		<li>nav3</li>
+		<li>nav4</li>
+		<li >nav5</li>
+		<li>nav6</li>
+		<li >nav7</li>
+	</ul>
+<div id="fullpage">
+<div class="section odd">section1</div>
+<div class="section">section2</div>
+<div class="section odd">section3</div>
+<div class="section">section4</div>
+<div class="section odd">section5</div>
+<div class="section">section6</div>
+<div class="section odd">section7</div>
+</div>	
+</body>
+</html>

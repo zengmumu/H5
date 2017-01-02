@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p id="time"></p>
+		<script type="text/javascript">
+		function mytime(){
+		var D1=new Date();
+		var D2=new Date(2016,9,22);
+		var time=document.getElementById("time")
+//		[0] 求时间差   D2.getTime()-D1.getTime()
+//		[1] 毫秒转成秒数 / 1000
+//		[2] 秒 转成差多少天   秒/ 60*60*24=天
+//		[3] ds-(dd*60*60*24)/60*60=小时
+//		[4] ds-(dd*60*60*24)-(dh*60*60)/60
+//		[5] ds-(dd*60*60*24)-(dh*60*60)-dm*60
+		var dis=D2.getTime()-D1.getTime();
+		var ds=Math.floor(dis/1000);
+		var dd=Math.floor(ds/(60*60*24));
+		var dh=Math.floor((ds-(dd*60*60*24))/(60*60))
+		var dm=Math.floor((ds-(dd*60*60*24)-(dh*60*60))/60);
+	
+		var dS=ds-(dd*60*60*24)-(dh*60*60)-(dm*60);
+			time.innerHTML=dd+"天"+dh+"时"+dm+"分"+dS+"秒";
+		}
+		setInterval(function(){mytime()},1000)
+		
+		
+		</script>
+	</body
+</html>

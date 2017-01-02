@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>Cookie��洢</title>
+
+<script>
+function setCookie(name,value,day,path){
+	var cookieText=name+"="+value;
+	if(day){
+		var d=new Date();
+		cookieText+=";expires="+d.setDate(d.getDate()+day);
+	}
+	if(path){
+		cookieText+=";path="+path;
+	}
+	document.cookie=cookieText;	
+}
+//setCookie("age",18,7);
+
+function getCookie(name){
+	var start=0;
+	var end=0;
+	if(document.cookie.indexOf(name+"=")!=-1){
+		start=document.cookie.indexOf(name+"=");		
+		end=document.cookie.indexOf(";",start);	
+		if(end==-1){	end=document.cookie.lenght;	}
+	   return document.cookie.substring(start+name.length+1,end);
+	}		
+}
+
+function unsetCookie(name){
+	document.cookie=name+"=;expires="+new Date(0);
+}
+alert(document.cookie);
+setCookie("name","mumu",2000);
+setCookie("age","180",2000);
+alert(document.cookie);
+</script>
+</head>
+<body>
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>webrx-title</title>
+		<meta name="description" content="简介">
+		<meta name="keywords" content="关键字">
+
+	</head>
+
+	<body>
+		<ul id="list">
+			<!--	<li>
+    <p><span>name</span><span>shenmiweiyi</span></p>
+      <p><span>QQ</span><span>306451129</span></p>
+    </li>
+    <li></li>-->
+		</ul>
+<script>
+//		var pe={"age":20,"name":"mumu","leg":2};
+//var str=JSON.stringify(pe);
+//alert(str);
+var txt = '{"age":"18"}';
+//var obj=JSON.parse(txt);
+//alert(obj.age);
+var obj=eval("("+txt+")");
+alert(obj.age);
+
+</script>
+	</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body{ text-align: center;}
+			
+		</style>
+		<script>
+		
+
+
+//[1] 循环初始条件      i=1		  
+//[2] 循环的结束条件   i<=1000	
+//[3] 循环的操作	特需的 数 6个换行	 
+//[4] 循环的变更	i++；
+
+var  num=0;//特殊的数开始是0个
+for(var i=1;i<=10000;i++){
+	if(i%3==0&&i%5==0&&i%7==0){//被357整除
+		num++;
+		document.write(i+" ");//输出数
+		if(num%6==0){//有6个就换个行
+			document.write("<br/>");
+		}
+	}
+	
+}
+
+
+
+
+
+	</script>
+	</head>
+	<body>
+	
+	</body>
+</html>

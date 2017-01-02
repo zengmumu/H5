@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>数组</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="简介">
+<meta name="keywords" content="关键字">
+<style>
+</style>
+<body>
+<script>
+//var myname="mumu";
+//alert(myname);
+//用一 个变量存储  小明  小红 老王
+//var names=new Array("小明","小红","老王");
+//alert(names[1]);
+/*var names=new Array();
+names[0]="小明";
+names[1]="小红";
+names[2]="老王";
+alert(names[2]);*/
+
+/*var names=new Array(3);//里面可以有3个元素
+names[0]="小明";
+names[1]="小红";
+names[2]="老王";
+alert(names[0]);*/
+//var names=["小明","小红","老王"];
+//alert(names[2]);
+//---------------------------------------数组的值得访问
+//alert(names[4]);//undefined
+//---------------------------------------数组值de类型
+//var arr=["小明","小红","老王",128,false,null,undefined,"good"];
+//alert(arr[5]);
+//---------------------------------------数组值的长度 
+//alert(arr.length);
+//arr[250]="我是大傻瓜";
+//alert(arr.length);
+//---------------------------------------数组值的遍历
+/*for(var i=0;i<arr.length;i++){
+	alert(arr[i]);
+}*/
+/*for(var k in arr){
+	alert(arr[k]);
+}*/
+
+//--从后面删 后面加
+/*var re=arr.pop();
+alert(arr);
+alert(re);*/
+/* var re=arr.push("god is a girl","you are bad");
+console.log(arr);
+console.log(re);*/
+//--从前面删 前面加
+/*var re=arr.shift();
+console.log(arr);
+console.log(re);*/
+/*var re=arr.unshift("I am first");
+console.log(arr);
+console.log(re);*/
+//---从中间删除[添加]
+//var arr=["小明","小红","老王",128,false,null,undefined,"good"];
+/*var re=arr.splice(2,2,"道静","静晓");
+console.log(arr);
+console.log(re);*/
+/*var re=arr.slice(1,4);
+console.log(re);
+console.log(arr);*/
+// 数组的排序
+var arr=["acd","sting","bigger","today","call","mon","dis"];
+var  arr2=[25,12,1,15,35,85,150];
+//  arr.sort();
+//  console.log(arr);
+
+/*arr2.sort(
+ 	function(a,b){
+ 		if(a>b){return 1}else{ return -1}
+ 	});//从小到大排序*/
+ 
+/*arr2.sort(
+ 	function(a,b){
+ 		if(a<b){return 1}else{ return -1}
+ 	});//从小到大排序*/
+// 	arr2.reverse();
+//
+//
+//console.log(arr2)
+</script>
+</body>
+</html>

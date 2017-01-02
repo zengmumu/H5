@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box {
+				height: 50px;
+				width: 50px;
+				position: absolute;
+				top: 50px;
+				background-color: yellow;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<p id="pp"></p>
+		<script>
+	var		fileName="this.is a file.png";
+	//[1] 取到最后一个点的位置
+	//[2] 从点的位置截取到最后
+	var 	po=fileName.lastIndexOf(".");
+				
+	var		type=fileName.substr(po+1);
+	alert(type);
+	
+		</script>
+
+	</body>
+
+</html>

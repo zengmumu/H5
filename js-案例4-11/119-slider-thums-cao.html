@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		*{ margin: 0; padding: 0;}
+		ul,ol{list-style: none;}
+		.slider{-webkit-transition:all 1s; transition: all 1s;}
+		.slider.hide{ opacity: 0;}
+		.s1{ height:150px ; width: 586px;}
+		.s1 li{position: absolute; left: 0; top: 0;}
+		.sliderWrap{position: relative; height:150px ; width: 586px;}
+		.ctrlUl{ position: absolute; right: 10px; bottom:10px}
+		.ctrlUl li{ display: inline-block; width: 20px; height: 20px; text-align: center; background-color: #CCCCCC; margin-right: 5px; cursor: pointer;}
+		</style>
+		<script>
+			function slider(obj){
+			  this.opt=obj;
+			 this.dom=document.getElementsByClassName(this.opt.dom)[0];
+			 this.sliders=this.dom.getElementsByClassName("slider");
+			 this.controls=[];//控制点
+			 this.index=0;//现在是第几张
+			 this.inter=this.opt.inter//间隔时间	
+			 this.len=this.sliders.length;//图片的个数
+			 this.wrap;//包裹器
+			 this.old;//过去显示的slide
+			 this.stopId;// 停止auto 控制方式
+			 this.thumbs;// 小点
+			  this.init();
+			  this.auto()
+			  this.bindDom();
+			}
+			//初始化
+			slider.prototype.init=function(){
+				//包裹div				
+				//创造一个ul（包括控制小点的）				
+				//创建controls				
+			}
+			////转到第几页
+			slider.prototype.goslider=function (num){
+				//				
+			}
+			//自动播放
+			slider.prototype.auto=function(){
+			
+			}
+			//做事件绑定
+			slider.prototype.bindDom=function(){				
+				//---------控制小点添加事件
+				
+			  //---------控制小点添加事件
+			}
+			
+		window.onload=init;
+		function init(){
+			new slider({dom:"s1",inter:2000,mode:"fade"});
+		}
+		</script>
+	</head>
+	<body>
+	<ul class="s1">
+		<li class="slider"><a href=""><img src="images/ads/1.gif" alt="" /></a></li>
+		<li class="slider"><a href=""><img src="images/ads/2.gif" alt="" /></a></li>
+		<li class="slider"><a href=""><img src="images/ads/3.gif" alt="" /></a></li>
+		<li class="slider"><a href=""><img src="images/ads/4.gif" alt="" /></a></li>
+		<li class="slider"><a href=""><img src="images/ads/5.gif" alt="" /></a></li>
+	</ul>
+	</body>
+</html>

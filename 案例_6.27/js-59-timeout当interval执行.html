@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box {
+				height: 50px;
+				width: 50px;
+				position: absolute;
+				top: 50px;
+				background-color: yellow;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<button id="btn">我是一个好按钮</button>
+		<button id="third">有我在,你永远也出不来</button>
+
+		
+
+		<script>
+		var btn=document.getElementById("btn");
+		var timeId;
+		btn.onclick=doit;
+		
+		function doit(){
+			
+			setTimeout(function(){
+				alert("迟来的爱");
+				doit();
+			
+			},1500);
+		}
+		
+	
+		</script>
+
+	</body>
+
+</html>

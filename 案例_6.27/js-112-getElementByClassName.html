@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+</head>
+<body>
+	<h3 class="mya"></h3>
+	<p class="good mya">this is p</p>
+	<p> 我是间谍没有class 更没有mya</p>
+	<div class="container right">this is div</div>
+	<span class="mya test left">wo shi left</span>
+	<script>
+//		document.getElementsByClassName()
+//      ie8以上的浏览器支持
+//		className获取该元素的所有class名
+//		indexOf() 检测是否含有字符串
+//      arr.push()添加一个元素
+
+//解决办法
+//1,document.getElementsByTagName("*") 获取的所有元素
+//2,让每一个元素的className 来对比  要查找的class
+//3，如果返回值为非-1   存到数组里面
+//4，最后返回这个数组
+	document.getElementsByClassName=function (str){
+		var all=document.getElementsByTagName("*");
+		var arr=[];
+		for(var i=0;i<all.length;i++){
+			if(all[i].className.indexOf(str)!=-1){
+				arr.push(all[i]);
+			}
+		}		
+		
+		return arr;
+	}
+	
+	var myas=document.getElementsByClassName("mya");
+	for(var i=0;i<myas.length;i++){
+		myas[i].style.color="red";
+	}
+
+		
+		
+	</script>
+	
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			p{  display: none;}
+		</style>
+	</head>
+	<body>
+		<p>this is a p</p>
+		<script>
+			var p=document.getElementsByTagName("p")[0];
+			
+			function getStyle(elem,name){
+				if(elem.currentStyle){
+										
+					return elem.currentStyle[name];	
+				}
+				else if(document.defaultView&& document.defaultView.getComputedStyle){
+					return document.defaultView.getComputedStyle(elem,null)[name]
+				}else{
+					
+				}
+			}
+		function getHeight(elem){//获取元素的实际高
+			
+			var old=getStyle(elem,"display");//先存一个元素的display属性
+			if(old=="none"){//如果元素是个隐藏的元素 
+				elem.style.display="block";//先显示
+				var h=getStyle(elem,"height");//再获取高
+				alert(h);
+				if(h=="auto"){//如果是ie浏览器，
+				h=elem.offsetHeight;//用它的offsetHeight
+				}
+				elem.style.display=old;//在隐藏
+				
+				return h;//再返回值
+			}else{
+			return	getStyle(elem,"height");//返回高
+			}
+		}
+		
+//		alert(p.offsetHeight);
+		
+		</script>
+	</body>
+</html>

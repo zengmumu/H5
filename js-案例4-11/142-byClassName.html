@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<style>
+		p{ background-color: yellow; width: 240px;  width: 200px; height: 50px ; overflow: scroll;}
+		.active{ color: red; border:1px solid red;}
+	</style>
+	
+<script>
+	function byClass(name){
+		if(document.getElementsByClassName){
+			return document.getElementsByClassName(name);
+		}
+		var arr=[];//要返回的元素
+		var reg=new RegExp("(^|\\s+)" + name + "(\\s+|$)");
+		var elems=document.getElementsByTagName("*");
+		for(var i=0;i<elems.length;i++){
+			if(reg.test(elems[i].className)){
+				arr.push(elems[i]);
+			}
+		}
+		return arr;
+	}
+	function removeClass(elem,name){
+		
+		var reg=new RegExp("(^|\\s+)" + name + "(\\s+|$)");
+	
+		if(reg.test(elem.className)){
+			
+			elem.className=elem.className.replace(name,'');
+		}
+	}
+	function addClass(elem,name){
+		elem.className+=" "+name;
+	}
+	function toggleClass(elem,name){
+		var reg=new RegExp("(^|\\s+)" + name + "(\\s+|$)");
+		var s=elem.className;
+	
+		if(reg.test(s)){
+		
+		removeClass(elem,name);
+		}else{
+		addClass(elem,name);	
+		}
+	}
+	window.onload=init;	
+	//className里面包含 mys  并且前面有空格或者是开头 后面有空格或者是结尾
+	function init(){
+//	var mys=document.getElementsByClassName("mys");
+	var mys=byClass("mys");
+	for(var i=0;i<mys.length;i++){
+		mys[i].onclick=function(){
+			toggleClass(this,"active");
+		}
+		}
+	}
+	
+</script>
+</head>
+<body>
+			<p class="mys ymysous">this is  a p</p>
+						
+			<div class="mys">this is my s</div>
+			<div class="love mys">this is you s</div>
+</body>
+</html>

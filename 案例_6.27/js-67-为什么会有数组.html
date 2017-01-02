@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box {
+				height: 50px;
+				width: 50px;
+				position: absolute;
+				top: 50px;
+				background-color: yellow;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<h1>WHY ARRAY</h1>
+		
+		</form>
+		<script>
+//		var  str=new String("我爱我的祖国");
+		var   str="我爱我的祖国";
+//		alert(str[1]);
+//		var arr=new Array("我爱",100,"真理",true,str);
+		var arr=["我爱",100,"真理",true,str];
+//		alert(arr[2])
+//		alert(arr.length);
+//		alert(arr[3]);
+//		arr[3]=1200;
+//		alert(arr);
+		arr[1000]="我是第一万个";
+//		alert(arr.length);
+		/*for(var i=0;i<arr.length;i++){
+			console.log(arr[i]);
+		}
+		*/
+		for(var k in arr){
+			console.log(arr[k]);
+		}
+		var arr2=[18,11,2,3,9,14];
+		function fn(a,b){
+			if(b-a>0){return 1}else{return -1}
+		}
+		arr2.sort(fn);
+		alert(arr2);
+		</script>
+	</body>
+
+</html>

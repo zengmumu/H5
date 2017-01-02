@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>webrx-title</title>
+<meta name="description" content="简介">
+<meta name="keywords" content="关键字">
+
+
+<body>
+<div id="box">
+	<input type="text"  id="show"/>
+	<input type="button" value="1" id="n1" />
+	<input type="button" value="2" id="n2" />
+	<input type="button" value="3" id="n3" />
+	<input type="button" value="4"  />
+	<input type="button" value="5"  />
+	<input type="button" value="6"  />
+	<input type="button" value="7"  />
+	<input type="button" value="8"  />
+	<input type="button" value="9"  />
+	<input type="button" value="0"  />
+	<input type="button" value="." id="ndot" />
+	<input type="button" value="+" id="nplus" />
+	<input type="button" value="-" id="nminus" />
+	<input type="button" value="*" id="" />
+	<input type="button" value="/" id="" />
+	<input type="button" value="=" id="equal" />
+	<input type="button" value="c" id="c" />
+		<input type="button" value="back" id="b" />
+</div>
+
+<script >
+var box=document.getElementById("box");
+var show=document.getElementById("show")
+var equal=document.getElementById("equal")
+var c=document.getElementById("c")
+var b=document.getElementById("b")
+var inputs=box.getElementsByTagName("input");
+
+for(var i=0;i<inputs.length;i++){
+	if(inputs[i]==equal||inputs[i]==c||inputs[i]==b){continue;}
+	inputs[i].onclick=showNum;
+	
+}
+function showNum(){
+	show.value=show.value+this.value;
+}
+equal.onclick=function(){
+	show.value=eval(show.value);
+}
+c.onclick=function(){
+	show.value="";
+}
+b.onclick=function(){
+	var str=show.value;
+	show.value=str.substr(0,str.length-1);
+	//78956
+	  //0-4
+	   //0-length-1
+}
+//eval 会把里面的字符串当javascript 代码执行  字符串转javascript
+</script>
+</body>
+</html>

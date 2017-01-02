@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>二维数组</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="简介">
+<meta name="keywords" content="关键字">
+<style>
+</style>
+<body>
+<script>
+//二维数组的创建于访问
+
+var arr=["good",["papa","mama","iphone"],"body","boy","girl"];
+//alert(arr[1][2]);
+for(var k in arr){
+//	console.log(arr[k]);
+//	console.log(typeof(arr[k]));
+if(typeof(arr[k])=="object"){
+	var arr_in=arr[k];
+	for(var j in arr_in){
+		console.log("---"+arr_in[j]);
+	}
+	
+}else{
+	console.log(arr[k]);
+}
+
+}
+
+</script>
+</body>
+</html>

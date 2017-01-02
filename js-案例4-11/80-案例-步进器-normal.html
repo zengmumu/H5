@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>步进器-normal</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="简介">
+<meta name="keywords" content="关键字">
+<style>
+ul,ol{ list-style: none;}
+li{ margin-bottom: 35px;}
+</style>
+<body>
+	<ul>
+		<li>
+			<div class="steper">
+				<input type="text" class="num" value="0" />
+				<input type="button" value="+" class="plus" />
+			</div>
+		</li>
+		<li>
+			<div class="steper">
+				<input type="text" class="num" value="0" />
+				<input type="button" value="+" class="plus" />
+			</div>
+		</li>
+	</ul>
+
+<script>
+	// 当单机steper 里面的plus 让steper 里面的num 加1
+	var step=document.getElementsByClassName("steper")[0];
+	var plus=step.getElementsByClassName("plus")[0];
+	var num=step.getElementsByClassName("num")[0];
+	plus.onclick=fn_plus;
+	
+	function fn_plus(){
+		var val=parseInt(num.value);
+		num.value=val+1;
+		
+	}
+	
+</script>
+
+
+</body>
+
+
+</html>

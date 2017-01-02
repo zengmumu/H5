@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			p{width: 50%; border:5px solid red;height: 50px; }
+			
+		</style>
+	</head>
+	<body>
+		<p>this is a p</p>
+		<script>
+			var p=document.getElementsByTagName("p")[0];
+			    //设置css
+//			    p.style.height="150px";
+//			    alert(p.style.width)
+//				alert(p.currentStyle.width)
+//				alert(document.defaultView.getComputedStyle(p,null).width)
+
+
+//			获取元素的真实样式(电脑运算出的结果样式)
+			function getStyle(elem,name){
+				if(elem.currentStyle){
+										
+					return elem.currentStyle[name];	
+				}
+				else if(document.defaultView&& document.defaultView.getComputedStyle){
+					return document.defaultView.getComputedStyle(elem,null)[name]
+				}else{
+					
+				}
+			}
+			alert(getStyle(p,"borderWidth"))
+		</script>
+	</body>
+</html>

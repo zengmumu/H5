@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			*{ margin: 0; padding: 0; box-sizing: border-box;}
+			body{ padding: 50px;}
+			.acc1{ width: 500px;}
+			.acc_title{ height: 35px; line-height: 35px; border: 1px solid #BBBBBB; text-align: center;}
+			.acc_title.active{ background-color:#f80; color: #FFF;}
+			.acc_content{ height: 350px;border: 1px solid #BBBBBB;transition:all .5s; -webkit-transition:all .5s; overflow: hidden; }
+			
+		</style>
+		<script>
+//		className 在ie8以下的浏览器不兼容
+		//1，缩小范围   new According
+		//2， According 对象  属性
+//		     2.1 titles 被单击的标题集合
+//		     2.2 contents 显示div 元素的集合
+//		     2.3 index 默认的显示第几个div
+		//3. 单击 titles 里面某个H3 执行  slide
+//		     3.1 单击的第几个h3 num
+//           3.2 让index 对应的h3 取消 active
+//           3.3 让 num 对应的h3 添加 active
+//			 3.4 让 index 对应的 div 隐藏
+//			 3.5 让 num对应的 div 显示
+	function Acc(option){
+		var dom=document.getElementById(option);//限定的范围
+		var titles=dom.getElementsByClassName("acc_title");
+		var contents=dom.getElementsByClassName("acc_content");
+		var index=0;
+			init();
+		//默认设置
+		function init(){
+			titles[index].className="acc_title active";
+			for(var i=0;i<contents.length;i++){
+			contents[i].style.display="none";	
+			}
+			contents[index].style.display="block";
+		}
+		//3. 单击 titles 里面某个H3 执行  slide
+		for(var i=0;i<titles.length;i++){
+			(function(){
+				var j=i;
+				titles[j].onclick=function(){
+				titles[index].className="acc_title";
+				titles[j].className="acc_title active";
+				contents[index].style.display="none";
+				contents[j].style.display="block";
+				index=j;//更新变量 设置上一个 index 赋值为num
+			}//click ed
+				
+				
+			})()
+			
+		}
+		
+		/*function slide(){
+//		 3.1 单击的第几个h3 num
+		 var num;
+			 for(var i=0;i<titles.length;i++){
+				if(titles[i]==this){
+					num=i;
+					break;
+				}
+			}//for ed
+			
+			
+		}//slide ed*/
+		
+	}
+	window.onload=init;
+	
+	function init(){
+		new Acc("acc1");
+		
+	}
+			
+		</script>
+	</head>
+	<body>
+			<div class="acc1" id="acc1">
+				<h3 class="acc_title">标题1</h3>
+				<div class="acc_content">内容1</div>
+				<h3 class="acc_title">标题2</h3>
+				<div class="acc_content">内容2</div>
+				<h3 class="acc_title">标题3</h3>
+				<div class="acc_content">内容3</div>
+			</div>
+	</body>
+</html>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>webrx-title</title>
+<meta name="description" content="简介">
+<meta name="keywords" content="关键字">
+
+</head>
+
+<body>
+<ul id="list">
+<!--<li>name:Bob</li>
+<li>age:40</li>-->
+</ul>
+<script >
+
+var list=document.getElementById("list");
+var str="";//来存取循环出来的临时 字符串
+var data = {'name':'Bob','age':40};
+for(var k in data){
+	str+="<li>"+k+":"+data[k]+"</li>";
+	
+}
+list.innerHTML=str;
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	
+</head>
+<body>
+
+<h1 id="myh" class="youh" title="爱谁谁谁">我最大我是和H1</h1>
+<script>
+//[1]选择到 h1
+	//[a] id选择器
+	//var elem=document.getElementById("myh");
+	//[b] 标签选择器
+	//var elem=document.getElementsByTagName("h1")[0]
+	//[c] class选择器
+	var elem=document.getElementsByClassName("youh")[0]
+//[2]添加单击事件
+      elem.onclick=function (){
+      	alert(this.title);
+      }
+      //选择到elem（h1）单击执行执行一段代码function（）{}
+      //弹出他的title属性
+	
+	
+</script>
+
+
+
+</body>
+</html>

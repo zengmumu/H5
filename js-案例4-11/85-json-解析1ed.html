@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>webrx-title</title>
+<meta name="description" content="简介">
+<meta name="keywords" content="关键字">
+
+
+<body>
+<ul id="list">
+  <!--<li>Bob (40)</li>  
+    <li>Frank (15)</li>  
+    <li>Bill (65)</li>  
+    <li>Robert (24)</li>  -->
+</ul>
+<script >
+
+var data = [  
+      {'name':'Bob','age':40},  
+      {'name':'Frank','age':15},  
+      {'name':'Bill','age':65},  
+      {'name':'Robert','age':24}  
+]; 
+var str="";
+//for(var k in data){
+//	 var obj=data[k];
+//		str+="<li>"+obj.name+"("+obj.age+")</li>";
+//}
+
+for(var k in data){
+	  var obj=data[k];//获取数组里面的对象
+	  str+="<li>";//每一个对象用li 包括
+	   for(var j in obj){//循环对象里面的属性
+	   	
+	   	if(j=="age"){//如果属属性是age 则在外面加（）；
+	   	str+="("+obj[j]+")";	
+	   	}else{//如果属性不是age 则直接加值；
+	   		str+=obj[j];
+	   	}
+	   	
+	   }
+	  	
+	  str+="</li>"
+	  
+	
+}
+
+
+
+
+var list=document.getElementById("list");
+list.innerHTML=str;
+
+
+
+</script>
+</body>
+</html>

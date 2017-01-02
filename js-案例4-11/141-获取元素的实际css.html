@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<style>
+		p{ background-color: yellow; width: 240px;  width: 200px; height: 50px ; overflow: scroll;}
+	</style>
+	<script>
+/*		window.onload=init;
+			function byClass(name){
+				var arr=[];
+				var reg=new RegExp("(^|\\s)"+name+"($|\\s)");
+				           
+				//className里面必须有 name 前面有空格或者是开头  后面有空格或者是结尾
+				var elems=document.getElementsByTagName("*");
+				for(var i=0;i<elems.length;i++){
+				
+					if(reg.test(elems[i].className)){
+						
+						arr.push(elems[i]);
+					}
+				}
+				return arr;
+				
+			}
+			function removeClass(elem,name){
+				var reg=new RegExp("(^|\\s)"+name+"($|\\s)");
+				if(reg.test(elem.className)){
+					elem.className=elem.className.replace(reg,"");
+				}
+			}
+			function addClass(elem,name){
+				elem.className=" "+name;
+				
+			}*/
+//		function init(){
+//			var p=document.getElementsByTagName("p")[0];
+//			var h=document.defaultView.getComputedStyle(p,null).lineHeight;
+//			var h=p.currentStyle.lineHeight;
+//			var h=p.style.lineHeight;
+//			alert(h);
+//			alert(p.offsetHeight);
+//			alert(document.defaultView.getComputedStyle(p,null).paddingTop)
+
+//--------------------clas
+//			var mys=byClass("mys");
+// 			var mys=document.getElementsByClassName("mys");
+//			alert(mys[0].innerHTML);
+//		}
+		
+	</script>
+<script>
+	window.onload=init;
+	function init(){
+		var p=document.getElementsByTagName("p")[0];
+		//1 style 行内样式
+//		var h=p.style.height;
+		//W3C 获取元素的实际样式
+//		var h=document.defaultView.getComputedStyle(p,null).height;
+		//IE 获取元素的实际样式
+		
+//      var h=p.currentStyle.height;
+		//元素的高包括滚动条
+//		var h=p.offsetHeight;
+	//元素的高 不包括滚动条
+		var h=p.clientHeight;
+		
+		alert(h);
+	}
+	
+</script>
+</head>
+<body>
+			<p class="mys yous">this is  a pthis is  a pthis is  a pthis is  a pthis is  a pthis is  a pthis is  a pthis is  a pthis is  a pthis is  a pthis is  a pthis is  a pthis is  a pthis is  a pthis is  a pthis is  a pthis is  a pthis is  a pthis is  a pthis is  a pthis is  a pthis is  a pthis is  a pthis is  a pthis is  a pthis is  a pthis is  a pthis is  a p</p>
+			<div class="mys">this is my s</div>
+			<div class="love mys">this is you s</div>
+</body>
+</html>

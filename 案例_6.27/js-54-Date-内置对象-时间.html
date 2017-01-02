@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>js</title>
+	<style>
+	</style>
+</head>
+<body>
+	
+	<br />
+	<br />
+	<br />
+	<h2>距离2016年10月22日的倒计时：<span id="down"></span></h2>
+	<h2>距离2016年10月1日的倒计时：<span id="down2"></span></h2>
+	<script type="text/javascript">
+function lessTime(location,date){
+	function times(){
+		
+		var date1=new Date();
+		var date2=date;
+			//转变成秒
+		var dis=(date2.getTime()-date1.getTime())/1000;
+		var d2=parseInt(dis/86400);
+		var h2=parseInt((dis-d2*86400)/3600);
+		var m2=parseInt((dis-d2*86400-h2*3600)/60);
+		var s2=parseInt(dis-d2*86400-h2*3600-m2*60);
+		location.innerHTML=d2+"天"+h2+"时"+m2+"分"+s2+"秒";		
+	}
+		
+		setInterval(function(){times();},1000);
+	}	
+//倒到哪一天，在哪儿显示
+	var down=document.getElementById("down");
+	var t=new Date(2016,09,22);
+	new lessTime(down,t);
+	var down2=document.getElementById("down2");
+	var t2=new Date(2016,09,1);
+	new lessTime(down2,t2);
+	</script>
+</body>
+</html>

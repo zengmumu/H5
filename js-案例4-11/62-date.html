@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p id="time"></p>
+		<script type="text/javascript">
+		var time=document.getElementById("time");
+/*	function getTime(){
+		var D=new Date();
+		
+		var y=D.getFullYear();
+		var m=D.getMonth();
+		var d=D.getDate();
+		var H=D.getHours();
+		var M=D.getMinutes();
+		var S=D.getSeconds();
+		time.innerHTML=y+"年"+(m+1)+"月"+d+"日"+" "+H+":"+M+":"+S;
+	}*/
+function getTime(){
+		var D=new Date();		
+		
+		time.innerHTML=D.toLocaleDateString()+D.toLocaleTimeString();
+	}
+	
+setInterval(function(){getTime();},1000)
+		</script>
+	</body
+</html>

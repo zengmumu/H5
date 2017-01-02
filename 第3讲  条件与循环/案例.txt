@@ -1,0 +1,140 @@
+1  成绩平均数
+
+2  表格A
+2  表格B
+
+3  9*9A
+
+4  9*9B
+
+5 break  错误停止
+6 continue  继续
+
+
+第8 讲
+
+   窗口宽 window.innerWidth||document.documentElement.clientWidth;
+	  window.innerHeight||document.documentElement.clientHeight;
+       多少秒自动返回 
+	返回 前进 去那一页
+	history.back()forward()go()
+
+	location.reload() 刷新		window.location.href	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+window.addElementListener("load",init,false);
+function(){
+var name=document.getElementsByTagName("p")[0];
+var name2=document.getElementsByTagName("p")[1];
+   name.onclick=function(){alert("www");}
+   name2.onclick=function(){alert("mmm");}
+
+}
+</script>
+
+<p>this is a pragrapha</p>
+<p> just test</p>
+
+
+通过id获得元素
+document.getElementById("")
+
+通过className获得元素
+document.getElementsByClassName("")
+通过标签获得元素
+document.getElementsByTagName("")
+转换为整数
+parseInt();
+parseFloat();
+
+
+页面中弹出一个窗口
+alert()
+
+向页面中写入内容
+
+document.write();
+
+当窗口加载完毕后执行init函数
+a  window.addEventListenter("load",init,flase);
+b  window.onload=init;
+
+变量？
+变量的命名规则
+变量的声明
+
+运算符号
++ - * / %  
+a++
+a--
+a+=10;
+//a=a+10；
+a-=10;
+a*=10;
+a/=10;
+
+
+
+比较符号
+>< >= <= == ===  !=
+
+逻辑
+且&&
+或||
+非！
+
+
+类型转换
+
+ 数字转 布尔
+ ----比0大的为true 小于等于0  false
+ 字符串转 布尔
+---空  false    非空 true
+
+ 布尔转数字
+- true  1  false 0
+ 字符串转数字
+-如果是0-9数字组成转换为 数字  否则  NaN
+
+
+--布尔转字符
+  true “true” false “false”
+
+--数字转字符
+ 1223   “123”
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

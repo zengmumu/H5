@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+
+	<body>
+		<p>
+			<input type="text" id="person" />
+			<button id="cai">猜一下</button>
+		</p>
+		<script type="text/javascript">
+			var com = Math.ceil(Math.random() * 100);
+			var cai = document.getElementById("cai");
+			var person = document.getElementById("person");
+			cai.onclick = function() {
+				var val = parseInt(person.value);
+				if (val > com) {
+					alert("大了");
+				} else if (val < com) {
+					alert("小了");
+				} else {
+					alert("恭喜你对了");
+				}
+			}
+		</script>
+	</body>
+
+</html>

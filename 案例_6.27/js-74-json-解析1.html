@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>webrx-title</title>
+		<meta name="description" content="简介">
+		<meta name="keywords" content="关键字">
+
+	</head>
+
+	<body>
+		<ul id="list">
+			<li>
+				<!--<p><span>name</span><span>shenmiweiyi</span></p>
+				<p><span>QQ</span><span>306451129</span></p>-->
+			</li>
+		</ul>
+		<script>
+			var user = {
+				"employees": [{
+					"name": "蔡恒",
+					"QQ": 306451129,
+					"email": "shenmiweiyi@163.com",
+					"address": [{
+						"City": "ZhengZhou",
+						"ZipCode": "450000"
+					}, {
+						"City": "BeiJing",
+						"ZipCode": "100000"
+					}]
+				}, {
+					"name": "曾庆林",
+					"QQ": 254892313,
+					"email": "kehao@163.com",
+					"address": [{
+						"City": "ShangHai",
+						"ZipCode": "200000"
+					}, {
+						"City": "GuangZhou",
+						"ZipCode": "510000"
+					}]
+				}]
+			}
+			var str="";
+			for(var k in user.employees){
+				var person=user.employees[k];
+				str+="<li>";
+					for(var j in person){
+						str+="<p>"
+						
+						
+						if(j=="address"){
+							str+=j+":"+person[j][0].City;
+							
+						}else{
+						}else{
+							str+=j+":"+person[j];	
+						}
+						str+="</p>"
+					}
+				str+="</li>";
+			}
+			var list=document.getElementById("list");
+			list.innerHTML=str;
+		</script>
+	</body>
+		
+</html>

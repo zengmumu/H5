@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>使用Document方法</title>
+<style type="text/css">
+body{font-size:14px;
+     line-height:30px;
+	 }
+input{margin:1px;
+      width:90px;
+	  font-size:12px;
+	  padding:0;
+	  }
+#node{
+	width:100px;
+	font-size:24px;
+	font-weight:bold;
+	float: left;
+	}
+</style>
+<script  type="text/javascript">
+function changeNode(){
+	var node=document.getElementById("node");
+	if(node.innerHTML=="新浪"){
+		node.innerHTML="搜狐";
+	}else{
+		node.innerHTML="新浪";
+	}
+	
+}
+
+function showInput(){
+	var s=document.getElementById("s");
+	var inputs=document.getElementsByTagName("input");
+	var str="";
+	for(var i=0;i<inputs.length;i++){
+		str+=inputs[i].value+"<br/>";
+	}
+	s.innerHTML=str;
+}
+function showSeason(){
+	var s=document.getElementById("s");
+	var season=document.getElementsByName("season");
+	var str="";
+	for(var j=0;j<season.length;j++){
+		str+=season[j].value+"<br>";
+	}
+	s.innerHTML=str;
+	
+}
+</script>
+</head>
+
+<body>
+<div id="node">新浪</div>
+<input name="b1" type="button" value="改变层内容" onclick="changeNode()" /><br />
+
+<br /><input name="season" type="text" value="春" />
+<input name="season" type="text" value="夏" />
+<input name="season" type="text" value="秋" />
+<input name="season" type="text" value="冬" />
+<br /><input name="b2" type="button" value="显示input内容" onclick="showInput()"  />
+<input name="b3" type="button" value="显示season内容" onclick="showSeason()"  />
+<p id="s"></p>
+</body>
+</html>

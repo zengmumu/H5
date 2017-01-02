@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+
+	</head>
+
+	<body>
+		<h1>内置对象-Date</h1>
+		
+		<p>现在时间为: <span id="time"></span></p>
+	
+	<script>
+	var  time=document.getElementById("time");
+
+function showTime(){
+var date=new Date();
+var y=date.getFullYear();
+var m=date.getMonth();
+var d=date.getDate();
+var day=date.getDay();
+var H=date.getHours();
+var M=date.getMinutes();
+var S=date.getSeconds();
+
+time.innerHTML=y+"年"+(m+1)+"月"+d+"日"+H+": "+M+": "+S;
+console.log(date);
+}
+
+setInterval(function(){
+	showTime();
+},1000)
+		
+	</script>
+	</body>
+
+</html>

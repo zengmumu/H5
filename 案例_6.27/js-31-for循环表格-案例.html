@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+		
+// 打印表格 9行9列
+
+//[1] 循环初始条件		  
+//[2] 循环的结束条件  	
+//[3] 循环的操作		 
+//[4] 循环的变更
+//左边 j	右边i
+//1X1=1
+//1X2=2	2X2=4
+//1X3=3	2X3=6	3x3=9
+//1X4=4	2x4=8	3X4=12	4X4=16
+//打印9个td
+//99乘法表   左边j<=右边的i
+
+document.write('<table border="1" width="900" align="center">');
+	for(var i=1;i<=9;i++){
+		document.write('<tr>');
+		
+				for(var j=1;j<=9;j++){
+					document.write("<td>");
+					if(j<=i){
+						document.write(j+"X"+i+"="+i*j);
+					}
+					document.write("</td>");
+				}
+		
+		document.write('</tr>');
+	}
+document.write('</table>');
+
+//当使用两层for循环的时候
+//外面一层代表hang
+//里面一层代表列
+//在里面for循环里面可以访问外循环的变量i
+	</script>
+	</head>
+	<body>
+	<!--<table border="1" width="900" align="center">
+		<tr>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+		</tr>
+		<tr>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+		</tr>
+		<tr>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+		</tr>
+		<tr>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+		</tr>
+		<tr>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+		</tr>
+		<tr>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+		</tr>
+		<tr>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+		</tr>
+		<tr>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+		</tr>
+		<tr>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+			<td>abc</td>
+		</tr>
+	</table>-->
+	</body>
+</html>

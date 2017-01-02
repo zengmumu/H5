@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+
+	</head>
+
+	<body>
+		<h1>多个参数-求平均值</h1>
+		<script>
+		function avg(a,b){
+//			alert("平均数为:"+((a+b)/2));
+//			alert(arguments.length); 参数的个数
+//		[1]求参数和
+		var total=0;
+		for(var i=0;i<arguments.length;i++){
+			total+=arguments[i];
+		}
+//		[2]和/arguments.length
+		alert("平均数为:"+total/arguments.length);
+			
+		}
+		
+		
+		avg(2,2,5,10000);
+		
+		</script>
+	</body>
+
+</html>

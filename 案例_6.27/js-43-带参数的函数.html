@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+	</head>
+	<body>
+	<h1>水果巴黎</h1>
+	<h2>点餐系统</h2>
+	<input type="button" value="苹果" onclick="zhazhi('苹果')" />
+	<input type="button" value="葡萄"  onclick="zhazhi('葡萄')" />
+	<input type="button" value="西瓜" onclick="zhazhi(this.value)" />
+	<script>
+	function zhazhi(fruit){
+		alert("一杯新鲜的"+fruit+"汁好了");
+	}
+
+	zhazhi("苹果")
+		
+	</script>
+	</body>
+</html>

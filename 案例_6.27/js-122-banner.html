@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<style>
+		*{margin: 0;
+		padding: 0;}
+		ul{list-style: none;}
+		.banner{ width: 1000px; height: 215px; margin: 50px auto; position: relative;}
+		.banner .content li{ position: absolute; left: 0; top: 0;  transition:opacity 1s;}
+		.thumnail{ position: absolute; right:50px; bottom: 50px; z-index: 100;}
+		.thumnail li{ height: 30px; width: 30px;text-align: center; line-height: 30px; background-color: rgba(100,100,0,.4); margin-bottom: 3px; cursor: pointer;}
+		.thumnail li:hover,.thumnail .active{ background-color: #f80; color:#fff;}
+	</style>
+	<script>
+		window.onload=init;
+		function init(){
+			new Slider("banner");
+		}
+		//单击第几个显示第几个
+		function Slider(opt){
+		var dom=document.getElementById(opt);
+		var content=dom.getElementsByClassName("content")[0];
+		var sliders=content.getElementsByTagName("li");
+		var thumnail=dom.getElementsByClassName("thumnail")[0];
+		var thums=thumnail.getElementsByTagName("li");
+		var index=0;
+			function init(){
+				for(var i=0;i<sliders.length;i++){
+					sliders[i].style.opacity=0;
+				}
+				sliders[index].style.opacity=1;
+			}
+			function goSlider(num){
+				alert("我切到第"+num+"张");
+				sliders[index].style.opacity=0;
+				thums[index].className="";
+				sliders[num].style.opacity=1;
+				thums[num].className="active";
+				index=num;
+			}
+			function auto(){}
+			function animate(){};
+			for(var i=0;i<thums.length;i++){
+				(function(){
+					var j=i;
+					thums[j].onclick=function(){
+						goSlider(j);
+					}
+				})()
+			}
+			
+		
+			
+		}
+		
+	</script>
+</head>
+<body>
+		<div class="banner" id="banner">
+			<ul class="content">
+				<li><img src="images/banner_1.jpg" alt="" width="100%" /></li>
+				<li><img src="images/banner_2.jpg" alt="" width="100%" /></li>
+				<li><img src="images/banner_3.jpg" alt="" width="100%" /></li>
+				<li><img src="images/banner_4.jpg" alt=""width="100%"  /></li>
+			</ul>
+			<ul class="thumnail">
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+			</ul>
+			
+		</div>
+		
+</body>
+</html>

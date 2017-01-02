@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body{}
+		</style>
+	</head>
+
+	<body>
+		<script>
+//		判断浏览器
+//		浏览器会有一个头信息  window.navigator.userAgent
+		// IE 会有 MSIE
+		// 谷歌 会有 chrome
+		var agent=window.navigator.userAgent;
+	     if(agent.indexOf("MSIE")!=-1){
+	     	alert("你用的是IE浏览器");
+	     }
+	      if(agent.indexOf("Chrome")!=-1){
+	     	alert("你是谷歌的忠实用户");
+	     }
+	        if(agent.indexOf("Firefox")!=-1){
+	     	alert("你可能是程序员用的是火狐");
+	     }
+		
+		
+		 </script>
+		
+	</body </html>

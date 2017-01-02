@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box {
+				height: 50px;
+				width: 50px;
+				position: absolute;
+				top: 50px;
+				background-color: yellow;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<p id="pp"></p>
+		<script>
+			var agent=window.navigator.userAgent;
+			pp.innerHTML=agent;
+			if(agent.indexOf("Chrome")!=-1){
+				alert("你用的是高大上的谷歌浏览Chrome");
+			}
+			if(agent.indexOf("MSIE")!=-1){
+				alert("你用个的浏览器是十年前的吧！");
+			}
+			if(agent.indexOf(" Trident/7.0")!=-1){
+				alert("你用个的浏览器IE");
+			}
+			
+				
+		</script>
+
+	</body>
+
+</html>

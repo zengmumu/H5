@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>webrx-title</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="简介">
+<meta name="keywords" content="关键字">
+<style>
+
+</style>
+
+
+
+<body>
+<ul id="myul">
+	<li> 我爱你第1次</li>
+	<li> 我爱你第2次</li>
+	<li> 我爱你第3次</li>
+	<li> 我爱你第4次</li>
+	<li> 我爱你第5次</li>
+</ul>
+<script>
+	//单击每一个li 弹出里面的内容；
+	var myul=document.getElementById("myul");
+	var lis=myul.getElementsByTagName("li");
+	for(var i=0;i<lis.length;i++){
+		lis[i].onclick=function(){alert(this.innerHTML);}
+	}
+
+</script>
+
+</body>
+</html>

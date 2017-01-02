@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{ margin: 0;
+			padding: 0;}
+			body{ color: #777; font: 14px/1.7em 微软雅黑;}
+			ul,ol{ 
+					list-style: none;
+				}
+				
+			body{
+					padding: 15px;
+				}
+			.item{ 
+				
+					border-bottom:1px solid #f6f6f6;
+					padding-left:15px ;
+					
+					position: relative;
+				}
+			.item>span{ 
+					display: block;
+					height: 43px;
+					line-height:43px ; 
+					position:relative;
+					}
+					
+			.arrow:after{
+				
+					content:"";
+					display: block;
+					height: 10px;
+					width: 10px;
+					border-top:1px solid red;
+					border-right:1px solid red;
+					position: absolute;
+					right: 25px;
+					top:50%;
+					transform-origin: center center;
+					transform: rotate(45deg) translate(0,-50%);
+					transition:all 0.3s;
+			}
+			.down:after{
+					transform: rotate(135deg) translate(-50%,50%);
+			}
+			.item .item:last-of-type{ border-bottom:none ; }
+			
+			
+		</style>
+	</head>
+	<body>
+		<ul class="lists">
+			<li class="item ">
+				<span class="arrow down">热水器</span>
+				<ul class="list subMenu" style="display: none;">
+					<li class="item"><span>item1</span></li>
+					<li class="item"><span>item2</span></li>
+					<li class="item"><span>item3</span></li>
+					<li class="item"><span>item1</span></li>
+				</ul>
+			</li>
+			<li class="item "><span class="arrow">空调</span></li>
+			<li class="item arrow"><span>空调</span></li>
+		</ul>
+		<script>
+			var arrow=document.getElementsByClassName("arrow")[0];
+			var subMenu=document.getElementsByClassName("subMenu")[0];
+			arrow.onclick=function(){
+				if(this.className=="arrow"){
+					this.className="arrow down"
+					subMenu.style.display="block";
+				}else{
+					this.className="arrow"
+					subMenu.style.display="none";
+				}
+			}
+			
+		</script>
+	</body>
+</html>

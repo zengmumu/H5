@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			*{ margin: 0; padding: 0;}
+			body{ padding: 50px;}
+			.acc1{ width: 500px;}
+			.acc_title{ height: 35px; line-height: 35px; border: 1px solid #BBBBBB; text-align: center;}
+			.acc_title.active{ background-color:#f80; color: #FFF;}
+			.acc_content{ height: 450px;border: 1px solid #BBBBBB;
+			-webkit-transition:all 0.5s; transition:all 0.5;
+			}
+			.acc_content.hide{ height: 0; border:0px solid transparent; overflow: hidden;}
+			
+		</style>
+		<script src="according.js"></script>
+		<script>
+			window.onload=init;
+			function init(){
+				new according(
+					{elem:"acc1",
+					 title:"acc_title",
+					 content:"acc_content",
+					 Default:2
+					}
+				);
+				new according(
+					{elem:"acc2",
+					 title:"acc_title",
+					 content:"acc_content",
+					 Default:0
+					}
+				);
+			}
+			
+			
+		</script>
+	</head>
+	<body>
+			<div class="acc1">
+				<h3 class="acc_title">标题1</h3>
+				<div class="acc_content">内容1</div>
+				<h3 class="acc_title">标题2</h3>
+				<div class="acc_content">内容2</div>
+				<h3 class="acc_title">标题3</h3>
+				<div class="acc_content">内容3</div>
+			</div>
+			
+			<div class="acc2">
+				<h3 class="acc_title">标题1</h3>
+				<div class="acc_content">内容1</div>
+				<h3 class="acc_title">标题2</h3>
+				<div class="acc_content">内容2</div>
+				<h3 class="acc_title">标题3</h3>
+				<div class="acc_content">内容3</div>
+			</div>
+	</body>
+</html>

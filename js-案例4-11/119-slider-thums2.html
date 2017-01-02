@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		*{ margin: 0; padding: 0;}
+		ul,ol{list-style: none;}
+		.slider{-webkit-transition:all 1s; transition: all 1s;}
+		.slider.hide{ opacity: 0;}
+		.s1{ height:150px ; width: 586px;}
+		.s1 li{position: absolute; left: 0; top: 0;}
+		.sliderWrap{position: relative; height:150px ; width: 586px;}
+		.ctrlUl{ position: absolute; right: 10px; bottom:10px}
+		.ctrlUl li{ display: inline-block; width: 20px; height: 20px; text-align: center; background-color: #CCCCCC; margin-right: 5px; cursor: pointer;}
+		</style>
+		<script>
+			function slider(obj){
+			 this.opt=obj;
+			 this.dom=document.getElementsByClassName(this.opt.dom)[0];
+			 this.sliders=this.dom.getElementsByClassName("slider");
+			 this.controls;//控制点
+			 this.index=0;//现在是第几张
+			 this.inter=this.opt.inter//间隔时间	
+			 this.len=this.sliders.length;//图片的个数
+			 this.old;
+			 this.stopId;
+			 this.wrap;
+			
+			 this.auto();//自动播放
+			
+			 this.bindDom();
+			   this.init();
+			}
+			//初始化
+			slider.prototype.init=function(){
+				//包裹div
+				this.wrap=document.createElement("div");
+				this.wrap.className="sliderWrap";
+				this.dom.parentNode.appendChild(this.wrap);
+				this.wrap.appendChild(this.dom);
+				//创造一个ul（包括控制小点的）
+				var ul=document.createElement("ul");
+					ul.className="ctrlUl";
+				this.wrap.appendChild(ul);
+				var str="";
+				for(var i=0;i<this.len;i++){
+					if(i==0){
+						this.sliders[i].className="slider";
+						this.old=this.sliders[i];
+					}else{
+						this.sliders[i].className="slider hide";
+					}
+					str+="<li class='thumbs'>"+(i+1)+"</li>";
+				}
+				//创建controls；
+			   ul.innerHTML=str;
+			   this.controls=ul.getElementsByTagName("li");
+				
+			}
+			////转到第几页
+			slider.prototype.goslider=function (num){
+				this.old.className="slider hide";
+				this.sliders[num].className="slider";
+				this.old=this.sliders[num];
+//				console.log("转到第"+(num+1)+"张");
+			}
+			//自动播放
+			slider.prototype.auto=function(){
+				var main=this;
+				main.stopId=setInterval(function(){
+					main.index++;
+					if(main.index>=main.len){
+						main.index=0;
+					}
+					main.goslider(main.index);
+				},main.inter)
+			}
+			//做事件绑定
+			slider.prototype.bindDom=function(){
+				var main=this;
+				main.dom.onmouseover=function(){
+					clearInterval(main.stopId);
+				}
+				main.dom.onmouseout=function(){
+					main.auto();
+				}
+				//---------控制小点添加事件
+				for(var i=0;i<main.len;i++){
+					(function(){
+						var j=i;
+						main.controls[j].onclick=function(){
+							main.index=j;
+							main.goslider(j);
+						}
+						
+					})()
+				}
+			  //---------控制小点添加事件
+			}
+			
+		window.onload=init;
+		function init(){
+			new slider({dom:"s1",inter:2000,mode:"fade"});
+		}
+		</script>
+	</head>
+	<body>
+	<ul class="s1">
+		<li class="slider"><a href=""><img src="images/ads/1.gif" alt="" /></a></li>
+		<li class="slider"><a href=""><img src="images/ads/2.gif" alt="" /></a></li>
+		<li class="slider"><a href=""><img src="images/ads/3.gif" alt="" /></a></li>
+		<li class="slider"><a href=""><img src="images/ads/4.gif" alt="" /></a></li>
+		<li class="slider"><a href=""><img src="images/ads/5.gif" alt="" /></a></li>
+	</ul>
+	</body>
+</html>

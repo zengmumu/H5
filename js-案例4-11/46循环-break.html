@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>循环</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="简介">
+<meta name="keywords" content="关键字">
+<style>
+</style>
+<body>
+
+<script>
+	/*[0] 循环初始化 1
+	[1] 循环结束 <=5 
+	[2] 循环操作 求和 让输入5门成绩
+	------
+	求平均
+*/
+var total=0;
+for(var i=1;i<=5;i++){
+	var cj=parseInt(prompt("请输入第"+i+"门成绩","60"));
+    if(cj<=0||isNaN(cj)){
+    	alert("输入错误，系统3秒钟后爆炸");
+    	i--;
+    	continue;
+    }
+
+	document.write("第"+i+"门成绩是"+cj+"<br/>");
+    // total=total+cj;
+    total+=cj;
+}
+document.write("总成绩是："+total+"平均成绩是"+total/5);
+ 
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+
+	</head>
+
+	<body>
+		<h1>猜数-正常智商6次以内</h1>
+		<input type="text" id="box" placeholder="请输入0-100的随机整数" /><input type="button" id="btn" value="猜一猜" />
+		<div id="tip">0-100的数你能几次猜中</div>
+		
+	
+	<script>
+//需要电脑随机一个数00-100，和我自己写的一个数进行比较 并记录次数
+//单击btn时进行比较 次数加一   显示到tip里面
+var computer=Math.ceil(Math.random()*100);//[1]电脑随机数0-100
+var person;//[2]自己出一个数
+var times=0;//[3]猜的次数
+//[4]btn 单击
+var btn=document.getElementById("btn");
+btn.onclick=guess;//单击btn 猜一猜
+function guess(){
+	//次数加1
+	times++;
+	//进行比较
+	person=document.getElementById("box").value;//获取自己输入的”值“
+	if(person>computer){
+		alert("大了");
+	}else if(person<computer){
+		alert("小了")
+	}else{
+		alert("恭喜你，答对了，自己去对面银行领奖")
+	}
+	//显示提示到tip里面
+	var tip=document.getElementById("tip");
+	tip.innerHTML="你猜了"+times+"次";
+	
+}
+		
+	</script>
+	</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+
+	</head>
+
+	<body>
+		<h1>计算器</h1>
+		<p>第一个数  <input type="text" id="pre" /></p>
+		<p>第二个数  <input type="text" id="next" /></p>
+		<p><input type="button" id="plus" value="+" /> <input type="button" id="reduce" value="-" /></p>
+		<p>结果 <input type="text" id="result" /></p>
+	<script>
+		var plus=document.getElementById("plus");
+        var reduce=document.getElementById("reduce");
+        plus.onclick=function(){cal("+") }
+        reduce.onclick=function(){cal("-")}
+	
+		function cal(type){
+			var pre=document.getElementById("pre").value;
+			var next=document.getElementById("next").value;
+			var result=document.getElementById("result");
+			if(type=="+"){
+				result.value=parseFloat(pre)+parseFloat(next);
+			}
+			if(type=="-"){
+				result.value=parseFloat(pre)-parseFloat(next);
+			}
+		}
+		
+	</script>
+	</body>
+
+</html>

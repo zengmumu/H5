@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>webrx-title</title>
+<meta name="description" content="简介">
+<meta name="keywords" content="关键字">
+<link rel="stylesheet" type="text/css" href="index.css"/>
+<script>
+function fnp(){
+	alert("p被单击了");
+	}
+function fndiv(){
+	alert("div被单击了");
+	}
+</script>
+<style>
+div{ padding:100px; border:2px solid green; background-color: #E9F1BA; border: 1px solid #F2B5A9}
+p{ background-color: yellow; height: 50px;}
+</style>
+</head>
+
+<body>
+
+<div onClick="fndiv()">
+	<p onClick="fnp()">我是a 标签</p>
+</div>
+</body>
+</html>

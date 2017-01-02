@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+/*[1] 循环的操作  彩排一次
+[2] 循环的结束条件  得到的答案 满意
+[3] 循环的操作	   彩排一次	
+[4] 循环的变更	 再次询问是否满意
+*/
+do{
+	document.write("盈盈，我彩排一次，你看看满意否？<br/>");//[1][3]
+	var answer=window.prompt("请评价是否满意","不满意");//[4]
+}while(
+	answer!="满意"//[2]
+)
+document.write("<h1>大功告成，回去吃着西瓜，吹着空调</h1>");
+
+
+	</script>
+	</head>
+	<body>
+	</body>
+</html>

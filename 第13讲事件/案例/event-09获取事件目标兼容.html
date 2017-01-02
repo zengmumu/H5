@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>webrx-title</title>
+<meta name="description" content="简介">
+<meta name="keywords" content="关键字">
+<link rel="stylesheet" type="text/css" href="index.css"/>
+<script>
+
+
+function addEvent(elem,type,fn){
+	if(elem.addEventListener){
+		elem.addEventListener(type,fn,false);
+	}else{
+		elem.attachEvent("on"+type,fn);
+	}
+}
+function removeEvent(elem,type,fn){
+	if(elem.removeEventListener){
+		elem.removeEventListener(type,fn,false);
+	}else{
+		elem.detachEvent("on"+type,fn);
+	}
+}
+function getTarget(evt){
+	if(evt.target){
+		return evt.target;
+	}else{
+		return window.event.srcElement;
+	}
+}
+
+
+addEvent(window,"load",init);
+function init(){
+var myp=document.getElementsByTagName("p")[0];
+	addEvent(myp,"click",fn2);	
+}
+function fn2(evt){
+ var obj=getTarget(evt);
+ alert(obj.innerHTML);
+	
+	
+}
+
+
+
+
+
+
+//function addEvent(elem,type,fn){
+//	if(elem.addEventListener){
+//	   elem.addEventListener(type,fn,false);
+//	}else{
+//		elem.attachEvent("on"+type,fn);
+//	}
+//}
+//
+//
+//addEvent(window,"load",init);
+//
+//
+//
+//
+//
+//function init(){
+//alert(" 窗口加载了");
+//}
+
+
+</script>
+<style>
+div{ padding:100px; border:2px solid green; background-color: #E9F1BA; border: 1px solid #F2B5A9}
+p{ background-color: yellow; height: 50px;}
+</style>
+</head>
+
+<body>
+
+<div >
+	<p id="myp">我是个P 标签<a href="http://www.baidu.com">百度</a></p>
+</div>
+</body>
+</html>

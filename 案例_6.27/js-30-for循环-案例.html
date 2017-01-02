@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+		
+//循环录入5个人的cj 并计算平均分
+
+//[1] 循环初始条件		总分total		从第一个	  
+//[2] 循环的结束条件  	第5个	
+//[3] 循环的操作		得到单个人的成绩--  加入到总成绩	  
+//[4] 循环的变更	  	每次加1
+
+var total=0;//总分
+for(var i=1;i<=5;i++){//1,2,4
+	var cj=window.prompt("请输入第"+i+"个人的成绩","60");//录成绩
+	document.write("第"+i+"个人的成绩为"+cj+"<br/>");//打印成绩
+	total+=parseInt(cj);//加入到总成绩
+}
+
+document.write("总成绩为:"+total+"<br/>");
+document.write("平均成绩成绩为:"+total/5+"<br/>");
+
+	</script>
+	</head>
+	<body>
+	
+	</body>
+</html>

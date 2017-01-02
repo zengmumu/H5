@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>全选效果</title>
+		<style type="text/css">
+			.bg {
+				background-image: url(images/list_bg.gif);
+				background-repeat: no-repeat;
+				width: 730px;
+			}
+			
+			td {
+				text-align: center;
+				font-size: 13px;
+				line-height: 25px;
+			}
+			
+			body {
+				margin: 0
+			}
+		</style>
+		<script type="text/JavaScript">
+			window.onload=init;
+			function init(){
+				var div=document.getElementsByTagName("div")[0];
+//				var nextOne=next(div);
+//				alert (nextOne.innerHTML);
+//				console.log(nextOne);
+//			var fi=first(div); 第一个
+//				alert(fi.innerHTML);
+//			var la=last(div); 最后一个
+//			alert(la.innerHTML);
+			var third=nthChild(div,3);
+			alert(third.innerHTML);
+			
+				
+			}
+			function next(elem){
+//				return elem.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling.nextSibling;
+				//要return  元素节点   节点的nodeType==1
+				//找下一个元素至少找一次  do while；
+				//循环查找  循环条件nodeType！=1;
+				
+				do{
+					elem=elem.nextSibling;//elem等于elem下一个元素
+					console.log(elem.nodeType+"-----"+elem.nodeValue+"----"+elem);
+				}while(elem.nodeType!=1);
+				return elem;
+				
+			
+			}
+			
+			function pre(elem){
+				do{
+					elem=elem.previousElementSibling;					
+				}while(elem.nodeType!=1);
+				return elem;
+				
+			}
+			function first(elem){
+				elem=elem.firstChild;
+				if(elem.nodeType!=1){
+					elem=next(elem);
+				}
+				return elem;
+				
+			}
+			
+			function last(elem){
+				elem=elem.lastChild;
+				if(elem.nodeType!=1){
+					elem=pre(elem);
+				}
+				return elem;
+			};
+			function nthChild(elem,num){
+				var nodes=elem.childNodes;
+				var myNodes=[];
+				for(var i=0;i<nodes.length;i++){
+					if(nodes[i].nodeType==1){
+						myNodes.push(nodes[i]);
+					}
+				}
+				return myNodes[num];
+			}
+		</script>
+	</head>
+
+	<body>
+		<div>
+			
+			<p>我是一个p元素</p>
+			<h3>我是标题</h3>
+			<p>我是他兄弟
+				<a href=""><em>我是百度他哥</em></a>
+			</p>
+			<p>p1</p>
+			<p>p2</p>
+			<p>p3</p>
+			<p>p4</p>
+			<p>p5</p>
+		</div>
+		
+		<!--wo shi 1 -->
+		<!--wo shi 2-->
+		<!--wo shi 3-->
+		<!--wo shi 4-->
+		<!--wo shi 5-->
+		<div>
+			我是第二个div
+		</div>
+
+	</body>
+
+</html>

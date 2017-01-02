@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8" />
+		<title>Document</title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			body {
+				padding: 50px;
+			}
+			
+			ul {
+				list-style: none;
+			}
+			
+			.tabs .tab-title {
+				height: 35px;
+				line-height: 35px;
+				border: 1px solid #aaa;
+				padding-left: 15px;
+				padding-right: 15px;
+				float: left;
+				margin-right: 15px;
+			}
+			
+			.tabs .tab-content {
+				clear: both;
+				border: 1px solid #aaa;
+				padding: 25px;
+				width: 450px;
+				height: 300px;
+				display: none;
+				position: relative;
+				top: -1px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="tab1" class="tabs">
+			<ul>
+				<li class="tab-title">li1</li>
+				<li class="tab-title">li2</li>
+				<li class="tab-title">li3</li>
+			</ul>
+			<div class="tab-content" style="display: block;">内容1</div>
+			<div class="tab-content">内容2</div>
+			<div class="tab-content">内容3</div>
+		</div>
+		<script>
+			//1 单击li  
+			//2 找到是第几个li
+			//3 隐藏别的div
+			//4 显示 第几个li对应的div 显示
+
+			function Tab(arg) {
+				var tab = document.getElementById(arg);
+				//1 单击li 
+				var lis = tab.getElementsByClassName("tab-title");
+				for(var i = 0; i < lis.length; i++) {
+					lis[i].onclick = qie;
+				}
+
+				function qie() {
+
+					//2 找到是第几个li
+					var num = 0;
+					for(var i = 0; i < lis.length; i++) {
+						if(lis[i] == this) {
+							num = i;
+							break;
+						}
+					}
+
+					var divs = tab.getElementsByClassName("tab-content");
+					//3隐藏别的div
+					for(var i = 0; i < divs.length; i++) {
+						divs[i].style.display = "none";
+					}
+					//4 显示 第几个li对应的div 显示
+					divs[num].style.display = "block";
+
+				}
+
+			}
+			new Tab("tab1");
+		</script>
+
+	</body>
+
+</html>

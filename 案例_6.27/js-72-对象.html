@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box {
+				height: 50px;
+				width: 50px;
+				position: absolute;
+				top: 50px;
+				background-color: yellow;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<h1>WHY ARRAY</h1> vcd     
+		
+		
+	
+		<p id="p1"></p>
+		<p id="p2"></p>
+			<script>
+/*		var p1=document.getElementById("p1");
+		var d=new Date();
+		p1.innerHTML=d.toLocaleDateString();
+		
+		var  p2=document.getElementById("p2");
+		var d2=new Date();
+		p2.innerHTML=d2.toLocaleDateString();*/
+		
+		function Time(obj){
+			function setMyTime(){
+			var d=new Date();
+			obj.innerHTML=d.toLocaleTimeString();
+			};
+			setInterval(function(){setMyTime()},1000);
+		}
+		var p1=document.getElementById("p1");
+		var t1=new Time(p1);
+		var p2=document.getElementById("p2");
+		var t2=new Time(p2);
+	
+
+
+		
+		
+		</script>
+	</body>
+
+</html>

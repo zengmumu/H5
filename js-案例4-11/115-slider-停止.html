@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		*{ margin: 0; padding: 0;}
+		ul,ol{list-style: none;}
+		.slider{-webkit-transition:all 1s; transition: all 1s;}
+		.slider.hide{ opacity: 0;}
+		.s1{ height:150px ; width: 586px;}
+		.s1 li{position: absolute; left: 0; top: 0;}
+		.sliderWrap{ position: relative; width: 586px; height: 150px;}
+		.sliderWrap .sliderCtrl{ position: absolute; right: 50px; bottom:10px;}
+		.sliderCtrl li{ display: inline-block; width: 20px;height:20px; background-color: azure; text-align: center; margin-right: 10px;}
+		</style>
+		<script>
+			function slider(obj){
+			 this.opt=obj;
+			 this.dom=document.getElementsByClassName(this.opt.dom)[0];
+			 this.sliders=this.dom.getElementsByClassName("slider");
+			 this.controls=[];//控制点
+			 this.index=0;//现在是第几张
+			 this.inter=this.opt.inter//间隔时间	
+			 this.len=this.sliders.length;//图片的个数
+			 this.wrap;
+			 this.old;
+			 this.stopId;
+			 this.thumbs;
+			 this.init();
+			 this.auto();//自动播放
+			 this.bindDom();
+			
+			 
+			 
+			}
+			slider.prototype.init=function(){
+				this.wrap=document.createElement("div");
+				this.wrap.className="sliderWrap";
+				this.dom.parentNode.appendChild(this.wrap);
+				this.wrap.appendChild(this.dom);
+				var ctrl=document.createElement("ul");
+					ctrl.className="sliderCtrl";
+				this.controls=ctrl;
+				var str="";
+				for(var i=0;i<this.len;i++){
+					if(i==0){
+						this.sliders[i].className="slider";
+						this.old=this.sliders[i];
+					}else{
+						this.sliders[i].className="slider hide";
+					}
+					str+="<li>"+(i+1)+"</li>";
+					this.controls.innerHTML=str;
+					this.wrap.appendChild(this.controls);
+					this.thumbs=this.controls.getElementsByTagName("li");
+					
+				}
+				
+			}
+			
+			slider.prototype.goslider=function (num){
+				this.old.className="slider hide";
+				this.sliders[num].className="slider";
+				this.old=this.sliders[num];
+//				console.log("转到第"+(num+1)+"张");
+			}
+			slider.prototype.auto=function(){
+				var main=this;
+			main.stopId=setInterval(function(){
+					main.index++;
+					if(main.index>=main.len){
+						main.index=0;
+					}
+					main.goslider(main.index);
+				},main.inter)
+			}
+			slider.prototype.stop=function(){
+				clearInterval(this.stopId);
+			}
+			slider.prototype.bindDom=function(){
+				var main=this;
+				main.dom.onmouseover=function(){
+					main.stop();
+				}
+				main.dom.onmouseout=function(){
+					main.auto();
+				}
+				for(var i=0;i<main.len;i++){
+					(function(){
+						var j=i;
+						main.thumbs[j].onclick=function(){
+							main.index=j;
+							main.goslider(j);
+						}
+						
+					})()
+				}
+			}
+		window.onload=init;
+		function init(){
+			new slider({dom:"s1",inter:2000,mode:"fade"});
+		}
+		</script>
+	</head>
+	<body>
+	<ul class="s1">
+		<li class="slider"><a href=""><img src="images/ads/1.gif" alt="" /></a></li>
+		<li class="slider"><a href=""><img src="images/ads/2.gif" alt="" /></a></li>
+		<li class="slider"><a href=""><img src="images/ads/3.gif" alt="" /></a></li>
+		<li class="slider"><a href=""><img src="images/ads/4.gif" alt="" /></a></li>
+		<li class="slider"><a href=""><img src="images/ads/5.gif" alt="" /></a></li>
+	</ul>
+	</body>
+</html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<style>
+		p,div,h3{ font-size: 25px;}
+		.active{ background-color: yellow;}
+	</style>
+</head>
+<body>
+	<h3 class="mya"></h3>
+	<p class="good mya">this is p</p>
+	<p> 我是间谍没有class 更没有mya</p>
+	<div class="conmyatainer right">this is div</div>
+	<span class="mya test left">wo shi left</span>
+	
+	<script>
+//1,遍历所有的元素,并取出来他的className
+//2,用 className 看是否匹配 需要的class名 如果为true 把该元素放入一个数组
+//3,最后返回这个数组
+	
+		function Byclass(name){
+			var all=document.getElementsByTagName("*");
+			var reg=new RegExp("(\\s|^)"+name+"(\\s|$)");//匹配 class的规则
+			//name 前面要么是开头 要么事空格  name的后面要么是空格要么是结尾
+			var arr=[];
+			for(var i=0;i<all.length;i++){
+				var cName=all[i].className;
+				console.log(cName);
+				if(reg.test(cName)){					
+					arr.push(all[i]);					
+				}
+			}//for ed
+			return arr;
+		}
+var result=Byclass("mya");
+console.log(result);
+		
+	</script>
+	
+</body>
+</html>

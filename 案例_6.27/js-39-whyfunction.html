@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+	</head>
+	<body>
+	<input type="button" value="单击我" />
+	<div id="box"></div>
+	<script>
+		var btn=document.getElementsByTagName("input")[0];//获取input
+		var box=document.getElementById("box");//获取div
+		var times=0;//默认次数为0
+		btn.onclick=doit;
+		function doit(){
+			times++;//单击次数加1
+			box.innerHTML+="hello my lover<br/>";//单击设置box的html内容
+			box.innerHTML+=times+"次<br/>";
+			
+		}
+		
+	</script>
+	</body>
+</html>

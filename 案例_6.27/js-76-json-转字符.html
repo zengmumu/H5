@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>webrx-title</title>
+		<meta name="description" content="简介">
+		<meta name="keywords" content="关键字">
+
+	</head>
+
+	<body>
+			
+		<script>
+		
+	var data={"name":"mumu","age":18};
+	var str=JSON.stringify(data);//把json转换为字符串
+    var data2=JSON.parse(str);//把字符串转换为json对象
+    data2.age=data2.age+1;
+    console.log(data2);
+
+
+		</script>
+	</body>
+		
+</html>

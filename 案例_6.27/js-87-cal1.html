@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>webrx-title</title>
+<meta name="description" content="简介">
+<meta name="keywords" content="关键字">
+
+
+<body>
+<input type="text"  id="show"/>
+<input type="button" value="1" id="n1" />
+<input type="button" value="2" id="n2" />
+<input type="button" value="3" id="n3" />
+<input type="button" value="." id="ndot" />
+<input type="button" value="+" id="nplus" />
+<input type="button" value="-" id="nminus" />
+<input type="button" value="=" id="nequal" />
+
+
+<script >
+var n1=document.getElementById("n1");
+var n2=document.getElementById("n2");
+var n3=document.getElementById("n3");
+var ndot=document.getElementById("ndot");
+var nplus=document.getElementById("nplus");
+var nequal=document.getElementById("nequal");
+var show=document.getElementById("show");
+var pre;//记住按运算符前面的数
+var next;//记住按等于号前面的数（运算符后面的数）
+var type;//记住按了哪个符号好
+//[1]单击那个框里面显示哪儿
+n1.onclick=showNum;
+n2.onclick=showNum;
+n3.onclick=showNum;
+ndot.onclick=showNum;
+function showNum(){
+	 show.value= show.value+this.value;
+}
+//[2] 按运算符号记住运算符号前的数字  //并清空
+nplus.onclick=function(){
+	pre=show.value;
+	show.value="";
+	type="jia";
+}
+nminus.onclick=function(){
+	pre=show.value;
+	show.value="";
+	type="jian";
+}
+
+//[3] 按等于号记住等于号前面的数字 在前后想 按符号来
+nequal.onclick=function(){
+	next=show.value;
+	if(type=="jia"){
+	show.value=parseFloat(pre)+parseFloat(next);
+	}
+	if(type=="jian"){
+	show.value=parseFloat(pre)-parseFloat(next);	
+	}
+}
+</script>
+</body>
+</html>

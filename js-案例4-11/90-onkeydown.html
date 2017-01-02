@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>webrx-title</title>
+		<meta name="description" content="简介">
+		<meta name="keywords" content="关键字">
+		<style>
+		.square{ width: 50px; height: 50px; background-color:yellow; position: relative; display: block;}
+		</style>
+
+	</head>
+	
+	<body>
+		<span class="square" style="left:0; top: 0;"></span>
+		
+		<script>
+			var square=document.getElementsByClassName("square")[0];
+			var flag=true;
+			window.onkeydown=function(event){
+				var code=event.keyCode;
+				if(code==39){//按右建 keyCode是39  让它向右移动5px
+					square.style.left=(parseInt(square.style.left)+5)+"px";
+				}
+				if(code==37){//按右建 keyCode是39  让它向右移动5px
+					square.style.left=(parseInt(square.style.left)-5)+"px";
+				}
+				if(code==38){//按右建 keyCode是39  让它向右移动5px
+					square.style.top=(parseInt(square.style.top)-5)+"px";
+				}
+				if(code==40){//按右建 keyCode是39  让它向右移动5px
+					square.style.top=(parseInt(square.style.top)+5)+"px";
+				}
+				if(code==32){
+					if(flag){
+					square.style.transform="scale(10,10)";	
+					flag=false;
+					}else{
+						
+						square.style.transform="scale(1,1)";
+					}
+					
+					
+				}
+				
+				
+			}
+			
+		</script>
+	</body>
+
+</html>

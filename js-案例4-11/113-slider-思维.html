@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			*{ margin: 0; padding: 0;}
+			body{ padding: 50px;}
+
+			
+		</style>
+		
+		<script>
+		function slider(){
+			
+			this.sliders=[];//slider 图片集合
+			this.controls=[];//slider 控制
+			this.len=4;//slider 长度 4页
+			this.index=0;//当前是第几页
+			this.inter=2000;//间隔时间
+			this.auto();
+		}
+		slider.prototype.goSlider=function(num){			
+			alert("滑动到第"+(num+1)+"图片");
+		}
+		slider.prototype.auto=function(){
+			var main=this;
+			setInterval(function(){
+				main.index++;
+				if(main.index>=main.len){
+				main.index=0;
+				}
+			main.goSlider(main.index);
+			},main.inter)
+		}
+		
+		
+		
+		
+		
+		
+		new slider();
+		</script>
+	</head>
+	<body>
+
+	</body>
+</html>

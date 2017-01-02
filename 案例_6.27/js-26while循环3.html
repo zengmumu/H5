@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script>
+/*[1] 循环的初始条件      从第1个开始
+[2] 循环的结束条件	 小于3
+[3] 循环的操作		 录入成绩加到总分		
+[4] 循环的变更		每次加1*/
+
+
+var  i=1;//[1]
+var  sum=3;//有三个人
+var  total=0;//总成绩
+while(i<=sum){//[2]
+	//[3]
+	var cj=parseInt(window.prompt("请输入第"+i+"人的成绩","60"));
+	document.write("第"+i+"人的成绩是"+cj+"<br/>");
+	total+=cj;
+	//[4]
+	i++;
+}
+
+document.write("总分是:"+total+"<br/>");
+document.write("平均分是:"+total/sum+"<br/>");
+	</script>
+	</head>
+	<body>
+	</body>
+</html>

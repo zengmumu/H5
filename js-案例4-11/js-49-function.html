@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<button id="qd">clickMe</button>
+<div id="show"></div>
+	<script>
+	var times=0;
+// [1] 响应用户点击
+// a选择 button
+    var qd=document.getElementById("qd");
+     var show=document.getElementById("show");
+// b点击事件
+    qd.onclick=function(){
+    show.innerHTML+="hello  my lover<br/>";
+    	times++;
+	show.innerHTML+=times+"<br/>";
+    }
+// [2]  输出hello
+// [3]   纪录点击次数
+	</script>
+</body>
+</html>

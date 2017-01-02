@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			
+			.succ{ background: url(images/lihua.gif) repeat-x;}
+		</style>
+
+	</head>
+
+	<body >
+		<h1>猜数-正常智商6次以内</h1>
+		<input type="text" id="box" placeholder="请输入0-100的随机整数" /><input type="button" id="btn" value="猜一猜" />
+		<div id="tip">0-100的数你能几次猜中</div>
+		
+	
+	<script>
+//需要电脑随机一个数00-100，和我自己写的一个数进行比较 并记录次数
+//单击btn时进行比较 次数加一   显示到tip里面
+
+/**
+ * person	用户输入的值
+ * times	猜的次数   
+ * computer 电脑随机数据
+ * btn 单击按钮	tip 提示区域	box 用户输入框 * 
+ */
+
+var person;
+var times=0;
+var computer=Math.ceil(Math.random()*100);//[1]电脑随机数0-100
+var btn=byId("btn");
+var tip=byId("tip");
+var box=byId("box");
+console.log(computer);
+btn.onclick=guess;
+function guess(){	
+	if(btn.value=="再猜一次"){
+		reset();//重置一切
+		return;
+	}
+	times++;
+	person=box.value;//获取自己输入的”值“
+	if(person>computer){
+		alert("大了");
+	}else if(person<computer){
+		alert("小了")
+	}else{
+		alert("恭喜你，答对了，自己去对面银行领奖")
+		document.body.className="succ";
+		btn.value="再猜一次";
+	}
+	//显示提示到tip里面	
+	tip.innerHTML="你猜了"+times+"次";
+	
+	
+}
+
+function reset(){
+	btn.value="猜一猜";
+	tip.innerHTML="0-100的数你能几次猜中";
+	document.body.className="";
+	box.value="";
+	times=0;
+	computer=Math.ceil(Math.random()*100);
+	
+}
+
+function byId(tag){
+	return document.getElementById(tag);
+}
+		
+	</script>
+	</body>
+
+</html>

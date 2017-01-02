@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+
+<style type="text/css">
+#imgs{ width:800; height:600px; position:relative;}
+#imgs img{ display:block; left:0; top:0; position:absolute;}
+</style>
+<script type="text/javascript">
+
+
+
+window.onload=init;
+function init(){
+	var pic=document.getElementById("imgs");
+	var pics=pic.getElementsByTagName("img");
+	
+	var btn=document.getElementById("btn");
+	fadeIn(pics[0]);
+	fadeIn(pics[1]);
+	var index=2;
+	btn.onclick=function(){
+		if(index>2){
+			index=0;
+			}
+	
+if(index-1<0)	{
+	fadeOut(pics[2]);
+	}else{
+	
+		fadeOut(pics[index-1]);
+	}
+	fadeIn(pics[index]);
+		index--;
+		if(index<0){
+			index=2;
+			}
+		}
+	}
+
+
+
+
+
+function fadeIn(elem){
+
+
+for(var i=100;i>=0;i--){
+	//---start
+	
+	(function(){
+			  var po=i;
+			
+			
+	setTimeout(function(){ setOpacity(elem,po) },(100-po)*10)
+	})()
+	//--end
+	
+	}
+
+
+
+}
+
+function fadeOut(elem){
+
+
+for(var i=0;i<=100;i++){
+	//---start
+	
+	(function(){
+			  var po=i;
+			
+			 
+	setTimeout(function(){ setOpacity(elem,po) },po*10)
+	})()
+	//--end
+	
+	}
+
+
+
+}
+
+
+
+
+
+function setOpacity(elem,pos){
+
+	if(elem.filters){
+	elem.style.filter="alpha(opacity="+ pos+");"
+	}else{
+		elem.style.opacity=pos/100;
+		}
+	
+	}
+	
+</script>
+</head>
+
+<body>
+<div id="imgs">
+<img src="Friend.jpg" id="img"/>
+<img src="Bliss.jpg" id="img2"/>
+<img src="Follow.jpg" id="img3"/>
+</div>
+<input type="button"  id="btn" value="透明度">
+</body>
+</html>

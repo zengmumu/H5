@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>步进器-normal</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="简介">
+<meta name="keywords" content="关键字">
+<style>
+ul,ol{ list-style: none;}
+li{ margin-bottom: 35px;}
+</style>
+<body>
+	<ul>
+		<li>
+			<div class="bujinqi">
+			<input type="text" class="kuang" value="0"/>
+			<input type="button" value="+" class="jia" />
+			
+		   </div>
+		</li>
+		
+		<li>
+			<div class="bujinqi">
+			<input type="text" class="kuang" value="0"/>
+			<input type="button" value="+" class="jia" />
+			
+		   </div>
+		</li>
+	</ul>
+</body>
+	
+
+<script>
+	// 用函数去创建一个对象
+	function Bjq(wai){
+		this.main=wai;
+		this.k=wai.getElementsByClassName("kuang")[0];
+		this.j=wai.getElementsByClassName("jia")[0];
+//		单击步进器里面的 加  让步进器里面的框里面的值加1
+        var kuang=this.k;
+        var jia=this.j;
+		this.j.onclick=function(){
+			var zhi=parseInt(kuang.value);
+			kuang.value=zhi+1;
+		}
+	}
+	
+//var bujinqi0=document.getElementsByClassName("bujinqi")[0];
+//var bujinqi1=document.getElementsByClassName("bujinqi")[1];
+//	var b0=new Bjq(bujinqi0);
+//	var b1=new Bjq(bujinqi1);
+var bjq_jihe=document.getElementsByClassName("bujinqi");
+
+for(var i=0;i<bjq_jihe.length;i++){
+	
+	new Bjq(bjq_jihe[i]);
+}
+	
+</script>
+
+
+</body>
+
+
+</html>

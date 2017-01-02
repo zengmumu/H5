@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h1>数组深复制</h1>
+		<script>
+		var mynum=0;
+			var a = [
+				1,
+				3,
+				5,
+				{name:"mumu",age:"18",data:["爸爸","妈妈",	{"age":"15","money":2000,"check":function(){alert(this.money)}}
+			]}];
+			/*var b=[].concat(a);
+			b[3].age=88;
+			
+			console.log(a);
+			console.log(b);*/
+			function checkType(obj){
+				var s=Object.prototype.toString.apply(obj,null);
+				s=s.substring(8,s.length-1);
+				return s;
+			}
+			var a = [
+				1,
+				3,
+				5,
+				{name:"mumu",age:"18",data:["爸爸","妈妈",	{"age":"15","money":2000,"check":function(){alert(this.money)}}
+			]}];
+			
+/*			 b =[
+				1,
+				3,
+				5,
+				[3]= o copyObj[{对象}]
+					name :"mumu",
+					age	 :"18"
+					data :  copyObj[{对象}]
+							"爸爸",
+							"妈妈"
+							[2]	=o=copyObj[{对象}]
+										age:15,
+										money:"2000",
+										check:fun()
+				]*/
+			function copyObj(obj){
+				// 看参数类型是 数组 还是 对象 如果是数组 声明一个空的数组 。。。
+				if(checkType(obj)=="Array"){
+					var o =[];
+				}
+				if(checkType(obj)=="Object"){
+					var o ={};
+				}
+				// 循环遍历对象的每一个属性 // 数组和对象都可以用for in
+				for(var k in obj){
+					// 如果这个对象的属性指还是一个 对象 或者数组 用copyObj 再次拷贝一次
+					if(checkType(obj[k])=="Object"||checkType(obj[k])=="Array"){
+						o[k]=copyObj(obj[k]);
+					}else{
+						o[k]=obj[k];
+					}
+					
+				}
+				mynum++;
+				console.log(mynum+"有执行的一次该函数")
+				return o;
+			}
+		var b=copyObj(a);
+			b[3].age=88;
+
+		
+
+		</script>
+	</body>
+</html>

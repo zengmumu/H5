@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/react.min.js"></script>
+	<script src="js/react-dom.min.js"></script>
+	<script src="js/browser.min.js"></script>
+</head>
+<body>
+	<div id="example"></div>
+	<div id="example2"></div>
+<script  type="text/babel" >
+	
+var MyText=React.createClass({
+	getDefaultProps:function(){
+		return {
+			text:'这是一条默认的内容'
+		};
+	},
+	render:function(){
+		return <h1>{this.props.text}</h1>;
+	}
+});
+ReactDOM.render(
+<MyText/>,
+document.getElementById('example')
+);
+</script>
+</body>
+</html>

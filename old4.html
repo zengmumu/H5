@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	 <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.css" rel="stylesheet"/>
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+    </script>
+	<script src="js/react.min.js"></script>
+	<script src="js/react-dom.min.js"></script>
+	<script src="js/browser.min.js"></script>
+	<script src="js/jquery-1.8.3.min.js"></script>
+	<style>
+	ul:after{content: ""; display: block; clear: both;}
+		li{
+			list-style: none; float: left; margin-left: 15px;
+			border:1px solid gray; height: 35px; line-height: 35px;text-align: center;width: 35px;
+		}
+		.red-text{ border:1px solid orange; height: 35px; line-height: 35px;text-align: center;width: 35px; color: orange;}
+	</style>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+		<h1 class="mui-title">评论</h1>
+	</header>
+	<div id="container"></div>
+	<script type="text/babel">
+	/***************************显示评论内容********************************/
+	var Comments=React.createClass({
+		render:function(){
+			//-------[01]遍历传过来的的数据并存在一个数组里面
+			var commentsNode=this.props.comments.map(function(elem,index){
+				return(
+				<div className="comments-list">
+					<div>{elem.msg}</div>
+					<p>-{elem.username}</p>
+				</div>)
+			})
+			//-------[02]返回解析好的html
+			return (
+			<div>
+				{commentsNode}
+			</div>)
+		}
+	});
+/***************************评论表单********************************/	
+	var Forms=React.createClass({	
+	//-------[01]处理表单单机
+		handelSubmit:function(e){			
+			e.preventDefault();
+			var forms=this.refs.form;
+			var name=this.refs.name.value;
+			var comment=this.refs.comment.value;			
+			this.props.isSubmit({username:name,msg:comment});//发送给父亲组建当条新的数据
+			this.sendDataToServer({username:name,msg:comment,aid:188})//发送给服务数据
+			//forms.reset();
+		},
+	//-------[02]发送给服务器数据
+		sendDataToServer:function(comment){
+			var _self=this;			
+			$.ajax({
+					url:"http://127.0.0.1/addComment.php?username="+comment.username,
+					dataType:"json",
+					data:comment,
+					success:function(res){}
+				})
+		},
+		render:function(){
+			return(
+			<form onSubmit={this.handelSubmit} ref="form">
+				<label>用户名:</label><input type="text" ref="name" />
+				<div>
+				<label>评论:</label>	
+				<textarea name="" rows="" cols="" ref="comment"></textarea>
+				</div>
+				<input type="submit" value="来条神评"/>
+			</form>
+			)
+		}
+	})
+/***************************评论表分页********************************/	
+	var Pages=React.createClass({
+		//-------[01]设置默认状态 1页，第0页 总共 0页
+		getInitialState:function(){
+			return {items:1,page:0,num:0}
+		},
+		//-------[02]组建渲染页面后开始 获取总评论数
+		componentDidMount:function(){
+		  	this.loadDataFromServer();
+		  	
+		 },
+		//-------[03]获取总评论数
+		loadDataFromServer:function(){
+			var _self=this;
+			$.ajax({
+					url:"http://127.0.0.1/getComment.php?all=1&aid=188",
+					dataType:"json",
+					success:function(res){						
+						_self.setState({num:parseInt(res.num)});//设置总评论数
+						_self.pagesCalc();//执行分页			
+						return parseInt(res.num);
+						
+					}
+			})
+		},
+		//-------[04]执行分页
+		pagesCalc:function(){
+			//this.loadDataFromServer();
+			//var allLength=this.loadDataFromServer();	
+			var allLength=this.state.num;//总评论数		
+			var showNum=10;//一页显示几个
+			var items=Math.ceil(allLength/showNum);//总共多少页
+			this.setState({items:items});//把页数存在状态上
+			
+		},
+		 //-------[06]处理单击事件
+		handleClick:function(num){
+			//设置状态 page
+			alert(num);
+			this.setState({page:num});
+			//通过props向父亲组建传参当前页
+			this.props.setPage(num);			
+		},
+		doClick:function(num){
+			this.setState({page:num});
+			this.props.setPage(num);
+		},
+	    //-------[05]返回渲染数据
+		render:function(){
+			 var _self=this;//this上下文
+			 var arr=[];
+			 //页面长度做成一个数组
+			 for(var i=0;i<this.state.items;i++){
+			 	arr.push(i);
+			 }
+			 //便利格式化数组并返回分页需要数据		
+			 var nodes=	arr.map(function(elem,index){		 
+			 	return (<li className={ (_self.state.page==index? ' red-text' : '')}  onClick={_self.handleClick.bind(_self,index)} key={index} >{index+1}</li>)	
+			 });
+			 return (
+				<ul>
+					{nodes}
+				</ul>)
+			 }
+		
+		
+	})
+/***************************评论总组件********************************/	
+	var CommentComponent=React.createClass({
+		//-------[01]初始状态 comments从 属性prop获取或者为[]
+		getInitialState:function(){
+			return {comments:this.props.comments||[],current:0};
+		},
+		//-------[02]默认从后台抓取数据
+		  componentDidMount:function(){
+		  	this.loadDataFromServer();
+		  },
+		//-------[03]抓取的评论数据放到状态里面comments 最后使用props传给子组件
+		loadDataFromServer:function(){
+			var _self=this;
+			alert(this.state.current);
+			$.ajax({
+					url:"http://127.0.0.1/getComment.php?page="+this.state.current+"&aid=188",
+					dataType:"json",
+					success:function(res){
+								     
+						_self.setState({comments:res.data})
+					}
+			})
+		},
+		//-------[04]分页组件会传过来当前是第几页 根据是第几页重新抓取数据
+		handelCommentItems:function(comment){	
+			this.setState({current:comment},function(){
+				this.loadDataFromServer();	
+			});
+			
+			
+			
+		},
+		//-------[05]表单组件会传过来一条 评论 插入到总评论 并重新设置状态数据 comment
+		handelNewComment:function(comment){			
+			var comments=this.state.comments;
+				comments.unshift(comment);
+			this.setState({comments:comments});
+		},
+		
+		 
+		////////////////////////////////////包含三个子组件
+		render:function(){
+			return(<div>
+				<h1>评论</h1>
+				<Comments comments={this.state.comments}/>
+				<Pages setPage={this.handelCommentItems}/>
+				<Forms isSubmit={this.handelNewComment}/>
+			</div>)
+		}
+	});
+/***************************评论初始化数据(可删除)********************************/	
+	var commentData=[
+		{username:"mumu",msg:"this is firstTime"},
+		{username:"曾庆林",msg:"this is 第二条评论"}
+	];
+/***************************渲染组件********************************/	
+	ReactDOM.render(
+	<CommentComponent comments={commentData}/>,
+	document.getElementById("container")
+	)
+	
+	
+	
+	</script>
+</body>
+</html>

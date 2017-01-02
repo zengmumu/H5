@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/react.min.js"></script>
+	<script src="js/react-dom.min.js"></script>
+	<script src="js/browser.min.js"></script>
+</head>
+<body>
+	<div id="example"></div>
+	<div id="example2"></div>
+<script  type="text/babel" >
+	
+var IntroText=React.createClass({
+	render:function(){
+		return(
+		<div>
+			<h1>{this.props.title}</h1><p>{this.props.content}</p>
+		</div>
+		);
+	}
+});
+	ReactDOM.render(
+	<IntroText title="曾庆林" content="html讲师"/>,
+	document.getElementById("example")
+	)
+
+</script>
+</body>
+</html>

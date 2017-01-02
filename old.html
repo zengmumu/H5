@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/react.min.js"></script>
+	<script src="js/react-dom.min.js"></script>
+	<script src="js/browser.min.js"></script>
+	<script src="js/jquery-1.8.3.min.js"></script>
+	<style>
+		.comments-list{ border-bottom:1px solid #f7f7f7; padding: 15px;}
+		form{ padding: 15px; vertical-align: middle;}
+		p{ color: #aaa;}
+		label{ vertical-align: top; width:60px; text-align: right; display: inline-block;}
+		input,textarea{ padding: 10px; border-radius: 5px; border: 1px solid #aaa; margin-bottom: 15px;  display: inline-block;}
+		input[type=submit]{ margin-left: 60px; background-color: dodgerblue; color: #fff; border-color:dodgerblue;}
+	</style>
+</head>
+<body>
+	<div id="container"></div>
+	<script type="text/babel">
+	var Comments=React.createClass({
+		render:function(){
+			var commentsNode=this.props.comments.map(function(elem,index){
+				return(
+				<div className="comments-list">
+					<div>{elem.msg}</div>
+					<p>作者:{elem.username}</p>
+				</div>)
+			})
+			return (
+			<div>
+				{commentsNode}
+			</div>)
+		}
+	});
+	var Forms=React.createClass({
+		handelSubmit:function(e){
+			
+			e.preventDefault();
+			var forms=this.refs.form;
+			var name=this.refs.name.value;
+			var comment=this.refs.comment.value;			
+			this.props.isSubmit({username:name,msg:comment});
+			forms.reset();
+		},
+		render:function(){
+			return(
+			<form onSubmit={this.handelSubmit} ref="form">
+				<label>用户名:</label><input type="text" ref="name" />
+				<div>
+				<label>评论:</label>	
+				<textarea name="" rows="" cols="" ref="comment"></textarea>
+				</div>
+				<input type="submit" value="来条神评"/>
+			</form>
+			)
+		}
+	})
+	var CommentComponent=React.createClass({
+		
+		getInitialState:function(){
+			return {comments:this.props.comments||[]};
+		},
+		handelNewComment:function(comment){
+			
+			var comments=this.state.comments;
+				comments.unshift(comment);
+			this.setState({comments:comments});
+		},
+		  
+		render:function(){
+			return(<div>
+				<h1>评论</h1>
+				<Comments comments={this.state.comments}/>
+				<Forms isSubmit={this.handelNewComment}/>
+			</div>)
+		}
+	});
+	var commentData=[
+	{username:"mumu",msg:"this is firstTime"},
+	{username:"曾庆林",msg:"this is 第二条评论"}
+	];
+	ReactDOM.render(
+	<CommentComponent comments={commentData}/>,
+	document.getElementById("container")
+	)
+	
+	
+	
+	</script>
+</body>
+</html>

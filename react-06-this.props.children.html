@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/react.min.js"></script>
+	<script src="js/react-dom.min.js"></script>
+	<script src="js/browser.min.js"></script>
+</head>
+<body>
+	<div id="example"></div>
+	<div id="example2"></div>
+<script  type="text/babel" >
+	
+
+
+var Nodelist=React.createClass({
+	render:function(){
+		return (
+		<ol>
+			{
+				this.props.children.map(function(child){
+					return <li>{child}</li>
+				})
+			}
+		</ol>
+		);
+	}
+});
+ReactDOM.render(
+<nodelist>
+	<h4>Hello</h4>
+	<h5>word</h5>
+	<span>react</span>
+</nodelist>,
+document.getElementById("example")
+)
+
+</script>
+</body>
+</html>

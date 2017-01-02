@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/react.min.js"></script>
+	<script src="js/react-dom.min.js"></script>
+	<script src="js/browser.min.js"></script>
+	<script src="js/jquery-1.8.3.min.js"></script>
+	<style>
+		
+	</style>
+</head>
+<body>
+	<div id="example"></div>
+	
+	
+	
+
+
+<script  type="text/babel" >
+var UserGist = React.createClass({
+      getInitialState: function() {
+        return {
+          username: '',
+          lastGistUrl: '',
+          records: []
+        };
+      },
+
+      componentDidMount: function() {
+        $.get(this.props.source, function(result) {
+          var lastGist = result[0];
+          console.log(result[0]);
+          console.log(result);
+          if (this.isMounted()) {
+            this.setState({
+              username: lastGist.owner.login,
+              lastGistUrl: lastGist.html_url,
+              records: result
+            });
+          }
+        }.bind(this));
+      },
+
+      render: function() {
+        var records = this.state.records;
+        var getFileInfo = function(files) {
+          return files[Object.keys(files)[0]];
+        };
+
+        return (
+          <div>
+            <h2>{this.state.username}'s last gist is <a href={this.state.lastGistUrl}>here</a>.</h2>
+            <h3>用户【{this.state.username}】最后【{records.length}次】提交文件记录：</h3>
+            <ol>
+            {
+              records.map(function(record) {
+                var file = getFileInfo(record.files);
+                return <li><a href={file.raw_url}>{file.filename}</a> Last Update At: {record.updated_at}</li>
+              })
+            }
+            </ol>
+          </div>
+        );
+      }
+    });
+
+    ReactDOM.render(
+      <UserGist source="https://api.github.com/users/facebook/gists" />,
+      document.getElementById('example')
+    );
+
+</script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/react.min.js"></script>
+	<script src="js/react-dom.min.js"></script>
+	<script src="js/browser.min.js"></script>
+</head>
+<body>
+	<div id="example"></div>
+	<div id="example2"></div>
+	
+    <table>
+      <caption>支持验证的数据类型</caption>
+      <thead>
+        <tr>
+          <th>数据类型</th>
+          <th>React PropTypes</th>
+          <th>React验证函数</th>
+        </tr>
+      </thead>
+      <tbody id="tbodyContent"></tbody>
+    </table>
+
+<script  type="text/babel" >
+	var MyText=React.createClass({
+		propTypes:{
+			text:React.PropTypes.string.isRequired
+			
+			
+		},
+		render:function(){
+			return <h1>{this.props.text}</h1>
+		}
+	});
+	var text=["这个是变量内容","zheng d",456,true];
+ReactDOM.render(
+<MyText text={text}/>,
+document.getElementById('example')
+);
+
+
+ var reactPropTypes = {
+      array: "createPrimitiveTypeChecker('array')",
+      bool: "createPrimitiveTypeChecker('boolean')",
+      func: "createPrimitiveTypeChecker('function')",
+      number: "createPrimitiveTypeChecker('number')",
+      object: "createPrimitiveTypeChecker('object')",
+      string: "createPrimitiveTypeChecker('string')",
+
+      any: "createAnyTypeChecker()",
+      arrayOf: "createArrayOfTypeChecker",
+      element: "createElementTypeChecker()",
+      instanceOf: "createInstanceTypeChecker",
+      node: "createNodeChecker()",
+      objectOf: "createObjectOfTypeChecker",
+      oneOf: "createEnumTypeChecker",
+      oneOfType: "createUnionTypeChecker",
+      shape: "createShapeTypeChecker"
+    };
+
+    var TableRow = React.createClass({
+      render: function() {
+        return (
+        <tbody>
+        {
+          Object.keys(reactPropTypes).map(function(key) {
+            return <tr><td>{key}</td><td>React.PropTypes.{key}</td><td>{reactPropTypes[key]}</td></tr>
+          })
+        }
+        </tbody>
+        )
+      }
+    });
+    ReactDOM.render(
+      <TableRow />,
+      document.getElementById('tbodyContent')
+    );
+
+</script>
+</body>
+</html>

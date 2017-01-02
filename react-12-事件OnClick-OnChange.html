@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/react.min.js"></script>
+	<script src="js/react-dom.min.js"></script>
+	<script src="js/browser.min.js"></script>
+	<style>
+		.big-text{font-size:28px; color: #006699;}
+		.red-text{
+			color: #f00;
+		}
+		.yellow-text{color: #ff9800;}
+	</style>
+</head>
+<body>
+	<div id="example"></div>
+	<div id="example2"></div>
+	
+	
+
+
+<script  type="text/babel" >
+var LikeButton=React.createClass({
+	getInitialState(){
+		return{
+			name:"mumu",
+			age:null
+		};
+	},
+	setYourName(name){
+		this.setState({name:name,initName:true});
+	},
+	setYourAge(age){
+		this.setState({age:age,initAge:true});
+	},
+	clearInitInfo(type){
+		var state={};
+		if(type=='name') state={name:'',initName:false};
+		if(type=='age') state={age:'',initAge:false};
+		this.setState(state);
+	},
+	toggleDiv(isShow){
+		return {display:isShow?'inline':'none'};
+	},
+	changeInfo(type, event) {
+        var state = {}, val = event.target.value;
+        state[type] = val;
+        state['init' + type.substr(0, 1).toUpperCase() + type.substr(1)] = !!val;
+        this.setState(state);
+      },
+	render(){
+		return (
+		<div>
+		 <div className="row">
+                <label>姓名：</label><input type="text" value={this.state.name} onChange={this.changeInfo.bind(this, 'name')} /><button onClick={this.setYourName.bind(null, 'Happy乔')}>初始化</button><span style={ this.toggleDiv(this.state.initName) }>初始化姓名[{this.state.name}]成功</span><button style={ this.toggleDiv(this.state.initName) } onClick={this.clearInitInfo.bind(null, 'name')}>清除数据</button>
+              </div>
+			<div className="row">
+                <label>年龄：</label><input type="text" value={this.state.age} onChange={this.changeInfo.bind(this, 'age')} /><button onClick={this.setYourAge.bind(null, 25)}>初始化</button><span style={ this.toggleDiv(this.state.initAge) }>初始化age[{this.state.age}]成功</span><button style={ this.toggleDiv(this.state.initAge) } onClick={this.clearInitInfo.bind(null, 'age')}>清除数据</button>
+              </div>
+		</div>
+		);
+	}
+});
+ReactDOM.render(
+ <LikeButton />,
+        document.getElementById('example')
+)
+//http://www.zhangxinxu.com/wordpress/2012/10/ecmascript-es5-bind-array-slice-call-apply/
+</script>
+</body>
+</html>

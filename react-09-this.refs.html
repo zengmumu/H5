@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="js/react.min.js"></script>
+	<script src="js/react-dom.min.js"></script>
+	<script src="js/browser.min.js"></script>
+</head>
+<body>
+	<div id="example"></div>
+	<div id="example2"></div>
+	
+    
+
+<script  type="text/babel" >
+	var  MyComponent=React.createClass({
+		handelClick:function(){
+			this.refs.myTextInput.focus();
+		},
+		setText:function(){
+			this.refs.myTextInput.value="我有值了";
+		},
+		clearText:function(){
+			this.refs.myTextInput.value="";
+		},
+		render:function(){
+			return(
+			<div>
+				<input type="text" ref="myTextInput" placeholder="checkme" />
+				<input type="button" value="focus it" onClick={this.handelClick} />
+					<input type="button" value="set it" onClick={this.setText} />
+					<input type="button" value="clear it" onClick={this.clearText} />
+					
+				
+				
+			</div>
+			);
+		}
+	});
+	ReactDOM.render(
+	<MyComponent/>,
+	document.getElementById("example")
+	)
+</script>
+</body>
+</html>

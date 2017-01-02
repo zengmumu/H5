@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<script src="js/TouchSlide.1.1.js"></script>
+	<style>
+	/*公用*/
+	.l{ float: left;}
+	.r{ float: right}
+	.shadow-d,.shadow-hover-d:hover{ box-shadow:0 2px 3px #aaa; }
+	.round-6{ -ms-border-radius: 6px;-moz-border-radius: 6px;-webkit-border-radius: 6px;border-radius: 6px; overflow: hidden;}
+	.bo{border:1px solid rgb(205,205,205);}
+	.text-center{ text-align: center;}
+	body{ font-family: "Microsoft Yahei"; padding-top: 99px;}
+
+	/*颜色*/
+	.bg-primary{ background-color: rgb(230,0,68);}
+	.txt-hidden{ text-indent: -99999em;}
+	/*背景*/
+	/*栅格系统*/
+	.container{width: 1200px; margin-left: auto; margin-right: auto;}
+	.col1,.col2,.col3,.col4,.col6{ box-sizing:border-box;-webkit-box-sizing:border-box;}
+	.col1{ width: 8.3333%; float: left; padding: 10px;}
+	.col3{ width:25%; float: left; padding: 10px;}
+	.col4{ width: 33.3333%; float: left; padding: 10px;}
+	.col6{ width: 50%; float: left; padding: 10px;}
+	.col12{ width: 100%; float: left; padding: 10px;}
+	.row{ width: 100%;}
+	.row-fluid>*[class^="col"]{ padding-left:0; padding-right: 0}
+	/*组件模块*/
+	.triangle-b-u:before{
+ content: ""; display: inline-block;width: 0; height: 0px; border:6px solid transparent;border-bottom-color:rgb(230,0,68);
+ position: absolute; left:50%; top: 0;
+ transform:translate(50%,-100%);
+  -webkit-transform:translate(-50%,-100%);
+	}
+	.triangle-b-d:before{ content: ""; display: inline-block;width: 0; height: 0px; border:6px solid transparent;border-top-color:rgb(205,205,205);}
+     .triangle-a-d:after{ content: ""; display: inline-block;width: 0; height: 0px; border:6px solid transparent;border-top-color:rgb(205,205,205); vertical-align: middle;}
+	
+	
+
+
+	/*导航*/
+	header{ height: 99px; background-color: rgb(247,247,247) ;background-image: url(images/logo_left.png); background-repeat: no-repeat; background-size: 20% 99px;position: fixed; width: 100%; left:0; top:0;z-index: 100;}
+	.nav{ margin-top: 35px; background:url(images/header-xuxian.png) no-repeat left 3px;}
+	.nav li{ float: left; width: 87px; text-align: center; position: relative;}
+	.nav .active a{ color: rgb(230,0,68);}
+	.nav li a:before{ content: ""; height: 7px; width: 7px; display: block; margin-left: auto; margin-right: auto; background:url(images/headeryuan.png) no-repeat left top;}
+	.nav a{ display: block;}
+	.nav a:hover:before,.nav .active a:before{ background-position: right top;}
+	.topSearch{ height: 35px; line-height: 35px; margin-top: 30px; width: 220px; overflow: hidden;}
+	.s-news{ border-right: 1px solid rgb(205,205,205); display: inline-block; height: 35px; padding-left: 5px; padding-right: 5px;}
+	.searchInp{ border:none; height: 35px; line-height: 35px; padding:0 5px; width: 110px;}
+	.searchSub{ display: inline-block; width: 45px; float: right; height: 35px; line-height: 35px; border:none; background-image: url(images/fangdajing.png); background-repeat: no-repeat; background-position:  center center;}
+	.subnav{ width: 87px; border-radius: 0 0 6px 6px; background-color:rgb(230,0,68); padding: 10px 0 10px 0; position: absolute; left:0; top: 63px; /*  height: 0;opacity: 0; transition:all 1s;*/ display: none;}
+	.nav>li{ height: 60px;}
+	.nav>li:hover .subnav{ /*opacity: 1; height: auto;*/ display: block;}
+	.subnav li{ float: none;}
+	.subnav a{ display: block; height: 25px; line-height: 25px; color: #fff;}
+	.subnav a:hover{ background-color: #BE2450;}
+	.subnav li a:before{ display: none;   }
+	.banner{ position: relative; z-index: 10;}
+/* 本例子css -------------------------------------- */
+	.slideBox{ position:relative; overflow:hidden; margin:0px auto;  max-width:100%;/* 设置焦点图最大宽度 */ }
+	.slideBox .hd{ position:absolute; height:28px; line-height:28px; bottom:0; right:0; left:50%; z-index:1; }
+	.slideBox .hd li{ display:inline-block; width:12px; height:12px; -webkit-border-radius:12px; -moz-border-radius:12px; border-radius:12px; background:#333; text-indent:-9999px; overflow:hidden; margin:0 6px;   }
+	.slideBox .hd li.on{ background:rgb(230,0,68);  }
+	.slideBox .bd{ position:relative; z-index:0; }
+	.slideBox .bd li{ position:relative; text-align:center;  }
+	.slideBox .bd li img{ background:url(images/loading.gif) center center no-repeat;  vertical-align:top; width:100%;/* 图片宽度100%，达到自适应效果 */}
+	.slideBox .bd li a{ -webkit-tap-highlight-color:rgba(0,0,0,0);  }  /* 去掉链接触摸高亮 */
+	.slideBox .bd li .tit{ display:block; width:100%;  position:absolute; bottom:0; text-indent:10px; height:28px; line-height:28px; background:url(images/focusBg.png) repeat-x; color:#fff;  text-align:left;  }
+	/*bannered*/
+	/*.hotlink ul li:nth-of-type(3){ background: red;}*/
+	.hotlink{ background-color: rgb(239,239,239); padding-top: 15px;padding-bottom: 15px;}
+	.hotlink li a{ display: block; width:100%; margin-left: auto; margin-right:auto; height: 150px; background-image:url(images/1-1511061I522596.jpg); background-size:100% auto; background-repeat: no-repeat; background-position: center center; }
+	.hotlink li:nth-child(1) a:hover{ background-image: url(images/big1.jpg)}
+	.hotlink li:nth-child(2) a{ background-image: url(images/1-1511061I53V13.jpg)}
+	.hotlink li:nth-child(3) a{ background-image: url(images/1-1511061I44a26.jpg)}
+   	.hotlink li:nth-child(4) a{ background-image: url(images/1-1511061I5051O.jpg)}
+   	.hotlink li:nth-child(2) a:hover{ background-image: url(images/big2.jpg)}
+	.hotlink li:nth-child(3) a:hover{ background-image: url(images/big3.jpg)}
+   	.hotlink li:nth-child(4) a:hover{ background-image: url(images/big4.jpg)}
+
+   	/*produce*/
+   	.prolist>li{ position: relative; overflow: hidden;}
+   	.protxt{ position: absolute; height: 350px;
+   	 left:0; bottom:-370px; background-color: rgba(255,255,255,.9); padding: 15px; transition:bottom 1s ease;-webkit-transition:bottom 1s ease;}
+   	 .prolist>li:hover .protxt{ bottom:0;}
+   	 .protxt h3{ height: 50px; line-height: 50px; border-bottom: 1px solid  #999; font-size: 24px;}
+   	 .protxt .des{ line-height: 1.8em; font-size: 1.2em; margin-top: 1em;}
+
+   	 .worksCat li{ display: inline-block; margin-right: 15px; cursor: pointer;}
+   	 .worksCat li:hover{ color: rgb(230,0,68)}
+     .worksCat li:before{ content: attr(data-name); display: inline-block; width: 25px; height: 25px; border-radius: 25px;background-color: #999; line-height: 25px; text-align:center; color: #fff; margin-right: 3px;}
+     .works{ background-color: rgb(235,235,235); padding-top: 35px;}
+     .worksCat li:hover:before,.worksCat li.active:before{ background-color: rgb(230,0,68);}
+     .thumnail{ padding-bottom: 15px; background-color:#fff;}
+     .thumnail:after{ content: attr(data-name); display: inline-block; height: 25px; width: 25px; line-height: 25px; font-size:14px; border-radius: 25px; text-align: center; color:#fff;background-color:rgb(230,0,68); float: right; margin-right: 15px; }
+     .thumnail img{width: 100%; height: auto;}
+     .thumnail h3{ margin-bottom: 5px; margin-top: 10px; font-size: 22px; color: #333;}
+     .thumnail h3,.thumnail p{ padding:10px;}
+     .thumnail .view{ display: inline-block; padding-left: 25px; background:url(images/eye.png) no-repeat left center ; padding-right: 25px;}
+      .thumnail .good{ display: inline-block; padding-left: 15px; background:url(images/zan.png) no-repeat left center ; padding-right: 25px;}
+      .siderbar{ width: 60px; height: 240px; background-color: rgba(0,0,0,.8); position: fixed; right:0; top:250px; z-index: 20;}
+      /*设置siderbar的宽高 背景颜色 ，固定在右边 距离上边250；层高度20*/
+      .siderbar a{ display: block; height: 60px; width: 60px; text-align: center; line-height: 60px; transition:all 1s; position: relative; color: #aaa;}
+      /*给a 转换为块 设置框  居中  行高（上下居中） 过渡效果*/
+      /*relative 为了让span 定位有基准点 颜色*/
+
+      .siderbar a:hover{ background-color:rgb(230,0,68); color: #fff; }
+      /*鼠标放在a 上 背景颜色 文字颜色*/
+      .si1 span{ position: absolute;left:0; top:0;transition:all 1s; width:0;height: 0;  overflow: hidden; }
+      /*span 绝对定位 ，左边 0 上边0 过渡 宽0 高度 图片不显示 */
+      .si1:hover span{ width:180px; height:180px;left:-180px; top:-120px; }
+      /*鼠标放上去  span  宽度  高度 定位-180  -120位置*/
+      .si3 span{ height: 60px;width:60px; transition:all 1s; position: absolute;  left:0; top:0; padding-left:5px;}
+      /*默认高度和a的宽高一样；绝对定位 0 0位置（不动） 文字离左边5px*/
+      .si3:hover span{left:-120px; top:0;  width: 180px;background-color: rgb(230,0,68); }
+      /*鼠标放上去  span left120 top0  宽180（向左展开）背景颜色*/
+
+	</style>
+</head>
+<body>
+<header class="shadow-d">
+<div class="container">
+	<h2 class="brand l"><a href=""><img src="images/runmei.png" alt=""></a></h2>
+    <ul class="nav l clearfix">
+    	<li class="active"><a href="">navlink1</a></li>
+    	<li><a href="">navlink2</a></li>
+    	<li><a href="">navlink3</a>
+			<ul class="subnav triangle-b-u">
+				<li><a href="">sub1</a></li>
+				<li><a href="">sub2</a></li>
+				<li><a href="">sub3</a></li>
+				<li><a href="">sub4</a></li>
+				<li><a href="">sub5</a></li>
+			</ul>
+    	</li>
+    	<li><a href="">navlink4</a>
+<ul class="subnav triangle-b-u">
+				<li><a href="">sub1</a></li>
+				<li><a href="">sub2</a></li>
+			
+				<li><a href="">sub5</a></li>
+			</ul>
+    	</li>
+    	<li><a href="">navlink5</a></li>
+    	<li><a href="">navlink6</a></li>
+    	<li><a href="">navlink7</a></li>
+    </ul>
+	<form action="" class="topSearch r bo round-6">
+		<span class="triangle-a-d s-news">新闻</span>
+		<input type="text" class="searchInp" name="" id="" placeholder="请输入关键字">
+		<input type="submit" value="搜索" class="searchSub bg-primary txt-hidden">
+	</form>
+	</div>
+</header>
+<div class="banner">
+	<!-- 本例主要代码 Start ================================ -->
+			<div id="slideBox" class="slideBox">
+
+				<div class="bd">
+					<ul>
+							<li>
+								<a class="pic" href="#"><img src="images/slider1.jpg" /></a>
+								
+							</li>
+							<li>
+								<a class="pic" href="#"><img src="images/1-151106112J03L.jpg" /></a>
+								
+							</li>
+							<li>
+								<a class="pic" href="#"><img src="images/1-1511061129212T.jpg" /></a>
+								
+							</li>
+							
+					</ul>
+				</div>
+
+				<div class="hd">
+					<ul></ul>
+				</div>
+			</div>
+			<script type="text/javascript">
+				TouchSlide({ 
+					slideCell:"#slideBox",
+					titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+					mainCell:".bd ul", 
+					effect:"leftLoop", 
+					autoPage:true,//自动分页
+					autoPlay:true,//自动播放
+					interTime:3000
+				});
+			</script>
+			<!-- 本例主要代码 End ================================ -->
+
+</div>
+<div class="hotlink">
+	<div class="container">
+	<ul class="row clearfix">
+		<li class="col3"><a href="" class="txt-hidden">item1</a></li>
+		<li class="col3"><a href="" class="txt-hidden">item2</a></li>
+		<li class="col3"><a href="" class="txt-hidden">item3</a></li>
+		<li class="col3"><a href="" class="txt-hidden">item4</a></li>
+	</ul>
+	</div>
+</div>
+<div class="produce">
+	<div class="container">
+		<div class="row">
+			<h2 class="col12 text-center"><a href=""><img src="images/zhi.png" alt=""></a></h2>
+
+		</div>
+		<ul class="row-fluid prolist clearfix">
+			<li class="col3"><img src="images/1-151106155A0219.jpg" alt="">
+			<div class="protxt">
+				<h3 class="text-center">我是一个标题</h3>
+					<p class="des">如同5月份不断攀升的气温，国内主题文化乐园新一轮的兴建热潮也开始袭来，全国各地各类主题文化乐园如雨后春笋般出现，让人眼花缭乱。</p>
+				
+			</div>
+			</li>
+			<li class="col3"><img src="images/1-15110615543E96.jpg" alt="">
+<div class="protxt">
+				<h3 class="text-center">我是一个标题2</h3>
+					<p class="des">如同5月份不断攀升的气温，国内主题文化乐园新一轮的兴建热潮也开始袭来，全国各地各类主题文化乐园如雨后春笋般出现，让人眼花缭乱。</p>
+				
+			</div>
+			</li>
+			<li class="col3"><img src="images/1-151106155552E6.jpg" alt=""></li>
+			<li class="col3"><img src="images/1-1511061554121P.jpg" alt=""></li>
+		</ul>
+
+	</div>
+
+</div>
+<div class="works">
+	<div class="container">
+		<div class="row">
+			<h2 class="text-center">案例展示</h2>
+		</div>
+		<ul class="row clearfix worksCat text-center">
+			<li data-name="展" class="active">items1</li>
+			<li  data-name="视">items2</li>
+			<li  data-name="C">items3</li>
+			<li  data-name="视">items4</li>
+			<li  data-name="视">items5</li>
+			<li  data-name="视">items6</li>
+			<li  data-name="视">items7</li>
+			<li  data-name="视">items8</li>
+		</ul>
+		<ul class="row clearfix">
+			<li class="col3" >
+			<div class="thumnail round-6 shadow-hover-d" data-name="地">
+			<a href="">
+					<img src="images/1-1510201F353D0.jpg
+
+					" alt="">
+					<h3>我是标题1</h3>
+				</a>
+				<p><a href="" class="view">80</a><a href="" class="good">6</a></p>
+				</div>
+				</li>
+			<li class="col3" >
+			<div class="thumnail round-6 shadow-hover-d" data-name="地">
+			<a href="">
+					<img src="images/1-1510201F353D0.jpg
+
+					" alt="">
+					<h3>我是标题1</h3>
+				</a>
+				<p><a href="" class="view">80</a><a href="" class="good">6</a></p>
+				</div>
+				</li>
+		<li class="col3" >
+			<div class="thumnail round-6 shadow-hover-d" data-name="地">
+			<a href="">
+					<img src="images/1-1510201F353D0.jpg
+
+					" alt="">
+					<h3>我是标题1</h3>
+				</a>
+				<p><a href="" class="view">80</a><a href="" class="good">6</a></p>
+				</div>
+				</li>
+
+			<li class="col3" >
+			<div class="thumnail round-6 shadow-hover-d" data-name="地">
+			<a href="">
+					<img src="images/1-1510201F353D0.jpg
+
+					" alt="">
+					<h3>我是标题1</h3>
+				</a>
+				<p><a href="" class="view">80</a><a href="" class="good">6</a></p>
+				</div>
+				</li>
+
+			<li class="col3" >
+			<div class="thumnail round-6 shadow-hover-d" data-name="地">
+			<a href="">
+					<img src="images/1-1510201F353D0.jpg
+
+					" alt="">
+					<h3>我是标题1</h3>
+				</a>
+				<p><a href="" class="view">80</a><a href="" class="good">6</a></p>
+				</div>
+				</li>
+
+			<li class="col3" >
+			<div class="thumnail round-6 shadow-hover-d" data-name="地">
+			<a href="">
+					<img src="images/1-1510201F353D0.jpg
+
+					" alt="">
+					<h3>我是标题1</h3>
+				</a>
+				<p><a href="" class="view">80</a><a href="" class="good">6</a></p>
+				</div>
+				</li>
+
+
+			<li class="col3" >
+			<div class="thumnail round-6 shadow-hover-d" data-name="地">
+			<a href="">
+					<img src="images/1-1510201F353D0.jpg
+
+					" alt="">
+					<h3>我是标题1</h3>
+				</a>
+				<p><a href="" class="view">80</a><a href="" class="good">6</a></p>
+				</div>
+				</li>
+		</ul>
+	</div>
+</div>
+
+<ul class="siderbar">
+	<li><a href="" class="si1">item
+		<span><img src="images/1-151021110F2456.jpg" alt="" width="180"></span>
+	</a></li>
+	<li><a href="" class="si2">item2</a></li>
+	<li><a href="" class="si3"><span>TEL:13598859747</span></a></li>
+	<li><a href="" class="si4">item</a></li>
+</ul>
+</body>
+</html>

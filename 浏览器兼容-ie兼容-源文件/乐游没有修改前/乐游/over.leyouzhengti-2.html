@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>leyou</title>
+
+<style>
+	*{margin: 0;padding: o;}
+	ul,ol{list-style: none;}
+	img{border:none;vertical-align: top;}
+	table{border-collapse: collapse;}
+	body{font-family:"微软雅黑";font-size: 14px;color:#777;background-color: #f0f0f0;}
+	.top-bar{height: 28px;line-height: 28px;background-color: #5A5858}
+	.header{height: 90px;}
+	.banner{height:170px;background-color: #919FE7;}
+	.article{height: 570px;}
+	.footer{height: 150px;background-color:#616570;margin-top:120px; }
+	.container{height: 100%;width: 1000px;margin-left: auto;margin-right: auto;}
+	.article .container{background-color: #fff;margin-top: -50px;border:1px solid #E4E4E4;}
+	.breadcrumb{height: 50px;width: 1000px;border-bottom:1px solid #E4E4E4;}
+	.aside{height: 520px;width: 249px;float: left;border-right: 1px solid #E4E4E4;}
+	.content-right{height: 520px;width: 750px;float: right;}
+	.user-info{height:179px;border-bottom:1px solid #E4E4E4;}
+	.safe-tools{height: 140px;border-bottom:1px solid #E4E4E4;}
+	.safe-tools .section{width: 33%;float: left;height: 140px;}
+	.s-email{border-left:1px solid #E4E4E4;border-right:1px solid #E4E4E4;}
+	.top-one{float: right;}
+	.top-one li{float: left;color: #717171;}
+	.top-one a{text-decoration: none;color: #E4E4E4;padding-right: 10px;padding-left: 10px;}
+	.top-one a:hover{text-decoration: underline;color: #2ECCF2;}
+    .top-one img{margin-top: 3px;padding-left: 3px;}
+     /*top-bar ed*/
+	.logo{float: left;height: 90px;line-height: 90px;}
+	.logo a img{vertical-align: middle;}
+	.main-nav{float: right;border-right: 1px dashed #D0D0D0;}
+	.main-nav li{float:left;border-left: 1px dashed #D0D0D0;width: 120px;height: 90px;text-align: center;}
+	.main-nav a{display: block;font-size: 18px;color: #333;text-decoration: none;padding-top: 25px;height: 62px;}
+	.main-nav span{display: block;font-size: 12px;}
+	.main-nav a:hover{border-bottom: 3px solid #0B36BB;color:#0B36BB;}
+	.main-nav .active{border-bottom: 3px solid #0B36BB;color:#0B36BB;}
+	/*header ed*/
+	.banner{background-image: url(images/banner-acc.jpg);}
+	.management{font-weight:normal;text-align: center;padding-top: 30px;}
+	.management span{display: block;font-size: 14px;color:#A9A8A8;}
+	/*banner ed*/
+	.breadcrumb a{display: block;font-size: 14px;color: #A1A1A1;text-decoration: none;}
+	.bread-left{float:left;background-image: url(images/bread-icon.gif);background-repeat: no-repeat;background-position: 15px center;padding-left: 30px;}
+	.bread-left li{float:left;height: 50px;line-height: 50px;}
+	.bread-left li .li-one{margin-right:15px;}
+	.bread-right{float:right;}
+	.bread-right a{float:left; height: 50px;line-height: 50px;width: 120px;border-left: 1px solid #E4E4E4;text-align: center;}
+	.breadcrumb a:hover{color:#2ECCF2;}
+	/*breadcrumb ed*/
+	.subnav h3{font-weight: normal;}
+	.subnav{padding-left:35px;padding-top:35px;}
+	.subnav li{margin-bottom: 35px;}
+	.subnav li li{margin-bottom: 10px;list-style:disc;color:#A1A1A1;margin-left: -10px;}
+	.subnav a{font-size: 14px;color: #A1A1A1;text-decoration: none;}
+	.subnav a:hover{color:#2ECCF2;}
+	.trigle{display: inline-block;width: 0;height: 0;border:5px solid transparent;border-left-color:#2ECCF2;}
+	/*saide ed*/
+	.user-info h3{float:left;margin-top: 45px;margin-left: 45px;}
+	.user-mess{float:left;margin-left: 25px;margin-top: 25px;}
+	.user-mess p{height: 30px;line-height: 30px;}
+	em{font-style: normal;padding-left: 15px;padding-right: 15px;color: #333; }
+	.user-mess .money{padding-left: 20px;}
+	.user-mess .middle{background-image: url(images/save.png);background-repeat: no-repeat;background-position: 15px center;padding-left: 100px;color:#E19914;}
+	.user-mess .name,.money,.improve{color:#2ECCF2;}
+	.user-mess .name,.money,.improve:hover{color:#2ECCF2;}
+	/*user-info ed*/
+	.section h4{background-image: url(images/icon-mobile.png);background-repeat: no-repeat;background-position:left center;padding-top:20px;padding-bottom:20px;padding-left:60px;margin-left:50px;margin-top:10px;color:#555555;}
+	.section p{margin-left:40px;}
+	.section .bang{font-size: 12px;color:#A1A1A1;background-image: url(images/icon-right.gif);background-repeat: no-repeat;background-position:left center;padding-top:3px;padding-left: 20px;}
+	.section .xiugai{font-size: 12px;color:#2ECCF2;}
+	.s-email p{margin-left:25px;}
+	.s-order p{margin-left:45px;}
+	.s-email h4{background-image: url(images/icon-mess.png);background-repeat: no-repeat;background-position:left center;padding-top:20px;padding-bottom:20px;padding-left:60px;margin-left:50px;margin-top:10px;color:#555555;}
+	.s-email .bang{font-size: 12px;color:#A1A1A1;background-image: url(images/icon-alert.gif);background-repeat: no-repeat;background-position:left center;padding-top:3px;padding-left: 20px;}
+	.s-email h4{background-image: url(images/icon-mess.png);background-repeat: no-repeat;background-position:left center;padding-top:20px;padding-bottom:20px;padding-left:60px;margin-left:50px;margin-top:10px;color:#555555;}
+	/*safe-tools ed*/
+	.message table{width: 90%;margin-left: auto;margin-right: auto;margin-top: 20px;font-size: 12px;color:#A1A1A1;}
+	.message td{height: 35px;line-height: 35px;}
+	.message table a{font-size: 12px;color:#2ECCF2;text-decoration: none;}
+	.message th{padding-right: 50px;font-size: 12px;font-weight:bold;color:#555555;}
+	.message table a:hover{color:#A1A1A1;}
+	.message .active{color:#A1A1A1;}
+	.message .one{background-color: rgb(250,250,250);}
+	/*container ed*/
+	.footer h3{float:left;height: 150px;line-height: 150px;margin-right:50px;}
+	.footer a img{vertical-align: middle;}
+	.footer p{height: 25px;color:#9AA0AF;font-size: 12px;font-weight: bold;}
+	.footer p a{color:#9AA0AF;font-size: 12px;font-weight: bold;text-decoration: none;}
+	.footer p a:hover{color:#fff;}
+	.footertext{float:left;margin-top: 45px;}
+	/*.picture{margin-top:-8px;}*/
+</style>
+</head>
+<body>
+	<div class="top-bar"><div class="container">
+		<ul class="top-one">
+				<li><a href="">你好，黎罗丹 &nbsp&nbsp&nbsp退出</a>|</li>
+				<li><a href=""><img src="images/email.png" alt=""> &nbsp&nbsp安全中心</a>|</li>
+				<li><a href="">充值</a>|</li>
+				<li><a href="">客服</a></li>
+			</ul>
+	</div></div>
+<!-- top-bar ! -->
+	<div class="header"><div class="container">
+	<h2 class="logo"><a href=""><img src="images/logo.png" alt=""></a></h2>
+			<ul class="main-nav">
+				<li><a href="" class="active">首页<span>HOME</span></a></li>
+				<li><a href="">账号管理<span>ACCOUNT</span></a></li>
+				<li><a href="">充值<span>RECHARGE</span></a></li>
+				<li><a href="">客服中心<span>RESIVE</span></a></li>
+			</ul>
+</div></div>
+<!-- header ed! -->
+	<div class="banner"><div class="container">
+	<h1 class="management">账号管理<span>ACCOUNT MANAGEMENT</span></h1></div></div>
+<!-- banner ed !-->
+	<div class="article"><div class="container">
+	<div class="breadcrumb">
+		<ul class="bread-left">
+					<li><a href="" class="li-one">乐游首页 ></a></li>
+					<li><a href="">账号管理中心</a></li>
+				</ul>
+				<ul class="bread-right">
+					<li>
+						<a href="">完善资料</a>
+						<a href="">修改密码</a>
+						<a href="">防沉迷认证</a>
+					</li>
+				</ul></div>
+	<div class="aside">
+	<ul class="subnav">
+					<li>
+						<h3><t class="trigle"></t>账号管理</h3>
+						<ul>
+							<li><a href="">管理游戏</a></li>
+							<li><a href="">修改通行证密码</a></li>
+							<li><a href="">完善个人资料</a></li>
+							<li><a href="">防沉迷认证</a></li>
+						</ul>
+					</li>
+					<li>
+						<h3> <t class="trigle"></t>账号安全</h3>
+						<ul>
+							<li><a href="">账号安全设置</a></li>
+						</ul>
+					</li>
+					<li>
+						<h3> <t class="trigle"></t>密保管理</h3>
+						<ul>
+							<li><a href="">密保卡</a></li>
+							<li><a href="">手机令牌</a></li>
+						</ul>
+					</li>
+				</ul></div>
+	<div class="content-right">
+		<div class="user-info">
+			<h3><a href=""><img src="images/user-default.jpg" alt=""></a></h3>
+			<div class="user-mess">
+			<p>乐游账号：<em>黎罗丹</em><a href="" class="name">实名认证</a></p>
+			<p>账户余额：<em>0元</em><a href=""class="money">充值</a></p>
+			<p>安全级别：<em class="middle">中</em><a href="" class="improve">提升</a></p>
+			</div>
+		</div>
+		<!-- 用户信息 ed! -->
+		<div class="safe-tools">
+			<div class="section s-mobile">
+				<h4>安全手机<br/>
+				<span class="bang">已绑定</span>
+				<a href="" class="xiugai">修改</a>
+				</h4>
+				<p class="des">您账号安全的最高有效凭证</p>
+			</div>
+
+			<div class="section s-email">
+				<h4>安全邮箱<br/>
+				<span class="bang">未绑定</span>
+				<a href="" class="xiugai">绑定</a>
+				</h4>
+				<p class="des">安全服务开启时的重要权限判断</p>
+			</div>
+
+			<div class="section s-order">
+				<h4>手机密令<br/>
+				<span class="bang">已绑定</span>
+				<a href="" class="xiugai">修改</a>
+				</h4>
+				<p class="des">动态密码有效防止盗号</p>
+			</div>
+		</div>
+		<!-- 安全工具 ed! -->
+		<div class="message">
+			<table>
+				<tr class="one">
+					<th>登录密码：</th>
+					<td>登录支付宝账户时需要输入的密码修改登录密码</td>
+					<td><a href="">修改密码</a></td>
+				</tr>
+				<tr>
+					<th>个人资料：</th>
+					<td>未完善个人资料</td>
+					<td><a href="">立即完善</a></td>
+				</tr>
+				<tr class="one">
+					<th>实名认证：</th>
+					<td>未实名认证或未满十八周岁账号，账号将进入防沉迷状态。什么是防沉迷？</td>
+					<td><a href="" class="active">已认证</a></td>
+				</tr>
+				<tr>
+					<th>密 保 卡：</th>
+					<td>尚未绑定</td>
+					<td><a href="">立即绑定</a></td>
+				</tr>
+			</table>
+		</div>
+		<!-- 具体信息 ed! -->
+	</div>
+	</div></div>
+<!-- 内容ed !-->
+	<div class="footer"><div class="container">
+		<h3><a href=""><img src="images/foot-logo.png" alt=""></a></h3>
+		<div class="footertext">
+		<p>
+			<a href="">关于乐游 </a>|
+			<a href="">法律声明 </a>|
+			<a href="">联系我们 </a>|
+			<a href="">诚聘英才 </a>|
+			<a href="">游戏论坛 </a>|
+			<a href="">新隋唐风云官网 </a>|
+			<a href="">家长监护</a>
+		</p>
+		<p>郑州乐游网络技术有限公司版权所有 COPYRIGHT @2014 LEYOU.COM LIMITED.ALL RIGHTS RESERVED.</p>
+		<p class="picture">豫网文(2014)0110-002号&nbsp&nbsp&nbsp&nbsp<a href=""><img src="images/wwwm.png" alt=""></a></p>
+		</div>
+	</div></div>	
+</body>
+</html>

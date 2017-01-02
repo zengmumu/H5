@@ -1,0 +1,153 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	padding:0px;
+	margin:0px;
+}
+html
+{
+	position:relative;
+	min-width:1200px;
+	width:100%;
+	text-align:center;
+}
+body
+{
+	min-width:1200px;
+	width:100%;
+	text-align:center;
+}
+/*****************************体部结束*************************/
+
+/*****************************脚部开始*************************/
+#divFoot
+{
+	position:relative;
+	width:100%;
+	min-width:1200px;	
+	min-height:150px;
+	background-color:#ffffff;
+	text-align:center;
+}
+#divFootCenter
+{
+	position:relative;	
+	margin:auto;
+	text-align:left;
+/*	border:1px solid #00ff00;*/
+	width:1000px;
+	min-height:150px;
+}
+img.footLogo
+{
+	position:absolute;
+	left:0px;
+	top:0px;
+	width:200px;
+	height:100px; 
+}
+
+div.foot_row
+{
+	position:relative;
+	width:605px;
+	min-height:60px;
+	margin-top:2px;
+	margin-left:245px;
+}
+
+div.smallRowBlock
+{
+	position:relative;
+	display:block;
+	float:left;
+	width:150px;
+	height:60px;
+	border-right:1px solid #dddddd;
+}
+div.smallRowBlock:first-child
+{
+	border-left:1px solid #dddddd;
+}
+
+a.bold
+{
+	position:relative;
+	display:block;
+	text-align:center;
+	line-height:60px;
+	font-size:13px;
+	font-weight:bold;
+	text-decoration:none;
+	color:#adadad;
+	width:150px;
+	height:60px;
+}
+a.bold:hover
+{
+	color:#407cf6;
+}
+p.bold
+{
+	position:relative;
+	display:block;
+	margin:0px;
+	padding:20px;
+	float:left;
+	text-indent:30px;
+	text-align:center;
+	background-image:url(../images/wechat.jpg);
+	background-repeat:no-repeat;
+	background-position:18% 50%;	
+	line-height:20px;
+	font-size:13px;
+	font-weight:bold;
+	color:#adadad;
+	width:100px;
+	height:20px;
+}
+
+div.row_border
+{
+	position:relative;
+	width:605px;
+	min-height:60px;
+	margin-top:10px;
+	margin-left:245px;
+	border-top:1px solid #dddddd;
+}
+
+#copyRightRow
+{
+	position:relative;
+	width:100%;
+	height:60px;
+	border-top:1px solid #adadad;
+	text-align:center;
+}
+p.copyRight
+{
+	position:relative;
+	text-align:center;
+	font-size:13px;
+	color:#adadad;
+	line-height:60px;
+	width:100%;
+}
+#qrcode1
+{
+	position:absolute;
+	right:150px;
+	top:0px;
+	width:100px;
+	height:100px;
+}
+#qrcode2
+{
+	position:absolute;
+	right:0px;
+	top:0px;
+	width:100px;
+	height:100px;
+}
+/*****************************脚部结束*************************/

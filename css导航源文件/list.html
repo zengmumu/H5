@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>神州科技</title>
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<style>
+*{ margin: 0; padding: 0; box-sizing:border-box;}
+	html{ font-size: 18px;}
+
+	body{ background-color: #efeff4; font-size: 12px;
+		font-family:roboto, \65B9\6B63\5170\4EAD\7EA4\9ED1\7B80\4F53, \5FAE\8F6F\96C5\9ED1, "Helvetica Neue", Helvetica, Arial, sans-serif; }
+		a { text-decoration: none; color: #333;}
+		.lists  li{ height:2.38rem; line-height: 2.3rem; border-bottom: 1px solid #e0e0e0; padding-left: 0.82rem; padding-right: 0.82rem; font-size: 0.8rem; position: relative;}
+		.lists li:hover{ background-color: #FAF8F8;}
+		.lists li:active{ background-color: #EEECEC;}
+		.lists .li_title {display: block; height: 2.38rem;}
+		.li_arr:after{ content: ""; display: block; height: 10px; width: 10px; border-top:1px solid #bbb; border-right:1px solid #bbb; position: absolute; right: 1rem; top: 50%; transform:rotate(45deg) translate(0%,-50%);}
+		.tips .tip{ height: 2.38rem; line-height: 2.38rem; display: block; position: absolute; top:0; right:0.82rem; font-size: 0.5rem; color: #ADADAD;}
+		.tips.li_arr .tip{ right: 1.4rem;}
+		.radios {display: inline-block; height: 2.38rem; line-height: 2.38rem;padding-right: 0.82rem; }
+		.radios .circle{ width: 1.6rem; height: 1.6rem; border-radius: 1.6rem; border:1px solid #bbb; display: inline-block; position: relative; vertical-align: middle; transition:all 0.7s ease; }
+		.radios [type="radio"]{ display: none;}
+		.radios [type="radio"]:checked+.circle{
+			background-color: #218FDC; border:1px solid #218FDC;
+		}
+		.radios [type="radio"]:checked+.circle:before{ content:""; width: 0.6rem; height: 0.4rem; display: inline-block;border-left:1px solid #fff; border-bottom: 1px solid #fff; position: absolute; left:50%; top:40%; transform:translate(-50%,-50%) rotate(-45deg);}
+		.toggle{ float: right; display:inline-block;}
+		.toggle .t_btn{ display:inline-block;width:2.83rem; height: 1.72rem; background-color: #aaa; border-radius: 1.72rem; vertical-align: middle; position: relative; transition:all 0.6s ease;}
+		.toggle .t_btn:before{ content: ""; display: inline-block; height: 1.52rem; width: 1.52rem; background-color: #fff; border-radius: 1.52rem; position: absolute;left:0.1rem; top:0.1rem; transition:left 0.5s ease;}
+		.toggle [type="checkbox"]{ display: none;}
+		.toggle [type="checkbox"]:checked+.t_btn{ background-color: #15C1EF;}
+		.toggle [type="checkbox"]:checked+.t_btn:before{ left:1.2rem;}
+		.checks{ float: right; display: inline-block;
+			padding-left: 1rem;}
+		.checks .check{ display: inline-block; height: 1rem; width:1rem; line-height: 1rem; background:url(images/uncheck.png) no-repeat center center; background-size:100% auto; vertical-align:middle;}
+		.checks [type="checkbox"]{ display: none;}
+		.checks [type="checkbox"]:checked+.check{
+			background-image: url(images/checked.png);
+		}
+	
+		</style>
+
+		</head>
+<body>
+<ul class="lists">
+	<li><a href="" class="li_title">我是一个基本的列表</a></li>
+	<li class="li_arr"><a href="" class="li_title">我是一个基本的列表</a></li>
+	<li class="tips"><a href="" class="li_title">我是一个基本的列表</a><span class="tip">马上挣钱</span></li>
+	<li class="tips li_arr"><a href="" class="li_title">我是一个基本的列表</a><span class="tip">马上挣钱</span></li>
+	<li>
+		<label class="radios"> <input type="radio" name="myra" checked="checked" /><span class="circle"></span>   报装 
+		</label>
+		<label class="radios"> <input type="radio" name="myra" /> <span class="circle"></span>
+		  报修 
+		</label>
+	</li>
+	<li>
+		<label class="toggle">
+		<input type="checkbox">
+
+		<span class="t_btn"></span>
+		</label>
+	</li>
+	<li><label class="checks"> <input type="checkbox" checked="checked"><span class="check"></span></label></li>
+	<li><label class="checks"> <input type="checkbox"> <span class="check"></span></label></li>
+</ul>	
+</body>
+
+</html>

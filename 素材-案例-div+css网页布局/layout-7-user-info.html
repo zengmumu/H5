@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+/*[1]清除*/
+*{ margin: 0; padding: 0;}
+ul,ol{ list-style: none;}
+img{ border: none; vertical-align: top;}
+table{ border-collapse: collapse;}
+a{text-decoration: none; color: #777;}
+a:hover{text-decoration: underline; color: rgb(144,211,253)}
+h1,h2,h3,h4,h5,h6{font-weight: normal;}
+em{ font-style: normal;}
+.primary-link{color: rgb(144,211,253);text-decoration: underline; }
+/*[2] 设置整体文字大小和颜色*/
+body{ font-family: "Microsoft YaHei"; font-size: 14px; color: #777; background-color: #f0f0f0;}
+
+/*[3] 横向的布局*/
+.top-bar{ height: 28px; line-height: 28px; background-color: #323240;}
+.header{ height: 90px; background-color: #fff;}
+.banner{ height: 170px; background-color: #2A8BB7;}
+.article{ height: 570px;}
+.footer{ height: 150px; background-color: #323240; margin-top: 120px; }
+.container{ height: 100%; width: 1000px; margin-left: auto; margin-right: auto; }
+.article .container{ background-color: #fff; margin-top: -50px; border: 1px solid rgb(228,228,228);}
+/*layout-3*/
+.breadcrumb{ height: 50px; background-color: #fff; border-bottom:1px solid rgb(228,228,228);}
+.aside{ width: 249px; float: left;  height: 100%; border-right:1px solid rgb(228,228,228);}
+.content{ width: 750px; float: left; height: 100%;}
+.user-info{ height: 180px; }
+.safe-tools{ height: 140px; background-color: #AEA832;}
+.safe-tools .section{ height: 100%; width: 33%; float: left;}
+.s-email{ background-color: #5929C8;}
+
+/*-----------------------top bar*/
+.bar-nav{ float: right;}
+.bar-nav li{ float: left; height: 28px; line-height: 28px; font-size: 12px;}
+.bar-nav a{ padding-left: 15px; padding-right: 15px; color: #b0b0b0;}
+.bar-nav a:hover{ color: #fff;}
+.logo{  float: left;height: 90px; line-height: 90px;}
+
+.logo img{ vertical-align:middle;}
+.main-nav{ float: right;}
+.main-nav li{float: left; border-left: 1px dashed #ddd; height: 90px; width: 120px; text-align: center; font-size: 18px;}
+.main-nav span{ display: block; font-size: 12px;}
+.main-nav a{ display: block; height: 62px; padding-top: 25px; text-decoration: none;}
+.main-nav a:hover,.main-nav .active{ border-bottom: 3px solid rgb(57,105,157); color:rgb(57,105,157);}
+.banner{ background-image: url(images/banner-acc.jpg)}
+.banner h1{ text-align: center; font-size: 24px; font-weight: normal; padding-top: 35px; color:rgb(35,57,94);}
+.banner span{ display: block; font-size: 12px; color: #777;}
+.breaklink{ float: left; background-image: url(images/bread-icon.gif); background-repeat: no-repeat; background-position: 15px center; padding-left: 35px;}
+.breaklink li{ float: left; height: 50px; line-height: 50px;}
+
+.hotlink{ float: right;}
+.hotlink li{ float: left; width: 120px; height: 50px; line-height: 50px; border-left: 1px solid rgb(228,228,228); text-align: center;}
+.hotlink a{ display: block; height: 50px;}
+
+.subnav{ padding-left: 35px; padding-top: 35px;}
+.subnav li{ margin-bottom: 35px;}
+.subnav h3{ color: #333;}
+.subnav li li{ margin-bottom: 0; list-style: disc; font-size: 12px;margin-left: 20px; color: #DBDADA; height: 30px; line-height: 30px;}
+.subnav li li a{ font-size: 14px;}
+.trigle{ display: inline-block; width: 0; height: 0px; border:6px solid transparent;
+	border-left-color:rgb(144,211,253);
+}
+
+/*content*/
+.user-info{ border-bottom:1px solid rgb(228,228,228);}
+.user-info h4{ background-color: yellow; float: left; margin-top: 45px; margin-left: 35px; margin-right: 20px;}
+.user-mess{ float: left; margin-top: 15px;}
+.user-mess p{ height: 35px; line-height: 35px;}
+.user-mess em{padding-left: 15px; padding-right: 15px; color: #333; font-weight: bold;}
+.user-mess .s-level{ background-image: url(images/safe-m.png); background-repeat: no-repeat; background-position:  15px center; padding-left: 100px; color: #EA9927;}
+
+	</style>
+
+
+</head>
+<body>
+	<div class="top-bar"><div class="container"><ul class="bar-nav">
+		<li><a href="">link1</a>|</li>
+		<li><a href="">link2</a>|</li>
+		<li><a href="">link3</a>|</li>
+		<li><a href="">link4</a></li>
+	</ul>
+	</div></div>
+	<div class="header"><div class="container">
+	<h2 class="logo"><a href=""><img src="images/logo.png" alt=""></a></h2>
+	<ul class="main-nav">
+		<li><a href="">首页1<span>Home1</span></a></li>
+		<li><a href="" class="active">账号管理<span>Account</span></a></li>
+		<li><a href="">首页3<span>Home3</span></a></li>
+		<li><a href="">首页4<span>Home4</span></a></li>
+	</ul>
+	</div></div>
+	<div class="banner"><div class="container">
+	<h1>账号管理<span>Account Mangement</span></h1>
+	</div></div>
+	<div class="article"><div class="container">
+	<div class="breadcrumb">
+		<ul class="breaklink">
+			<li><a href="">links1</a> &gt;</li>
+			<li><a href="">links2</a></li>
+		</ul>
+		<ul class="hotlink">
+			<li><a href="">textlink1</a></li>
+			<li><a href="">textlink2</a></li>
+			<li><a href="">textlink3</a></li>
+		</ul>
+	</div>
+	<div class="aside">
+		<ul class="subnav">
+			<li>
+				<h3><i class="trigle"></i>账号管理2</h3>
+				<ul>
+					<li><a href="">item1</a></li>
+					<li><a href="">item2</a></li>
+					<li><a href="">item3</a></li>
+					<li><a href="">item4</a></li>
+				</ul>
+			</li>
+			<li>
+				<h3> <i class="trigle"></i>账号管理</h3>
+				<ul>
+					<li><a href="">item1</a></li>
+				</ul>
+			</li>
+			<li>
+				<h3> <i class="trigle"></i>账号管理3</h3>
+				<ul>
+					<li><a href="">item1</a></li>
+					<li><a href="">item2</a></li>
+				</ul>
+			</li>
+		</ul>
+
+	</div>
+	<div class="content">
+		<div class="user-info">
+			<h4><a href=""><img src="images/user-default.jpg" height="54" width="54" alt=""></a></h4>
+			<div class="user-mess">
+				<p>乐游账号<em>zeng***</em><a href="" class="primary-link">link1</a></p>
+				<p>乐游账号<em>zeng***</em><a href="" class="primary-link">link2</a></p>
+				<p>乐游账号<em class="s-level">中</em><a href="" class="primary-link">link3</a></p>
+			</div>
+		</div>
+		<div class="safe-tools">
+			<div class="section">section1</div>
+			<div class="section s-email">section2</div>
+			<div class="section">section3</div>
+		</div>
+		<!-- safe-tools ed -->
+		<div class="safe-mess">safe-mess</div>
+
+	</div>
+	<!-- content ed -->
+	<!-- article container ed -->
+	</div></div>
+	<div class="footer"><div class="container">container
+	</div></div>
+</body>
+</html>

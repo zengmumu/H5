@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<style>
+	/*公用*/
+	.l{ float: left;}
+	.r{ float: right}
+	.shadow-d{ box-shadow:0 2px 3px #aaa;}
+	.round-6{ -ms-border-radius: 6px;-moz-border-radius: 6px;-webkit-border-radius: 6px;border-radius: 6px;}
+	.bo{border:1px solid rgb(205,205,205);}
+
+	/*颜色*/
+	.bg-primary{ background-color: rgb(230,0,68);}
+	.txt-hidden{ text-indent: -99999em;}
+	/*背景*/
+	/*栅格系统*/
+	.container{width: 1200px; margin-left: auto; margin-right: auto;}
+	/*组件模块*/
+	.triangle-b-u:before{
+ content: ""; display: inline-block;width: 0; height: 0px; border:6px solid transparent;border-bottom-color:rgb(230,0,68);
+ position: absolute; left:50%; top: 0;
+ transform:translate(50%,-100%);
+  -webkit-transform:translate(-50%,-100%);
+	}
+	.triangle-b-d:before{ content: ""; display: inline-block;width: 0; height: 0px; border:6px solid transparent;border-top-color:rgb(205,205,205);}
+     .triangle-a-d:after{ content: ""; display: inline-block;width: 0; height: 0px; border:6px solid transparent;border-top-color:rgb(205,205,205); vertical-align: middle;}
+	
+	
+
+
+	/*导航*/
+	header{ height: 99px; background-color: rgb(247,247,247) ;background-image: url(images/logo_left.png); background-repeat: no-repeat; background-size: 20% 99px;}
+	.nav{ margin-top: 35px; background:url(images/header-xuxian.png) no-repeat left 3px;}
+	.nav li{ float: left; width: 87px; text-align: center; position: relative;}
+	.nav .active a{ color: rgb(230,0,68);}
+	.nav li a:before{ content: ""; height: 7px; width: 7px; display: block; margin-left: auto; margin-right: auto; background:url(images/headeryuan.png) no-repeat left top;}
+	.nav a{ display: block;}
+	.nav a:hover:before,.nav .active a:before{ background-position: right top;}
+	.topSearch{ height: 35px; line-height: 35px; margin-top: 30px; width: 220px; overflow: hidden;}
+	.s-news{ border-right: 1px solid rgb(205,205,205); display: inline-block; height: 35px; padding-left: 5px; padding-right: 5px;}
+	.searchInp{ border:none; height: 35px; line-height: 35px; padding:0 5px; width: 110px;}
+	.searchSub{ display: inline-block; width: 45px; float: right; height: 35px; line-height: 35px; border:none; background-image: url(images/fangdajing.png); background-repeat: no-repeat; background-position:  center center;}
+	.subnav{ width: 87px; border-radius: 0 0 6px 6px; background-color:rgb(230,0,68); padding: 10px 0 10px 0; position: absolute; left:0; top: 63px; /*  height: 0;opacity: 0; transition:all 1s;*/ display: none;}
+	.nav>li{ height: 60px;}
+	.nav>li:hover .subnav{ /*opacity: 1; height: auto;*/ display: block;}
+	.subnav li{ float: none;}
+	.subnav a{ display: block; height: 25px; line-height: 25px; color: #fff;}
+	.subnav a:hover{ background-color: #BE2450;}
+	.subnav li a:before{ display: none;   }
+	</style>
+</head>
+<body>
+<header class="shadow-d">
+<div class="container">
+	<h2 class="brand l"><a href=""><img src="images/runmei.png" alt=""></a></h2>
+    <ul class="nav l clearfix">
+    	<li class="active"><a href="">navlink1</a></li>
+    	<li><a href="">navlink2</a></li>
+    	<li><a href="">navlink3</a>
+			<ul class="subnav triangle-b-u">
+				<li><a href="">sub1</a></li>
+				<li><a href="">sub2</a></li>
+				<li><a href="">sub3</a></li>
+				<li><a href="">sub4</a></li>
+				<li><a href="">sub5</a></li>
+			</ul>
+    	</li>
+    	<li><a href="">navlink4</a>
+<ul class="subnav triangle-b-u">
+				<li><a href="">sub1</a></li>
+				<li><a href="">sub2</a></li>
+			
+				<li><a href="">sub5</a></li>
+			</ul>
+    	</li>
+    	<li><a href="">navlink5</a></li>
+    	<li><a href="">navlink6</a></li>
+    	<li><a href="">navlink7</a></li>
+    </ul>
+	<form action="" class="topSearch r bo round-6">
+		<span class="triangle-a-d s-news">新闻</span>
+		<input type="text" class="searchInp" name="" id="" placeholder="请输入关键字">
+		<input type="submit" value="搜索" class="searchSub bg-primary txt-hidden">
+	</form>
+	</div>
+</header>
+	
+</body>
+</html>

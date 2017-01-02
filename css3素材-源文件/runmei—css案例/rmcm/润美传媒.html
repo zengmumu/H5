@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://www.zzrmcm.com/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<title>润美传媒</title>
+<link href="./润美传媒_files/base.css" rel="stylesheet" type="text/css">
+<link href="./润美传媒_files/index.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="./润美传媒_files/jquery1.42.min.js"></script>
+<script type="text/javascript" src="./润美传媒_files/jquery.SuperSlide.2.1.1.source.js"></script>
+<script src="./润美传媒_files/index.js"></script>
+<script type="text/javascript" src="./润美传媒_files/base.js"></script>
+<script language="javascript" type="text/javascript" src="./润美传媒_files/dedeajax2.js"></script>
+<script>
+$(function(){
+	$(".anli_nav li").click(function(){
+		var x=$(".anli_nav li").index(this);
+		$(".anli_nav li").removeClass("im");
+		$(".anli_nav li").eq(x).addClass("im");
+		$(".anli").hide();
+		$(".anli").eq(x).show();
+		
+		})
+	})
+</script>
+<script language="javascript" type="text/javascript">
+	
+	function zan(id){
+	  var taget_obj = document.getElementById('_zandiv'+id);
+	  myajax = new DedeAjax(taget_obj,false,false,'','','');
+	  myajax.SendGet2("/zan.php?id="+id);
+	  DedeXHTTP = null;
+	}
+
+</script>
+<style>
+.anli {display:none;}
+</style>
+</head><body>
+
+<div class="header">
+	<div class="headertext">
+    	<div class="headertext-le">
+        	<a href="./润美传媒_files/润美传媒.html"><img src="./润美传媒_files/runmei.png"></a>
+        </div>
+        <script>
+        	$(function(){
+				$(".headertext-ri ul li").hover(function(){
+					$(this).children(".dwbox").stop(true,true).slideDown("fast");
+					
+				},function(){
+					$(this).children(".dwbox").stop(true,true).slideUp("fast");
+						
+				})	
+			})
+        </script>
+        <div class="headertext-ri">
+        	 <ul>
+             	<li class="qqqq">
+                   <a href="./润美传媒_files/润美传媒.html">首页</a>
+                </li>				
+                <li>
+                	<a href="http://www.zzrmcm.com/about/pinpai/">生而不凡</a>
+                    <div class="dwbox">
+                           <div class="imgj">
+                           	    <img src="./润美传媒_files/header-jian.png">
+                           </div>
+                           <div class="dw">
+                           <a href="http://www.zzrmcm.com/about/pinpai/">品牌故事</a>
+                           <a href="http://www.zzrmcm.com/about/jianjie/">公司简介</a>
+                           <a href="http://www.zzrmcm.com/about/linian/">企业理念</a>
+                           <a href="http://www.zzrmcm.com/about/tuandui/">团队合作</a>
+                           </div>
+                     </div>
+                </li>
+                <li>
+				
+                <a href="http://www.zzrmcm.com/xebc/gongsixinwen/">新而不从</a>
+                <div class="dwbox">
+                           <div class="imgj">
+                           	    <img src="./润美传媒_files/header-jian.png">
+                           </div>
+                           <div class="dw">
+                           <a href="http://www.zzrmcm.com/xebc/gongsixinwen/">公司新闻</a>
+                           <a href="http://www.zzrmcm.com/xebc/hangyexinwen/">行业新闻</a>
+                           </div>
+                       </div>
+                </li>
+                <li>
+                <a href="http://www.zzrmcm.com/zebq/cehua">卓尔不群</a>
+                <div class="dwbox">
+                           <div class="imgj">
+                           	    <img src="./润美传媒_files/header-jian.png">
+                           </div>
+                           <div class="dw">
+                           <a href="http://www.zzrmcm.com/zebq/cehua/">润策划</a>
+						   <a href="http://www.zzrmcm.com/zebq/shijue/">美视觉</a>
+						   <a href="http://www.zzrmcm.com/zebq/pinpai/">传品牌</a>
+						   <a href="http://www.zzrmcm.com/zebq/meiti/">新媒体</a>
+                           </div>
+                       </div>
+                </li>
+                <li>
+                <a href="http://www.zzrmcm.com/webs/">为而不恃</a>
+                <div class="dwbox">
+                           <div class="imgj">
+                           	    <img src="./润美传媒_files/header-jian.png">
+                           </div>
+                           <div class="dw">
+                           <a href="http://www.zzrmcm.com/webs/cehua/">展会策划</a>
+						   <a href="http://www.zzrmcm.com/webs/sheji/">视觉设计</a>
+						   <a href="http://www.zzrmcm.com/webs/yunying/">新媒体运营</a>
+						   <a href="http://www.zzrmcm.com/webs/yanyi/">COS演艺</a>
+						   <a href="http://www.zzrmcm.com/webs/donghua/">动画制作</a>
+						   <a href="http://www.zzrmcm.com/webs/yingshi/">影视策划</a>
+						   <a href="http://www.zzrmcm.com/webs/pinpai/">品牌策划</a>
+						   <a href="http://www.zzrmcm.com/webs/dichan/">地产营销</a>
+                           </div>
+                       </div></li>
+                <li> <a href="http://www.zzrmcm.com/zebb/cehua">周而不比</a>
+					<div class="dwbox">
+                           <div class="imgj">
+                           	    <img src="./润美传媒_files/header-jian.png">
+                           </div>
+                           <div class="dw">
+                           <a href="http://www.zzrmcm.com/zebb/cehua/">平面设计</a>
+						   <a href="http://www.zzrmcm.com/zebb/kehu/">活动策划</a>
+						   <a href="http://www.zzrmcm.com/zebb/qiantai/">推广专员</a>
+						   <a href="http://www.zzrmcm.com/zebb/meishu/">执行专员</a>
+						   <a href="http://www.zzrmcm.com/zebb/pingmian/">业务经理</a>
+						   
+						   
+						   
+                           </div>
+                       </div>
+				</li>
+                <li> <a href="http://www.zzrmcm.com/hebt/">和而不同</a></li>
+             </ul>
+        </div>
+    <!-------搜索栏开始------->
+
+<!-------搜索栏开始------->
+ <div class="search">
+        	
+		 <form action="http://www.zzrmcm.com/plus/search.php" method="post" name="form10">
+		 <input type="hidden" name="kwd" value="0">
+		 <input type="hidden" name="dopost" value="search">
+		 <div class="search_left">
+            	<div id="sleBG">   
+                <span id="sleHid">   
+                    <select name="typeid" id="typeid" class="select"> 
+                        <option value="2">新闻</option>    
+                        <option value="4">案例</option>    
+                    </select>   
+                </span>   
+            </div>   
+            </div>
+            <div class="search_center"><input type="text" name="keyword" id="search-keyword" placeholder="请输入关键词"></div>
+            <a onclick="form10.submit();"><div class="search_right"><input type="submit" value=""></div></a>			 
+         </form>
+        </div>
+    </div>
+</div>
+
+<div class="bannerBox">
+      <div class="kkk">
+            <div class="tempWrap" style="overflow:hidden; position:relative; width:1920px"><div class="imgBox" style="width: 11520px; position: relative; overflow: hidden; padding: 0px; margin: 0px; left: -5760px;"><a href="http://www.zzrmcm.com/zebb/cehua/" target="_blank" class="clone" style="float: left; width: 1920px;"><img alt="公司招聘" src="./润美传媒_files/1-1511061GGbP.jpg"></a>
+			<a href="http://www.zzrmcm.com/about/pinpai/" target="_blank" style="float: left; width: 1920px;"><img alt="幻灯一" src="./润美传媒_files/1-151106133501645.jpg"></a>
+<a href="http://www.zzrmcm.com/xebc/gongsixinwen/" target="_blank" style="float: left; width: 1920px;"><img alt="幻灯二" src="./润美传媒_files/1-1511061129212T.jpg"></a>
+<a href="http://www.zzrmcm.com/zebq/cehua/" target="_blank" style="float: left; width: 1920px;"><img alt="幻灯三" src="./润美传媒_files/1-151106112J03L.jpg"></a>
+<a href="http://www.zzrmcm.com/zebb/cehua/" target="_blank" style="float: left; width: 1920px;"><img alt="公司招聘" src="./润美传媒_files/1-1511061GGbP.jpg"></a>
+
+                 
+            <a href="http://www.zzrmcm.com/about/pinpai/" target="_blank" class="clone" style="float: left; width: 1920px;"><img alt="幻灯一" src="./润美传媒_files/1-151106133501645.jpg"></a></div></div>
+            <div class="btnBox"><a class="currentBTN"></a><a class=""></a><a class="on"></a><a class=""></a></div>
+         </div> 
+      <script type="text/javascript">
+				jQuery(".kkk").slide( { titCell:".btnBox a",mainCell:".imgBox",effect:"leftLoop",easing:"swing",autoPlay:"true",opp:"true"});
+	  </script>
+</div>
+<ul class="index_content01">
+	<li><div class="pro_img"><img src="./润美传媒_files/1-1511061I53V13.jpg"></div>
+        <a href="http://www.zzrmcm.com/zebq/cehua/" class="big" target="_blank" style="display: none;"><img src="./润美传媒_files/big1.png"></a>
+
+    </li>
+    <li>
+    	<div class="pro_img"><img src="./润美传媒_files/1-1511061I522596.jpg"></div>
+        <a href="http://www.zzrmcm.com/zebq/shijue/" class="big" target="_blank" style="display: none;"><img src="./润美传媒_files/big2.png"></a>
+
+    </li>
+    <li>
+    	<div class="pro_img"><img src="./润美传媒_files/1-1511061I5051O.jpg"></div>
+        <a href="http://www.zzrmcm.com/zebq/pinpai/" class="big" target="_blank"><img src="./润美传媒_files/big3.png"></a>
+
+    </li>
+    <li>
+    	<div class="pro_img"><img src="./润美传媒_files/1-1511061I44a26.jpg"></div>
+        <a href="http://www.zzrmcm.com/zebq/meiti/" class="big" target="_blank" style="display: none;"><img src="./润美传媒_files/big4.png"></a>
+
+    </li>
+</ul>
+<div class="index_content02">
+	<div class="neirong02">
+         <div class="neirong_top"><img src="./润美传媒_files/zhi.png"></div>
+         <ul class="hua">
+		 <li>
+            	<div class="cehua_img"><img src="./润美传媒_files/1-151106155A0219.jpg"></div>
+                <div class="fugai" style="display: none;">
+                	<div class="zhanshi_top"><a href="http://www.zzrmcm.com/plus/view.php?aid=52" target="_blank">一个PPT，如何开启一场商</a></div>
+                    <div class="zhanshi_top01">2015年三月某天，当我做完最后一页PPT时，时针恰好指向凌晨三点钟，这已经是连续的第三天。这是一个关于莱迪时尚购物中心的招商PPT。</div>
+                    <div class="ckck"><a href="http://www.zzrmcm.com/plus/view.php?aid=52" target="_blank">查看更多&gt;&gt;</a></div>
+                </div>
+            </li>
+<li>
+            	<div class="cehua_img"><img src="./润美传媒_files/1-151106155552E6.jpg"></div>
+                <div class="fugai" style="display: none;">
+                	<div class="zhanshi_top"><a href="http://www.zzrmcm.com/plus/view.php?aid=53" target="_blank">无与伦比的美丽</a></div>
+                    <div class="zhanshi_top01">如同5月份不断攀升的气温，国内主题文化乐园新一轮的兴建热潮也开始袭来，全国各地各类主题文化乐园如雨后春笋般出现，让人眼花缭乱。</div>
+                    <div class="ckck"><a href="http://www.zzrmcm.com/plus/view.php?aid=53" target="_blank">查看更多&gt;&gt;</a></div>
+                </div>
+            </li>
+<li>
+            	<div class="cehua_img"><img src="./润美传媒_files/1-15110615543E96.jpg"></div>
+                <div class="fugai" style="display: none;">
+                	<div class="zhanshi_top"><a href="http://www.zzrmcm.com/plus/view.php?aid=54" target="_blank">有一种跨年只为天生热爱</a></div>
+                    <div class="zhanshi_top01">2014年12月3日，同事们像往常一样忙碌着，副总进来，“新消息：2014年度‘千亿科技城’文化产业成果展政府审核通过，由润美协办！各位辛苦一下，共同完成这道文化大餐！”</div>
+                    <div class="ckck"><a href="http://www.zzrmcm.com/plus/view.php?aid=54" target="_blank">查看更多&gt;&gt;</a></div>
+                </div>
+            </li>
+<li>
+            	<div class="cehua_img"><img src="./润美传媒_files/1-1511061554121P.jpg"></div>
+                <div class="fugai" style="display: none;">
+                	<div class="zhanshi_top"><a href="http://www.zzrmcm.com/plus/view.php?aid=55" target="_blank">中原广告产业园</a></div>
+                    <div class="zhanshi_top01">随着中原广告产业园各项基础设施的完善，招商工作被提上日程。一个能够展示园区实力，传达园区文化、展现园区愿景的宣传片，无论对于园区形象的塑造还是招商工作的开展都显得尤为重要。</div>
+                    <div class="ckck"><a href="http://www.zzrmcm.com/plus/view.php?aid=55" target="_blank">查看更多&gt;&gt;</a></div>
+                </div>
+            </li>
+
+           
+         </ul>
+    </div>
+</div>
+<div class="anli_box">
+	<div class="anli_box_top">案例展示</div>
+    <ul class="anli_nav">
+		<li class="im"></li>
+    	<li><span>展</span>展会策划</li>
+        <li><span>视</span>视觉设计</li>
+        <li><span>新</span>新媒体运营</li>
+        <li><span>C</span>COS演艺</li>
+        <li><span>动</span>动画制作</li>
+        <li><span>影</span>影视策划</li>
+    	<li><span>品</span>品牌策划</li>
+        <li><span>地</span>地产营销</li>
+    </ul>
+	 <ul class="anli" style="display:block;">
+	<li>
+        	<div class="anli_img"><a href="http://www.zzrmcm.com/webs/dichan/2016/0113/131.html" target="_blank"><img src="./润美传媒_files/1-1601122354090-L.jpg"></a></div>
+            <div class="anli_name"><a href="http://www.zzrmcm.com/webs/dichan/2016/0113/131.html" target="_blank">三九天里的坚持，只为给</a></div>
+            <div class="zan">
+                <div class="zan_left">80</div>
+                <div class="zan_center" id="_zandiv131" onclick="zan(131)">0</div>
+                <div class="zan_right">&nbsp;<img alt="" src="./润美传媒_files/1-151021123022D9.png" style="width: 20px; height: 20px;"></div>
+            </div>
+        </li>
+<li>
+        	<div class="anli_img"><a href="http://www.zzrmcm.com/webs/cehua/2016/0112/130.html" target="_blank"><img src="./润美传媒_files/1-1601122310450-L.jpg"></a></div>
+            <div class="anli_name"><a href="http://www.zzrmcm.com/webs/cehua/2016/0112/130.html" target="_blank">因你变完美 《龙OL》首届</a></div>
+            <div class="zan">
+                <div class="zan_left">63</div>
+                <div class="zan_center" id="_zandiv130" onclick="zan(130)">0</div>
+                <div class="zan_right">&nbsp;<img alt="" src="./润美传媒_files/1-151021122IR55.png" style="width: 20px; height: 20px;"></div>
+            </div>
+        </li>
+<li>
+        	<div class="anli_img"><a href="http://www.zzrmcm.com/webs/donghua/2015/1020/60.html" target="_blank"><img src="./润美传媒_files/1-1510201F353D0.jpg"></a></div>
+            <div class="anli_name"><a href="http://www.zzrmcm.com/webs/donghua/2015/1020/60.html" target="_blank">山海奇谭</a></div>
+            <div class="zan">
+                <div class="zan_left">138</div>
+                <div class="zan_center" id="_zandiv60" onclick="zan(60)">2</div>
+                <div class="zan_right">&nbsp;<img alt="" src="./润美传媒_files/1-15102112291ND.png" style="width: 20px; height: 20px;"></div>
+            </div>
+        </li>
+<li>
+        	<div class="anli_img"><a href="http://www.zzrmcm.com/webs/cehua/2015/1011/24.html" target="_blank"><img src="./润美传媒_files/1-15102016492IJ.jpg"></a></div>
+            <div class="anli_name"><a href="http://www.zzrmcm.com/webs/cehua/2015/1011/24.html" target="_blank">改变策展的可能性</a></div>
+            <div class="zan">
+                <div class="zan_left">192</div>
+                <div class="zan_center" id="_zandiv24" onclick="zan(24)">2</div>
+                <div class="zan_right">&nbsp;<img alt="" src="./润美传媒_files/1-151021122IR55.png" style="width: 20px; height: 20px;"></div>
+            </div>
+        </li>
+<li>
+        	<div class="anli_img"><a href="http://www.zzrmcm.com/webs/yanyi/2015/1020/63.html" target="_blank"><img src="./润美传媒_files/1-1510201G244145.png"></a></div>
+            <div class="anli_name"><a href="http://www.zzrmcm.com/webs/yanyi/2015/1020/63.html" target="_blank">狂拽酷炫萌炸天</a></div>
+            <div class="zan">
+                <div class="zan_left">116</div>
+                <div class="zan_center" id="_zandiv63" onclick="zan(63)">2</div>
+                <div class="zan_right">&nbsp;<img alt="" src="./润美传媒_files/1-151021122UJR.png" style="width: 20px; height: 20px;"></div>
+            </div>
+        </li>
+<li>
+        	<div class="anli_img"><a href="http://www.zzrmcm.com/webs/yanyi/2015/1020/62.html" target="_blank"><img src="./润美传媒_files/1-1510201G0455Z.png"></a></div>
+            <div class="anli_name"><a href="http://www.zzrmcm.com/webs/yanyi/2015/1020/62.html" target="_blank">只是在Cos中多看了一眼</a></div>
+            <div class="zan">
+                <div class="zan_left">163</div>
+                <div class="zan_center" id="_zandiv62" onclick="zan(62)">1</div>
+                <div class="zan_right">&nbsp;<img alt="" src="./润美传媒_files/1-151021122UJR.png" style="width: 20px; height: 20px;"></div>
+            </div>
+        </li>
+<li>
+        	<div class="anli_img"><a href="http://www.zzrmcm.com/webs/dichan/2015/1020/61.html" target="_blank"><img src="./润美传媒_files/1-1510201F555121.jpg"></a></div>
+            <div class="anli_name"><a href="http://www.zzrmcm.com/webs/dichan/2015/1020/61.html" target="_blank">凭什么说我们是土豪?</a></div>
+            <div class="zan">
+                <div class="zan_left">172</div>
+                <div class="zan_center" id="_zandiv61" onclick="zan(61)">2</div>
+                <div class="zan_right">&nbsp;<img alt="" src="./润美传媒_files/1-151021123022D9.png" style="width: 20px; height: 20px;"></div>
+            </div>
+        </li>
+<li>
+        	<div class="anli_img"><a href="http://www.zzrmcm.com/webs/pinpai/2015/1020/59.html" target="_blank"><img src="./润美传媒_files/1-1510201F05C40.jpg"></a></div>
+            <div class="anli_name"><a href="http://www.zzrmcm.com/webs/pinpai/2015/1020/59.html" target="_blank">莱迪Lady Park时尚购物中心</a></div>
+            <div class="zan">
+                <div class="zan_left">192</div>
+                <div class="zan_center" id="_zandiv59" onclick="zan(59)">2</div>
+                <div class="zan_right">&nbsp;<img alt="" src="./润美传媒_files/1-151021123002633.png" style="width: 20px; height: 20px;"></div>
+            </div>
+        </li>
+<li>
+        	<div class="anli_img"><a href="http://www.zzrmcm.com/webs/pinpai/2015/1020/58.html" target="_blank"><img src="./润美传媒_files/1-1510201AG5N1.jpg"></a></div>
+            <div class="anli_name"><a href="http://www.zzrmcm.com/webs/pinpai/2015/1020/58.html" target="_blank">百汇地动漫谷</a></div>
+            <div class="zan">
+                <div class="zan_left">63</div>
+                <div class="zan_center" id="_zandiv58" onclick="zan(58)">2</div>
+                <div class="zan_right">&nbsp;<img alt="" src="./润美传媒_files/1-151021123002633.png" style="width: 20px; height: 20px;"></div>
+            </div>
+        </li>
+<li>
+        	<div class="anli_img"><a href="http://www.zzrmcm.com/webs/pinpai/2015/1020/57.html" target="_blank"><img src="./润美传媒_files/1-1510201A41IJ.jpg"></a></div>
+            <div class="anli_name"><a href="http://www.zzrmcm.com/webs/pinpai/2015/1020/57.html" target="_blank">睿纳传媒</a></div>
+            <div class="zan">
+                <div class="zan_left">147</div>
+                <div class="zan_center" id="_zandiv57" onclick="zan(57)">1</div>
+                <div class="zan_right">&nbsp;<img alt="" src="./润美传媒_files/1-151021123002633.png" style="width: 20px; height: 20px;"></div>
+            </div>
+        </li>
+        
+    </ul>
+    <ul class="anli">
+	<li>
+        	<div class="anli_img"><a href="http://www.zzrmcm.com/webs/cehua/2016/0112/130.html" target="_blank"><img src="./润美传媒_files/1-1601122310450-L.jpg"></a></div>
+            <div class="anli_name"><a href="http://www.zzrmcm.com/webs/cehua/2016/0112/130.html" target="_blank">因你变完美 《龙OL》首届</a></div>
+            <div class="zan">
+                <div class="zan_left">63</div>
+                <div class="zan_center" id="_zandiv130" onclick="zan(130)">0</div>
+                <div class="zan_right"><img src="./润美传媒_files/icon1.png"></div>
+            </div>
+        </li>
+<li>
+        	<div class="anli_img"><a href="http://www.zzrmcm.com/webs/cehua/2015/1011/24.html" target="_blank"><img src="./润美传媒_files/1-15102016492IJ.jpg"></a></div>
+            <div class="anli_name"><a href="http://www.zzrmcm.com/webs/cehua/2015/1011/24.html" target="_blank">改变策展的可能性</a></div>
+            <div class="zan">
+                <div class="zan_left">192</div>
+                <div class="zan_center" id="_zandiv24" onclick="zan(24)">2</div>
+                <div class="zan_right"><img src="./润美传媒_files/icon1.png"></div>
+            </div>
+        </li>
+        
+    </ul>
+	 <ul class="anli">
+	        
+    </ul>
+	 <ul class="anli">
+	        
+    </ul>
+	 <ul class="anli">
+	<li>
+        	<div class="anli_img"><a href="http://www.zzrmcm.com/webs/yanyi/2015/1020/63.html" target="_blank"><img src="./润美传媒_files/1-1510201G244145.png"></a></div>
+            <div class="anli_name"><a href="http://www.zzrmcm.com/webs/yanyi/2015/1020/63.html" target="_blank">狂拽酷炫萌炸天</a></div>
+            <div class="zan">
+                <div class="zan_left">116</div>
+                <div class="zan_center" id="_zandiv63" onclick="zan(63)">2</div>
+                <div class="zan_right"><img src="./润美传媒_files/icon4.png"></div>
+            </div>
+        </li>
+<li>
+        	<div class="anli_img"><a href="http://www.zzrmcm.com/webs/yanyi/2015/1020/62.html" target="_blank"><img src="./润美传媒_files/1-1510201G0455Z.png"></a></div>
+            <div class="anli_name"><a href="http://www.zzrmcm.com/webs/yanyi/2015/1020/62.html" target="_blank">只是在Cos中多看了一眼</a></div>
+            <div class="zan">
+                <div class="zan_left">163</div>
+                <div class="zan_center" id="_zandiv62" onclick="zan(62)">1</div>
+                <div class="zan_right"><img src="./润美传媒_files/icon4.png"></div>
+            </div>
+        </li>
+        
+    </ul>
+	 <ul class="anli">
+	<li>
+        	<div class="anli_img"><a href="http://www.zzrmcm.com/webs/donghua/2015/1020/60.html" target="_blank"><img src="./润美传媒_files/1-1510201F353D0.jpg"></a></div>
+            <div class="anli_name"><a href="http://www.zzrmcm.com/webs/donghua/2015/1020/60.html" target="_blank">山海奇谭</a></div>
+            <div class="zan">
+                <div class="zan_left">138</div>
+                <div class="zan_center" id="_zandiv60" onclick="zan(60)">2</div>
+                <div class="zan_right"><img src="./润美传媒_files/icon5.png"></div>
+            </div>
+        </li>
+        
+    </ul>
+	 <ul class="anli">
+	        
+    </ul>
+	 <ul class="anli">
+	<li>
+        	<div class="anli_img"><a href="http://www.zzrmcm.com/webs/pinpai/2015/1020/59.html" target="_blank"><img src="./润美传媒_files/1-1510201F05C40.jpg"></a></div>
+            <div class="anli_name"><a href="http://www.zzrmcm.com/webs/pinpai/2015/1020/59.html" target="_blank">莱迪Lady Park时尚购物中心</a></div>
+            <div class="zan">
+                <div class="zan_left">192</div>
+                <div class="zan_center" id="_zandiv59" onclick="zan(59)">2</div>
+                <div class="zan_right"><img src="./润美传媒_files/icon7.png"></div>
+            </div>
+        </li>
+<li>
+        	<div class="anli_img"><a href="http://www.zzrmcm.com/webs/pinpai/2015/1020/58.html" target="_blank"><img src="./润美传媒_files/1-1510201AG5N1.jpg"></a></div>
+            <div class="anli_name"><a href="http://www.zzrmcm.com/webs/pinpai/2015/1020/58.html" target="_blank">百汇地动漫谷</a></div>
+            <div class="zan">
+                <div class="zan_left">63</div>
+                <div class="zan_center" id="_zandiv58" onclick="zan(58)">2</div>
+                <div class="zan_right"><img src="./润美传媒_files/icon7.png"></div>
+            </div>
+        </li>
+<li>
+        	<div class="anli_img"><a href="http://www.zzrmcm.com/webs/pinpai/2015/1020/57.html" target="_blank"><img src="./润美传媒_files/1-1510201A41IJ.jpg"></a></div>
+            <div class="anli_name"><a href="http://www.zzrmcm.com/webs/pinpai/2015/1020/57.html" target="_blank">睿纳传媒</a></div>
+            <div class="zan">
+                <div class="zan_left">147</div>
+                <div class="zan_center" id="_zandiv57" onclick="zan(57)">1</div>
+                <div class="zan_right"><img src="./润美传媒_files/icon7.png"></div>
+            </div>
+        </li>
+        
+    </ul>
+	 <ul class="anli">
+	<li>
+        	<div class="anli_img"><a href="http://www.zzrmcm.com/webs/dichan/2016/0113/131.html" target="_blank"><img src="./润美传媒_files/1-1601122354090-L.jpg"></a></div>
+            <div class="anli_name"><a href="http://www.zzrmcm.com/webs/dichan/2016/0113/131.html" target="_blank">三九天里的坚持，只为给</a></div>
+            <div class="zan">
+                <div class="zan_left">80</div>
+                <div class="zan_center" id="_zandiv131" onclick="zan(131)">0</div>
+                <div class="zan_right"><img src="./润美传媒_files/icon8.png"></div>
+            </div>
+        </li>
+<li>
+        	<div class="anli_img"><a href="http://www.zzrmcm.com/webs/dichan/2015/1020/61.html" target="_blank"><img src="./润美传媒_files/1-1510201F555121.jpg"></a></div>
+            <div class="anli_name"><a href="http://www.zzrmcm.com/webs/dichan/2015/1020/61.html" target="_blank">凭什么说我们是土豪?</a></div>
+            <div class="zan">
+                <div class="zan_left">172</div>
+                <div class="zan_center" id="_zandiv61" onclick="zan(61)">2</div>
+                <div class="zan_right"><img src="./润美传媒_files/icon8.png"></div>
+            </div>
+        </li>
+        
+    </ul>
+    <div class="more"><a href="http://www.zzrmcm.com/webs/cehua/" target="_blank">更多</a></div>
+</div>
+<div class="news">
+	<div class="news_content">
+    	<div class="anli_box_top">新闻动态</div>
+        <ul class="xinwen">
+		<li>
+            	<div class="xunwen_img"><a href="http://www.zzrmcm.com/xebc/gongsixinwen/2015/1222/129.html" target="_blank"><img src="./润美传媒_files/1-1512211445060-L.png"></a></div>
+                <div class="xinwen_right">
+                	<div class="xinwen_name"><a href="http://www.zzrmcm.com/xebc/gongsixinwen/2015/1222/129.html" target="_blank">润美西游记——梦幻丽江</a></div>
+                    <div class="riqi">2015-12-22</div>
+                    <div class="jianjie">2015年是润美起步发展的第一年，在润美传媒迎来一周年的生日之际，为庆祝周年庆并犒赏三军，公司全体员工飞赴丽江开启梦幻之旅</div>
+                    <div class="chakan"><a href="http://www.zzrmcm.com/xebc/gongsixinwen/2015/1222/129.html" target="_blank">查看更多 &gt;&gt;</a></div>
+                </div>
+            </li>
+<li>
+            	<div class="xunwen_img"><a href="http://www.zzrmcm.com/xebc/hangyexinwen/2015/1120/126.html" target="_blank"><img src="./润美传媒_files/1-151120150K5125.png"></a></div>
+                <div class="xinwen_right">
+                	<div class="xinwen_name"><a href="http://www.zzrmcm.com/xebc/hangyexinwen/2015/1120/126.html" target="_blank">2015媒介趋势报告：碎片化</a></div>
+                    <div class="riqi">2015-11-20</div>
+                    <div class="jianjie">技术的发展使得广告媒介以一种全新的速度出现在广告主面前，2015年就将过去，那么广告媒介又呈现出怎样的趋势呢？群邑中国发布了一份《群邑山海今媒介趋势报告2015》，报告总结</div>
+                    <div class="chakan"><a href="http://www.zzrmcm.com/xebc/hangyexinwen/2015/1120/126.html" target="_blank">查看更多 &gt;&gt;</a></div>
+                </div>
+            </li>
+<li>
+            	<div class="xunwen_img"><a href="http://www.zzrmcm.com/xebc/hangyexinwen/2015/1112/119.html" target="_blank"><img src="./润美传媒_files/1-1511121H25KT.png"></a></div>
+                <div class="xinwen_right">
+                	<div class="xinwen_name"><a href="http://www.zzrmcm.com/xebc/hangyexinwen/2015/1112/119.html" target="_blank">万圣节刚过，可乐就喊你</a></div>
+                    <div class="riqi">2015-11-13</div>
+                    <div class="jianjie">文/Vera 一个卖饮料的品牌却对自家瓶子情有独钟。横跨百年的弧形瓶，既是品牌的载体，也是品牌的推手，可口可乐拿瓶子做营销，不厌其烦，却每每给人新的惊喜。玩了一圈昵称瓶、</div>
+                    <div class="chakan"><a href="http://www.zzrmcm.com/xebc/hangyexinwen/2015/1112/119.html" target="_blank">查看更多 &gt;&gt;</a></div>
+                </div>
+            </li>
+<li>
+            	<div class="xunwen_img"><a href="http://www.zzrmcm.com/xebc/hangyexinwen/2015/1112/120.html" target="_blank"><img src="./润美传媒_files/1-1511121H910443.png"></a></div>
+                <div class="xinwen_right">
+                	<div class="xinwen_name"><a href="http://www.zzrmcm.com/xebc/hangyexinwen/2015/1112/120.html" target="_blank">把实体书店干掉的亚马逊</a></div>
+                    <div class="riqi">2015-11-13</div>
+                    <div class="jianjie">文/grace 靠在线售卖图书起家的亚马逊，日前在家乡西雅图开了一家实体书店，说来像是讽刺，把多少家实体书店干倒之后，亚马逊反倒回到了传统的卖书方式，表面上看是这样的，不过</div>
+                    <div class="chakan"><a href="http://www.zzrmcm.com/xebc/hangyexinwen/2015/1112/120.html" target="_blank">查看更多 &gt;&gt;</a></div>
+                </div>
+            </li>
+            
+        </ul>
+        <div class="more"><a href="http://www.zzrmcm.com/xebc/gongsixinwen/" target="_blank">更多</a></div>
+    </div>
+</div>
+<div class="js">
+	<div class="js_left">
+    	<div class="left_neirong">
+		<div class="tu01"><a href="http://www.zzrmcm.com/about/jianjie//2015/1011/29.html" target="_blank"><img src="./润美传媒_files/1-1511051I320Y6.png"></a></div>
+            <div class="tu02">
+            	<div class="tu02_top">
+                	<div class="tu02_top_left">公司简介</div>
+                    <div class="tu02_top_right"><a href="http://www.zzrmcm.com/about/jianjie/" target="_blank">更多</a></div>
+                </div>
+                <div class="miaoshu"><a href="http://www.zzrmcm.com/about/jianjie//2015/1011/29.html" target="_blank"> 郑州润美文化传媒有限公司是一家集营销策划、品牌传播、展会策划、广告制作于一体的拥有互联网基因的创新传媒公司。...</a></div>
+            </div>
+
+        </div>
+    </div>
+    <div class="js_right">
+	<div class="pin01"><img src="./润美传媒_files/1-1510111531270-L.png"></div>
+    <div class="aaa"><a href="http://www.zzrmcm.com/zebb/cehua/" target="_blank">诚聘英才<br>
+                            <span>展现润美对人才的态度，唯才是举、德才兼备，<br>
+                            人尽其才、才尽其用。</span></a></div>
+
+    </div>
+</div>
+<div class="hezuo">
+	<div class="hezuo_content">
+    	<div class="hezuo_content_top">合作伙伴</div>
+        <ul class="huoban">		
+	<li><a href="http://www.zhiruidm.com/index.asp" target="_blank"><img src="./润美传媒_files/QQ截图20151029145339.png" width="88" height="31" border="0"></a> </li><li><a href="http://www.adquan.com/" target="_blank"><img src="./润美传媒_files/1510291502092309.png" width="88" height="31" border="0"></a> </li><li><a href="http://www.digitaling.com/" target="_blank"><img src="./润美传媒_files/1510291505099964.png" width="88" height="31" border="0"></a> </li><li><a href="http://socialbeta.com/" target="_blank"><img src="./润美传媒_files/1510291506561390.png" width="88" height="31" border="0"></a> </li><li><a href="http://www.topys.cn/" target="_blank"><img src="./润美传媒_files/QQ截图20151029145426.png" width="88" height="31" border="0"></a> </li><li><a href="http://www.damndigital.com/" target="_blank"><img src="./润美传媒_files/QQ截图20151029145619.png" width="88" height="31" border="0"></a> </li>		
+        </ul>
+    </div>
+</div>
+<div class="footer">
+	<div class="footer_content">
+    	<div class="footer_left">
+        	<ul>
+            	<li style="background-image:url(/templets/moban/images/h01.png);background-repeat:no-repeat;background-position:left center;padding-left:15px;">公司地址 : 河南省郑州市高新区科学大道57号中原广告产业园3号楼5层（127室）</li>
+                <li style="background-image:url(/templets/moban/images/h02.png);background-repeat:no-repeat;background-position:left center;padding-left:15px;">业务电话 : 0371-55520007</li>
+                <li style="background-image:url(/templets/moban/images/h03.png);background-repeat:no-repeat;background-position:left center;padding-left:15px;">电子邮件 : ZZRMCM@163.COM</li>
+                <li>5F,NO.3 Building,National Animation Base,science Avenue,High-Tech zone,Zhengzhou city,Henan Province</li>
+                <li>加入润美    请将您的简历及代表作品发往<span>ZZRMCM@163.COM</span>我们会尽快与您取得联系。</li>
+                <li>技术支持：<a href="http://www.cccuu.com/">灵秀网络科技</a></li>
+            </ul>
+        </div>
+        <div class="footer_right">
+        	<div class="tel">联系方式<span> 0371-55520007</span></div>
+            <ul class="fa">
+			
+            	<li><a href="http://weibo.com/5514914941/profile?topnav=1&wvr=6" target="_blank"><img src="./润美传媒_files/ico01.png" onmouseover="this.src=&#39;/templets/moban/images/ico001.png&#39;" onmouseout="this.src=&#39;/templets/moban/images/ico01.png&#39;"></a></li>
+                <li><a href="http://www.douban.com/" target="_blank"><img src="./润美传媒_files/ico02.png" onmouseover="this.src=&#39;/templets/moban/images/ico002.png&#39;" onmouseout="this.src=&#39;/templets/moban/images/ico02.png&#39;"></a></li>
+                <li><a href="http://zone.qq.com/" target="_blank"><img src="./润美传媒_files/ico03.png" onmouseover="this.src=&#39;/templets/moban/images/ico003.png&#39;" onmouseout="this.src=&#39;/templets/moban/images/ico03.png&#39;"></a></li>
+                <li><a href="http://www.qq.com/" target="_blank"><img src="./润美传媒_files/ico04.png" onmouseover="this.src=&#39;/templets/moban/images/ico004.png&#39;" onmouseout="this.src=&#39;/templets/moban/images/ico04.png&#39;"></a></li>
+                <li><a href="http://mp.weixin.qq.com/s?__biz=MzA3NzQ2ODM2OA==&mid=203352360&idx=1&sn=b90be9fe5259bb26b523d07ba39116b6#rd" target="_blank"><img src="./润美传媒_files/ico05.png" onmouseover="this.src=&#39;/templets/moban/images/ico005.png&#39;" onmouseout="this.src=&#39;/templets/moban/images/ico05.png&#39;"></a></li>
+                <li><a href="http://www.zzrmcm.com/#" target="_blank"><img src="./润美传媒_files/ico06.png" onmouseover="this.src=&#39;/templets/moban/images/ico006.png&#39;" onmouseout="this.src=&#39;/templets/moban/images/ico06.png&#39;"></a></li>
+                <li><a href="http://www.baidu.com/" target="_blank"><img src="./润美传媒_files/ico07.png" onmouseover="this.src=&#39;/templets/moban/images/ico007.png&#39;" onmouseout="this.src=&#39;/templets/moban/images/ico07.png&#39;"></a></li>
+                <li><a href="http://www.zzrmcm.com/#" target="_blank"><img src="./润美传媒_files/ico08.png" onmouseover="this.src=&#39;/templets/moban/images/ico008.png&#39;" onmouseout="this.src=&#39;/templets/moban/images/ico08.png&#39;"></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="side">
+	<ul>
+         <li class="sidebox1" style="background-color:#333333; opacity:0.8; position:relative;">
+          	<a href="javascript:void(0);">
+            	<div class="ts">微信</div>
+      			<div style="position: absolute; right: 54px; bottom: -50px; width: 130px; display: none;" class="codebox">
+      				<img alt="微信二维码" style="display:block;width:130px;float:none" src="./润美传媒_files/1-151021110F2456.jpg">
+
+      			</div>
+           	</a>
+       	  </li>
+		  <li style="border:none;">
+          	<a href="http://weibo.com/zzrmcm/profile?rightmod=1&wvr=6&mod=personinfo" target="_blank" class="sidetop">
+            	<div class="top">微博</div>
+           	</a>
+       	  </li>
+         <li>
+         	<a href="javascript:void(0);">
+            	<div class="sidebox"><div class="ttt">Tel:0371-55520007</div></div>
+            </a>
+         </li>
+	  	  <li style="border:none;">
+          	<a href="javascript:goTop();" class="sidetop">
+            	<div class="top">Top</div>
+            </a>
+          </li>
+	</ul>
+</div>
+
+
+</body></html>

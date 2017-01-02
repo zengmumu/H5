@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+*{ margin: 0; padding: 0;}
+ul{ list-style: none;}
+a{color: #fff;text-decoration: none;}
+a:hover{ text-decoration:underline;}
+.nav{ height: 35px;  width: 100%; background-color: #1537A3;}
+/*出现一个横条蓝色*/
+.container{ width: 1200px; margin-left: auto; margin-right: auto;}
+/*让文字在横条里居中*/
+.mainnav li{ float: left; width: 120px; text-align: center; line-height: 35px; height: 35px; background-color: #1537A3;}
+/*不光是第一层li 是第二层的li*/
+/*浮动靠左；有宽度 水平居中  行高 垂直居中  也用了个蓝色的背景*/
+
+.mainnav li a{ display: block; height: 35px;}
+/*增加a的点击范围*/
+.mainnav li a:hover{ background-color: #247ED7;}
+/*鼠标放上去 换个颜色*/
+.subnav{ display: none;}
+/*默认 二级隐藏*/
+.subnav li{ float: none;}
+/*为了解决二级ul没有高度*/
+.mainnav li:hover .subnav{ display: block;}
+/*鼠标放在一级菜单上，显示二级菜单*/
+.mainnav li { position: relative;}
+.ssnav{ position: absolute; left:120px; top:0; display: none;}
+.mainnav li  li:hover .ssnav{ display: block;}
+
+
+
+	</style>
+
+
+
+</head>
+<body>
+<div class="nav">
+		<div class="container">
+			<ul class="mainnav">
+				<li><a href="">mianlink1</a>
+					<ul class="subnav">
+						<li><a href="">subnav1</a></li>
+						<li><a href="">subnav2</a>
+						<!-- 三级导航 st -->
+							<ul class="ssnav">
+								<li><a href="">ssnav1</a></li>
+								<li><a href="">ssnav2</a></li>
+								<li><a href="">ssnav3</a></li>
+							</ul>
+							<!-- 三级导航 ed -->
+						</li>
+					</ul>
+				</li>
+				<li><a href="">mianlink2</a></li>
+				<li><a href="">mianlink3</a>
+<ul class="subnav">
+						<li><a href="">subnav1</a></li>
+						<li><a href="">subnav2</a></li>
+
+					</ul>
+				</li>
+				<li><a href="">mianlink4</a></li>
+				<li><a href="">mianlink5</a></li>
+				<li><a href="">mianlink6</a></li>
+				<li><a href="">mianlink7</a></li>
+			</ul>
+		</div>
+	</div>	
+</body>
+
+</html>

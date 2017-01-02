@@ -1,0 +1,52 @@
+A  overflow：hidden；超出自己设置的范围隐藏 IE6 子元素超过父亲大小把父亲元素撑大
+B  clear：both；
+C   <h4>我是一段文字<span>more</span></h4>	
+     h4 span{float:right;}/*ie6会上下错位*/
+    <h4><em>我是一段文字</em><span>more</span></h4>	
+     h4 span{float:right;}
+     h4 em{ float:left; font-style:normal;}
+     <h4><span>more</span>我是一段文字</h4>	
+     h4 span{float:right;}
+
+E  IE6 不支持png格式的透明
+
+	lt?表示less?than?当前条件版本以下的版本，不包含当前版本。
+	gte?表示greeter?than?or?equal?当前版本以上版本，并包含当前版本。
+	lte?表示less?than?or?equal?当前版本以下版本，并包含当前版本。
+
+<!--[if IE 6]>
+
+	<script type="text/javascript" src="../js/ddpng.js"></script>
+	<script type="text/javascript">
+	DD_belatedPNG.fix(".png");
+	//DD_belatedPNG.fix(".abc");
+	</script>
+ <![endif]--> 
+     要把png透明的图片命名class=“png”
+     要把png透明的图片命名class=“abc”
+
+
+F 单独修正某个版本的 css
+
+	div {
+	background-color:red\0;? /* ie 8/9*/
+	background-color:blue\9\0;? /* ie 9*/
+	*background-color:green;? /* ie 7*/
+	_background-color:gray;? /* ie 6*/
+}
+
+G meta 声明
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE10">
+<meta http-equiv="X-UA-Compatible" content="IE=10">
+
+F
+@media screen and (-webkit-min-device-pixel-ratio:0){ #test {background-color:gray;} }最后这个是浏览器新贵chrome和safari的。
+
+G国内的浏览器都是双核  IE   webkit（google） 自动识别选择内核
+360内核
+若页面需默认用极速核，增加标签：<meta name="renderer" content="webkit"> 
+若页面需默认用ie兼容内核，增加标签：<meta name="renderer" content="ie-comp"> 
+若页面需默认用ie标准内核，增加标签：<meta name="renderer" content="ie-stand">
+
+
+

@@ -1,0 +1,146 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	padding:0px;
+	margin:0px;
+	font-family:"Microsoft YaHei"  !important;  
+}
+html
+{
+	position:relative;
+	background-color:#f1f1f1;
+	min-width:1200px;
+	width:100%;
+	min-height:800px;
+	text-align:center;
+}
+body
+{
+	background-color:#f1f1f1;
+	min-width:1200px;
+	width:100%;
+	min-height:800px;
+	text-align:center;
+}
+#page-wrap
+{
+	position:relative;
+	text-align:center;
+	width:100%;
+	min-width:1200px;
+	min-height:1000px;
+}
+img.
+{
+	border:none;
+}
+/*****************************头部开始*************************/
+#divHead
+{
+	position:relative;
+	text-align:center;
+	width:100%;
+	min-width:1200px;
+	min-height:60px;
+	background-color:#ffffff;
+}
+#divHeadCenter
+{
+	position:relative;
+	width:1000px;
+}
+/*****************************头部结束*************************/
+/*****************************图片开始*************************/
+#divSlider
+{
+	position:relative;
+	text-align:center;
+	width:100%;
+	min-width:1200px;
+	min-height:100px;
+}
+#divSliderCenter
+{
+	position:relative;
+	margin:auto;
+	margin-top:20px;
+	width:1000px;
+	min-height:100px;		
+}
+/*****************************图片结束*************************/
+
+/*****************************体部开始*************************/
+#divBody
+{
+	position:relative;
+	text-align:center;
+	margin-top:20px;
+	width:100%;
+	min-width:1200px;	
+}
+#divCenter
+{
+	position:relative;
+	margin:auto;
+	width:1000px;
+	min-height:1300px;
+	background-color:#ffffff;
+	border:1px solid #dddddd;
+}
+#divCenterLeftMenu
+{
+	position:absolute;
+	border-right:1px solid #dddddd;
+	top:0px;
+	left:0px;
+	height:100%;
+	width:250px;
+}
+#divCenterContent
+{
+	position:relative;
+	margin-left:250px;
+	min-height:700px;
+	width:748px;
+}
+/*****************************体部结束*************************/
+
+/*****************************脚部开始*************************/
+#divFoot
+{
+	position:relative;
+	margin-top:20px;
+	width:100%;
+	min-width:1200px;	
+	min-height:200px;
+	background-color:#ffffff;
+	text-align:center;
+}
+#divFootCenter
+{
+	position:relative;	
+	margin:auto;
+/*	border:1px solid #00ff00;*/
+	width:1000px;
+	min-height:200px;
+}
+/*****************************脚部结束*************************/
+
+#divIframe
+{
+	width:100%;
+	min-width:1200px;
+	min-height:155px;
+	padding-top:20px; 
+	background-color:#fff;
+	margin-top:20px;	
+}
+iframe
+{
+	position:relative;
+	border:none;
+	overflow:hidden;
+	width:100%;
+	height:155px;
+	border:none;
+}

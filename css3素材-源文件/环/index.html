@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!-- saved from url=(0045)http://www.yangqq.com/web/css3demo/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>CSS3圆环倒计时效果 by liumiao.me</title>
+<script src="./index_files/jquery-1.7.min.js"></script>
+<style type="text/css">
+body { margin:0; padding:0; padding-bottom:20px; font-family:"微软雅黑"; }
+h1 { background:#ccc; margin:0; padding:20px; }
+em { font-size:14px; font-weight:normal; margin-left:50px; font-style:normal; color:#666 }
+h2 { margin:0; padding:20px; }
+h3 { margin:0; padding:20px; display:inline-block; }
+.intro { color:#999; margin:0; padding:0; display:inline-block; font-size:16px; }
+iframe { border:0; margin:0 20px; display:block; width:400px; height:250px; }
+.step { margin-bottom:20px; }
+#ieshow { text-align:center; font-size:20px; padding:20px; display:none;}
+</style>
+</head>
+
+<body onload="doShow()">
+<h1>CSS3圆环倒计时效果 <em>by liumiao.me 2011.12.20</em></h1>
+<div id="ieshow">这演示的是CSS3呀，你用IE浏览？换标准浏览器看吧！</div>
+<div id="show">
+  <h2>效果演示</h2>
+  <iframe src="./index_files/step12(1).html" scrolling="no" frameborder="0"></iframe>
+  <h2>实现步骤分解</h2>
+  <div class="step">
+    <h3>Step1</h3>
+    <p class="intro">普通的正方形</p>
+    <iframe src="./index_files/step1.html" scrolling="no" frameborder="0"></iframe>
+  </div>
+  <div class="step">
+    <h3>Step2</h3>
+    <p class="intro">用"border-radius"实现圆形</p>
+    <iframe src="./index_files/step2.html" scrolling="no" frameborder="0"></iframe>
+  </div>
+  <div class="step">
+    <h3>Step3</h3>
+    <p class="intro">用"clip:rect"遮罩为半圆</p>
+    <iframe src="./index_files/step3.html" scrolling="no" frameborder="0"></iframe>
+  </div>
+  <div class="step">
+    <h3>Step4</h3>
+    <p class="intro">父级增加一层DIV</p>
+    <iframe src="./index_files/step4.html" scrolling="no" frameborder="0"></iframe>
+  </div>
+  <div class="step">
+    <h3>Step5</h3>
+    <p class="intro">把父级DIV用"clip:rect"遮罩为一半</p>
+    <iframe src="./index_files/step5.html" scrolling="no" frameborder="0"></iframe>
+  </div>
+  <div class="step">
+    <h3>Step6</h3>
+    <p class="intro">用"transform:rotate"连续改变扇形旋转角度</p>
+    <iframe src="./index_files/step6.html" scrolling="no" frameborder="0"></iframe>
+  </div>
+  <div class="step">
+    <h3>Step7</h3>
+    <p class="intro">同理复制左半边扇形旋转</p>
+    <iframe src="./index_files/step7.html" scrolling="no" frameborder="0"></iframe>
+  </div>
+  <div class="step">
+    <h3>Step8</h3>
+    <p class="intro">拼接两个扇形</p>
+    <iframe src="./index_files/step8.html" scrolling="no" frameborder="0"></iframe>
+  </div>
+  <div class="step">
+    <h3>Step9</h3>
+    <p class="intro">控制两个扇形旋转时间相差30秒</p>
+    <iframe src="./index_files/step9.html" scrolling="no" frameborder="0"></iframe>
+  </div>
+  <div class="step">
+    <h3>Step10</h3>
+    <p class="intro">去掉辅助背景，添加一个底衬背景</p>
+    <iframe src="./index_files/step10.html" scrolling="no" frameborder="0"></iframe>
+  </div>
+  <div class="step">
+    <h3>Step11</h3>
+    <p class="intro">加入一个圆形覆盖在最上面，形成圆环形式</p>
+    <iframe src="./index_files/step11.html" scrolling="no" frameborder="0"></iframe>
+  </div>
+  <div class="step">
+    <h3>Step12</h3>
+    <p class="intro">加入渐变、阴影等修饰，及倒计时数字</p>
+    <iframe src="./index_files/step12(1).html" scrolling="no" frameborder="0"></iframe>
+  </div>
+</div>
+<script>
+if($.browser.msie) {
+	$("#ieshow").show();
+	$("#show").hide();
+}
+</script>
+
+
+</body></html>

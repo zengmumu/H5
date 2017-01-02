@@ -1,0 +1,100 @@
+<!DOCTYPE html >
+<html  manifest="index.manifest">
+<head>
+	<meta charset="UTF-8">
+	<title>神州科技</title>
+<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<link rel="stylesheet" href="css/reset.css">
+<style>
+	
+
+</style>
+<script src="js/TouchSlide.1.1.js"></script>
+</head>
+<body>
+<header class="szbar">
+	<a href="" class="logo text-primary"><img src="images/logo.png" height="80" width="80" alt=""> 神州科技 </a>
+	<a href="" class="user-icon text-hidden">用户名</a>
+	<a href="" class="search-icon text-hidden">搜索</a>
+</header>
+<!-- 本例主要代码 Start ================================ -->
+			<div id="slideBox" class="slideBox">
+
+				<div class="bd">
+					<ul>
+							<li>
+								<a class="pic" href="#"><img src="images/banner.jpg"/></a>
+								
+							</li>
+							<li>
+								<a class="pic" href="#"><img src="images/banner.jpg"/></a>
+								
+							</li>
+							<li>
+								<a class="pic" href="#"><img src="images/banner.jpg"/></a>
+								
+							</li>
+							
+							
+							
+					</ul>
+				</div>
+
+				<div class="hd">
+					<ul></ul>
+				</div>
+			</div>
+			<script type="text/javascript">
+				TouchSlide({ 
+					slideCell:"#slideBox",
+					titCell:".hd ul", //开启自动分页 autoPage:true ，此时设置 titCell 为导航元素包裹层
+					mainCell:".bd ul", 
+					effect:"leftLoop", 
+					autoPage:true,//自动分页
+					autoPlay:true //自动播放
+				});
+			</script>
+			<!-- 本例主要代码 End ================================ -->
+<section class="com_culture com_section">
+<h3 class="se_title">企业文化</h3>
+<ul class="clearfix cultureList com_list">
+	<li><a href="">item1</a></li>
+	<li><a href="">item2</a></li>
+	<li><a href="">item3</a></li>
+	<li><a href="" class="text-hidden">item4</a></li>
+</ul>
+
+	
+</section>
+
+
+<section class="com_culture com_section">
+<h3 class="se_title">企业文化</h3>
+<ul class="clearfix officeList com_list">
+	<li><a href="">item1</a></li>
+	<li><a href="">item2</a></li>
+	<li><a href="">item3</a></li>
+	<li><a href="" class="text-hidden">item4</a></li>
+	<li><a href="">item1</a></li>
+	<li><a href="">item2</a></li>
+	<li><a href="">item3</a></li>
+	<li><a href="" class="text-hidden">item4</a></li>
+</ul>
+
+	
+</section>
+	<script>
+
+window.applicationCache.addEventListener('updateready', function(){
+         console.log('updateready!');
+         window.applicationCache.swapCache();
+         document.location.reload();
+      });
+//http://blog.csdn.net/tsxw24/article/details/8315672
+//http://www.nihaoshijie.com.cn/index.php/archives/425
+//http://blogread.cn/it/article/7176
+	</script>
+</body>
+</html>

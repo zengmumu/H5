@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!-- saved from url=(0045)http://www.yangqq.com/web/css3demo/step8.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>CSS3圆环倒计时效果 by liumiao.me</title>
+<style>
+.pie {
+	 width:200px; height:200px; background-color:blue;
+	 border-radius:100px;
+	 position:absolute;
+	}
+.pie1 { clip:rect(0px,200px,200px,100px); }
+.pie2 { clip:rect(0px,100px,200px,0px); }
+.hold {
+	 width:200px; height:200px; background:#ccc;
+	 position:absolute;
+	}
+.hold1 { clip:rect(0px,200px,200px,100px); }
+.hold2 { clip:rect(0px,100px,200px,0px); }
+</style>
+</head>
+
+<body>
+<div class="hold hold1">
+  <div class="pie pie1" style="transform: rotate(333deg);"></div>
+</div>
+<div class="hold hold2">
+  <div class="pie pie2" style="transform: rotate(333deg);"></div>
+</div>
+
+
+<script src="./jquery-1.7.min.js"></script> 
+<script>
+i = 0;
+function start(){
+	i = i + 0.6;
+	$(".pie").css("-o-transform","rotate(" + i + "deg)");
+	$(".pie").css("-moz-transform","rotate(" + i + "deg)");
+	$(".pie").css("-webkit-transform","rotate(" + i + "deg)");
+};
+setInterval("start()",100);
+</script> 
+
+
+<!--查看源码-->
+<input onclick="window.open(&#39;view-source:&#39; + window.location.href)" type="button" value="查看源代码" style="position:absolute; right:0; top:0; width:80px; height:30px;">
+
+
+</body></html>

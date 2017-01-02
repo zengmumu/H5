@@ -1,0 +1,19 @@
+CACHE MANIFEST  
+# VERSION 1.01
+  
+# 直接缓存的文件d  
+CACHE:  
+js/TouchSlide.1.1.js  
+css/reset.css
+images/logo.png
+
+
+  
+# 需要在在线的文件  
+NETWORK: 
+* 
+index2.html   
+  
+# 替代方案  
+FALLBACK:  
+#/ajax/ ajax.html  

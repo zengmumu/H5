@@ -1,0 +1,134 @@
+/*[1]清除*/
+a{ color: #777; text-decoration: none;}
+a:hover{ text-decoration: underline; color: rgb(144,211,253);}
+.primary-link{color: rgb(144,211,253);text-decoration: underline; }
+/*[2] 设置整体文字大小和颜色*/
+body{ font-family: "Microsoft YaHei"; font-size: 14px; color: #777; background-color: #f0f0f0;}
+
+/*[3] 横向的布局*/
+.top-bar{ height: 28px; line-height: 28px; background-color: #323240;}
+.header{ height: 90px; background-color: #fff;}
+.banner{ height: 170px; background-color: #2A8BB7;}
+.article{ height: 570px;}
+.footer{ height: 150px; background-color: #323240; margin-top: 120px; }
+.container{ height: 100%; width: 1000px; margin-left: auto; margin-right: auto; }
+.article .container{ background-color: #fff; margin-top: -50px; border: 1px solid rgb(228,228,228);}
+/*layout-3*/
+.breadcrumb{ height: 50px; background-color: #fff; border-bottom:1px solid rgb(228,228,228);}
+.aside{ width: 249px; float: left;  height: 100%; border-right:1px solid rgb(228,228,228);}
+.content{ width: 750px; float: left; height: 100%;}
+.user-info{ height: 180px; }
+.safe-tools{ height: 140px; border-bottom:1px solid rgb(228,228,228);}
+.safe-tools .section{ height: 100%; width: 33%; float: left;}
+.s-email{ border-left:1px solid rgb(228,228,228); border-right:1px solid rgb(228,228,228);}
+
+/*-----------------------top bar*/
+.bar-nav{ float: right;}
+.bar-nav li{ float: left; height: 28px; line-height: 28px; font-size: 12px;}
+.bar-nav a{ padding-left: 15px; padding-right: 15px; color: #b0b0b0;}
+.bar-nav a:hover{ color: #fff;}
+.logo{  float: left;height: 90px; line-height: 90px;}
+
+.logo img{ vertical-align:middle;}
+.main-nav{ float: right;}
+.main-nav li{float: left; border-left: 1px dashed #ddd; height: 90px; width: 120px; text-align: center; font-size: 18px;}
+.main-nav span{ display: block; font-size: 12px;}
+.main-nav a{ display: block; height: 62px; padding-top: 25px; text-decoration: none;}
+.main-nav a:hover,.main-nav .active{ border-bottom: 3px solid rgb(57,105,157); color:rgb(57,105,157);}
+.banner{ background-image: url(../images/banner-acc.jpg)}
+.banner h1{ text-align: center; font-size: 24px; font-weight: normal; padding-top: 35px; color:rgb(35,57,94);}
+.banner span{ display: block; font-size: 12px; color: #777;}
+.breaklink{ float: left; background-image: url(../images/bread-icon.gif); background-repeat: no-repeat; background-position: 15px center; padding-left: 35px;}
+.breaklink li{ float: left; height: 50px; line-height: 50px;}
+
+.hotlink{ float: right;}
+.hotlink li{ float: left; width: 120px; height: 50px; line-height: 50px; border-left: 1px solid rgb(228,228,228); text-align: center;}
+.hotlink a{ display: block; height: 50px;}
+
+.subnav{ padding-left: 35px; padding-top: 35px;}
+.subnav li{ margin-bottom: 35px;}
+.subnav h3{ color: #333;}
+.subnav li li{ margin-bottom: 0; list-style: disc; font-size: 12px;margin-left: 20px; color: #DBDADA; height: 30px; line-height: 30px;}
+.subnav li li a{ font-size: 14px;}
+.trigle{ display: inline-block; width: 0; height: 0px; border:6px solid transparent;
+	border-left-color:rgb(144,211,253);
+}
+
+/*content*/
+.user-info{ border-bottom:1px solid rgb(228,228,228);}
+.user-info h4{ background-color: yellow; float: left; margin-top: 45px; margin-left: 35px; margin-right: 20px;}
+.user-mess{ float: left; margin-top: 15px;}
+.user-mess p{ height: 35px; line-height: 35px;}
+.user-mess em{padding-left: 15px; padding-right: 15px; color: #333; font-weight: bold;}
+.user-mess .s-level{ background: url(../images/safe-m.png) no-repeat  15px center;   padding-left: 100px; color: #EA9927;}
+/*------------safe tools*/
+.safe-tools  h3{ background: url(../images/icon-mobile.png) no-repeat left center; padding-top: 15px; padding-bottom: 15px;  padding-left: 55px; margin-left: 55px; color: #333; margin-top: 15px;}
+.safe-tools span{ font-size: 12px; color: #777; background:url(../images/icon-right.gif) no-repeat left center; padding-left:18px; padding-top:2px; padding-bottom: 2px;}
+.safe-tools .unbind{ background-image: url(../images/icon-alert.gif);}
+.safe-tools a{font-size: 12px;}
+.safe-tools .des{ text-align: center; font-size: 12px; margin-top: 15px; color: #aaa;}
+.s-email h3{ background-image: url(../images/icon-mess.png);}
+.s-order h3{ background-image: url(../images/icon-mess.png);}
+.safe-mess table{ width: 90%; margin-left: auto; margin-right: auto; margin-top: 25px;}
+.safe-mess td{ height: 35px; line-height: 35px;}
+.safe-mess th{ font-weight: bold;  text-align: right; width: 90px; padding-right: 30px;}
+.strip{ background-color: rgb(250,250,250);}
+.footer h4{ width: 250px; margin-top: 35px; float: left;}
+.f-text{margin-top: 35px; float: left;}
+.f-text .fi{ color: #4B4646;}
+.f-text a:hover{ color: #e0e0e0;}
+.f-text img{vertical-align: top;}
+
+/*首页的banner*/
+.home{ background-color: rgb(236,236,236)}
+.bannerlogin .banner{height: 345px;  margin-top: 60px; float:left; width: 720px; background-image: none;}
+.login{ height: 345px; background-color: #fff; margin-top: 60px; float: left; width: 280px;}
+.bigbtn{ height: 70px;}
+.bigbtn a{ display: block; width: 140px; height: 70px; float: left; background-image: url(../images/reg-btn-bg.png); text-indent: -99999em;}
+.bigbtn .rechargeBtn{ background-position: -140px top;}
+.bigbtn a:hover{ background-image: url(../images/reg-btn-hover-bg.png);}
+
+/*longin*/
+.login h4{ height: 50px; line-height: 50px; font-size: 18px; color: rgb(188,188,188); text-align: center; background-color: rgb(240,240,240)}
+.login form{ margin-left: 35px; margin-top: 25px;}
+.uname,.upass,.uvad{ width: 177px; height: 30px; line-height: 30px; background:url(../images/user-login-bg.jpg); border: none; padding-left: 33px;}
+.upass{ background-image: url(../images/pass-word-bg.jpg);}
+.uvad{ width: 90px; padding-left: 5px; background-image: url(../images/validate-bg.jpg)}
+.vadp img{ vertical-align: top;}
+.vadp { margin-top: 20px;}
+.forgetpwd{ width: 210px; text-align: right;}
+.subp{ margin-top: 20px;}
+.sub{ width: 210px; height: 35px; line-height: 35px; font-size: 18px; color: #e0e0e0; background-color: rgb(9,135,208);border: none;}
+.sub:hover{ background-color:#4298E6; }
+.hotbtn{height: 140px; background-color: rgb(231,235,238);}
+.hotbtn li{ float: left; width: 16.6666%; text-align:center;}
+.hotbtn a{ display: block;}
+.hotbtn a:before{ content: ""; display: block; height: 82px; width: 82px;  margin:15px auto 5px; background-image: url(../images/bg-hotlink.png); transition:all 1s;}
+.li2 a:before{ background-position: -82px 0;}
+.li3 a:before{ background-position: -164px 0;}
+.li4 a:before{ background-position: -246px 0;}
+.li5 a:before{ background-position: -328px 0;}
+.li6 a:before{ background-position: -410px 0;}
+.li1 a:hover:before{ background-position: -0px  -82px}
+.li2 a:hover:before{ background-position: -82px  -82px}
+.li3 a:hover:before{ background-position: -164px -82px;}
+.li4 a:hover:before{ background-position: -246px -82px;}
+.li5 a:hover:before{ background-position: -328px -82px;}
+.li6 a:hover:before{ background-position: -410px -82px;}
+.threeblock { margin-top: 55px;}
+.threeblock .block{ float: left; width: 33.333%; height: 150px; background-color: #fff;}
+.gamein{ position: relative; display: block;}
+.hot{ position: absolute;  left: 0; top: 0;}
+.block h3{ width: 90%; margin:10px auto; border-left:3px solid rgb(37,196,251); height: 30px; line-height: 30px; padding-left: 5px; padding-right: 5px; }
+h3 .more{ float: right; color: rgb(37,196,251); font-size: 12px;}
+.newslist  li{ height: 30px; line-height: 30px; width: 90%; margin-left: auto; margin-right:auto; border-bottom: 1px dashed #e0e0e0;}
+.newslist .title{ width: 75%; height: 30px; overflow: hidden; float: left; white-space: nowrap; 
+	text-overflow:ellipsis;}
+.newslist .time{ width: 25%; height: 30px; overflow: hidden; float: right; font-size: 12px; color: rgb(154,154,154);}
+.job .newslist{ background:url(../images/h-job-bg.jpg) no-repeat left center; padding-left: 100px;}
+.job .newslist li{ width: 50%; float: left;}
+.job .newslist  a:before{ content: ""; display: inline-block; width: 0;  height: 0; border:6px solid transparent; border-left-color:rgb(37,196,251);}
+
+
+
+

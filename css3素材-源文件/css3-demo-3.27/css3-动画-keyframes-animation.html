@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<style>
+body {
+	font-family: "Microsoft Yahei";
+}
+.box {
+	padding: 15px;
+	margin: 50px;
+	border: 1px solid #e0e0e0;
+}
+.box h3 {
+	background-color: #e0e0e0;
+	height: 35px;
+	line-height: 35px;
+	padding: 0 25px;
+	font-size: 18px;
+}
+@-webkit-keyframes myani{
+	0%{background-color: red; width: 250px; left:0;transform:rotate(0deg);}
+	50%{width:500px;}
+	75%{ left:300px; transform:rotate(360deg);}
+	100%{ background-color: yellow; width: 250px; left:0; transform:rotate(0deg);}
+}
+
+@-webkit-keyframes fly-l{
+	0%{position:relative; left:-200%;}
+	
+	100%{position:relative; left:0; }
+}
+@-webkit-keyframes fly-r{
+	0%{position:relative; left:400%;}
+	
+	100%{position:relative; left:0; }
+}
+
+
+/*p{ height: 35px; width: 280px; background-color: red; -webkit-animation:myani 2s ease-in 4 alternate 2s; position: relative;}*/
+/*.mydiv{height: 250px; -webkit-animation:myani 2s ease-out infinite alternate; position: relative;}*/
+.mydiv{height: 250px; background-color: yellow;
+
+-webkit-animation:fly-l 2s;}
+.mydiv2{height: 150px; background-color: yellow;
+
+-webkit-animation:fly-r 3s;}
+</style>
+</head>
+<body>
+<div class="box bg">
+  <h3>过渡 transition </h3>
+  <p>我是一行文字</p>
+
+  <div class="mydiv">this is div</div>
+   <div class="mydiv2">this is div</div>
+  
+  
+</div>
+</body>
+</html>

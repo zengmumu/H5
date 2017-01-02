@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!-- saved from url=(0046)http://www.yangqq.com/web/css3demo/step11.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>CSS3圆环倒计时效果 by liumiao.me</title>
+<style>
+.pie {
+	 width:200px; height:200px; background-color:blue;
+	 border-radius:100px;
+	 position:absolute;
+	}
+.pie1 { clip:rect(0px,200px,200px,100px); }
+.pie2 { clip:rect(0px,100px,200px,0px); }
+.hold {
+	 width:200px; height:200px;
+	 position:absolute;
+	 z-index:1;
+	}
+.hold1 { clip:rect(0px,200px,200px,100px); }
+.hold2 { clip:rect(0px,100px,200px,0px); }
+.bg { width:200px; height:200px; background-color:red; border-radius:100px; position:absolute; }
+.time { width:160px; height:160px; margin:20px 0 0 20px; background-color:#fff; border-radius:100px; position:absolute; z-index:1; }
+</style>
+</head>
+
+<body>
+<div class="hold hold1">
+  <div class="pie pie1" style="transform: rotate(180deg);"></div>
+</div>
+<div class="hold hold2">
+  <div class="pie pie2" style="transform: rotate(151.8deg);"></div>
+</div>
+<div class="bg"> </div>
+<div class="time"> </div>
+
+
+<script src="./jquery-1.7.min.js"></script> 
+<script>
+i = 0;
+j = 0;
+count = 0;
+function start1(){
+	i = i + 0.6;
+	count = count + 1;
+	if(count>=300){
+		count = 0;
+		clearInterval(t1);
+		t2 = setInterval("start2()",100);
+	};
+	$(".pie1").css("-o-transform","rotate(" + i + "deg)");
+	$(".pie1").css("-moz-transform","rotate(" + i + "deg)");
+	$(".pie1").css("-webkit-transform","rotate(" + i + "deg)");
+};
+function start2(){
+	j = j + 0.6;
+	count = count + 1;
+	if(count>=300){
+		count = 0;
+		clearInterval(t2);
+		t1 = setInterval("start1()",100);
+	};
+	$(".pie2").css("-o-transform","rotate(" + j + "deg)");
+	$(".pie2").css("-moz-transform","rotate(" + j + "deg)");
+	$(".pie2").css("-webkit-transform","rotate(" + j + "deg)");
+};
+t1 = setInterval("start1()",100);
+</script> 
+
+
+<!--查看源码-->
+<input onclick="window.open(&#39;view-source:&#39; + window.location.href)" type="button" value="查看源代码" style="position:absolute; right:0; top:0; width:80px; height:30px;">
+
+
+</body></html>

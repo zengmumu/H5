@@ -1,0 +1,10 @@
+extends layout
+block content
+   .container
+      .row
+         h1.text-center #{movie.title}
+         .col-md-12.text-center
+            embed(src='#{movie.videoUrl}', width='720', height='480')
+
+
+

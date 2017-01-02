@@ -1,0 +1,23 @@
+extends layout
+block content
+   .container
+      .row
+         h1 修改电影
+         .col-md-6
+            form.form-horizontal(action='/admin/upmoive/' method='post')
+               .form-group
+                  label.col-md-2 影片名称
+                  .col-md-10
+                     input.form-control(type='text', name='title', value='#{movie.title}')
+               .form-group
+                  label.col-md-2 海报
+                  .col-md-10
+                     input.form-control(type='text', name='picUrl',value='#{movie.picUrl}' )
+               .form-group
+                  label.col-md-2 影片链接
+                  .col-md-10
+                     input.form-control(type='text', name='videoUrl' value='#{movie.videoUrl}')
+                     input(type="hidden" value='#{movie._id}' name="id")
+               .form-group
+                  .col-md-10.col-md-offset-2
+                     input.btn.btn-success.btn-block(type='submit', value='提交')

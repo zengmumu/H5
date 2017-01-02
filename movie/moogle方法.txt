@@ -1,0 +1,13 @@
+User.create({                             // 创建一组user对象置入model
+                name: uname,
+                password: upwd
+            },function(err,doc){ 
+                 if (err) {
+                        res.send(500);
+                        console.log(err);
+                    } else {
+                        req.session.error = '用户名创建成功！';
+                        res.send(200);
+                    }
+                  });
+ User.findOne({name: uname},function(err,doc){ 

@@ -1,0 +1,2877 @@
+﻿photoshop
+------------------默认文件格式
+psd
+常见的图片格式
+jpg
+------------------ctrl+j 复制当前图层
+ctrl+M
+打开曲线面板
+
+-----------------金饭碗
+
+1，打开图片
+2，ctrl+J 复制
+3，ctrl+M  曲线
+   a 蓝色 下调
+   b  红，绿上调
+
+
+
+--------------------快捷键
+写在括号里面的 需要 alt+ 英文字母
+-------------工具箱
+如果只有个 按 快捷键  （英文的开头第一个字母A-Z
+在工具箱里面切换  
+a：shift+快捷键
+b: alt+单击工具箱
+c： 单击等待会弹出所有公交
+
+
+shift+Tab 可以隐藏显示面板
+Tab 可以隐藏显示工具箱
+F    切换屏幕模式
+
+在窗口菜单里面能找到所有的面板
+
+窗口-》工作区-》复位基本工作区-》修复界面
+F7 能打开显示图层面板
+
+
+---------放大缩小
+1，ctrl+“+”  ctrl+“-”
+2，放大镜工具（z） 单击放大  alt+单击 缩小
+3，ctrl+1  适合画面
+4，ctrl+0  实际大小
+
+
+--------参考线
+ctrl+R 打开标尺
+在标尺上右击可以更改刻度单位 
+网页上电脑上用的单位用 像素px
+打印文档 单位用        毫米 mm
+
+在标尺上拖动鼠标 可以拉出一根参考线
+按住shift 可以让参考线对齐刻度
+按住alt   可以让参考线横竖转换
+
+ctrl+； 显示隐藏参考线
+ctrl+alt+； 锁定/解锁参考线
+ctrl+H   能够隐藏所有类型的参考
+把参考线拉到 标尺上可以删除参考线 
+
+
+
+视图-》显示-》智能参考线
+
+-----------------所有关于显示的都可以在【视图】菜单中找到
+
+
+
+----------------推销自己
+1，www.zcool.com.cn 站酷  注册账号，把做的作业发上去   zengmumu
+
+
+
+--------字体
+c盘-》windows->font
+
+
+--------字体的分类
+有衬线 （宋体）
+方正大标宋
+宋体
+造字工房  朗宋
+造字工房  俊雅锐宋
+
+
+ 
+
+无衬线  （黑体）
+微软雅黑
+兰亭超细黑
+ 
+字体粗的字体细的
+字体越粗越能当标题 广告文字  越稳重朴实
+字体越细 越能当正文 格调要高   科技  奢侈感
+
+
+----------------新建文件
+
+ 	电脑/屏幕  		打印 
+单位： 	 像素/px		毫米/mm
+分辨率：  72像素/英寸		300/英寸
+颜色模式： RGB（红绿蓝）    CMYK（青 洋红 黄色 黑色）
+
+-----------------------3.8
+
+色彩三属性：  色相  饱和度  亮度
+
+D  默认黑白
+x  切换前景背景色
+ctrl+Delete /退格   前景色填充
+alt+Delete  /退格   背景色填充 
+
+表示颜色  左右 颜色 鲜艳程度
+           上下 颜色 亮度
+
+ctrl+Alt+Z 后退
+ctrl+shift+Z 前进 
+ctrl+K 首选项   性能  
+ 历史纪录的步数
+ ps占用内存大小
+ ps 占用磁盘的盘符
+
+ctrl+D 取消选择
+ctrl+shift+D 在一次出现上一次选区 
+
+shift 拖拽选取  可以出现正方形
+alt   从中心开始出现选区
+shift+alt  从中心开始的正方形选区
+
+ctrl+T 自由变换
+编辑-》自由变换
+
+-------四分圆
+1，参考线 横竖
+2，从中心开始绘制一个 正圆
+3，选择：正方形选框工具 ，选择选区交
+4，绘制正方形和圆形的交集
+5，特别特别重要 新建一个图层（ctrl+shfit+alt+N）
+6，填充颜色
+7，复制图层（ctrl+J）拖拽到新建按钮上
+8，ctrl+T（自由变换）更改变换中心点（中心点要在十字线上） 调整角度（-90）
+9，fx  颜色叠加 改变颜色
+
+
+移动选取：
+A 在绘制过程中移动选取
+  按空格移动
+
+B 绘制完毕后移动选取
+  1，必须是在选择工具条件下
+  可以通过光标上下左右键移动一次 1个像素
+ 如果配合shift+上下左右键   一次移动10个像素
+2，如果是在新建选区状态下，可以把鼠标放在选区里面手动移动选区。
+C  如果是别的工具就相当于剪切。
+
+
+-------------变换选区
+1选择-》变换选区（不是ctrl+T）
+2，变换时候要注意中心点
+3，如果是把光标放在某一个角则是放大缩小 （光标的形状是斜线）
+    配合shift 等比例放大缩小
+    配合alt+shift+ctrl  ？（透视）
+4，如果把光标放在选区的外面则是旋转选区（光标的形状是弧线）
+    配合shfit 以15度角的倍数选择
+
+
+---------------颜色填充不了
+1，要取消选择 ctrl+D
+2，工具选项栏-》模式 -》正常
+
+
+
+
+----------------------------羽化
+能够让选区的边缘柔和
+
+在绘制前羽化  工具选项栏  羽化
+在绘制选区后羽化 选择-》修改-》羽化（shift+F6）
+
+智能复制
+1，复制一个图层
+2，ctrl+T 移动复制出来的图层
+3，ctrl+shift+alt+T  智能复制
+
+
+1，透视原理： 画面中平行的两条线的延长线最终会消失在意一点上
+2，ctrl+T 自由变换  缩放最终会消失在中心点上
+
+ctrl+shift+I 反选
+
+
+
+----------------------------------3.9复习
+---------------选区
+1，在绘制前按
+   shift  和以前的选区相加
+   alt    和以前的选区相减
+   shift+Alt  和以前的选区相交
+2，在绘制的过程中
+   shift  正的圆，正的方形
+   alt	  从中心开始
+   shift+alt 从中心开始的正圆/正方形
+   空格 移动选区
+
+3 ，在绘制后 要想移动选取
+    a，必须在选择工具
+    b，上下左右  一次1像素
+       上下左右+shift  一次10像素
+       把鼠标放在选区中间可以移动
+    c，如果是别的工具相当于剪切
+4，  绘制后要取消选区
+     a，ctrl+D
+     b，在选择工具情况下  单击空白处、   
+     c，右键取消
+     d，选择-》取消
+5，  全选 ctrl+A	
+     反选  ctrl+shift+I
+     再一次选择 ctrl+shift+D
+
+6， 选区修改有哪些？
+    羽化
+    平滑
+    扩展
+    收缩
+    边界
+7，羽化选区（让边缘柔和）
+   a，在绘制前
+   b，选择-》修改 -》羽化
+8，选区描边
+   编辑-》描边
+9，选区变换
+   选择-》变换选区
+   在变换选区的过程中
+   a，鼠标放在 外面
+      旋转的意思  配合shift 可以15度角的倍数旋转
+   b，鼠标放在选区的角
+      缩放的一次 ，shift 等比例  alt 从中心
+
+
+ 单击
+10   通过图层载入选区  ctrl+单击 图层的缩略图
+     如果再一次单击别的图层缩略图   
+a    ctrl+ 图层的缩略图+shift  和以前的选区相加
+a    ctrl+ 图层的缩略图+alt  和以前的选区相减 
+c    ctrl+ 图层的缩略图+shift+alt和以前的选区相交
+
+11  在ps 里面后退，前进一步
+    ctrl+alt+Z
+    ctrl+shfit+Z
+    ctrl+Z 第一次后退 第二次前进 循环
+
+12   智能变换
+     a，复制图层 
+     b，ctrl+T 对图形进行变形
+     C，ctrl+shift+alt+T 重复上一次变形操作
+
+
+-------------------------------------3.9
+  ctrl+T 变形后
+  旋转
+  缩放
+  斜切 ctrl+shift  拖动变形中点 
+  扭曲 ctrl  拖动变形点 
+  透视 ctrl+shift+alt  拖动变形中点 
+  变形
+
+-------------------------------------图层总结
+1，新建
+   a，单击按钮
+   b，ctrl+shift+N 弹出新建
+   c，ctrl+shift+alt  新建
+   d，图层-》新建
+2，图层复制
+   a，ctrl+J
+   b,  图层上右键复制
+   c，拖动到 新建按钮上
+3，图层的删除
+   a，delete
+   b，拖动到垃圾桶
+4，图层重命名
+   双击图层名
+5，图层的链接（可以共同移动，缩放，变形）
+7，图层的不透明度（改变图层的透明度）
+   小键盘 输入数字0-100
+8，图层的顺序
+   a，拖动
+   b，ctrl+]  向上 ctrl+[  向下移动一层
+   c，ctrl+shift+] 移动到顶层 
+      ctrl+shift+[ 移动到底层
+
+
+ 9,图层的编组 ctrl+G  （新建文件组）
+ 10，图层的合并
+    ctrl+E 向下合并
+    选择图层  ctrl+E 合并选中的图层
+    ctrl+shift+E 合并可见图层
+    ctrl+shfit+alt+E 拼合所有图层，并放在最上面 不影响其他图层（印盖图章）
+11，图层的显示与隐藏   
+    a，单击小眼睛
+    b，alt+单击小眼睛 隔离显示当前图层（隐藏别的图层）
+    c，单击拖动小眼睛
+    d，编组的，如果组隐藏所有的都隐藏
+
+
+-----------------------图层样式
+1，混合模式：
+   正常 
+   正片叠底：越叠越暗
+   滤色	   ：越叠越亮
+   叠加/柔光：柔和，融合的意思，（增加对比度）
+2，全局光  一般取消
+3，距离，就是指效果出现的大小（范围）
+4，大小，效果模糊柔和的大小
+5，阻塞，越大，效果越清晰。
+6，大小和软化   大小 效果应用的范围 
+    软化：柔和的大小
+--------------------------总体思想
+   不要太刻意，基本要让人看见某一个整体效果，而不是看见某一个单一的效果（各种值调小点）
+
+
+---------------------定义图案
+1，定义的图案是矩形，可以有透明度，可以保持颜色
+2，在填充时候会水平，垂直平铺定义的图案。
+
+
+-------------------------------3.10
+1,图层
+  a，新建 ctrl+shift+N
+  b，删除 delete
+  c，调整顺序 ctrl+] ctrl+[  ctrl+shift+[
+  d，合并 ctrl+E
+  e，隔离显示 alt+单击小眼睛
+  f，图层常用混合模式
+     正常    滤色   线形添加   正片叠底  叠加
+2，图层样式
+   好多
+
+3，定义图案
+   1，必须是矩形
+   2，可以保留颜色
+   3，图案可以用油漆桶填充（水平，垂直平铺）
+4，油漆桶
+   会对当前图层有用
+   如果当前图层有内容，填充的区域是和单击处颜色相近的区域
+5，渐变
+   线  径向 角度  棱形  对称
+
+   渐变编辑器
+   a，与预设的渐变
+   b，渐变调下面方块控制颜色 上面控制透明度
+
+电脑的图形分为两种类型
+1，位图
+    a，放大后会不清晰
+    b，是由不可分割的小方块（像素组成）
+    c，占用磁盘空间要大
+    d，适合表现颜色丰富照片，图像等。。。
+2，矢量图
+    a，矢量图放大后是清晰的
+    b，是由数学计算出来（路径，锚点，控制手柄，填充，描边）
+    d，适合表现颜色单一简单的图形（logo ，文字等。。）
+    c ，占用磁盘空间要小
+
+行高设置经验
+1，文字越大行高可以设置越小
+2，文字越小行高可以设置越大
+3，行高大可以增强画面的品质，科技（高大上）
+   文字行高特别大会影响文字的阅读
+4，一般行高的设置要大于文字高度的1.2倍，要小于文字高度的2背
+alt+上下键
+
+
+
+
+
+
+
+1，位图a，放大后会不清晰b，是由不可分割的小方块（像素组成）c，占用磁盘空间要大  d，适合表现颜色丰富照片，图像等。。。
+2，矢量图    a，矢量图放大后是清晰的 b，是由数学计算出来（路径，锚点，控制手柄，填充，描边）
+    d，适合表现颜色单一简单的图形（logo ，文字等。。） c ，占用磁盘空间要小
+
+1，要突出一个物体：
+   a  放大它 b 让他鲜艳  C 让他亮
+   a  所小别的  b 让别的不鲜艳   c 让别的暗
+   d   让他周围留白多
+
+ 
+   
+
+ ---------------文字工具
+1，文字图层
+2，矢量，位图
+3，文字工具选项栏
+4，文字面板
+
+
+------------------选择工具
+磁性套索工具
+自由
+多边形
+魔棒
+快速选择工具
+
+自由：
+小部分，灵活随意
+
+多边形：
+物体比较规则多边形
+
+磁性：
+物体和背景颜色差别比较大
+
+魔棒：
+相同，相近的颜色，背景比较单一
+
+快速：
+---------------------------------
+1，选择选择工具
+    a 快速选择工具
+2，选择画面中实的部分
+
+3，选择画面中虚的部分
+   调整边缘
+4，融合新的背景
+   跟颜色的深浅决定
+   复制两个图层
+   下面的图层 用叠加模式  |正片叠底模式
+    上面的部分正常  添加蒙版（ 在蒙版里面把画面中虚的部分涂黑（隐藏））
+
+
+---------------------------画笔
+快捷键  B
+
+放大笔尖  ]
+放大笔尖  [
+
+增加画笔的硬度  shift+]
+减小画笔的硬度  shift+[
+
+-------------------钢笔工具
+
+1，p
+2，单击拖动可以变成平滑节点
+3，单击时配合shift 可以是水平垂直45
+4，在绘制的过程总按 空格可以移动最后一个节点
+5，在绘制的过程按alt 单击最后一个锚点可以把锚点变成尖突节点
+6，在绘制的过程中按ctrl 可以临时切换到直接选择锚点工具
+7，在绘制的过程中按 alt 拖动控制手柄时可以只改变一边的路径
+8，在绘制的过程 按 esc /ctrl+单击空白  可以结束绘制
+
+----------------钢笔工具总结
+1，钢笔工具（p）
+   使用钢笔工具的变化
+    a，在没有锚点的线段上单击是增加锚点
+       有锚点单击时删除锚点
+    b，按ctrl，钢笔变成直接选择工具
+    c，按alt， 钢笔 变成 锚点转换工具
+2，锚点转换工具
+3，加减锚点工具
+4，直接选择工具（用来选择锚点的）
+5，路径选择工具（用来选择单独一条路径的）
+
+------------------------------3.14
+
+蒙版
+---------快速蒙版  Q
+
+1，蒙版可以转换为选区
+2，蒙版里面绘制颜色 只有黑白 灰没有彩色
+3，蒙版里面的颜色转换为选区
+   黑色代表不选择
+   白的代表选项区域
+   灰色代表选择部分区域
+   越接近黑色选择的区域越少
+   越接近白色选择的区域越多
+
+-----------------图层蒙版
+1，图层蒙版可以控制当前图层的部分显示与隐藏
+2，图层蒙版里面是黑色 代表图层所对应的区域不现实
+3，图层里面是白色，代表图层所对应的区域显示
+4，alt+单击图层蒙版可以只显示蒙版
+5，shift+单击图层蒙版可以停用图层蒙版
+6，有击图层蒙版可以应用蒙版效果
+
+有选区的情况下
+单击图层蒙版按钮选择的部分  在蒙版里面是白色
+alt+单击图层蒙版按钮选择的部分在蒙版里面是黑色
+
+没有选区的情况下
+单击图层蒙版按钮 ，图层蒙版是白色的
+alt+单击图层蒙版按钮 ，图层蒙版是黑色
+
+
+----图层蒙版与图层
+1，默认情况下是锁定的  移动图层或者蒙版 都会同时移动
+2，可以解锁图层与蒙版，这是可以单独移动图层或者蒙版
+
+ctrl+单击，可以把蒙版转换为选区
+
+-------剪切蒙版
+在两个图层间 按 alt+单击
+
+上面图层只显示下面图层有内容的区域
+
+
+----------------HTML
+
+115.239.211.112
+
+html 超文本标记语言
+head  头部（网页的头部）
+body  身体（网页的内容部分）
+title 标题（网页的名称-网页标签显示的名称）
+
+1，大部分html标记是成对出现如：
+   <body></body>
+2,<>必须是英文的
+3， 推荐小写英文
+
+img	图片 （image）
+src     图片的地址（source）
+ol	有序列表（order list）
+li      列表项(list)
+ul      无序列表（un order list）
+a       超链接
+href    链接的地址
+&copy;    版权符合
+在html 一次最多表现一个空格 
+&nbsp   代表一个空格
+
+居中<center></center>
+
+---------------table 表格
+<table border="1" align="center" width="50">
+	<tr><td>1</td><td>2</td></tr>
+	<tr><td>1</td><td>2</td></tr>
+</table>
+
+table 表格
+tr    一行  tablerow
+td    一列  tablecell
+border  表格边框
+width   宽度
+align   对齐 left  right  center
+
+单元格垂直对齐
+style="vertical-align:top"
+
+项目列表
+
+style=“list-style:disc”
+
+style=“list-style:square”
+
+
+
+<html>
+	<head><title></title>
+	</head>
+	<body>
+		
+</body>
+</html>   
+
+
+
+-------------单词
+p段落
+h1-h6标题
+body网页的身体
+head网页的头部
+title网页标签
+img图片
+src图片的地址
+a超链接
+href超链接的地址
+ol有序列表
+ul无序列表
+li列表项
+table表格
+tr一行
+td一列
+width宽度
+border表格边框
+align对齐
+
+dl
+dt
+dd
+hr
+
+big
+i
+small 
+b
+sub
+sup
+del
+br
+u
+
+--------------------块级标签-行内标签
+默认情况下标签元素是垂直排列 是块级元素
+默认情况下元素是水平排列 是行内元素
+
+块级元素 会独自占一行，里面的文字会自动换行
+行内元素 宽度是里面内容（文字）的宽度
+
+-----------------------------------------3.15
+块级标签
+	body
+	div
+	h1-h6
+	p
+	ul
+	ol
+	li
+	dl
+	dt
+	dd
+行内
+	span
+	a
+	img
+	em
+	br
+ 	sup
+	sub
+  ---不推荐的表现元素也是行内
+	i
+	u
+	small
+	big
+	b
+	del
+
+--------------------------html标签的嵌套规则
+1，块级元素可以嵌套块级元素和行内元素
+   <ul><li><a href="">wo shi Li</a> </li></ul>
+2,行内只能嵌套行内容元素,不能嵌套块元素
+  <a href="">首页<span>Home</span></a>
+3，h不能套h，p不能套p   a 不能套a
+4, p里面不能嵌套h  h里面不能嵌套p
+
+meta  元数据
+keywords  关键词
+content	   内容
+description 描述
+charset     字符编码
+docType	    文档类型
+class     类 名称
+id	id
+style	样式
+title   标题-提示
+
+
+元数meta
+关键字keywords
+内容content
+描述description
+字符编码charset
+文档类型doctype
+
+-----------------使用图片还是背景？
+1，如果图片上面有文字 一般用背景
+2，如果图片比较小并且一般不会更改 背景图片
+3，如果图片有可能根据后台数据的变化而变化用 img
+
+
+article  文章内容
+aside	 侧边栏
+section  一块，一节
+footer   页脚
+nav      导航
+
+
+container  内容
+breadcrumb 面包屑
+hot  热
+link 链接
+user  用户
+info  信息
+mess  信息
+tool  工具
+sub   次要的
+
+------------------------网络上图片格式的挑选
+1，要符合功能
+2，质量好占磁盘空间小
+
+jpg：
+不能有透明-更别说半透明
+jpg适合表现颜色丰富的照片等
+一般图片保存的质量可以压缩到60%
+
+gif：
+能有动画
+可以表现透明，不透明，不能半透明
+最多由256个颜色组成
+它相同的图片占用的磁盘空间会小，但是质量稍差
+适合表现色彩单一，简单的图像
+
+png
+可以表现半透明，如果是有透明的区域，他的边缘会表现的良好。
+但是 它是无损压缩  图片最清晰但是占用磁盘口空间要大
+
+png8 
+png24  才可以表现半透明
+但是：ie6不支持
+
+svg  矢量图形 数学运算出来的，一般表现颜色少单一，图形简单的icon 
+占用磁盘空间小  ie9以下的浏览器不支持
+
+data:image
+用字符串来表现 图片 他适合简单一的图形
+
+ WebP
+ 谷歌新发明的图片格式
+优点 与jpg png 同等情况下画面质量优，占磁盘空间小 但是 ，谷歌浏览器支持
+  
+
+
+
+
+
+doctype
+meta
+keywords
+description
+meta charset=gb2312
+head
+nav
+article
+banner
+aside
+container
+content
+user
+mess
+info
+sub
+footer
+section
+
+<!--nihao-->
+
+---------------------------------3.16
+
+超链接链接地址
+
+href="#" 回到页面的最上面
+href="###" 原地不动
+？href=""
+href="#name1" 回到页面中锚点名称为name1的地方
+href="exmple.html#name1"
+回到exmple.html页面中锚点名称为name1的地方
+
+target="_blank" 在新窗口中打开网页
+target="_self" 在当前窗口中打开网页
+target 默认是"_self"
+
+
+----------------------------a链接的四个状态
+a:link 		(link 可以省略) 正常状态
+a:visited  	链接访问过状态（只能改变颜色）
+a:hover  	鼠标放上去状态
+a:active  	鼠标放按下状态
+
+切记：
+1，a是行内元素 设置宽高要转换为块（display:block;）
+2，状态的顺序  Link visited hover active
+
+
+-----------------------------英文翻译
+background 背景
+url        地址
+image      图片
+color	   颜色
+display    显示（转换）
+block	   块
+width	   宽
+height     高
+line-height行高
+text	   文字
+align      对齐
+center	   居中
+decoration 装饰
+text-decoration:none
+文字装饰线 没有
+----------------------------css的写法
+1，必须都写在<style>标签里面</style>
+2，style 一般放在head 标签里
+3，规则
+   a{color:red;}
+   a		选择器
+   color	属性
+   red		属性值
+切记 
+1，{}是英文 
+2 每一条属性与属性值结束要以英文的分号结束；
+3 /**/ 是css的注释 只能用在style标签里面 
+4 <!-- --> 是html注释 
+
+    
+
+
+
+
+
+
+
+background-image
+display:block
+line-height
+text-decoration:none
+width
+height
+color
+text-align:center
+<a href="" target="_blank"></a
+>
+
+_self
+
+
+
+-----------------------------------CSS总结
+1，css都要写在<style></style> 标签里面
+2，css的规则
+   选择器{属性:属性值;}
+   a{color:#f00;}
+3,css的选择器
+  A，标签选择器 如：a{} ul{}
+  B，通配符选择器 如：*{ margin:0; padding:0;}
+     *代表所有的元素、
+  C，class选择器，类选择器 如：.main-nav{float:right;}
+4,css 常见的清零
+  a，清除默认距离 
+     *{margin:0; padding:0;}
+  b,清除ulol的项目列表 
+     ul，ol{list-style:none;}
+  C,清除图片边框
+     a{border:none;}
+ 一般写所有的网页都要类似的清零
+5，css中的对齐
+  a，文字水平居中
+     选择器{text-align:center;} 
+  b,文字上下居中
+     选择器{height:值1; line-height:值1} 
+     当文字只有一行才管用
+  C,块级元素在父亲元素内容水平居中
+     选择器{margin-left:auto;margin-right:auto; width:固定值}；
+     别忘了写宽度固定值
+
+6，CSS中文字的设置
+   设置字体	font-family:"微软雅黑"; 
+   设置字体大小 font-size:18px;
+   设置字体颜色 color:red;
+   设置文字对齐 text-align:left |right |center
+   设置文字装饰线text-decoration：none |underline  | overline |line-through 没有 下  上  删除
+   设置行高：  line-height:35px;
+
+7 块级元素排列方式
+  从父级元素的左边开始排列  float:left;
+  从父级元素的右边开始排列  float:right;
+
+8 css中的距离
+  padding-top:25px;
+  设置该元素的文字离该元素的上边框的距离为25
+  （每个元素都会有边框，哪怕是看不见也是有个无形的边框）
+  padding-left：
+  padding-right
+
+
+9  CSS中的边框
+   border： 2px  solid  red
+   边框：粗细 样式  颜色；
+   三个属性值没有顺序
+   样式有：solid  实线  dashed 虚线    dotted 点状线。
+
+
+
+
+2，css的规则
+选择器{属性：属性值；}  例：a{color:#aaa;}
+3,css的选择器
+
+* 		通配符选择器
+标签选择器	
+.		类选择器
+#		id选择器
+空格		后代选择器
+.main-nav .active
+
+4,css 常见的清零
+*{margin:0;padding:0;}
+ul{list-style:none;}
+img{border:0;}
+5，css中的对齐
+text-align:center;
+height:20px;
+line-height:20px;
+width:1000px;
+margin:auto;padding:auto;
+
+
+
+6，CSS中文字的设置
+font-family:"微软雅黑"
+font-size:10px;
+color:red;
+text-decoration:none ;underline /line-through
+overline
+height:20px;
+line-height:20px;
+
+
+7 块级元素排列方式
+div{float:left;}
+div{float:right;}
+
+8 css中的距离
+
+
+9  CSS中的边框
+border:2px solid red
+border-left:2px dashed red
+
+
+10 css背景图片
+<div class="divname">
+.divname{background-image:url(images/logo.png)}
+
+11 a超链接
+   target："_blank"  "_self"  "框架的名称"
+   a href
+     回到顶部 #  
+     原地    ###
+     回到锚点 #锚点名称
+     发送邮件 href=“mailto：zengmumu@126.com”
+     拨打电话 tel：13598859747
+     发送短信 sms：
+     链接地址 http：//
+
+
+框架 iframe
+     宽 width
+     高 height
+     链接地址 src
+     边框      frameborder
+     滚动条	scrolling=“no”
+
+
+
+
+--------------------------------------3.17
+html5新标签在ie9以下的浏览器里面不支持
+html5新标签-插入视频
+video 视频支持MP4 ogv avi quickTime等常用的视频
+	属性：
+	src  视频地址
+	autoplay 自动播放
+	controls 播放控制条
+source  设置多个格式的声音和视频
+
+audio  声音 mp3   ogg
+	属性：
+	src  视频地址
+	autoplay 自动播放
+	controls 播放控制条
+----------flash插入
+1，DW插入
+2，embed
+   <embed src="top.swf" width="719" height="289" wmode="transparent" type="application/x-shockwave-flash">
+
+---------table
+table
+    tr
+      td
+table
+  caption
+     thead
+	  tr
+		th
+     tbody
+     tfoot
+
+table 属性
+border 边框
+cellspacing  单元格间距
+cellpadding  单元格边框到里面的内容的距离
+width	     宽
+
+td 属性
+   rowspan   行合并
+   colspan   列合并
+
+
+表格相关的css
+table{ border-collapse:collapse;}
+      相邻的边框合并成一条
+td{可以设置边框的粗细和样式}
+
+td里面的内容默认是垂直居中的。
+
+width border align cellspacing cellpading 
+
+border-collapse:collapse
+<table><tr></tr></table>
+<table>
+caption
+thead
+tbody
+tfoot
+</table>
+<embed>
+wmode=transparent
+embed
+<embed src="abc.swf" width="500" height="500" wmode="transparent" type="application/x-shockwave-flash"></embed>
+<video src="myvideo.mp4"  autoplay controls ></video>
+
+
+-----------------------单词
+form  表单
+input 输入框
+label 标签
+placeholder 提示文本
+password    密码
+text	文本
+background 背景
+repeat    重复
+postion    位置
+inline-block 行内的块（有宽高，不换行）
+Method      方法
+action	   表单提交的位置（动作）
+submit	    提交
+get	    获取
+post        推送
+text-indent  文字首行缩进
+2em	     两个字符宽度
+
+
+
+------------------------------
+table  表格
+thead  表格的头
+tbody	表格的内容
+tfoot   表格的脚部
+th	表格的标题
+tr 	表格的行
+td	表格的列
+caption	标题
+colspan  合并列
+rowspan  合并行
+cellspacing  单元格间距
+cellpadding  单元格边框到内容距离
+border-collapse:collapse; 合并相邻的边框线
+
+------------------------------------
+embed  嵌入
+wmode	窗口模式
+transparent 透明
+
+------------------------------------
+video  视频
+audio   音频
+src	地址
+source  资源地址
+autoplay 自动播放
+controls 控制条
+
+ table thead tbody tfoot caption
+tr td rowspan=“2” colspan=“2”
+cellspacing cellpadding
+border-collapse:collapse
+<embed src="abc.swf"></embed>
+<video src="abc.mp4"  autoplay controls></video>  
+get  post
+password
+sumbit
+label
+background-position
+background-image
+background-repeat
+-------------------------------------单词
+checkbox	多选
+radio		单选
+name		名称
+textarea	多行文本
+select		下拉选择
+option		选择项
+disable		不可以用
+checked		选中
+selected	下拉选中
+file		文件
+button		按钮
+reset		重置
+
+email		邮箱
+url		网址
+number		数字
+range		范围
+date		日期
+
+time		时间
+month		月
+week		周
+color		颜色
+
+placeholder	提示文本
+max		最大
+min		最小
+step		步进
+novalidate	不需要验证
+required	必填
+pattern		规则
+autofocus	自动获取焦点
+value		值
+
+----------------------------html4.0表单
+input
+    type：
+	text 		文本
+	password 	密码
+	checkbox	多选
+	radio		单选
+	file		文件
+	submit		提交
+	reset		重置
+	selected	下拉选择
+	option		下拉选择项
+
+textarea  文本区域
+button	  按钮
+
+
+----------------------------html4的表单属性
+value		值
+disabled	不可用
+check		选中
+selected	下拉选中
+
+
+----------------------------html5表单
+（ie9以上的浏览器支持部分）
+
+type	
+	email	邮件
+	url	网址
+	number	数字
+	range	范围
+	date	日期
+	month	月
+	week	周
+	time	时间
+	search	搜索
+-------------------------html5 表单的属性
+novalidate	不需要验证
+autofocus	自动获取焦点
+required	必填
+min		最小
+max		最大
+step		步进
+pattern		格式
+placeholder	提示文本
+
+
+
+-----------------------html4.0
+
+---------行内元素（display：inline）
+span	行内的一块
+a	超链接
+em	强调
+br	换行
+sub	下标	
+sup	上标
+img	图片
+表现元素 big small u  i del b
+hr	横线
+
+---------块级元素（display：block）
+div 
+p
+h1-h6
+dl
+dt
+dd
+ol
+ul
+ol
+
+---------有行内块级元素（display:inline-block）
+input
+
+----------html4.0 表单
+input
+	type：
+	text	单行文本
+	password密码
+	radio	单选
+	checkbox 多选
+	
+	
+	file	 文件
+	reset	 重置
+	submit	 提交
+textarea	多行
+button		按钮
+select	 下拉
+option	  下拉选择项
+	
+	
+----------html4.0 表单属性
+
+value		值
+disabled	不可用
+checked		选中
+selected	下拉默认选择
+
+
+
+
+----------html5   表单
+type：
+email	邮箱
+url	网址
+range	范围
+month	月
+week	周
+date	日期
+number	数字
+time	时间
+color	颜色
+
+
+----------html5	   表单属性
+placeholder  提示文本
+max
+min	最小
+novalidate 不需要验证
+pattern	规则
+required	必填
+step	步进
+
+autofocus 自动获取焦点
+
+
+------------------------------css引入方式
+1，行内的css
+	<h3 style="color:green;"></h3>
+   只能对当前元素起作用
+
+2，内嵌css
+   <style>
+	h3{ color:yellow;}
+	</style>
+
+3,外链
+  a，name.css  文件
+  b，在html中引入 name .css
+      <link  rel="stylesheet" type="text/css" href="name.css">
+  只要引用了该css 就会起作用
+
+
+4，导入
+   可以在css 文件中导入css文件
+   也可以在style 标签中导入css文件
+   注意：一般css导入要放在前面
+  @import url("im.css");
+
+-----------------------------------CSS选择器
+1  * 通配符选择器
+     代表任何元素  
+     *{ margin：0; padding:0;}
+2  标签选择器
+      代表网页中任何该类型的标签
+      div{ border：1px solid red}
+      会选择到网页中所有的div并给以个红色的边框
+3  id选择器
+       选择网页中id名为，，，的元素
+       #myid{ font-size：48px}
+4  类选择器  .
+       选择网页总该类名的选择器
+       .header{ height:90px;}
+5  包含选择器  后代选择器
+   选择器1  选择器2
+   .aside div{ background-color:yellow}
+   选择页面的中的div给黄颜色的背景，必须是aside的后代元素
+
+
+-------------------------------CSS优先级
+
+在css中同样的选择器 后面的会覆盖前面的。
+在css中行内的css 优先级高于其他的。
+important 优先级最高
+
+离元素越近 css的优先级越高
+
+-----------------------------CSS选择器的权重
+选择器权重越高 里面的css样式优先级越高
+
+*   		0.5；
+标签 		 1
+类选择器  	 10
+id选择器	 100
+
+包含选择器      选择器1+选择器2
+                .subnav .first
+                 10+10
+
+如果权重一样看谁离得近
+
+
+------------------------CSS长度单位
+px 像素
+em 一个字符的宽度
+百分百  父亲元素宽度的百分比
+
+------------------------CSS中颜色表示方式
+1，英文： red blue  orange pink gold gray drak
+2，rgb 255：  rgb（255，0，0）
+3，rgb 百分比  rgb（50%，50%，0）
+4 16进制 表示  0-9 abcdef
+               #ff  ff  ff
+		红  绿   蓝
+  简写          #f00
+
+----------------------------------CSS中字体表示
+font-family：宋体 ，微软雅黑；
+1，一般的电脑写这两种字体才保险
+2，如果字体名称有空格用双引号
+3，多个字体用逗号隔开
+4，最好用unicode编码拽一下，也可以英文走一个国际风  Microsoft Yahei   simSun
+
+font-size	字体的大小
+em：父亲元素一个字体的大小
+
+font-style      字体的样式
+normal  italic   oblique 倾斜
+
+font-weight     字体的粗细
+1，单词  normal正常   bold 粗的  bolder  更粗
+         lighter 细的
+2，数字  100-900  400 正常
+
+
+text-transform    字体的大小写转换
+upper-case   大写
+lower-case  小写
+capitalize  首字母大写
+
+text-decoration		文字的装饰
+underline	下划线
+overline	上划线
+line-through	删除线
+
+-------------------------------段落相关
+text-indent	首行缩进 2em;
+letter-spacing	
+	英文：字母间距
+	中文：字间距
+word-spacing 单词间距
+
+text-align：文字对齐
+           left
+	   right
+	   center
+	   justify 两端对齐最后一行左对齐
+
+--------文字简写
+ font-weight:bold;
+
+ font-style:italic; 
+
+ font-size:1em; 
+
+ line-height:1.5em; 
+
+ font-family:verdana,sans-serif;
+font:bold italic 1em/1.5em verdana,sans-serif;
+简写的顺序  粗细 倾斜 大小/行高 字体
+必须有 字体和大小行高才管用
+
+
+
+------------------------------css的层叠（继承）
+css中 子元素会继承父亲元素的文字属性
+a 不会继承 颜色和装饰线
+h 不好继承 文字的大小和粗细
+em 不会继承斜体
+
+--------------------------------CSS高/宽
+在css中设置的宽 高 是指内容区域的宽高
+不包含 padding 和border的宽度高度
+--------------------------------CSS中颜色表示
+color:
+1,16进制 #FFFFFF；
+2，en，red blue pink transparent
+3，rgb：  rgb(255,255,255);
+   rgb:   rgb（100%,0%,0%）;
+
+--------------------------CSS中的度量单位
+px	位图（屏幕的最小颜色表示单位）
+em      父亲元素字体的大小
+百分比	父亲元素宽度的百分比
+rem	根元素文件字体的大小
+
+
+-------------------------CSS选择器
+0.5   	1，通配符  *
+1      	2，标签选择器  div p
+100	3，id选择器    #id名  
+10  	4，类选择器    .class名   .header
++  	5, 包含选择器  空格  选择器1 选择器2{}  ul  li{}
+ 	6，并列选择器   ，   选择器1，选择器2{}
+
+
+---------------------------CSS优先级
+同样的选择器后面的比前面的高
+行内的高于其他的
+离元素近的优先级高
+！important   最高
+
+--------------------------页面中引入css的方式
+1，行内的css
+   <div style="color:red;">
+2,内嵌css
+  <style></style>
+3, 外链CSS
+   <link rel="stylesheet" type="text/css" href="">
+
+4, @import url("");
+
+
+---------------------------CSS中字体简写方式
+
+font:粗细  样式   字体大小/行高  字体
+font:normal  italic  12px/18px "Microsoft Yahei";
+
+---------------------------CSS中font开头的属性
+font-family  字体
+font-size    大小
+font-style   样式  normal  italic oblique
+font-weight  粗细  normal bold bolder lighter
+                   100-900
+---------------------------CSS中text开头的属性
+text-align  对齐  center left right justify
+text-decoration  装饰  none  underline overline
+                   line-through
+text-transform 大小写转换 uppercase lowercase
+                          capitalize
+text-indent：2em；
+line-height： 行高
+wordspacing   单词间距
+letterspacing  汉字间距
+
+
+------------------一个元素的宽
+content（内容）+padding（内边距）+border（边框）
+当设置的padding 该元素实际尺寸会增加
+当设置margin    该元素的位置会发生改变
+
+当我我们设置width  是设置的内容宽 不是元素最终实际的宽度
+
+3，当设置背景颜色的是从边框的外边开始有背景颜色
+4，叠加顺序  
+   颜色 > 背景图片>边框》 文字
+5  背景图片是默认从元素的边框内侧左上角开始
+
+------------------------------CSS边框的写法
+1，4条边
+   border：宽度  样式 颜色；
+2，某一条
+   border-left：
+   border-right
+   border-bottom
+   border-top：
+3， 边的某一个属性
+   border-width：30px;
+   border-style:solid;
+   border-color:red;
+4,  某一条边的某一个属性
+    border-left-width
+    border-right-color
+    border-bottom-style
+
+--------------------------padding
+自己的边框到自己内容的距离
+padding 
+  1个值    4周
+  2个值    上下   左右
+  3个值    上  左右 下
+  4个值    顺时针  上  右 下 左
+padding：40px  50px 60px  90px;
+
+padding-left
+padding-right
+padding-bottom
+padding-top
+
+------------------margin
+margin:
+1,自己的边到兄弟元素的边距离
+2，自己的边到父亲元素边的距离
+3，margin 纵向如果重叠 取最大值
+4，margin 横向的两者间取和
+
+
+---------------------子元素和父亲元素要距离
+1，在父亲元素里面设置 padding
+   a，父亲元素的实际宽高会变大
+   b，对于所有的子元素来说只用设置一次
+   tip：减小父亲元素相应的宽高
+2，在子元素里面设置margin
+   a，每一个子元素都要设置
+   b，不会增加父亲元素的实际大小
+   tip：给每一个子元素设置相同的class名
+3，父亲元素padding+子元素的maring
+
+
+-----------------------兄弟元素间距离
+只能用margin
+
+-----------------------元素的宽高
+1如果块元素不设置宽高，他的宽100%，高是子元素的高（父亲元素的高由子元素的高决定）
+2，如果块元素浮动了 ，宽高都由子元素决定
+3，当然设置该元素的padding 和子元素的margin都会改变（增加）该元素的宽高
+
+-------------------------float
+1，当元素float以后 他的宽度不再是100%，而是由里面的文字（内容）决定。[自己变窄]
+2，当元素float以后，它就脱离了标准文档流（他的高度不再参与父亲高度的计算）[父亲变矮]
+3，浮动元素他的兄弟元素，和父亲元素认为他不存在了，兄弟元素会占据他原来的位置[自己的位置被占]
+4，兄弟元素的背景和实际位置都完全占据浮动元素的位置但是 兄弟元素的文字会从 该浮动元素实际的宽度开始显示（兄元素会留出 浮动元素文字的位置）
+5，谁先浮动 ，谁就有权力优先占据父亲元素的最左边（float：left） 右边（float：right）；
+   先：html写在前面
+6  当浮动元素在一行加起来的宽度超过了父亲元素的宽度，后面的那个浮动元素会自动换行（宽度不够换下一行）
+7，无论浮动元素前面是行内还是块级（没有浮动）
+   该浮动元素都会另起一行开始浮动
+8，行内元素浮动后会变成块级元素。
+9，元素怎么浮动都不会超过父亲元素的边界
+
+clear：left
+元素的左边不能出现浮动元素
+clear：both；
+元素两边都不能出现浮动元素（独自占一行）
+
+
+-------------------------父亲的高度
+父亲的高度是由子元素来决定的，如果子元素都浮动了，那么父亲高度就没有了
+
+-----------------------解决父亲元素不包括子元素（父亲元素没有高度的问题）
+在父亲元素的最后面添加一个子元素
+ clear：both 
+ 不浮动 
+ 高度：0
+ visibility ：hidden 隐藏
+
+1，给改父亲元素设置 class="clearfix";
+2, 设置css
+   .clearfix:after{content:""; display:block; clear:both; height:0; visibility:hidden;}
+
+visibility:显示属性
+hidden	隐藏
+content 内容
+after  后面的
+clear  清除
+
+both   两边
+
+
+
+clearfix:after{content:"";display:block;clear:both;height:0;visibility:hidden;}
+h3:before{content:"";display:block;height:0;border:5px solid transparent;border-top-color:red;}
+
+------------------------------3.23
+行内元素与块级元素
+1，块是垂直排列，行内是水平排列
+2，行内元素不能设置宽高
+3，行内元素的margin 垂直方向不管用，水平方向可以用
+4，行内元素可以设置四个方向的padding
+5，行内元素如果没有浮动 可以理解为一个文字
+6，行内元素浮动后会自动转为块
+
+----------------------------display
+
+行内元素默认  display：inline
+块默认	      display：block；
+
+display：inline-block  转换为行内的块
+可以设置宽高，不会自动占一行
+
+display：none； 隐藏元素（位置都没有了）
+visibility:hidden   隐藏元素（位置位置还是有的） 
+
+css--------------------继承
+
+只会继承文字属性
+a 不继承color 会有自己的text-decoration
+h  不基础font-size   font-weight
+em 不会基础斜体
+
+
+---------------------------overflow
+当子元素超过了父亲元素的宽高
+怎么来显示子元素
+hidden 超过部分隐藏
+visible 超过部分显示
+scroll	出现滚动条
+auto	自动决定出现滚动条
+
+---------------------------定位
+当页面中的元素需要重叠时，需要定位
+
+position：relative 相对定位
+参照定位点  0 0位置是他原来的位置
+
+1，兄弟元素和父亲元素都还以为他在原来的位置（不会影响其他元素）
+
+position：absolute  绝对定位
+参照定位定 0 0位置是
+              a：默认是body左上角
+              b:父辈元素写过postion属性的左上角
+1，自己的宽度会像浮动元素一样（变窄只有文字区域的宽）
+2，兄弟元素和父亲元素都认为他不存在了（
+  兄弟元素会占据他原来的位置，他也不再参与父亲元素的高度计算）
+
+position：fixed 固定定位
+参照定位点：00位置是 浏览器窗口左上角
+1，自己的宽度会像浮动元素一样（变窄只有文字区域的宽）
+2，兄弟元素和父亲元素都认为他不存在了（
+  兄弟元素会占据他原来的位置，他也不再参与父亲元素的高度计算）
+
+------------------------------------------------------------------CSS-选择器
+----------------基本选择器
+1，*通配符选择器
+2，标签名  标签选择器
+3，class名  .class类选择器
+4, id名	    #id选择器
+
+---------------层次过滤选择器
+
+
+>  选器器1>选择器2 代表选择器2是选择器1的直接子元素
++ 选器器1+选择器2
+  选择2是选择器1后面的一个兄弟元素
+~选器器1~选择器2
+ 选择器2是选择器1后面的所有兄弟元素
+空格 选择器1 选择器2
+     选择器2是选择器1的子孙元素（可以是子也可以是孙元素只要被选中器1包含就可以）
+
+------------------基本过滤选择器
+:first-line 第一个行
+:first-letter 第一个字
+::selection  选中的文本
+:root	 根元素
+:empty	 空的元素
+
+------------------伪类选择器
+:link	链接正常状态
+:visited 链接已经访问状态
+:hover    鼠标放上去状态
+:active   鼠标按下状态
+:focus    元素获取焦点状态
+:before	  在元素的最前面通过css创建一个行内元素
+:after     在元素的最后面创建一个行内元素
+提示：
+1，before after 必须写content 属性才有用
+2，before after contet可以是文本 content:"this is last" 也可以是 父亲元素的属性值 content：attr（"data-name"）;
+3,outline:none; 元素的外边框 ，它不会占元素的时间宽度； 取值访问  （颜色 样式 宽度）
+
+-------------------子元素过滤选择器
+-------------------child
+:first-child 父亲元素的一个子元素
+:last-child 父亲元素的最后一个子元素
+:nth-child(n) 父亲元素的第几个子元素
+:nth-child(2n) 父亲元素的第2的倍数子元素
+:nth-child(2n+1) 父亲元素的第2的倍数子元素向前调一个位置
+:nth-last-child(2n) 倒着数2的倍数个子元素
+
+如果选择的位置不是该类型子元素就不会选择
+如果选择的位置是该类型的子元素 不管前面的元素是否是该类型的都选择（只看位置，看类型）
+
+-------------------type
+
+
+
+
+
+
+
+
+------------html新增标签
+header 头部
+nav	导航
+main	主要
+aside  侧边
+article	文章
+section 一节
+hgroup	标题组
+figure   媒体
+figcaption  媒体标题
+footer 页脚
+details 详细的
+summary 摘要
+time	时间
+
+-----------基本选择器
+* 通配符
+标签
+.
+#
+------------层次选择器
+空格  包含选择器
+
+> 直接子元素
++ 后面的第一个兄弟元素
+~  后面的所有兄弟元素
+
+-------------------------过滤选择器
+---------------基本过滤
+:first-line	第一行
+：first-letter  第一个字
+：：selection	选择中的文字
+:root		根
+:empty		空
+
+
+------------------子元素过滤选择器
+------------child
+:first-child
+:last-child
+:nth-child(n)
+:nth-child(2n/2n+1)
+:nth-last-child(2n/n)
+：first-child
+ 查找父亲元素下面的第一个子元素如果是该类型的就选择，不是则不选择
+--------------------------type
+:first-of-type
+	查找父亲元素下面该类型的字元素的第一个
+:last-of-type
+:nth-of-type(2n);
+:nth-of-type(2n+1)
+例如：
+ul li:nth-of-type(2);
+查找ul 里面的 li的第二个元素
+ul li:nth-child(2);
+查找 ul 里面的第二个子元素
+:nth-last-of-type(2n) 从后面开始数
+
+-------------------------------属性过滤选择器
+a[href]{}
+选择 有href属性的a 元素
+a[href="#"]
+选择 属性href="#"的a 元素
+a[href~="love"]; a[href*="love"];
+选择 属性 href 里面值有love 的a元素
+a[href^="../"] a[href|="../"]
+选择 属性href 里面值是以 ../开头的a 元素
+a[href$=".pdf"];
+选择 属性href 里面值是以 .pdf结尾的a 元素
+
+-----------------------------CSS3透明
+1整个元素透明(背景+内容)
+opacity:.7;
+ IE浏览器不支持的解决办法
+ filter:alpha(opacity=70)
+
+2 颜色的透明
+  rgba(红，绿，蓝，透明度)
+
+--------------------文字的阴影
+text-shadow（水平，垂直，模糊，阴影的颜色）：
+text-shadow（0，-1px,3px,#999）;
+
+--------------------文字单词的强制换行
+word-wrap:break-word;
+单词-换行：打断-单词
+文字换行：强制换行
+
+-------------------汉字不换行
+white-space：nowrap；
+空白的区域：不换行
+强制汉字不换行
+
+-------------------文字最后省略点
+text-overflow：ellipisis；
+文本溢出：省略点；
+
+-------------------边框圆角
+border-radius:圆角的值；
+	      1个是指4周
+              2个值对角
+通过配合over-flow：hidden 可以设置圆形图片
+
+--------------------私有属性前缀
+1，早期的浏览器版本对CSS3各自的自持
+2，当浏览器都升级可以不用
+-ms-   IE内核
+-moz-  火狐内核
+-o-    欧朋内核
+-webkit-  ios 和 chrome（谷歌）浏览器内核
+
+--------------------盒子阴影
+box-shadow：水平偏移  垂直偏移 模糊大小  颜色
+box-shadow：0 3px 3px #999；
+
+tip：外发光效果
+box-shadow  0 0 12px  #999;
+
+--------------------------------背景
+background-color   背景颜色
+background-image:url() 背景图片地址
+background-position	背景位置
+			左右  上下
+		left right center top bottom
+background-repeat	背景平铺
+		no-repeat 不平铺
+		repeat-x  水平平铺
+		repeat-y  垂直平铺
+		repeat	   垂直水平平铺
+
+background-size：背景图片大小
+                水平  垂直
+                px，像素  
+                auto 自动
+		百分比 父亲元素的宽
+                cover  覆盖父亲元素
+
+background-origin： 背景图片开始的位置
+1，content-box 从内容区域开始
+2，padding-box 从padding开始（默认）
+3，border-box  从边框开始
+
+background-clip： 背景图片显示的区域
+1，content-box 从内容区域开始
+2，padding-box 从padding开始
+3，border-box  从边框开始
+
+backgrond-image：url(),url();多重背景
+
+
+-------------------------CSS3中渐变
+background-image:linear-gradient(方位，颜色，颜色)
+linear-gradient(to right，#000，#FFF)
+1，表示方位 ： to left right  bottom top  to left top；
+
+linear-gradient(90deg，#000，#FFF)
+linear-gradient(90deg，#000 50%，#FFF 100%)
+
+---------------自定义字体
+@font-face{
+font-family："mao";
+src:url(字体地址)；
+}
+
+p{font-family:mao;}
+
+  background-image:linear-gradient(to right,#000,#000);
+@font-face{
+	font-family：
+	src:url();
+}
+
+overflow:hidden;
+white-space:nowrap;
+text-overflow:ellipisis;
+
+
+
+box-shadow:水平 垂直 模糊 颜色；
+
+transform  改变 转换
+translate  改变位置
+transform：translate(x,y);
+
+-----------转换transform
+位移 translate（x，y）
+缩放 scale（x，y）
+     scale（1.2，1.2）放大1.2倍
+旋转 rotate（45deg）
+倾斜 skew（0，15deg）
+
+------------3D转换
+rotateY（45deg）Y轴旋转
+rotateX(180deg) X轴旋转
+
+transform-origin:变形的中心点位置、  
+        center center  left right top bottom px
+
+backface-visibility:hidden; 反转到反面不可见
+
+------------------过渡
+transition：过渡的属性 过渡的时间
+transition：all  1s：
+
+background-img:linear gradient(to right,#000,#fff);
+background-image:linear-gradient
+linear-gradient(to right, #000 ,#fff);
+translate
+transform
+skew
+scale
+rotate
+rotateX
+rotateY
+transform-origin
+backface-visibility:hidden;
+border-radius:2px 2px 0 0
+box-shadow:0 0 12px red
+p{width:249px;height:50px;overflow:hidden;white-space:nowrap;text- :ellipsis}
+background-size
+background-origin
+background-clip
+-----------------------------3.28
+
+------过渡效果 transition
+1，transition 属性
+2，hover 是改变属性
+p{width:150px;transition:width 1s;}
+p:hover{ width:250px;}
+
+transiton:属性  时间 缓冲动画 延时
+属性：all| css中任意属性
+时间：s秒为单位
+缓冲： ease ease-in ease-out ease-in-out
+延时：s秒为单位
+transition：all 1s ease 0.5s；
+
+--------------css3中的关键帧动画
+1，定义关键帧 动画
+2，调用关键帧动画
+
+@-webkit-keyframes myname{
+from{left:-200%}
+to{left:0;}
+}
+
+div{-webkit-animation:myname 2s;}
+
+
+关键帧定义百分比方式
+@-webkit-keyframes myname{
+0%{width：150px;}
+25%{width:250px;}
+75%{width:500px;}
+100%{width:150px;}
+}
+
+调用关键帧
+-webkit-animation:动画名称 时间 缓冲动画 动画次数 是否返回  延迟
+
+1，动画名称：定义关键帧动画的名称
+2，时间  s秒为单位
+3 缓冲  ease linear  ease-in ease-out
+4，次数  数字为单位  infinite 无限
+5，alternate 返回
+6 延时  s秒为单位 
+
+---------------------------引用网上js插件
+1，拷贝js文件到项目中
+2，引用js文件<script src>
+
+3,找到相应demo（案例）html
+4，拷贝案例的html到本文件（修改图片的路径）
+5，拷贝案例中的css文件到本文件
+6，修改css
+7，修改参数
+
+--------------------------------------------------------------------------4.5
+BootStrap 响应式布局
+
+基本要求
+bootstrap.css
+bootstrap.js
+jquery.js
+
+
+
+-------------------------------------------一个基本的bt网页结构
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Document</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+<h1>你好bootstrap 世界</h1>
+
+	<!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>	
+</body>
+</html>
+
+---------------------------------------------bootStrap格栅系统的基本布局
+<div class="container">
+	<div class="row">
+		<div class="col-lg-4 col-md-3 col-sm-2 col-xs-1 "></div>
+	</div>
+</div>
+
+---------------------------------------------bootStrap格栅系统
+
+		手机	平板	电脑     大屏电脑
+		<768    >768    >992	 >1200
+container	100%    750     770      1170
+列              col-xs  col-sm	col-md	col-lg
+列间距	        左右15px
+
+--------------------------------------------栅格规则
+1，一行有12列 超过了会另起一行
+2，如果div class="container-fluid"   全屏
+3，如果定义了各自屏幕的列宽  那么会以定义的为标准
+4，如果只定义了大的 那么如果屏幕的宽度小于的定义的宽度 将会以每一个列宽是占12列
+5，如果只定义了小的 那么如果屏幕的宽度大于的定义的宽度 那么将会以小的为依据 
+
+--------------------------------------------排版
+.lead 整段文字变大
+.small 小
+
+-------------------------行内标签
+ins 插入
+u   下 画线
+s   无用
+del  删除
+code 代码
+strong 粗
+small  小
+big 大
+em  强调
+i   斜体
+mark 标记
+abbr  缩写简写
+address 地址
+blockquote 引用
+--------------------------格式化文本
+.text-left  左对齐
+.text-right 右对齐
+.text-center 居中对齐
+.text-justify 俩端对齐 最后一行左对齐
+.text-lowercase 小写
+.text-uppercase 大写
+.text-capitalize 首字母大写
+
+--------------------------------table
+table	表格
+table-striped		条纹（隔行换色）
+table-hover		鼠标hover事件
+table-bordered		边框
+table-responsive	响应式（小于716出现可滑动的滚动条）
+table-condensed		紧缩表格
+
+table table-bordered table-striped table-hover table-condensed table-responsive 
+
+
+---------------------------------情景化颜色
+success		成功
+warning		警告
+info		信息
+active		激活
+danger		危险
+--------------------------------表单
+form-group         表单组
+form-control       表单圆角
+checkbox           单选
+help-block	   提示文本
+
+checkbox         多选
+checkbox-inline	 多选 行内
+radio		 单选
+radio-inline	 单选行内
+sr-only		 隐藏
+
+form-inline	 行内表单
+form-horizontal	 水平表单
+col-xs-2
+col-xs-10
+type="submit" col-xs-offset-2
+
+text-area   [rows 行数]
+
+------------------------------表单的验证常用状态
+
+has-success		成功状态
+has-error		错误状态
+has-warning		警告状态
+
+------------------------------表单的的验证图标
+form-group              has-feedback   反馈图标
+form-control 后面添加
+<span class="form-control-feedback glyphicon glyphicon-ok">
+
+------------------------------常用的图标class
+ glyphicon glyphicon-ok    		正确
+ glyphicon glyphicon-remove		错误
+ glyphicon glyphicon-warning-sign	警告
+ glyphicon glyphicon-user		用户
+ glyphicon glyphicon-lock		锁  
+
+-----------------------------表单组
+.input-group 表单组
+
+-----------------------------表单前面添加内容
+.input-group-addon 表单前面添加内容
+.glyphicon glyphicon-user 表单前面的图标
+
+
+
+
+
+
+
+
+
+
+
+
+
+form-inline
+form-horizontal
+col-sm-2
+col-sm-10
+col-sm-offset-2
+
+textarea row="3"
+checkbox label>input>爱好
+checkbox-inline
+radio
+select form-control
+disabled
+has-success
+has-warning
+has-error
+ has-feedback
+glyphicon 图标
+glyphicon-ok
+glyphicon-warning-sign
+glyphicon-remove
+form-control-feedback
+
+
+-------------------------------按钮
+btn  按钮
+btn-block 块状按钮
+btn-success 绿色按钮
+
+
+-------------------------------导航
+<nav class="navbar navbar-default">
+
+-------------------------导航内容
+<div class="container">  container-fluid 全屏
+
+---------------------导航的头部
+<div class="navbar-header">
+-----------------logo品牌
+<a class="navbar-brand">
+
+---------------------导航链接
+<ul class="nav navbar-nav">
+
+--------------------------------------手机屏幕折叠菜单
+1，需要在navbar-header 里面 添加一个手机屏幕下的促发按钮
+   <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mynav"> 菜单</button>	
+
+2，需要在导航链接的外面添加一个div
+<div class="collapse navbar-collapse" id="mynav">
+<ul class="nav navbar-nav">
+</div>
+
+3  如果想不菜单二字变成图标
+    <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mynav"> <span class="glyphicon glyphicon-menu-hambarger"></span></button>
+
+--------------------------------------导航菜单组件排列
+.navbar-right
+.navbar-left
+
+--------------------------------------bootstrap控制显示与隐藏
+visible-xs  在超小屏幕显示
+hidden-xs   在超小屏幕隐藏
+
+visible-md
+hidden-md
+
+visible-lg
+hidden-lg
+
+visible-sm
+hidden-sm
+
+--------------------------------------导航里面的表单
+<form class="navbar-form">
+	<div class="form-group">
+	   <input class="form-control">
+
+
+--------------------------------------导航里的文字
+<p class="navbar-text">
+	<a class="navbar-link">链接</a>
+</a>
+
+--------------------反色导航
+<nav class="navbar navbar-reverse">
+
+--------------------固定顶部
+<nav class="navbar navbar-reverse navbar-fixed-top">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+导航
+navbar
+navbar-default
+
+
+品牌
+
+
+container-fluid
+navbar-header
+navbar-brand
+
+导航链接
+
+nav navbar-nav
+
+
+隐藏菜单
+navbar-header里面
+navbar-toggle collapsed
+data-toggle="collapse"
+data-target="mynav"
+
+collapse navbar-collapse id=“mynav”
+
+-------导航表单
+navbar-form navbar-right
+form-group
+form-control
+
+
+
+-----------按钮
+btn btn-primary navbar-btn
+
+-----------文本
+
+p  navbar-text
+      nabar-link
+
+
+.navbar-fixed-top
+
+navbar-fixed-bottom
+navbar-static-top
+navbar-inverse
+
+
+-----------------------------------------js
+-----------单词
+script    语言
+onclick   单击
+var       声明一个选择器
+document.getElementById("name");
+文档     获取 元素  通过 Id
+this    当前元素
+function   函数（执行的内容块）
+document.getElementsByTagName("h1");
+文档     获取 元素集合 通过  标签名
+
+----------------------------------------js语法
+1js是从上到下执行的；
+2js能阻塞页面的内容
+3js 区分大小写 
+4js每一行都以分号结尾
+
+-----------------------------------------方法
+alert(); 弹出一个框
+onclick    单击
+onmouseover 鼠标放上
+。。。。。。。。
+-----------------------------------------js中的选择器
+1通过id的选择  document.getElementById
+2标签选择器    document.getElementsByTagName("h1");
+3class选择器    document.getElementsByClassName("myh");ie8以下不兼容
+
+------------------------------------------js中的4种执行区域
+1，行内写 onclick   ondblclick 属性来执行 javascript
+2，在内嵌 <script> js代码</script>
+3, 外链的一个js文件  通过<script src="out.js">
+4, 右键-检查(审查元素) console  里面写js代码
+
+ -------------------------------------变量的命名
+由 数字 字母 _ $ 组成
+不能是数字开头，不能有中文 不能是关键字如 var  function 
+
+---------------------------------------变量值的类型
+1 字符串 用双引号  var a="小胡子a";
+2 数字  只能是阿拉伯数字组成 可以有小数点 var b=150; var c=12.1;
+3 布尔类型 没有双引号  只有两个值     var d=true//正确  var e=false //错误
+  
+---------------------------------------变量的声明方式
+1，声明即赋值
+   var  love =“美好的”;
+2, 先声明后赋值
+   var  sunday
+        sunday=7；
+
+3，声明赋值多个
+   var a=18，b=2，c=10;
+4，声明多个不赋值
+   var d,e,f;
+
+4,如果没有赋值 变量默认值是 undefined （没有定义）
+
+-----------------------------------字符串相联
+1，字符串相连 用 + 如：
+  var s1="I love";
+  var s2="China";
+  alert(s1+s2);
+2,变量和字符串相连 +
+  alert("zengmumu说"+s1+s2+"1光年");
+  a,变量和字符串相连他自己不能有双引号 左右加号连接。
+
+
+------------------------------------简单的数学运算（数字类型）
+加 +
+减 -
+乘 *
+除 /
+余 %
+括号 （）
+
+
+-------------------------------------------------------函数
+1函数的种类？
+ a 系统定义函数     alert()   parseInt();
+ b 自定义函数
+   1 有名字的函数     function myfn(){};
+   2 匿名函数         function(){};
+
+
+2 函数的定义
+   function Name(){
+   语句
+	}
+3 函数的调用
+  a  函数名（）；  fn（）；
+  b  html 属性调用
+     <h1 onclic="fn()">click me</h1>
+  c 事件响应1
+    show.onclick=fn;
+  d 事件响应2 匿名
+    show.onclick=function(){alert("good by")};
+  f 匿名函数的调用
+     
+// (function (){ alert("我没有名字")})();
+// !function (){ alert("我没有名字")}();
+
+
+4，函数的参数集合  arguments
+   函数的参数集合长度 arguments.length
+   访问第一个参数  arguments[0]
+  访问第二个参数  arguments[1]
+
+------------------------变量的作用域
+1，函数体内能访问外面的变量
+2，函数体内的变量与函数体外变量冲突时 体内优先
+3，函数体外不能访问到函数体内的变量
+4，没有用var 声明的变量是全局变量在哪儿都能访问到；
+5，所有的全局变量是window 的属性
+
+
+
+
+-----------------------------------------------------------dom编程
+1 判断checkbox的选中属性  checked==true选中  checked==false  没有选中
+  设置 chekbox 选中属性  checked=true选中  checked=false  没有选中
+
+2 document.getElementsByName() 通过元素的名称获取 元素（集合） 单个元素用 集合名[num]
+  
+3 获取html元素的属性值
+  元素.getAttribute("属性名")；
+
+  设置元素的属性值
+  元素.setAttribute("属性名"，"属性值")；
+
+4 dom元素的节点关系
+  元素的父亲节点       		elem.parentNode;
+  元素的第一个子元素   		elem.firstChild;
+  元素的最后一个子元素   	elem.lastChild;
+  元素的后面一个兄弟元素   	elem.nextSibling;
+  元素的前面一个兄弟元素   	elem.previousSibling;
+  元素的子元素集合   	        var sons=elem.childNodes;
+  访问元素集合里面的单个内容     sons[0];
+  元素节点的类型   nodeType     3文本节点   如果1 代表元素节点
+
+----------------------------------查找上一个 兄弟元素
+function prev（elem）{
+	do{
+		elem=elem.previousSibling
+
+	}while(elem.nodeType!=1);
+return elem;
+}
+
+----------------------------------查找下一个 兄弟元素
+function next（elem）{
+	do{
+		elem=elem.nextSibling
+
+	}while(elem.nodeType!=1);
+return elem;
+}
+
+----------------------------------查找第一个子元素
+function first（elem）{
+	elem=elem.firstChild;
+	if(elem.nodeType!=1){
+		elem=next(elem);
+	}
+return elem;
+}
+
+----------------------------------查找第最后个子元素
+function last（elem）{
+	elem=elem.lastChild;
+	if(elem.nodeType!=1){
+		elem=prev(elem);
+	}
+return elem;
+}
+
+-----------------------------------查找第n个
+function eq(elem,n){
+var elems=elem.childNodes;
+var myelems=[];
+for(var i=0;i<elems.length;i++){
+	if(elems[i].nodeType==1){
+	myelems.push(elems[i]);
+	}
+}
+return myelems[n];
+}
+
+
+------------------------------------------
+nextSibling
+previousSibling
+childNodes
+parentNode
+
+
+-------------------
+createElement  创建元素
+insertBefore	插入元素
+appendChild	插入元素到 后面
+cloneNode	复制元素
+deleteNode	删除元素
+replaceNode（new ,old） 替换元素
+
+------------------------html对象访问方式
+.src 获取
+.src="images/grap.jpg"; 设置
+.tagName
+.title
+.alt
+.id
+.className   类名
+.innerHTML
+.outerHTML
+.offsetHeight;
+.offsetWidth
+
+-----------------------表格的操作
+1，获取一行
+tab.rows[0]
+1.获取一列
+row.cells[0]
+
+插入一行
+tab.insertRow(0);
+插入一列
+row.insertCell(0);
+
+设置列的内容
+cell.innerHTML     innerText
+
+
+--------------------------------------this 指向谁
+
+1，当在函数里面
+	谁调用者个函数 this 就等于掉用的对象
+        如果执行时执行函数  fn1（） this是window
+2，当在对象里面
+        this 指的是这个对象
+
+
+--------------------------------------------------
+ Uncaught TypeError:
+
+ 不能找到 该类型的错误
+
+ Cannot read property '0' of undefined
+ 不能读到undefined里面的第0个元素 的属性
+（找到的元素是undefined） 没要找到元素
+
+Cannot set property 'className' of undefined
+
+不能够给undefined 元素设置属性 className
+（找不到元素）
+
+
+--------------------------正则
+中文  [\u4e00-\u9fa5]
+邮箱  \w[-\w.+]*@([A-Za-z0-9][-A-Za-z0-9]+\.)+[A-Za-z]{2,14}
+手机 0?(13|14|15|18)[0-9]{9}
+电话号码 [0-9-()（）]{7,18}
+整数 -?[1-9]\d*
+邮编 \d{6}
+ip  (25[0-5]|2[0-4]\d|[0-1]\d{2}|[1-9]?\d)\.(25[0-5]|2[0-4]\d|[0-1]\d{2}|[1-9]?\d)\.(25[0-5]|2[0-4]\d|[0-1]\d{2}|[1-9]?\d)\.(25[0-5]|2[0-4]\d|[0-1]\d{2}|[1-9]?\d)
+身份证 \d{17}[\d|x]|\d{15}
+用户名 [A-Za-z0-9_\-\u4e00-\u9fa5]+
+
+
+该函数通过对指定你的字符串进行一次匹配检测，获取字符串中的第一个与正则表达式的内容，并且将匹配的内容和子匹配的结果存放在返回数组中 
+
+var str = "Visit W3School"; 
+var patt = new RegExp("W3School","g");
+var result;
+
+while ((result = patt.exec(str)) != null)  {
+  document.write(result);
+  document.write("<br />");
+  document.write(patt.lastIndex);
+ }
+
+//设置匹配的字符串 
+var objStr="我的手机号13522222222，他的手机号13288888888，她的手机号码13699999999"; 
+//设置正则表达式，匹配以13开头11位字符串，全局匹配 
+var reg=/13(/d)(/d{8})/g; 
+//执行exec函数，尽管是全局匹配的正则表达式，但是exec方法只对指定的字符串进行一次匹配，获取字符串中第一个与正则表达式想匹配的内容，并且将匹配内容和子匹配的结果存储到返回的数组中 
+var arr=reg.exec(objStr); 
+//循环输出结果 
+for(var i=0;i<arr.length;i++){ 
+document.write("<li>"+arr[i]+"<br>"); 
+} 
+
+ //----------------------exec(str)
+
+exec 直接执行 会返回第一个匹配的字符串  会返回lastIndex 第一个匹配字符串的位置
+var arr=[]
+如果通过 while(result=reg.exec(str)!=null){
+		///result 会匹配所有的相匹配的字符串
+			arr.push=result;
+  }
+    
+alert(result); 
+
+
+-------------------------------match() 
+match() 方法将检索字符串 stringObject，以找到一个或多个与 regexp 匹配的文本。这个方法的行为在很大程度上有赖于 regexp 是否具有标志 g。
+
+<script type="text/javascript">
+
+var str="Hello world!"
+document.write(str.match("world") + "<br />")
+document.write(str.match("World") + "<br />")
+document.write(str.match("worlld") + "<br />")
+document.write(str.match("world!"))
+
+</script>
+world
+null
+null
+world!
+
+
+
+var str="1 plus 2 equal 3"
+document.write(str.match(/\d+/g))
+
+1,2,3
+
+   
+
+
+  
+该函数通过对指定你的字符串进行一次匹配检测，获取字符串中的第一个与正则表达式的内容，并且将匹配的内容和子匹配的结果存放在返回数组中 
+
+var str = "Visit W3School"; 
+var patt = new RegExp("W3School","g");
+var result;
+
+while ((result = patt.exec(str)) != null)  {
+  document.write(result);
+  document.write("<br />");
+  document.write(patt.lastIndex);
+ } 
+
+
+-----------------search() 
+方法用于检索字符串中指定的子字符串，或检索与正则表达式相匹配的子字符串。
+
+search() 方法不执行全局匹配，它将忽略标志 g。它同时忽略 regexp 的 lastIndex 属性，并且总是从字符串的开始进行检索，这意味着它总是返回 stringObject 的第一个匹配的位置。
+
+
+var str="Visit W3School!"
+document.write(str.search(/W3School/))
+//6
+var str="Visit W3School!"
+document.write(str.search(/w3school/))
+-1
+
+var str="Visit W3School!"
+document.write(str.search(/w3school/i))
+
+----------------------------------------------------事件
+function addEvent（elem,type,fn）{
+	if（elem.addEventListener）{
+           elem.addEventListener(type,fn,false)
+       }else{
+           elem.attachEvent("on"+type,fn)}
+}
+
+function preDefalut(evt){
+var e = event||window.event;
+	if(e.preventDefault){
+	e.preventDefault();
+}else{
+	e.stop
+}
+}
+
+
+function settarget(evt){
+	if(evt.target){
+	return evt.target;
+  }else{
+    return window.event.srcElement;
+  }
+}
+
+
+-----------------------------------------------手机事件
+
+touchstart	开始触摸
+touchmove	触摸移动
+touchend	结束触摸
+targetTouches[0]  获取第一个根手指
+targetTouches[0].pageY	相对应页面
+		.pageX	
+		.clientX相对于视口 viewport
+		.clientY
+
+--------------------------注册监听事件
+addEventListener(type,fn,false)
+attachEvent("on"+type,fn);	
+--------------------------移除监听事件
+remveEventListener(type,fn,false)
+detachEvent("on"+type,fn);
+--------------------------事件的目标对象
+e.target;
+window.event.srcElement;
+
+--------------------------取消默认事件
+window.event.returnValue=false;
+e.preventDefault();
+--------------------------取消事件冒泡
+window.event.cancelBubble=true
+e.stopPropagation();
+
+------------------------执行函数fn1 并把this对象传进去
+fn1.call(obj)//obj就是 fn1里面的this
+
+
+-------------------------事件触发的位置
+e.clientX  相对应时间目标对象
+e.clientY
+e.pageX	  想对与文档
+e.pageY
+
+
+----------------------------------------
+document.cookie="user=wx;expires="+new Date(getDate()+2)
+
+------------------------弹出框
+属性：
+dom		弹出的内容
+closeBtn	关闭按钮
+winW		屏幕的宽
+winH		屏幕的高
+w		元素的宽
+h		元素的高
+lay		背景
+
+
+---方法
+init	 初始化	
+	1，从新算出中心点
+	2，显示	
+bindDom  绑定事件
+	3，关闭按钮点击  close
+	4， window 绑定发生大小改变是  重新算出中心点   
+close	 关闭时间
+	 弹出
+reset	 从新算出中心点
+
+----------------------------------------------jquery
+
+1，$(document).ready(function(){})
+2,$(function(){});
+3,jquery中最出名函数  $()
+4,jquery通过$()获取的元素是以个集合（一个也是集合）
+5，js 转 jquery  $(elem)
+6，jquery转js    $()[0]   $().get(0);
+7, $==jQuery;
+
+http://blog.csdn.net/dxx1988/article/details/6566847
+ 
+
+
+
+$(document).ready(function(){})
+$(function(){})
+elem.style.height;
+elem.document.defaultView.getComputerStyle(elem,null)
+elem.offsetHeight()
+elem.offsetWidth()
+
+function getClass(name){
+	if(document.getelementsByClassName){
+	return document.getelementsByClassName(name);
+}
+	var arr=[];
+	var reg=new RegExp("(^|\\s+)"+name+"(\\s+|$)");
+	var elems=document.getelementsByTagName("*");
+	for(var i=0;i<elems.length;i++){
+		if(reg.test(elems[i].className)){
+			arr.push(elems[i]);
+}
+	return arr
+
+
+}
+---------------------------------jquery 过滤选择器
+-----基本过滤选择器
+:first	第一个
+:last	最后一个
+:odd	奇数
+:even	偶数
+:gt(num)大于
+:lt(num)小于
+:eq(num)等于
+:not()	不是
+:header	标题
+:animated
+----------------内容过滤
+:contains('str') 元素包含 str内容
+:empty()空的元素
+:parent()当爹的元素（有子元素）
+:has(elem) 里面有什么。。
+-----------------------------------------jquery常用方法
+--------------隐藏显示
+show()	显示
+hide()	隐藏
+toggle();切换
+fadeIn() 淡入
+fadeOut();淡出
+fadeToggle（）1.4以上 切换淡入淡出
+slideDown()   下拉显示
+slideUp（）    上卷隐藏
+slideToggle(); 切换卷帘显示
+
+---------------class操作
+addClass()（这里面的名称不加点点点）；添加class名
+removeClass()移除class名
+toggleClass()切换class名
+hasClass();检测是否有class名
+
+--------------内容操作
+.html()	     获取元素的html内容<p>中华人民共和国</p>
+.html(str)   设置元素的html内容为 str
+.text();     获取元素的文本内容
+.text(str)   设置元素的文本内容 &;gtp&lt;中华人民共和国</p>
+
+
+-
+
+.show()
+.hide()
+.fadeIn();
+.fadeOut();
+.toggle();
+.slidetoggle();
+.slideDown();
+.slideUp();
+:first
+:last
+:gt()
+:lt()
+:odd
+:even
+:not()
+
+:contains(str)
+:empty()
+:has()
+:parent()
+:visible
+:hidden
+.addClass("")
+.removeClass("")
+.hasClass("")
+.html(str)
+.html()
+.text()
+.text(elem)
+---------------------------------------子元素过滤选择
+ul li:nth-child(2)
+元素li是ul第2个子元素并且还必须是li
+ul li:nth-of-type(2)
+元素是 ul里面的li的第二个（不一定是ul的第二个元素）
+2，里面的参数是从1开始的
+3， even odd  数字  数字n    数字n+数字
+    偶数 奇数 第几个 第几的倍数  倍数向前偏移
+
+ul.is(":animated")是否是动画中的
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 

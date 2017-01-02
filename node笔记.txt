@@ -1,0 +1,54 @@
+mongod --logpath c:\data\log\mongo.log  --logappend --dbpath c:\data\db --directoryperdb --serviceName MongoDB --install 
+
+mongod --logpath c:\data\log\mongo.log  --logappend --dbpath c:\data\db --directoryperdb --serviceName MongoDB --remove 
+
+
+
+var mongoose=require("mongoose");
+
+var schema = require('./schemas/movie');
+var mongoose = require('mongoose');
+//mongoose.connect('mongodb://localhost/my'); //连接到一个test的数据库
+app.set("views","./views");
+app.set("view engine","jade");
+app.listen(4000);
+var conn = mongoose.connect('mongodb://localhost/mymovie');
+
+var movie=mongoose.model("movies",schema);
+//var movie1=new movie();
+//movie1.title="zengmumu fitig node js";
+//movie1.year="2016";
+//movie1.save(function(err){
+//    if(err){
+//
+//    }
+//    console.log("good save success");
+//})
+//movie.find({},function(err,movies){
+//    console.log(movies);
+//})
+////
+
+//
+//
+////保存新纪录
+//var blog1 = new Blog();
+//blog1.id22 = 4;
+//blog1.title="zengmu";
+//blog1.save(function(err){
+//    if (err) {
+//        console.log('save failed');
+//    }
+//    console.log('save success');
+//});
+//
+/////查找记录
+//Blog.find({},function(err,docs){
+//    console.log(docs);
+//});
+
+
+
+//Movie.fetch(function(err,movie){
+//    console.log(movie);
+//})

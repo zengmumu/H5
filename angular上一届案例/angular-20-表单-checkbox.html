@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+	<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="script/angular.min.js"></script>
+		<script src="script/jquery-2.2.1.min.js"></script>
+		<script src="script/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		
+		
+	</head>
+	<body>
+	<div class="container" ng-controller="myCtrl">
+		<div class="row">
+			<form action="" class="form">
+				<div class="form-group">
+					<label>性别：</label>
+					<input type="radio" name="sex" value="男" ng-model="sex" ng-checked="true"/>男
+					<input type="radio" name="sex" value="女" ng-model="sex"/>女
+				</div>
+				<div class="form-group">
+					<label>爱好：</label>
+					<label><input type="checkbox" ng-true-value="唱歌" ng-false-value="" name="box" ng-model="c1"/>唱歌</label>
+					<label><input type="checkbox" ng-true-value="爬山" ng-false-value="" name="box" ng-model="c2"/>爬山</label>
+				</div>
+				<div class="form-group">
+					<label><input type="checkbox" ng-model="agree"/>同意</label>
+				</div>
+				<div class="form-group">
+					<label><input type="submit" value="提交" ng-disabled="!agree" ng-click="showResult()"/></label>
+				</div>
+			
+			</form>
+		
+			<p>你选择的是：{{result}}</p>
+		</div>
+	</div>
+
+	<script>
+		var app=angular.module("myapp",[])
+		.controller("myCtrl",["$scope",function($scope){
+			$scope.showResult=function(){
+				$scope.result=$scope.sex+""+$scope.c1+$scope.c2;
+			}
+		}])
+	</script>
+	</body>
+</html>

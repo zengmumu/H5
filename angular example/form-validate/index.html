@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<!--<link rel="stylesheet" href="css/animate.min.css" />-->
+		<link rel="stylesheet" href="css/ng-animation.css" />
+		<style>
+			body {
+				font-family: "微软雅黑";
+				background-color: #f0f0f0;
+			}
+			
+			.container {
+				width: 1200px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			
+			.no-padding {
+				padding: 0;
+			}
+			
+			.no-margin {
+				margin: 0;
+			}
+			
+			div {
+				font-size: 14px;
+			}
+			
+			.citylist>div {
+				border: 1px solid #ccc;
+				margin-left: -1px;
+				margin-bottom: -1px;
+				padding-top: 15px;
+				padding-bottom: 15px;
+				cursor: pointer;
+			}
+			
+			.citylist>div.active {
+				background-color: #fff;
+				color: green;
+			}
+		</style>
+	</head>
+
+	<body ng-controller="mainCtrl">
+		<div class="container">
+			<h1 class="title text-center">表单验证1</h1>
+			<div class="row">
+				<p>
+					<b>1. 必填项验证</b> 某个表单输入是否已填写，只要在输入字段元素上添加HTML5标记
+					<code>required</code>即可：
+
+					<p>
+						<b>2. 最小长度</b> 验证表单输入的文本长度是否大于某个最小值，在输入字段上使用指令
+						<code>ng-minleng= "{number}"</code>：
+					</p>
+
+					<p><b>3. 最大长度</b> 验证表单输入的文本长度是否小于或等于某个最大值，在输入字段上使用指令
+						<code>ng-maxlength="{number}"</code>：
+					</p>
+					<p>
+						<b>4. 模式匹配</b> 使用
+						<code>ng-pattern="/PATTERN/"</code>来确保输入能够匹配指定的正则表达式：
+						<p>
+
+							<p><b>
+5. 电子邮件</b> 验证输入内容是否是电子邮件，只要像下面这样将
+								<code>input的类型设置为email</code>即可：
+							</p>
+							<p>
+								<b>6. 数字</b> 验证输入内容是否是数字，将input的类型设置为
+								<code>number</code>：
+							</p>
+							<p>
+
+								<b>7. URL</b> 验证输入内容是否是URL，将input的类型设置为 <code>url</code>：
+							</p>
+
+			</div>
+			<div class="row">
+
+				<div class="col-md-6">
+					<form role="form" class="form-horizontal">
+						<div class="form-group">
+							<div class="col-md-4">
+								<label for="name">1.必填项</label>
+							</div>
+							<div class="col-md-8">
+								<input class="form-control" id="name" type="text" required ng-model='user.name' />
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-md-4">
+								<label for="minlength">2.最小长度=5</label>
+							</div>
+							<div class="col-md-8">
+								<input type="text" id="minlength" ng-minlength="5" ng-model="user.minlength" class="form-control" />
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-md-4">
+								<label for="minlength">3.最大长度=20</label>
+							</div>
+							<div class="col-md-8">
+								<input type="text" ng-model="user.maxlength" ng-maxlength="20" class="form-control" />
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-md-4">
+								<label for="minlength">4. 模式匹配</label>
+							</div>
+							<div class="col-md-8">
+								<input type="text" id="minlength" ng-model="user.pattern" ng-pattern="/^[a-zA-Z]*\d$/" class="form-control" />
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-md-4">
+								<label for="email">5. 电子邮件</label>
+							</div>
+							<div class="col-md-8">
+								<input type="email" id="email" name="email" ng-model="user.email" class="form-control" />
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-md-4">
+								<label for="age">6. 数字</label>
+							</div>
+							<div class="col-md-8">
+								<input type="number" id="age" name="age" ng-model="user.age" class="form-control" />
+							</div>
+						</div>
+						<div class="form-group">
+							<div class="col-md-4">
+								<label for="url"> 7. URL</label>
+							</div>
+							<div class="col-md-8">
+								<input type="url" id="url" name="homepage" ng-model="user.url" class="form-control" />
+							</div>
+						</div>
+						<div class="form-group text-center">
+							<input class="btn btn-primary btn-lg" type="submit" value="提交" />
+						</div>
+					</form>
+				</div>
+				<div class="col-md-12">
+					1.必填项:{{user.name}}<br> 2.最小长度=5:{{user.minlength}}
+					<br> 3.最大长度=20:{{user.maxlength}}
+					<br> 4.模式匹配:{{user.pattern}}
+					<br> 5.电子邮件:{{user.email}}
+					<br> 6.数字:{{user.age}}
+					<br> 7.URL:{{user.url}}
+					<br>
+				</div>
+			</div>
+		</div>
+		<script src="js/jquery-1.8.3.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+
+		<script src="js/angular.min.js"></script>
+		<script type="text/javascript" src="js/data.js"></script>
+		<script>
+			angular.module("myapp", [])
+				.controller("mainCtrl", function($scope, $sce) {
+					$
+				})
+		</script>
+
+	</body>
+
+</html>

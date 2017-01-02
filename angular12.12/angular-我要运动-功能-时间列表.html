@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html ng-app="ydApp" >
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<script src="js/angular.min.js"></script>
+		<script src="js/angular-route.js"></script>
+		<style>
+			.nav-tabs a{ color: darkgoldenrod;}
+			.week{ font-size: 14px;}
+			.day{ font-size: 16px; display: block;}
+			.nav-tabs .selected a{ background-color:  darkgoldenrod !important; color: #fff !important;}
+		</style>
+		
+	</head>
+	<body >
+		<div class="container" ng-controller="stadiumCtrl" >
+			<div class="row">
+				<div class="col-md-9">
+					<ul class="nav nav-tabs">
+						<li class="active" ng-repeat="item in navData" ng-click="setCurDay(item.d)" ng-class="{'selected':item.d==currentDay}">
+							<a class="text-center" >
+								<span class="week">{{item.w}}</span>
+								<span class="day">{{item.d|date:'M-dd'}}</span>
+							</a>
+						</li>
+						
+					</ul>
+				</div>
+				<div class="col-md-3"></div>
+			</div>
+			
+		</div>	
+		
+		
+		<script>
+			var app=angular.module("ydApp",[])
+			.controller("stadiumCtrl",["$scope",function($scope){
+				$scope.navData = [];				
+				$scope.today = new Date();
+			
+				var weekArr=["星期日","星期一","星期二","星期三","星期四","星期五","星期六"]
+				for(var i=0; i<7; i++){
+					let obj = {};
+					obj.d = new Date($scope.today.getFullYear(),$scope.today.getMonth(),$scope.today.getDate()+i);
+					let w= new Date($scope.today.getFullYear(),$scope.today.getMonth(),$scope.today.getDate()+i);
+					obj.w=weekArr[w.getDay()];
+					$scope.navData.push(obj);
+				}
+					$scope.currentDay=$scope.navData[0].d;
+				$scope.setCurDay=function(d){					
+					$scope.currentDay=d;
+					
+					
+				}
+				
+			}])
+		
+			
+		
+			
+			
+			
+			
+			
+		
+		</script>
+	</body>
+</html>

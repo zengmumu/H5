@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/angular.min.js"></script>
+	</head>
+	<body ng-controller="myCtrl">
+		
+		<!--数字的
+		number
+		currency
+		日期的
+		medium mediumTime  mediumDate
+		short shortTime shortDate
+		longDate
+		fullDate-->
+		{{9999999|number}} <br />
+		{{9999.9999|number:3}}  <br />
+		
+		{{123456789|currency}}  <br />
+		{{123456789|currency:"rmb"}}  <br />
+		
+		{{today}} <br />
+		{{today|date:"medium"}}  <br />
+		{{today|date:"mediumTime"}}  <br />
+		{{today|date:"mediumDate"}}  <br />
+		
+		{{today|date:"short"}} <br />
+		
+		{{today|date:"longDate"}} <br />
+
+		{{today|date:"fullDate"}} <br />
+		
+		
+		{{today|date:"m"}} <br />
+		{{today|date:"mm"}}<br />
+		
+		{{today|date:"h"}}<br />
+		{{today|date:"hh"}}<br />
+		
+		{{today|date:"s"}}<br />
+		{{today|date:"ss"}}<br />
+		{{today|date:".sss"}}<br />
+		
+		{{today|date:"y"}}<br />
+		{{today|date:"yy"}}<br />
+		{{today|date:"yyyy"}}<br />
+		
+		{{today|date:"M"}}<br />
+		{{today|date:"MM"}}<br />
+		{{today|date:"MMM"}}<br />
+		{{today|date:"MMMM"}}<br />
+		
+		{{today|date:"d"}}<br />
+		{{today|date:"dd"}}<br />
+		
+		{{today|date:"H"}}<br />
+		{{today|date:"HH"}}<br />
+		
+		{{today|date:"y*M*d Hmss.sss"}}
+		<script type="text/javascript">
+			angular.module("myapp",[])
+			.controller("myCtrl",["$scope",function($scope){
+				$scope.today=new Date();		
+			}])
+		</script>
+	</body>
+	
+</html>

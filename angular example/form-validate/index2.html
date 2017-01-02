@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<!--<link rel="stylesheet" href="css/animate.min.css" />-->
+		<link rel="stylesheet" href="css/ng-animation.css" />
+		<style>
+			body {
+				font-family: "微软雅黑";
+				background-color: #f0f0f0;
+			}
+			
+			.container {
+				width: 1200px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			
+			.no-padding {
+				padding: 0;
+			}
+			
+			.no-margin {
+				margin: 0;
+			}
+			
+			div {
+				font-size: 14px;
+			}
+			
+			.citylist>div {
+				border: 1px solid #ccc;
+				margin-left: -1px;
+				margin-bottom: -1px;
+				padding-top: 15px;
+				padding-bottom: 15px;
+				cursor: pointer;
+			}
+			
+			.citylist>div.active {
+				background-color: #fff;
+				color: green;
+			}
+			.glyphicon-ok,.suc{ color:lawngreen;}
+			.glyphicon-remove,.dan{ color: palevioletred;}
+			input.ng-valid.ng-dirty{ border-color: lightgreen;}
+			input.ng-invalid.ng-dirty{ border-color:lightpink;}
+		</style>
+	</head>
+
+	<body ng-controller="mainCtrl">
+		<div class="container">
+			<h1 class="title text-center">表单验证1</h1>
+			<div class="row">
+				 <div class="col-sm-5">
+          <table class="table table-bordered table-hover">
+      <tr>
+        <th>属性</th>
+        <th>样式</th>
+        <th>描述</th>
+      </tr>
+      <tr ng-repeat="v in validFormList">
+        <td ng-bind="v.name" ng-class="v.ngClass"></td>
+        <td ng-bind="v.class"></td>
+        <td ng-bind="v.desc"></td>
+      </tr>
+      <tr>
+      	<td></td>
+      	<td>.ng-invalid-required  </td>
+      	<td> 必填没有通过</td>
+      </tr>
+       <tr>
+      	<td></td>
+      	<td>.ng-invalid-minlength</td>
+      	<td>最小长度没有通过</td>
+      </tr>
+       <tr>
+      	<td></td>
+      	<td>.ng-valid-max-length </td>
+      	<td>在大长度没有通过</td>
+      </tr>
+    </table>
+
+          </div>
+
+			</div>
+			<div class="row">
+				 <div class="col-md-8">
+            <form role="form" name="myForm" ng-submit="submitForm(myForm.$valid)" class="form-horizontal" novalidate>
+                <div class="form-group  has-feedback">
+                    <div class="col-md-2">
+                        <label for="name">1.必填项</label>
+                    </div>
+                    <div class="col-md-8" >
+                        <input class="form-control" id="name" name="name" type="text" required ng-model='user.name' />
+                        <span class="glyphicon glyphicon-ok form-control-feedback"
+                              ng-show="myForm.name.$dirty && myForm.name.$valid"></span>
+                       <span class="glyphicon glyphicon-remove form-control-feedback" ng-show= "myForm.name.$dirty&&myForm.name.$invalid"></span>
+                       
+                    </div>
+                    <div class=" help-block col-md-2"><span ng-show="myForm.name.$dirty && myForm.name.$valid" class="suc">正确</span><span  ng-show= "myForm.name.$dirty&&myForm.name.$invalid" class="dan">该项是必填</span></div>
+                </div>
+                <div class="form-group  has-feedback">
+                    <div class="col-md-2">
+                        <label for="minlength">2.最小长度=5</label>
+                    </div>
+                    <div class="col-md-8">
+                        <input type="text" id="minlength" name="minlength" ng-minlength="5" ng-model="user.minlength" class="form-control" />
+                        <span class="glyphicon glyphicon-ok form-control-feedback"
+                              ng-show="myForm.minlength.$dirty && myForm.minlength.$valid"></span>
+                    </div>
+                </div>
+                <div class="form-group  has-feedback">
+                    <div class="col-md-2">
+                        <label for="maxlength">3.最大长度=20</label>
+                    </div>
+                    <div class="col-md-8">
+                        <input type="text" id="maxlength" name="maxlength" ng-model="user.maxlength" ng-maxlength="20" class="form-control" />
+                        <span class="glyphicon glyphicon-ok form-control-feedback"
+                              ng-show="myForm.maxlength.$dirty && myForm.maxlength.$valid"></span>
+                    </div>
+                </div>
+                <div class="form-group  has-feedback">
+                    <div class="col-md-2">
+                        <label for="pattern">4. 模式匹配</label>
+                    </div>
+                    <div class="col-md-8">
+                        <input type="text" id="pattern" name="pattern" ng-model="user.pattern" ng-pattern="/^[a-zA-Z]*\d$/" class="form-control" />
+                        <span class="glyphicon glyphicon-ok form-control-feedback"
+                              ng-show="myForm.pattern.$dirty && myForm.pattern.$valid"></span>
+                    </div>
+                </div>
+                <div class="form-group  has-feedback">
+                    <div class="col-md-2">
+                        <label for="email">5. 电子邮件</label>
+                    </div>
+                    <div class="col-md-8">
+                        <input type="email" id="email" name="email" ng-model="user.email" class="form-control" />
+                        <span class="glyphicon glyphicon-ok form-control-feedback"
+                              ng-show="myForm.email.$dirty && myForm.email.$valid"></span>
+                    </div>
+                </div>
+                <div class="form-group  has-feedback">
+                    <div class="col-md-2">
+                        <label for="age">6. 数字</label>
+                    </div>
+                    <div class="col-md-8">
+                        <input type="number" id="age" name="age" ng-model="user.age" class="form-control" />
+
+                        <span class="glyphicon glyphicon-ok form-control-feedback"
+                              ng-show="myForm.age.$dirty && myForm.age.$valid"></span>
+                    </div>
+                </div>
+                <div class="form-group  has-feedback">
+                    <div class="col-md-2">
+                        <label for="url"> 7. URL</label>
+                    </div>
+                    <div class="col-md-8">
+                        <input type="url" id="url" name="url" ng-model="user.url" class="form-control" />
+                        <span class="glyphicon glyphicon-ok form-control-feedback"
+                              ng-show="myForm.url.$dirty && myForm.url.$valid"></span>
+                    </div>
+                </div>
+                <div class="form-group  text-center">
+                    <input class="btn btn-primary btn-lg" ng-disabled="myForm.$invalid" type="submit" value="提交" />
+                </div>
+            </form>       
+      
+			</div>
+		</div>
+		<script src="js/jquery-1.8.3.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+
+		<script src="js/angular.min.js"></script>
+		
+		<script>
+			angular.module("myapp", [])
+				.controller("mainCtrl", function($scope, $sce) {
+					 $scope.validFormList = [
+      {name: '$valid', class: 'ng-valid', ngClass: 'success', desc: '通过当前验证设置的验证规则'},
+      {name: '$invalid', class: 'ng-invalid', ngClass: 'danger', desc: '无法通过当前验证设置的验证规则'},
+      {name: '$pristine', class: 'ng-pristine', ngClass: 'active', desc: '当前表单/输入区未修改过'},
+      {name: '$dirty', class: 'ng-dirty', ngClass: 'warning', desc: '当前表单/输入区修改过'},
+      {name: '$touched', class: 'ng-touched', ngClass: 'warning', desc: '是否点击过输入区(Angular 1.3+)'}
+    ];
+     $scope.submitForm = function(isValid) {
+//   	alert($scope.user.email.$valid);
+	    
+                if (!isValid) {
+                    alert('验证失败');
+                }else{
+                	alert("验证成功")
+                }
+            };
+
+
+				})
+		</script>
+
+	</body>
+
+</html>

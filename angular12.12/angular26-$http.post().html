@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="ydApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<script src="js/angular.min.js"></script>
+		<script src="js/angular-route.js"></script>
+	</head>
+	<body ng-controller="ydCtrl">
+		<div class="container">
+			<h1>评论</h1>
+			<div class="col-md-6 clearfix">
+				<div><textarea name="" rows="" cols="" class="form-control" ng-model="msg"></textarea></div>
+				<input type="button" value="评论" ng-click="sendMsg()" class="btn btn-danger">
+			</div>
+			<div class="commet-item col-md-12" ng-repeat="item in comments">
+				<div class="col-md-3">{{item.name}}</div>
+				<div class="col-md-9">{{item.msg}}</div>
+			</div>
+			</div>
+		
+		<script>
+			angular.module("ydApp",[])
+			.controller("ydCtrl",["$scope","$http","$templateCache",function($scope,$http,$templateCache){
+				$scope.comments=[];
+				$scope.sendMsg=function(){
+					$http({
+						url:"server/comment.php",
+						method:'POST',
+						headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+						data:"name=mumu&msg="+$scope.msg
+						
+					})
+					.success(function(res){
+						$scope.comments=$scope.comments.concat(res.data);
+						$scope.msg="";
+					})
+					
+				}
+				
+			}])
+			
+		</script>
+	</body>
+</html>

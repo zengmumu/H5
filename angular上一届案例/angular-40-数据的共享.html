@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<script src="script/lib/angular.min.js"></script>
+		<script src="script/lib/jquery-1.8.3.min.js"></script>
+		<script src="script/lib/bootstrap.min.js"></script>			
+		<link rel="stylesheet" href="style/bootstrap.min.css"/>
+	
+				
+		<style>
+		
+		</style>
+		
+	</head>
+	<body ng-controller="mainCtrl">
+		
+				<div ng-controller="son1">
+					<p><input type="text" ng-model="data"/></p>
+					
+					<p>{{data}}</p>
+				</div>
+				<div ng-controller="son2">
+					 {{data}}
+				</div>
+	<script>
+	
+	//config	配置
+	//run		运行  模块注入后  controller 执行前
+	//provider	数据提供者    controller 执行前执行
+	//factory    provider 简写 工厂模式数据的提供  在调用他的controller 执行早
+		angular.module("myapp",[])
+		.provider("po1",function(){//数据的提供者
+				this.$get=function(){
+					console.log("provider 被执行了")
+						return {"base":15}
+				}
+			
+		})
+		.factory("fa1",function(){
+			console.log("factory 被执行了")
+			//return {"mybase":88};
+			return "abc"
+		})
+		.service("se1",function(){
+//			this.getName=function(){return "abc"}
+//			this.getAge=function(){return 18}
+			//return {name:"mumu",age:18}
+			return "Ilove Chian"
+			
+		})
+		.constant('APP_KEY', 'a1s2d3f4')
+		.value("mygod","上帝")
+		.controller("mainCtrl",function($scope,po1){
+			
+			
+		})
+		.config(function(){
+			console.log("config被执行了")
+		})
+		.run(function(){
+			console.log("run 被执行了"); 
+		})
+		.controller("son1",function($scope,po1,fa1,se1,APP_KEY,mygod){
+			console.log(fa1);
+			console.log(se1);
+			console.log(APP_KEY);
+			console.log(mygod);
+			//alert(se1.getAge());
+			$scope.data=fa1
+		})
+		.controller("son2",function($scope,po1,fa1){
+			$scope.data=fa1
+		})
+	</script>
+	</body>
+	
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="script/angular.min.js"></script>
+		<script src="script/jquery-2.2.1.min.js"></script>
+		<script src="script/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		
+	</head>
+	<body>	
+	
+	<div class="container" ng-controller="myCtrl">
+			<div class="row">
+				<h1 class="text-center">2016中超联赛</h1>
+				<table class="table table-hover table-stripe table-bordered text-center">
+					<tr>
+						<td ng-repeat="(k,v) in cls_header" ng-bind="v"></td>
+					</tr>
+					<tr ng-repeat="item in cls">
+						<td ng-repeat="(k,v) in cls_header" ng-bind="item[k]"></td>
+					</tr>
+				</table>
+				
+			</div>
+		</div>
+	<script>
+		var app=angular.module("myapp",[])
+		.controller("myCtrl",["$scope","$http",function($scope,$http){
+			$scope.cls_header={Round:"轮次",Team1:"主场",Team2:"客场",MatchCity:"城市",Situation:"球场",date:"日期",status_cn:"状态"}	
+			$http.get("data/csl-data.json").success(function(res){
+				$scope.cls=res;
+			})
+		}])
+			
+	
+	</script>		
+	</body>
+</html>

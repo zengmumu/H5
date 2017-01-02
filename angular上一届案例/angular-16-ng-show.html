@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="script/angular.min.js"></script>	
+		<style>
+		.box{ height: 50px; line-height: 50px; background-color: #f0f0f0;}
+		.primary{background-color:dodgerblue ;}
+		.danger{ background-color:orange ;}
+		.success{ background-color:lawngreen;}
+		</style>
+		
+	</head>
+	<body>
+		<h1>Show hide</h1>
+		<div ng-controller="myCtrl">
+			<h2 ng-show="flag">我能显示出来</h2>
+			<button ng-click="flag=!flag">我能切换(显示/隐藏)</button>
+			<h2 ng-hide="bool">我是隐藏的人,当bool值为false我会显示出来</h2>
+			<ul ng-switch on="num">
+				<li ng-switch-when="1">我是1号</li>
+				<li ng-switch-when="2">我是2号</li>
+				<li ng-switch-when="3">我是3号</li>
+				<li ng-switch-when="4">我是4号</li>
+				<li ng-switch-default>我是除了1-4号之外的所有人</li>
+			</ul>
+			<button ng-click="changeIt()">切换</button>
+		</div>
+		<script>
+			var app=angular.module("myapp",[])
+			.controller("myCtrl",["$scope",function($scope){
+				$scope.flag=true;
+				$scope.bool=false;
+				$scope.num=0;
+				$scope.changeIt=function(){
+					$scope.num++;
+				}
+			}])
+		</script>
+		
+		<div ng-controller="myCtrl">
+			<h2 ng-show="flag">我能显示出来</h2>
+			<button ng-click="flag=!flag">我能切换(显示/隐藏)</button>
+			<h2 ng-hide="bool">我是隐藏的人,当bool值为false我会显示出来</h2>
+			<ul ng-switch on="num">
+				<li ng-switch-when="1">我是1号</li>
+				<li ng-switch-when="2">我是2号</li>
+				<li ng-switch-when="3">我是3号</li>
+				<li ng-switch-when="4">我是4号</li>
+				<li ng-switch-default>我是除了1-4号之外的所有人</li>
+			</ul>
+			<button ng-click="changeIt()">切换</button>
+		</div>
+		<script>
+			var app=angular.module("myapp",[])
+			.controller("myCtrl",["$scope",function($scope){
+				$scope.flag=true;
+				$scope.bool=false;
+				$scope.num=0;
+				$scope.changeIt=function(){
+					$scope.num++;
+				}
+			}])
+		</script>
+		
+	</body>
+</html>

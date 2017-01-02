@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="script/angular.min.js"></script>
+		
+		<style>
+		.box{ height: 50px; line-height: 50px; background-color: #f0f0f0;}
+		.primary{background-color:dodgerblue ;}
+		.danger{ background-color:orange ;}
+		.success{ background-color:lawngreen;}
+		</style>
+		
+	</head>
+	<body>
+		<h1>ng-class</h1>
+		<div ng-controller="myCtrl">
+			<!--<h4>第一种方式</h4>
+			<div class="box" ng-class="primary"></div>
+			<div class="box" ng-class="danger"></div>-->
+			<h4>数组判断</h4>
+			<div class="box" ng-class="{true:'success',false:'danger'}[flag]" ng-click="flag=!flag"></div>
+			<h3>键值对象</h3>
+			<div class="box" ng-class="{'success':bool,'danger':!bool}" ng-click="bool=!bool"></div>
+		</div>
+		
+		
+				
+		<script>
+			var app=angular.module("myapp",[]);
+				app.controller("myCtrl",["$scope",function($scope){
+//					$scope.primary="primary";
+					$scope.flag=true;
+//					$scope.bool=true;
+					
+				}])
+		</script>
+	</body>
+</html>

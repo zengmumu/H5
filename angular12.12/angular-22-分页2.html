@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/angular.min.js">			
+		</script>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<style>
+		
+		</style>
+	</head>
+	<body>
+		<div ng-controller="mainCtrl" class="container">
+			<h1>中超联赛2016</h1>
+			<div class="col-md-3">
+				全局模糊查询
+				<input type="text" class="form-control" ng-model="search.$" />
+			</div>
+			<div class="col-md-3">
+				轮次
+				<!--search 开头对象都是要 去做过滤的-->
+				<select name="" id="" class="form-control" ng-model="search.Round" ng-options="v.value as v.name for v in uniqueRound">
+					
+					
+				</select>
+			</div>
+			<div class="col-md-3">
+				日期
+				<select name="" id="" class="form-control" ng-model="search.date" ng-options="v.value as v.name for v in uniqueDate">
+					
+					
+				</select>
+			</div>
+			<table class="table table-border table-striped table-hover">
+				<tr>
+					<td ng-repeat="(k,v) in cls_header">
+						{{v}}
+					</td>
+				</tr>
+				<!-- item in cls _data 循环行-->
+				<!--<tr ng-repeat="item in filterData">-->
+					<tr ng-repeat="item in cls_data|filterPage:currentPage*pageNum:pageNum">
+					<!-- (k,v) in cls_header 循环列-->
+					<td ng-repeat="(k,v) in cls_header">
+						{{item[k]}}
+					</td>
+				</tr>
+				
+			</table>
+			<ul class=" pagination">
+				<li ng-click="setPageArray(currentPage-1)" ng-class="{'disabled':currentPage==0}"><a href="">上一页</a></li>
+				<li ng-repeat="item in pageArray track by $index" ng-click="setPageArray(item)"  ng-class="{'active':item==currentPage}" >
+					<a href=""><span ng-if="item!='...'">{{item+1}}</span><span ng-if="item=='...'">{{item}}</span></a></li>
+				<li ng-click="setPageArray(currentPage+1)" ng-class="{'disabled':currentPage==pageLen-1}"><a href="">下一页</a></li>
+			</ul>
+			
+			
+		</div>
+		
+		<script>
+			angular.module("myApp",[])			 
+			.controller("mainCtrl",["$scope","$http",function($scope,$http){			
+			$scope.cls_header={Round:"轮次",Team1:"主场",Team2:"客场",MatchCity:"城市",Situation:"球场",date:"日期",status_cn:"状态"}
+			// header 头部
+//			$scope.filterData=[];
+			$scope.pageArray=[];//用来存放分页的数组
+			$scope.listAll=0;//信息条总数
+			$scope.pageNum=5;//一个分页显示的数量
+			$scope.halfPageShow=3;//分页pageArray数组应该长度的一半			
+			$scope.currentPage=0;// 当前是第几个分页
+			$scope.pageLen=0;// 总共有多少个页面
+			$http.get("js/csl-data.json")//获取数据
+			.success(function(res){
+				$scope.cls_data=res;
+				//中超所有数据利于 双向绑定			
+				$scope.listAll=$scope.cls_data.length;
+				//信息条总数		
+				$scope.pageLen=Math.ceil($scope.listAll/$scope.pageNum);
+				//算出总共能分多少页
+				$scope.setPageArray($scope.currentPage);
+				// 默认去计算一次
+				
+			})
+			$scope.setPageArray=function(current){
+				//当当前页小于0 或者大于等于总页面的长度，或者 是字符 都说明不应该重新计算分页 直接返回
+				if(current<0||current>=$scope.pageLen||current=="..."){
+					return
+				}
+				$scope.currentPage=current;
+				// 重新设置当前页
+				$scope.pageArray=[];
+				//  清空分页数组
+				
+				// 分页算法有三种情况
+				// 1，当当前页小于 总页面一半时候 分页数组内容就是1-7
+				// [1 2 3 4 5 6 7]	
+				// [1 2 3 4 5 6 7]  
+				// [1 2 3 4 5 6 7]
+				if(current<$scope.halfPageShow){
+					for(var i=0;i<$scope.halfPageShow*2+1;i++){
+						$scope.pageArray.push(i);
+					}
+				}else if(current>=$scope.pageLen-$scope.halfPageShow){
+				// 分页算法有三种情况
+				// 2，当当前页大于 总页面减去分页长度的一半时候 如果总数是20条
+				//	[14 15 16 17 18 19 20 ]17
+				//	[14 15,16,17 18 19 20 ]18
+				//	[14 15,16,17 18 19 20 ]19
+				//	[14 15,16,17 18 19 20 ]19
+				//  分页数组应该是从分页总长度-分页数组总长度到 页面总长度 显示后7个
+					  for(var i=$scope.pageLen-$scope.halfPageShow*2;i<$scope.pageLen;i++){
+					  	$scope.pageArray.push(i);
+					  }					
+				}else{
+				// 分页算法有三种情况
+				// 3，当当前页面在中间时候
+				// [2 3 4 5 6 7 8] 当前页为5
+				//  分页数组 从 当前页减去分页显示的一半 到 当前页 到当前页加去分页显示的一半（左一半，右边一半）
+					for(var i=current-$scope.halfPageShow;i<=current+$scope.halfPageShow;i++){
+						$scope.pageArray.push(i);
+					}
+				}
+				
+				// 如果没有第一页 unshif 第一页  顺便加个点
+				// 如果没有最后一页 push 最后一页 顺便加个点
+				if($scope.pageArray.indexOf(0)==-1){				
+					$scope.pageArray.unshift("...");
+					$scope.pageArray.unshift(0);
+				}
+				if($scope.pageArray.indexOf($scope.pageLen-1)==-1){
+					$scope.pageArray.push("...");
+					$scope.pageArray.push($scope.pageLen-1);
+				}
+//				$scope.filterData=$scope.cls_data.splice($scope.currentPage*$scope.pageNum,$scope.pageNum)
+//				$scope.filterData=$scope.cls_data.slice($scope.currentPage*$scope.pageNum,$scope.currentPage*$scope.pageNum+$scope.pageNum)
+				
+				
+			}
+			}])
+			.filter("filterPage",[function(){
+				return function(data,start,len){
+					return data.slice(start,start+len);
+					// 算出当前需要显示那些条目
+					// slice(从第几个,到第几个) 不会改变元素数组
+					// splice(从第几个，截取几个，[添加])// 会改变到元素
+				}
+			}])		
+			
+			
+		</script>	
+	</body>
+</html>

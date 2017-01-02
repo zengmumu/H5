@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/angular.min.js">
+			
+		</script>
+		<style>
+			.son{ border: 1px solid green; padding: 50px;}
+		</style>
+	</head>
+	<body>
+		<div ng-controller="parentCtrl">
+			<p>输入内容：<input type="text" ng-model="uname" /></p>
+			<p ng-bind="uname"></p>
+			<h1>{{sonName}}</h1>
+			<div ng-controller="sonCtrl" class="son">
+				<p>{{uname}}</p>
+				<input type="text" ng-model="sonName" />
+				<p>{{sonName}}</p>
+			</div>
+		</div>
+		
+		<script>
+			function parentCtrl($scope){
+				$scope.uname="I Love China";
+			}
+			function sonCtrl($scope){
+				$scope.sonName="好儿子";
+			}
+		</script>	
+	</body>
+</html>

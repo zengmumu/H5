@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="script/angular.min.js"></script>
+		<style>
+			.odd{ background-color: skyblue;}
+			.even{ background-color: lightpink;}
+		</style>
+	</head>
+	<body>
+		<table width="70%" ng-controller="myCtrl">
+			<tr class="even">
+				<td>序号</td>
+				<td>姓名</td>
+				<td>性别</td>
+				<td>是第一个</td>
+				<td>是最后一个</td>
+			</tr>
+			<tr ng-repeat="user in data" ng-class-odd="'odd'" ng-class-even="'even'">
+			
+				<td>{{$index+1}}</td>
+				<td>{{user.name}}</td>
+				<td>{{user.sex}}</td>
+				<td>{{$first?"是":"否"}}</td>
+				<td>{{$last?"是":"否"}}</td>
+				
+			</tr>
+		</table>
+		<script>
+			var app=angular.module("myapp",[]);
+			app.controller("myCtrl",["$scope",function($scope){
+				$scope.data=[
+					{name:"许萌妍",sex:"女"},
+					{name:"赵小静",sex:"女"},
+					{name:"张继科",sex:"男"},
+					{name:"张明明",sex:"女" },
+	        		{name:"李清思",sex:"女" },
+	        		{name:"刘小华",sex:"男" },
+	        		{name:"陈忠忠",sex:"男"}
+        		];
+			}])
+		</script>
+		
+	</body>
+</html>

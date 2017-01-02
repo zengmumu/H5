@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<!--<link rel="stylesheet" href="css/animate.min.css" />-->
+		<link rel="stylesheet" href="css/ng-animation.css" />
+		<style>
+			body {
+				font-family: "微软雅黑";
+				background-color: #f0f0f0;
+			}
+			
+			.container {
+				width: 1200px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			
+			.no-padding {
+				padding: 0;
+			}
+			
+			.no-margin {
+				margin: 0;
+			}
+			div{ font-size: 14px;}
+		    .citylist>div{ border: 1px solid #ccc; margin-left: -1px;margin-bottom: -1px; padding-top: 15px; padding-bottom: 15px; cursor: pointer;}
+		   .citylist>div.active{ background-color: #fff; color: green;}
+			
+		</style>
+	</head>
+
+	<body ng-controller="mainCtrl">
+		<div class="container">
+	<div class="row">
+		<h1 class="text-center">城市旅游列表</h1>
+		
+	</div>
+	<div class="citylist row">
+		<div class="col-xs-2 text-center" ng-repeat="c in citys" ng-bind="c.city" ng-class="{active:curInfo==c}" ng-click="switchInfo(c)"></div>
+	</div>
+	<div class="row">
+		<h2 class="text center" ng-bind="curInfo.city+'简介:'"></h2>
+		<div class="des" ng-bind-html=trustHtml(curInfo.description)></div>
+	</div>
+	</div>
+		<script src="js/jquery-1.8.3.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+
+		<script src="js/angular.min.js"></script>
+		<script type="text/javascript" src="js/data.js"></script>
+		<script>
+		angular.module("myapp",[])
+		.controller("mainCtrl",function($scope,$sce){
+			$scope.citys=citys;
+			$scope.curInfo=$scope.citys[0];
+			$scope.switchInfo=function(city){
+				$scope.curInfo=city;
+			}
+			$scope.trustHtml=function(){
+			return $sce.trustAsHtml($scope.curInfo.description)	
+			}
+			
+		})
+		
+		</script>
+
+	</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="script/angular.min.js"></script>
+		<script src="script/angular-route.min2.js"></script>
+		<script src="script/jquery-2.2.1.min.js"></script>
+		<script src="script/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<style>
+			body{padding-top:60px ;}
+		</style>
+	</head>
+	<body>	
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<ul class="nav navbar-nav" ng-init="aNum=1">
+				<li ng-class="{'active':aNum==1}" ng-click="aNum=1"><a href="#/">首页</a></li>
+				<li ng-class="{'active':aNum==2}" ng-click="aNum=2"><a href="#/book/">图书</a></li>
+				<li ng-class="{'active':aNum==3}" ng-click="aNum=3"><a href="#/game/">游戏</a></li>
+			</ul>
+		</div>
+	</nav>
+		<div ng-view>
+			
+		</div>
+	
+		
+		<script>
+			var app=angular.module("myapp",["ngRoute"])
+			.config(function($routeProvider){
+				$routeProvider
+				.when("/",{template:"<div>这里是首页内容</div>"})
+				.when("/book/",{template:"<div>这里是图书内容</div>"})
+				.when("/game/",{template:"<div>这里是游戏内容</div>"})
+				.otherwise({
+					redirectTo:"/"
+				})
+			})
+			.controller("mainCtrl",["$scope",function(){
+				
+			}])
+			
+	
+		</script>		
+	</body>
+</html>

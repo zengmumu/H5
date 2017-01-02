@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<!--<link rel="stylesheet" href="css/animate.min.css" />-->
+		<link rel="stylesheet" href="css/ng-animation.css" />
+		<style>
+			body {
+				font-family: "微软雅黑";
+				background-color: #f0f0f0;
+			}
+			
+			.container {
+				width: 1200px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			
+			.no-padding {
+				padding: 0;
+			}
+			
+			.no-margin {
+				margin: 0;
+			}
+			div{ font-size: 24px;}
+		
+			
+		</style>
+	</head>
+
+	<body ng-controller="mainCtrl">
+	<h1 class="text-center">简单的计算器</h1>
+	<div><input type="text" placeholder="请输入要运算的内容" ng-model="expr" /></div>
+	<div>结果:{{result}}</div>
+	
+	
+		<script src="js/jquery-1.8.3.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+
+		<script src="js/angular.min.js"></script>
+		<script>
+		angular.module("myapp",[])
+		.controller("mainCtrl",function($scope,$parse){
+			$scope.$watch("expr",function(newVal,oldVal,scope){
+				if (newVal !== oldVal) {
+            // Let's set up our parseFun with the expression
+            var fun = $parse(newVal);
+            // Get the value of the parsed expression, set it on the scope for output
+          scope.result = fun()
+          }
+//$watch是一个scope函数，用于监听模型变化，当你的模型部分发生变化时它会通知你。
+			})
+		})
+		
+		</script>
+
+	</body>
+
+</html>

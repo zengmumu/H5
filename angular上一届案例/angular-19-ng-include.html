@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="script/angular.min.js"></script>	
+		<style>
+			/*.box{ height: 50px; line-height: 50px; background-color: #f0f0f0;}
+			.primary{background-color:dodgerblue ;}
+			.danger{ background-color:orange ;}
+			.success{ background-color:lawngreen;}*/
+			.container{ width: 1000px; margin:0 auto;}
+			.aside{ height: 500px; width: 250px; float: left; background-color: skyblue;}
+			.main{ height: 500px; width: 750px;float: left;background: #EEE8AA;}
+		</style>
+		
+	</head>
+	<body>	
+	
+		<div class="container" ng-controller="mainCtrl">
+			<h1>WebSite</h1>
+			<div class="aside" ng-include src="'tps/19-aside.html'"></div>
+			<div class="main" ng-include src="'tps/19-main.html'"></div>
+		</div>
+				
+		<script>
+			var app=angular.module("myapp",[]);
+				app.controller("mainCtrl",["$scope",function($scope){
+					
+				}])
+		</script>
+	</body>
+</html>

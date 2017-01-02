@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html ng-app="ydApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<script src="js/angular.min.js"></script>
+		<script src="js/angular-route.js"></script>
+	</head>
+	<body ng-controller="ydCtrl">
+		<div class="container">
+			<alert  msg="alertServer.msg" type="alertServer.type" ></alert>
+			<button class="btn btn-success" ng-click="alertServer.setMsg('登陆成功','danger')">登陆</button>
+			<button class="btn btn-success" ng-click="alertServer.setMsg('注册成功','success')">注册成功</button>
+		</div>	
+
+		
+		<script>
+			angular.module("ydApp",[])
+			.controller("ydCtrl",["$scope","alertServer",function($scope,alertServer){
+				$scope.alertServer=alertServer;
+				
+				
+				
+				
+			}])
+			.directive("alert",[function(){
+				return {
+					restrict:"EA",
+					template:
+						'<div class="alert alert-{{type}}" ng-show="msg">{{msg}}'
+						+'<button class="close" ng-click="hideAlert()"><span>&times;</span></button></div>',
+					link:function(scope,elem,attr){
+						scope.hideAlert=function(){
+							scope.msg=null;
+							scope.type=null;
+						}
+						
+						
+					},
+					scope:{msg:"=",type:"="}
+				}
+			}])
+			.factory("alertServer",["$timeout",function($timeout){
+				
+			return {
+				msg:"",
+				type:"",
+				setMsg:function(msg,type){
+					this.msg=msg;
+					this.type=type;
+					var _self=this;
+					$timeout(function(){
+						_self.msg=null;
+						_self.type=null;
+					},3000)
+				}
+			}
+				
+			}])
+			
+		
+		</script>
+	</body>
+</html>

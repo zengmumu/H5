@@ -1,0 +1,186 @@
+body {
+  margin: 0;
+  font-family: 'Microsoft YaHei';
+  background: #E5E5E5 url('../img/noise_lines.png');
+}
+
+.hand-behavior {
+  cursor: pointer;
+}
+
+.reset-padding {
+  padding: 0;
+}
+
+.rotate180 {
+  -webkit-transform: rotate(180deg); -moz-transform: rotate(180deg); transform: rotate(180deg);
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.container #currentMovieModal .modal-content {
+  background: url('../img/noise_lines.png');
+}
+
+.container #currentMovieModal .modal-content .modal-header .close:hover {
+  -webkit-transform: scale(1.5) rotate(180deg); -moz-transform: scale(1.5)  rotate(180deg); transform: scale(1.5) rotate(90deg);
+}
+
+.container .main-header {
+  line-height: 50px;
+}
+
+.container .row .title {
+  margin: 5px auto;
+  font-weight: bold;
+  color: #109bee;
+  -webkit-animation: 1s flip;
+  animation: 1s flip;
+}
+
+.container .row .search-movie {
+  position: absolute;
+  top: 8px;
+}
+
+.container .row .search-movie .glyphicon-user {
+  position: absolute;
+  font-size: 16px;
+  top: 9px;
+  left: 8px;
+}
+
+.container .row .search-movie .glyphicon-search {
+  position: absolute;
+  font-size: 16px;
+  top: 9px;
+  left: 144px;
+}
+
+.container .row .search-movie .form-control {
+  display: inline;
+}
+
+.container .row .search-movie input {
+  width: 170px;
+  font-size: 16px;
+  text-indent: 16px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.container .row .search-movie select {
+  width: 79px;
+}
+
+.container .row .movie-info {
+  min-height: 200px;
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  -moz-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: rgba(195, 229, 186, 0.15);
+  border: 1px solid rgba(86,61,124,.2);
+}
+.container .row .movie-info::after {
+  -webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16);
+  -moz-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16);
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16);
+}
+.container .row .movie-info:hover {
+  -webkit-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2);
+  top: -2px;
+}
+.container .row .movie-info:hover::after {
+  -webkit-box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -moz-box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.container .row .movie-info .movie-name {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.container .row .movie-info .pipian {
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  width: 20px;
+  height: 20px;
+}
+
+.container .row .movie-info .movie-index {
+  position: absolute;
+  right: 12px;
+  bottom: 5px;
+  text-shadow: 0px -1px #bbb,0 1px #fff;
+  color: #D2CFCF;
+  font-size: 16px;
+}
+
+.container .row .movie-info img {
+  width: 126px;
+  border: 1px solid white;
+  box-shadow: 2px 2px 12px #333;
+}
+
+.container .row .movie-info ul {
+  list-style-type: none;
+  margin-left: 30%;
+}
+
+.container .row .movie-info ul li {
+  margin-bottom: 2px;
+  text-overflow : ellipsis;
+  white-space : nowrap;
+  overflow : hidden;
+}
+
+/***Fix bootstrap modal auto width****/
+.modal.fade .modal-dialog {
+  display: inline-block;
+}
+.modal.fade .modal-dialog img{
+  max-height: 550px;
+}
+
+/********************Animate used Here**************************************/
+.repeater.ng-enter {
+  -webkit-transition: 0.2s linear all;
+  transition: 0.2s linear all;
+  opacity: 0;
+  -webkit-transform: scale(1.15)!important;
+  transform: scale(1.15)!important;
+}
+
+.repeater.ng-enter.ng-enter-active {
+  opacity: 1;
+  -webkit-transform: scale(1)!important;
+  transform: scale(1)!important;
+}
+
+.repeater.ng-leave {
+  -webkit-transition: 0.1s linear all;
+  transition: 0.1s linear all;
+  opacity: 1;
+}
+
+.repeater.ng-leave.ng-leave-active {
+  opacity: 0;
+}
+
+.repeater.ng-enter-stagger,
+.repeater.ng-leave-stagger {
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
+  -webkit-transition-duration: 0;
+  transition-duration: 0;
+}

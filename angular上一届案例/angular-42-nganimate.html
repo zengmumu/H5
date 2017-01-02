@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="script/angular.min.js"></script>
+		<script src="script/jquery-2.2.1.min.js"></script>
+		<script src="script/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/animate.min.css" />
+		<script src="script/angular-animate.min.js"></script>
+				
+		<style>
+			@-webkit-keyframes slideInLeft {
+					from {opacity: 0;transform:rotateX(180deg);}
+					to { opacity: 1;transform:rotateX(0deg);}
+				}
+				@-webkit-keyframes slideOutRight {
+					from {opacity: 1; transform:rotateX(0deg);}
+					to { opacity: 0; transform:rotateX(180deg);}
+				}
+				.ng-leave{position:relative; animation:slideOutRight 1s; transform-origin: center;}
+				.ng-enter{position:relative; animation:slideInLeft 1s ;}
+				.ng-enter-stagger,.ng-leave-stagger{animation-delay:0.05s;}
+				 
+		</style>
+		
+	</head>
+	<body ng-controller="mainCtrl">
+	<div class="container">
+		<h1>动画</h1>
+		<div class="form-group">
+			<input type="text" class="form-control" ng-model="myfilter.$" />
+		</div>
+		<ul class="list-group">
+			<li class="list-group-item" ng-repeat="item in data | filter:myfilter">{{item.title}}</li>
+		</ul>
+		</div>
+	<script>
+	
+	
+		angular.module("myapp",["ngAnimate"])		
+		
+		.controller("mainCtrl",function($scope){
+			$scope.data=[{"id":"14","title":"AngularJS $location\u5b66\u4e60\u7b14\u8bb0 - AngularJS\u77e5\u8bc6\u5e93","pubdate":"1473932802","typeid":"1"},{"id":"13","title":"AngularJS: &#34;Controller as&#34; or &#34;$scope&#34;? - An","pubdate":"1473932802","typeid":"1"},{"id":"12","title":"Begin_With_AngularJS\uff081\uff09\u57fa\u7840\uff1ang-app\uff0cng-controller\uff0c\u4ee3","pubdate":"1473932802","typeid":"1"},{"id":"11","title":"AngularJS\u5e38\u7528\u670d\u52a1\uff08$http\u3001$location\u3001$sce\u7b49\uff09 - Angu","pubdate":"1473932802","typeid":"1"},{"id":"10","title":"Angualr__directive - AngularJS\u77e5\u8bc6\u5e93","pubdate":"1473932802","typeid":"1"},{"id":"9","title":"AngularJS \u795e\u5947\u7684\u8868\u5355 - AngularJS\u77e5\u8bc6\u5e93","pubdate":"1473932802","typeid":"1"},{"id":"8","title":"AngularJS \u9738\u9053\u7684\u8fc7\u6ee4\u5668 - AngularJS\u77e5\u8bc6\u5e93","pubdate":"1473932802","typeid":"1"},{"id":"7","title":"AngularJS \u8fc7\u6ee4\u5668 - AngularJS\u77e5\u8bc6\u5e93","pubdate":"1473932802","typeid":"1"},{"id":"6","title":"AngularJS\u63a7\u5236\u5668\u8be6\u60c5 - AngularJS\u77e5\u8bc6\u5e93","pubdate":"1473932802","typeid":"1"},{"id":"4","title":"\u5a5a\u793c\u65f6\u65b0\u90ce\u7684\u80f8\u82b1\u4f69\u6234\u4e8b\u9879","pubdate":"1473406684","typeid":"1"}];
+		});
+		
+		
+	</script>
+	</body>
+	
+</html>

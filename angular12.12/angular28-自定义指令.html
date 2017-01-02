@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html ng-app="ydApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<script src="js/angular.min.js"></script>
+		<script src="js/angular-route.js"></script>
+	</head>
+	<body ng-controller="ydCtrl">
+		<div class="container">
+			<h1>自定义指令</h1>
+			<h2>购物车</h2>
+			<p ng-repeat="item in shopcar">
+				{{item.name}} | {{item.price}}元 
+				<stepper num="item.num"></stepper>
+				<button class="btn btn-default" ng-click="delItem(item)">&times;</button>
+			</p>
+			<div>总价：<span>{{allPrice}}</span>  <input type="button"  value="结账" class="btn btn-danger"/></div>
+			
+		</div>
+		
+		<script>
+			angular.module("ydApp",[])
+			.controller("ydCtrl",["$scope",function($scope,$http){
+				$scope.shopcar=[
+				{name:"白菜",price:0.3,num:5},
+				{name:"木槌",price:100,num:1},
+				{name:"豆腐",price:1,num:2}
+				]
+/*				$scope.allPrice=0;
+				for(var i=0;i<$scope.shopcar.length;i++){
+					$scope.allPrice+=$scope.shopcar[i].price*$scope.shopcar[i].num;
+				}*/
+				// 什么时候总价要 重新算= shopcar 发生改变时候重算
+				// 我们怎么发现shopcar 发生改变   $scope.$watch 能够监听 shopcar是否发生改变
+				// 第一个值 要监听的变量
+				// 第二值是 当变量发生改变会执行 这个函数
+				// 当他是一个对象 对象的某个属性发送改变 就会触发 第二个参数  （深观察）
+				$scope.$watch("shopcar",function(){
+					$scope.allPrice=0;
+					for(var i=0;i<$scope.shopcar.length;i++){
+						$scope.allPrice+=$scope.shopcar[i].price*$scope.shopcar[i].num;
+					}
+				},true);
+				
+				$scope.delItem=function(item){
+					var flag=confirm("亲爱的，你确定要删除宝贝吗?")
+					if(flag){
+						var index=$scope.shopcar.indexOf(item);
+						$scope.shopcar.splice(index,1);
+					}
+				}
+				
+			}])
+			//restrict  C 可以用 class 类名来调用指令 class
+			//			E 可以用 元素节点的方法显示指令element
+			//			A 可以用 元素属性的方法显示指令 attribute
+			//			M 可以用 元素注释的方法显示指令 
+			// template	指令的模板
+			// templateUrl 指令的模板的路径
+			// compile 指令开始编译   
+			// complie 在执行前对指令进行些操作
+			
+			// angular.element(节点内容)=$(节点内容)
+			// $(节点内容) 把元素包装成为一个jquery 元素
+			// ngular.element(节点内容) 把元素包装成为一个anguler 元素
+			
+			// link 指令 编译完成
+			// 		scope  elem attr
+			// 		scope  是指指令的作用域
+			//		elem   指令整个元素
+			//		attrs	指令的属性
+			// 一般指令用的最多
+			
+			// scope 指令作用域的范围  true：独立作用域   false 和父亲作用域相同
+			// scope 对象 {} 独立作用域  变量 属性值等与 {num:"="} num 和父亲的作用域名相等
+			// scope：{num:"&"} 以方法的形式 执行
+			// scope：{num:"@"}	只读的形式
+			.directive("stepper",[function(){
+				return {
+					"restrict":"ECMA",
+					"template":
+						'<button ng-click="decrease()">-</button>'
+						+'<input type="text" ng-model="num">'
+						+'<button ng-click="increase()">+</button>',
+//					templateUrl:"tpls/step.html"
+				/*compile:function(elem,attr){//编译
+					var btn=document.createElement("input");
+					btn.value="我是新来的";
+					btn.type="button";
+					angular.element(elem).append(btn);
+					console.log("指令开始编译")
+					console.log(elem,attr);
+					return function(scope,elem,attr){
+						// == link;
+					}
+					
+					},*/
+					link:function(scope,elem,attrs){
+						console.log("指令已经编译完成")
+						
+						scope.decrease=function(){
+							
+							scope.num--;
+							if(scope.num<0){scope.num=0;}
+						}
+						scope.increase=function(){
+							scope.num++;
+						}
+					},
+					scope:{num:"="},
+				}
+			}])
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="ydApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<script src="js/angular.min.js"></script>
+		<script src="js/angular-route.js"></script>
+	</head>
+	<body ng-controller="ydCtrl">
+		<div class="container">
+			<alert msg="msg"></alert>
+			<button class="btn btn-success" ng-click="showAlert()">登陆</button>
+			<button class="btn btn-success" ng-click="showAlert2()">注册成功</button>
+		</div>	
+
+		
+		<script>
+			angular.module("ydApp",[])
+			.controller("ydCtrl",["$scope",function($scope,$http){
+				$scope.showAlert=function(){
+					$scope.msg="登陆成功"
+				}
+				$scope.showAlert2=function(){
+					$scope.msg="注册成功"
+				}
+				
+			}])
+			.directive("alert",["$timeout",function($timeout){
+				return {
+					restrict:"EA",
+					template:
+						'<div class="alert alert-success" ng-show="msg">{{msg}}'
+						+'<button class="close" ng-click="hideAlert()"><span>&times;</span></button></div>',
+					link:function(scope,elem,attr){
+						scope.hideAlert=function(){
+							scope.msg="";
+						}
+						$timeout(function(){
+							scope.msg="";
+							console.log("hide");
+						},2000)
+					},
+					scope:{msg:"="}
+				}
+			}])
+			
+		
+		</script>
+	</body>
+</html>

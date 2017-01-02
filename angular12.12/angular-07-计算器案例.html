@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/angular.min.js">
+			
+		</script>
+		<style>
+			.son{ border: 1px solid green; padding: 50px;}
+		</style>
+	</head>
+	<body>
+		<div ng-controller="mainCtrl">
+			<p><input type="text" ng-model="pre" />+
+			   <input type="text" ng-model="next" />=
+			   <input type="text" value="{{pre*1+next*1}}" />				
+			</p>
+			<p>减法：{{pre-next}}</p>
+			<p>乘法：{{pre*next}}</p>
+			<p>除：{{pre/next}}</p>
+			
+		</div>
+		
+		<script>
+			function mainCtrl($scope) {
+				$scope.pre=0;
+				$scope.next=0;
+			}
+		</script>	
+	</body>
+</html>

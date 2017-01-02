@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="script/angular.min.js"></script>
+	</head>
+	<body>
+		<h1>watch</h1>
+		<div ng-controller="myCtrl">
+			<input type="text" ng-model="show"/>
+			<p>{{show}}</p>
+			<p>show被改变了{{num}}次</p>
+		</div>
+    <script>
+//  	function myCtrl($scope){
+//  		$scope.show="play";
+//  		$scope.num=0;
+//  		$scope.$watch("show",function(){
+//  			$scope.num++;
+//  			if($scope.num>20){
+//  				$scope.num=0;
+//  			}
+//  		})
+//  	}
+
+		    	function myCtrl($scope){
+    		$scope.show="play";
+    		$scope.num=0;
+    		$scope.$watch("show",function(news,old){
+    			console.log(old,news);
+    			$scope.num++;
+    			if($scope.num>20){
+    				$scope.num=0;
+    			}
+    		})
+    	}
+    </script>
+	</body>
+</html>

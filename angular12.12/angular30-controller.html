@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html ng-app="ydApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<script src="js/angular.min.js"></script>
+		<script src="js/angular-route.js"></script>
+	</head>
+	<body ng-controller="ydCtrl">
+		<div class="container">
+			<h1>transclude</h1>
+			<my-tag>
+					
+			</my-tag>
+			<my-tag>
+					
+			</my-tag>
+			
+			
+		</div>
+		
+		<script>
+			angular.module("ydApp",[])
+			.controller("ydCtrl",["$scope",function($scope,$http){
+				
+				
+			}])
+			.directive("myTag",[function(){
+				return {
+					restrict:"EA",
+					template:
+					'<div><input type="text" ng-model="data.num">'
+					+'<son-tag/></div> ',
+					transclude:true,
+					replace:false,
+					controller:function($scope){
+						$scope.data={};
+						$scope.data.num=4;
+						this.add=function(){
+						
+//							$scope.$apply(function(){
+									$scope.data.num++;
+//							})
+
+						}
+					},
+					scope:{}
+				
+					
+					
+				}
+			}])
+			.directive("sonTag",[function(){
+				return{
+					restrict:"EA",
+					template:'<button class="btn btn-danger" ng-click="add()">danger</button>',
+					require:"^myTag",
+					link:function(scope,elem,attr,ctrl){
+						
+						/*angular.element(elem).on("click",function(){							
+							ctrl.add();
+						})*/
+						scope.add=function(){
+							ctrl.add();
+						}
+						
+					},
+					scope:{}
+				}
+			}])
+		
+		</script>
+	</body>
+</html>

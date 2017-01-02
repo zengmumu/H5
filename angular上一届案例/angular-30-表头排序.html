@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="script/angular.min.js"></script>
+		<script src="script/jquery-2.2.1.min.js"></script>
+		<script src="script/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		
+	</head>
+	<body>	
+	
+	<div class="container" ng-controller="myCtrl">
+			<div class="row">
+				<table class="table table-hover table-stripe">
+					<tr>
+						<td>序号</td>
+						<td ng-click="title='name';desc=!desc">姓名</td>
+						<td ng-click="title='sex';desc=!desc">性别</td>
+						<td ng-click="title='age';desc=!desc">年龄</td>
+						<td ng-click="title='score';desc=!desc">成绩</td>
+					</tr>
+					<tr ng-repeat="item in data|orderBy:title:desc">
+						<td>{{$index+1}}</td>
+						<td>{{item.name}}</td>
+						<td>{{item.sex}}</td>
+						<td>{{item.age}}</td>
+						<td>{{item.score}}</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	<script>
+		var app=angular.module("myapp",[])
+				.controller("myCtrl",["$scope",function($scope){
+				 $scope.data = [
+		            { name: "张明明", sex: "女", age: 24, score: 9 },
+		            { name: "李清思", sex: "女", age: 27, score: 87 },
+		            { name: "刘小华", sex: "男", age: 28, score: 86 },
+		             { name: "李清", sex: "女", age: 25, score: 70 },
+		            { name: "刘华", sex: "男", age: 28, score: 86 },
+		            { name: "陈忠忠", sex: "男", age: 23, score: 97 }
+		            ];
+//		            $scope.title="score";
+		            $scope.desc=true;
+				}])
+				
+	</script>		
+	</body>
+</html>

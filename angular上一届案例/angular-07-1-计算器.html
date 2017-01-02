@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="script/angular.min.js"></script>
+	</head>
+	<body>
+		<h1>计算器</h1>
+		<div ng-controller="calcCtrl">
+			<input type="text" ng-model="data.pre"/>+<input type="text" ng-model="data.next"/>=<input type="text" ng-model="result"/>
+			<p>两数相乘:{{data.pre*data.next}}</p>
+			<p>两数相除:{{data.pre/data.next}}</p>
+			<p>两数相减:{{data.pre-data.next}}</p>
+		</div>
+    <script>
+	   function calcCtrl($scope){
+	   		$scope.data={pre:0,next:0};
+	   		$scope.result=$scope.data.pre+$scope.data.next;
+	   }
+    </script>
+	</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<!--<link rel="stylesheet" href="css/animate.min.css" />-->
+		<link rel="stylesheet" href="css/ng-animation.css" />
+		<style>
+			body {
+				font-family: "微软雅黑";
+				background-color: #f0f0f0;
+			}
+			
+			.container {
+				width: 1200px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			
+			.no-padding {
+				padding: 0;
+			}
+			
+			.no-margin {
+				margin: 0;
+			}
+			nav li.btn{ padding: 0; width: 40px; height: 40px; line-height:40px; text-align: center; border: 1px solid #999; margin: 0 5px;}
+			nav li.btn.active{ background-color: dodgerblue; border-color: royalblue; color: #fff; font-weight: bold;}
+			nav li button{ border: none; background-color:transparent; display: block; padding: 0; width: 40px;width: 40px; height: 40px; line-height:40px; text-align: center;}
+			
+		</style>
+	</head>
+
+	<body ng-controller="mainCtrl">
+		<div class="container">
+			<div class="row"><h1>移动指定代码</h1></div>
+			 <div class="row">
+			 	<table class="table table-striped table-bordered table-hover">
+			 		<tr>
+			 			<th width="50%">指令</th>
+			 			<th  width="50%">指令代码</th>
+			 		</tr>
+			 		<tr ng-repeat="v in list | pagefilter:curPage*pageSize | limitTo:pageSize">
+			 			<td ng-bind="v.coRemark"></td>
+			 			<td ng-bind="v.coCommandcode"></td>
+			 			
+			 		</tr>
+			 	</table>
+			 </div>
+		<div class="row">
+			<nav>
+				   
+					<!--<button class="previous"   ng-click="curPage = curPage - 1" ng-disabled="curPage <= 0"><span>&larr;</span>上一页</button>-->
+					<ul class="list-unstyled list-inline">
+							<li class="btn btn-deault"><button   ng-click="curPage = curPage - 1" ng-disabled="curPage <=0">&larr;</button></li>
+						<li ng-click="setCur(0)" class="btn btn-deault" ng-hide="curPage<6">1 </li>
+						<li  ng-hide="curPage<6">...</li>
+						<li ng-repeat="v in pageArr track by $index" ng-click="setCur($index)" ng-bind="$index+1" class="btn btn-deault" ng-show="$index<=(curPage+3)&&$index>=(curPage-3)||$index<8&&curPage<6||$index<(curPage-6)&&curpage>pageCount-8" ng-class="{'active':$index==curPage}"></li>
+						<li  ng-hide="curPage>=pageCount-6">...</li>
+						<li ng-click="setCur(pageCount)" class="btn btn-deault" ng-class="{'active':curPage==pageCount}">{{pageCount+1}} </li>
+						<li class="btn btn-deault"> <button ng-click="curPage = curPage + 1" ng-disabled="curPage >= pageCount">&rarr;</button></li>
+					</ul>
+						<!--<button class="previous"   ng-click="curPage = curPage + 1" ng-disabled="curPage >= pageCount">下一页<span>&rarr;</span></button>-->
+					
+				</ul>
+			</nav>
+		</div>
+		</div>
+		<script src="js/jquery-1.8.3.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+
+		<script src="js/angular.min.js"></script>
+		<script src="js/angular-animate.min.js"></script>
+		<script type="text/javascript" src="js/unicom-message-directive.js">		</script>
+		<script>
+		var app=angular.module("myapp",[])
+		.controller("mainCtrl",["$scope",function($scope){
+			 $scope.list = messageData.rspPublicArgs.rspArgs;
+			 $scope.pageSize=10;
+			 $scope.curPage=0;
+			 $scope.pageCount=Math.ceil($scope.list.length / $scope.pageSize)-1;
+			 $scope.pageArr=new Array($scope.pageCount);
+			 console.log($scope.pageArr);
+			 $scope.setCur=function(num){
+			 	 $scope.curPage=num;
+			 	 console.log( $scope.curPage);
+			 }
+		
+		}])
+		.filter("pagefilter",[function(){
+			return function(data,start){
+				start=+start;
+				return data.slice(start);
+			}
+		}])
+		</script>
+
+	</body>
+
+</html>

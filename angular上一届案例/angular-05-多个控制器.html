@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="script/angular.min.js"></script>
+	</head>
+	<body>
+		<div ng-controller="parentCtrl">
+	        <p><input type="text" ng-model="show" /></p>
+	        <div ng-controller="sonCtrl"><input type="text" ng-model="show" /></div>
+	        <div>{{show}}</div>
+    	</div>
+    <script>
+	    function parentCtrl($scope){
+	    	$scope.show="你好吗？"
+	    }
+	    function sonCtrl($scope){
+	    	$scope.show="very good"
+	    }
+    </script>
+	</body>
+</html>

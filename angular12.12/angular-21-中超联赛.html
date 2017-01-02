@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/angular.min.js">			
+		</script>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<style>
+		
+		</style>
+	</head>
+	<body>
+		<div ng-controller="mainCtrl" class="container">
+			<h1>中超联赛2016</h1>
+			<div class="col-md-3">
+				全局模糊查询
+				<input type="text" class="form-control" ng-model="search.$" />
+			</div>
+			<div class="col-md-3">
+				轮次
+				<!--search 开头对象都是要 去做过滤的-->
+				<select name="" id="" class="form-control" ng-model="search.Round" ng-options="v.value as v.name for v in uniqueRound">
+					
+					
+				</select>
+			</div>
+			<div class="col-md-3">
+				日期
+				<select name="" id="" class="form-control" ng-model="search.date" ng-options="v.value as v.name for v in uniqueDate">
+					
+					
+				</select>
+			</div>
+			<table class="table table-border table-striped table-hover">
+				<tr>
+					<td ng-repeat="(k,v) in cls_header">
+						{{v}}
+					</td>
+				</tr>
+				<!-- item in cls _data 循环行-->
+				<tr ng-repeat="item in cls_data | filter:search">
+					<!-- (k,v) in cls_header 循环列-->
+					<td ng-repeat="(k,v) in cls_header">
+						{{item[k]}}
+					</td>
+				</tr>
+				
+			</table>
+			
+			
+		</div>
+		
+		<script>
+			angular.module("myApp",[])
+			 
+			.controller("mainCtrl",["$scope","$http",function($scope,$http){
+			$scope.search={Round:"",date:""};
+			// 搜索的对象
+			$scope.uniqueRound=[];
+			// 没有重复的场次集合
+			$scope.uniqueDate=[];
+			// 没有重复的日期集合
+			$scope.cls_header={Round:"轮次",Team1:"主场",Team2:"客场",MatchCity:"城市",Situation:"球场",date:"日期",status_cn:"状态"}
+			// header 头部
+			
+			$http.get("js/csl-data.json")//获取数据
+			.success(function(res){
+				$scope.cls_data=res;
+				//中超所有数据利于 双向绑定
+				var n={};
+				// 数组的检查对象（对象里面的属性是不能，不会重复的，把对象里面的键 和数组的值做一个对比如果 已经被设置过 说明是重复的数据就不在添加，如果数组里面找不到该属性说明不是重复，把对象n对应的键 设置为true（ 为了下一次检测） 2添加数组值）
+				for(let i=0; i<$scope.cls_data.length;i++){
+					
+					if(!n[$scope.cls_data[i].Round]){
+						n[$scope.cls_data[i].Round]=true;
+						$scope.uniqueRound.push({name:$scope.cls_data[i].Round,value:$scope.cls_data[i].Round});		
+					}
+					if(!n[$scope.cls_data[i].date]){
+						n[$scope.cls_data[i].date]=true;
+						$scope.uniqueDate.push({name:$scope.cls_data[i].date,value:$scope.cls_data[i].date});		
+					}
+				
+				}
+				// 做完去重  在最前面添加一个全面值为空
+				$scope.uniqueRound.unshift({name:"全部",value:""});
+				$scope.uniqueDate.unshift({name:"全部",value:""});
+				
+				
+			})
+			
+		
+			
+				
+			}])
+			
+		</script>	
+	</body>
+</html>

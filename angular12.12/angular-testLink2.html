@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/angular.min.js">
+			
+		</script>
+		<style>
+			.son{ border: 1px solid green; padding: 50px;}
+		</style>
+	</head>
+	<body>
+		<div ng-controller="mainCtrl">	
+			<p>rating:{{rating}}</p>
+			<ng-stepper ng-model="rating"></ng-stepper>
+		</div>
+		
+		<script>
+			angular.module("myApp",[])
+			 
+			.controller("mainCtrl",["$scope",function($scope){
+				$scope.rating=40;
+				
+			}])
+			.directive("ngStepper",function(){
+				return {
+					"restrict":"ECMA",
+					"template":
+						'<button ng-click="decrement()">-</button>'+
+						'<div>{{value}}</div>'+
+						'<button  ng-click="increment()">+</button>',
+					link:function(scope,elem,attr,ctrl){
+						console.log(ctrl);
+						scope.increment=function(){
+							  updateModel(+1);
+						}
+						scope.decrement=function(){
+							  updateModel(-1);
+						}
+						 // when model change, update our view (just update the div content)
+						 //当模型发生改变,再去改变视图,
+						ctrl.$render=function(){
+							elem.find("div").text(ctrl.$viewValue)
+						}
+						function updateModel(offset){
+							ctrl.$setViewValue(ctrl.$viewValue+offset);
+							ctrl.$render();
+						}
+					},
+					scope:{	},
+					
+					// require 需要 ngModel 里面属性值的声明
+					// require 让 link 里面的 第4个参数ctrl 有效
+					require:"ngModel"
+					
+				}
+			})
+			.directive("ngModel",function(){
+				return:{
+					restrict:"ECMA",
+					controller:function(scope){
+						
+					}
+				}
+			})
+			//同时我们又添加了另外一组键值对require: ‘ngModel’。
+//我们使用了两个新的API：
+
+//ngModelController.$render: 在ngModel发生改变的时候框架自动调用，同步$modelValue和$viewValue， 即刷新页面。
+//ngModelController.$setViewValue： 当$viewValue发生改变时，通过此方法，同步更新$modelValue。
+		</script>	
+	</body>
+</html>

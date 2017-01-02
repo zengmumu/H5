@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="script/angular.min.js"></script>	
+		<style>
+		.box{ height: 50px; line-height: 50px; background-color: #f0f0f0;}
+		.primary{background-color:dodgerblue ;}
+		.danger{ background-color:orange ;}
+		.success{ background-color:lawngreen;}
+		</style>
+		
+	</head>
+	<body>
+		<!--<h1>事件方法</h1>
+		<div ng-controller="myCtrl">
+			{{showIt('abc')}}
+		</div>
+				
+		<script>
+			var app=angular.module("myapp",[]);
+				app.controller("myCtrl",["$scope",function($scope){
+					$scope.showIt=function(str){
+						return "欢迎来到angular的世界"+str;
+					}
+				}])
+		</script>-->
+		
+		
+		<h1>事件方法</h1>
+		<div ng-controller="myCtrl">
+			{{showIt('abc')}}
+			<h1 ng-show="flag">事件响应方法{{num}}</h1>
+			<button ng-click="toggleIt()">toggle</button>
+		</div>
+				
+		<!--<script>
+			var app=angular.module("myapp",[]);
+				app.controller("myCtrl",["$scope",function($scope){
+					$scope.flag=true;
+					$scope.num=0;
+					$scope.showIt=function(str){
+						return "欢迎来到angular的世界"+str;
+					}
+					$scope.toggleIt=function(arg){
+						$scope.flag=!$scope.flag;
+						$scope.num++;
+//						$scope.num=arg;
+					}
+				}])
+		</script>-->
+		<script>
+			var app=angular.module("myapp",[]);
+			app.controller("myCtrl",["$scope",function($scope){
+				$scope.flag=true;
+				$scope.num=0;
+				$scope.toggleIt=function(arg){
+					$scope.flag=!$scope.flag;
+					$scope.num++;
+				}
+			}])
+		</script>
+	</body>
+</html>

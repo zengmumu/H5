@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<script src="script/angular.min.js"></script>
+		<script src="script/jquery-1.8.3.min.js"></script>
+		<script src="script/bootstrap.min.js"></script>			
+		<link rel="stylesheet" href="style/bootstrap.min.css"/>
+	</head>
+	<body ng-controller="mainCtrl">
+		<div ng-controller="son1">
+			<p>son1: <input type="text" ng-model="data.val"/></p>
+			{{data.val}}
+		</div>
+		<div ng-controller="son2">
+			<p>son2: <input type="text" ng-model="data.val"/></p>
+			{{data.val}}
+		</div>
+		
+		<script>
+			angular.module("myapp",[])
+			.config(function(){
+				console.log("config被执行了");
+			})
+			.run(function(){
+				console.log("run 被执行了"); 
+			})
+			.provider("po1",function(){
+				this.$get=function(){
+					console.log("provider 被执行了 ")
+					return {"base":15}
+				}
+			})
+			.factory("fa1",function(){
+				return {"val":88};
+			})
+			.controller("mainCtrl",function($scope){
+				
+			})
+			.controller()
+		</script>
+	<script>
+	
+	
+		angular.module("myapp",[])
+		.config(function(){
+			console.log("config被执行了")
+		})
+		.run(function(){
+			console.log("run 被执行了"); 
+		})
+		.provider("po1",function(){//数据的提供者
+				this.$get=function(){
+					console.log("provider 被执行了")
+						return {"base":15}
+				}
+			
+		})
+		.factory("fa1",function(){
+//1			return function(){
+//				//操作
+//				return {"val":88};
+//			}
+			return  {"val":88};
+		})
+		.controller("mainCtrl",function($scope){
+			
+			
+		})
+		
+		.controller("son1",function($scope,fa1){
+			$scope.data=fa1;
+			
+		})
+		.controller("son2",function($scope,fa1){
+			$scope.data=fa1;
+			
+		})
+	</script>
+	</body>
+	
+</html>

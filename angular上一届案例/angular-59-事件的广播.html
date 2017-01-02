@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="script/angular.min.js"></script>
+		<script src="script/jquery-2.2.1.min.js"></script>
+		<script src="script/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/animate.min.css" />
+		<script src="script/angular-animate.min.js"></script>		
+	</head>
+	<body ng-controller="mainCtrl">
+		<div ng-controller="parent">
+			<h1 ng-click="toChild()"></h1>
+			<div ng-controller="self">
+				<h2>传播消息</h2>
+			</div>
+		</div>
+	</body>
+	<script>
+		angular.module("myapp",[])
+		
+	</script>
+</html>

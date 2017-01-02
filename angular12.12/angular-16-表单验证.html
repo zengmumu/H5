@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html  ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/angular.min.js">	</script>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<style>
+			.no-padding{ padding: 0;}
+			.err{ color: pink;}
+			.succ{ color:limegreen;}
+			.clear{ clear: both;}
+		</style>
+	</head>
+	<body ng-controller="mainCtrl">
+		<h1 class="text-center">表单验证</h1>
+		<div class="container">
+			<div class="row">
+				<form action="" name="myform"  >
+				<div class="form-group has-feedback "
+					ng-class="{'has-success':myform.uname.$dirty&&myform.uname.$valid ,'has-error':myform.uname.$dirty&&myform.uname.$invalid}"
+					 >
+					<label class="col-md-2 text-right">
+					 *必填
+					</label>
+					<div class="col-md-8 no-padding">
+						<input 
+							type="text" required="required"
+							class="form-control" 
+							name="uname" 
+							ng-model="uname"
+							
+							/>
+						<i 
+							class="glyphicon glyphicon-ok form-control-feedback"
+							ng-show="myform.uname.$dirty&&myform.uname.$valid"
+							></i>
+						<i 
+							class="glyphicon glyphicon-remove form-control-feedback"
+							ng-show="myform.uname.$dirty&&myform.uname.$invalid"
+							></i>
+					</div>
+					<div 
+						class="col-md-2" 
+						ng-show="myform.uname.$dirty&&myform.uname.$invalid" 
+						ng-class="{'err':myform.uname.$invalid,'succ':myform.uname.$valid}"
+						>该选项是必填</div>
+				</div>
+				<!--form-grouped-->
+				<div class="form-group has-feedback clear"
+					ng-class="{'has-success':myform.ulen.$dirty&&myform.ulen.$valid ,'has-error':myform.ulen.$dirty&&myform.ulen.$invalid}"
+					 >
+					<label class="col-md-2 text-right">
+					 2-18
+					</label>
+					<div class="col-md-8 no-padding">
+						<input 
+							type="text"  ng-minlength="2" ng-maxlength="18"
+							class="form-control" 
+							name="ulen" 
+							ng-model="ulen"
+							
+							/>
+						<i 
+							class="glyphicon glyphicon-ok form-control-feedback"
+							ng-show="myform.ulen.$dirty&&myform.ulen.$valid"
+							></i>
+						<i 
+							class="glyphicon glyphicon-remove form-control-feedback"
+							ng-show="myform.ulen.$dirty&&myform.ulen.$invalid"
+							></i>
+					</div>
+					<div 
+						class="col-md-2">
+						<span class="err" ng-show="myform.ulen.$dirty&&myform.ulen.$error.minlength" >最小长度不能小于2</span>
+						<span class="err" ng-show="myform.ulen.$dirty&&myform.ulen.$error.maxlength">最长不能超过18</span>
+						<span  class="succ" ng-show="myform.ulen.$dirty&&myform.ulen.$valid">正确</span>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-md-8 no-padding col-md-offset-2">
+						<input 							
+							type="submit"  
+							value="提交" 
+							class="btn btn-block btn-success"
+							ng-disabled="myform.$invalid"
+							/>
+					</div>
+				</div>
+					
+				</form>
+			</div>
+		</div>
+		
+		<script>
+			angular.module("myApp",[])
+			.controller("mainCtrl",["$scope",function($scope){
+				
+			}])
+		</script>
+	</body>
+</html>

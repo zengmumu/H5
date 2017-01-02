@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div p:nth-of-type(1){background: palegoldenrod;}
+			div p:nth-of-type(2){background: skyblue;}
+			div p:nth-of-type(3){background: pink;}
+		</style>
+		<script src="script/angular.min.js"></script>
+	</head>
+	<body>
+		<h1>计算器</h1>
+		<div ng-controller="calcCtrl">
+			<input type="text" ng-model="pre"/>+<input type="text" ng-model="next"/>=<input type="text" value="{{pre*1+next*1}}"/>
+			<p>两数相乘:{{pre*next}}</p>
+			<p>两数相除:{{pre/next}}</p>
+			<p>两数相减:{{pre-next}}</p>
+		</div>
+    <script>
+	   function calcCtrl($scope){
+	   		$scope.pre=0;
+	   		$scope.next=0;
+//	   		$scope.result=parseFloat($scope.pre)+parseFloat($scope.next);
+	   }
+    </script>
+	</body>
+</html>

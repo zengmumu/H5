@@ -1,0 +1,6 @@
+<div ng-controller="bookCtrl">
+	<h1>列表内容</h1>
+	<ul>
+		<li ng-repeat="item in bookData"><a href="#/view/{{item.id}}">{{item.title}}</a></li>
+	</ul>
+</div>

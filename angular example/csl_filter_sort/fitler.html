@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>数据过滤 模糊搜索</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<!--<link rel="stylesheet" href="css/animate.min.css" />-->
+		<link rel="stylesheet" href="css/ng-animation.css" />
+		<style>
+			body {
+				font-family: "微软雅黑";
+				background-color: #f0f0f0;
+			}
+			
+			.container {
+				width: 1200px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			
+			.no-padding {
+				padding: 0;
+			}
+			
+			.no-margin {
+				margin: 0;
+			}
+			
+			div {
+				font-size: 14px;
+			}
+			
+			.citylist>div {
+				border: 1px solid #ccc;
+				margin-left: -1px;
+				margin-bottom: -1px;
+				padding-top: 15px;
+				padding-bottom: 15px;
+				cursor: pointer;
+			}
+			
+			.citylist>div.active {
+				background-color: #fff;
+				color: green;
+			}
+			.glyphicon-ok,.suc{ color:lawngreen;}
+			.glyphicon-remove,.dan{ color: palevioletred;}
+			input.ng-valid.ng-dirty{ border-color: lightgreen;}
+			input.ng-invalid.ng-dirty{ border-color:lightpink;}
+			.row-select{ margin-top: 25px; margin-bottom: 25px;}
+		</style>
+	</head>
+
+	<body ng-controller="mainCtrl">
+		<div class="container">
+			<div class="row">
+				<form action="" class="form form-inline">
+					<div class="form-group">
+						<lable>全局搜索</lable>
+						<input type="text" class="form-control" ng-bind="searchInfo.$" />
+					</div>
+				</form>
+			</div>
+			<div class="row"><h1 class="text-center">2016年中超联赛积分榜</h1></div>
+		<div class="row row-select">
+		<form action="" class="form-inline">
+		<div class="form-group">
+			<label for="">全局搜索</label>
+			<input type="text" class="form-control" ng-model="teamInfo.$" />
+		</div>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		<div class="form-group">
+			<label for="">比赛场地</label>
+			<input type="text" class="form-control" ng-model="teamInfo.Situation" />
+		</div>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		<div class="form-group">
+			<label for="">比赛轮次</label>
+		<select name="" id="" class="form-control"
+		ng-options="v for v in uniqueRound"
+		ng-model="teamInfo.Round"
+		ng-change="resetFilter(teamInfo.Round)">
+			
+		</select>
+		</div>
+		&nbsp;&nbsp;&nbsp;&nbsp;
+		<div class="form-group">
+			<label for="">比赛时间</label>
+		<select name="" id="" class="form-control"
+		ng-options="v for v in uniqueDate"
+		ng-model="teamInfo.date"
+		ng-change="resetFilter(teamInfo.date)">
+		<option value="">请选择比赛日期</option>
+	
+		</select>
+		</div>
+		</form>
+		</div>
+		<div class="row">
+			
+			<table class="table table-bordered table-hover tab-strip">
+				<tr> <th>场次</th> <th>轮次</th> <th>主场</th> <th>客场</th> <th>城市</th> <th>球场</th> <th>日期</th> </tr>
+ <tr ng-repeat="v in match2015Data | filter: teamInfo" align="center">
+          <td ng-bind="$index + 1"></td>
+          <td ng-bind="v.Round"></td>
+          <td ng-bind="v.Team1"></td>
+          <td ng-bind="v.Team2"></td>
+          <td ng-bind="v.MatchCity"></td>
+          <td ng-bind="v.Situation"></td>
+          <td ng-bind="v.date"></td>
+        </tr>
+
+			</table>
+		</div>
+		</div>
+		<script src="js/jquery-1.8.3.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+
+		<script src="js/angular.min.js"></script>
+		<script src="js/csl-data.js"></script>
+		<script>
+			angular.module("myapp", [])
+				.controller("mainCtrl", function($scope) {
+	  $scope.match2015Data = match2015Data;
+      $scope.teamInfo = {};
+      $scope.resetFilter=function(v){
+      	console.log($scope.teamInfo);
+      	if(!v) $scope.teamInfo={};
+      }
+      function unique(arr,obj){
+      	var n={},r=[];
+      	for(var i=0;i<arr.length;i++){
+      	 var val =arr[i][obj];
+		
+      	if(!n[val]){ n[val]=true; r.push(val); }
+      	}
+      	
+      	return r;
+      }
+		$scope.uniqueRound=unique(match2015Data, 'Round');	
+		$scope.uniqueDate=unique(match2015Data, 'date');	
+		
+		})
+		
+		
+		</script>
+
+	</body>
+
+</html>

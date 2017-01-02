@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app="ydApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<script src="js/angular.min.js"></script>
+		<script src="js/angular-route.js"></script>
+	</head>
+	<body ng-controller="ydCtrl">
+		<div class="container">
+			<h1 ng-click="loadStr()">加载内容</h1>
+			<div class="content">
+				<img src="img/gallery-loading.gif" alt="" ng-show="isload" />
+				<div ng-show="!isload">{{data|json}}</div>
+			</div>
+		</div>
+		
+		<script>
+			angular.module("ydApp",[])
+			.controller("ydCtrl",["$scope","$http","$templateCache",function($scope,$http,$templateCache){
+				$scope.data=null;
+				
+				$scope.isload=false;
+				// 单击 h1 要去加载内容
+				$scope.loadStr=function(){
+					$scope.isload=true;
+					// 要加载的地址
+					var url="js/csl-data.json";
+					// 把地址放在angular 缓存列表里面
+					$templateCache.put(url);
+					// 执行加载 返回过来的是then 方法 第一个function 是 success
+					loadTemp(url).then(function(res){
+						// res 加载过来的的data 内容
+						$scope.data=res;
+						$scope.isload=false;
+						console.log(res);
+					})
+					
+				}
+				
+				function loadTemp(url){
+					// 		返回从 缓存里面获取数据  或者 从 
+					return $templateCache.get(url) || loadfromURL(url);
+				}
+				
+				function loadfromURL(url){
+					// 返回http 加载内容 默认开启缓存
+					return $http.get(url,{cache: true })                           
+					.then(function(res){
+						return res;
+						///当加载成功后返回 res 数据
+					})
+				}
+				
+			}])
+			
+		</script>
+	</body>
+</html>

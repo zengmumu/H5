@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html ng-app>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="script/angular.min.js"></script>
+	</head>
+	<body>
+		<!--ng-model双向绑定-->
+		<p><input type="text" ng-model='show' ng-init="show='forever'"/></p><!--ng-init初始化:可以设置默认值-->
+		<h2 ng-bind="show">{{show}}</h2>
+		
+		<!--<p><input type="text" ng-model='show' ng-init="show='haha'"/></p>
+		<h3 ng-bind="show">{{show}}</h3>-->
+	</body>
+</html>

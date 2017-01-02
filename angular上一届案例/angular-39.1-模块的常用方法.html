@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="script/angular.min.js"></script>
+		<script src="script/jquery-2.2.1.min.js"></script>
+		<script src="script/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<style>
+			
+		</style>
+	</head>
+	<body ng-controller="mainCtrl">	
+		<div ng-controller="son1">
+			<input type="text" ng-model="base" ng-change="changeBase(base)"/><br />
+			{{base*1+5}}
+			<p>{{mybase}}</p>
+		</div>
+		<div ng-controller="son2">
+			{{base*1+6}}
+		</div>
+	
+		
+		<script>
+			angular.module("myapp",[])
+			.provider("po1",function(){//数据的提供者
+				this.$get=function(){
+					console.log("provider被执行了")
+					return {"base":15}
+				}
+				
+			})
+			.factory("fa1",function(){
+				console.log("factory被执行了")
+				return {"mybase":88};
+			})
+			.controller("mainCtrl",function($scope){
+				
+			})
+			.config(function(){
+				console.log("config被执行了")
+			})
+			.run(function(){
+				console.log("run被执行了")
+			})
+			.controller("son1",function($scope,po1,fa1){
+				console.log("controller 被执行了")
+				$scope.base=po1.base;
+				$scope.mybase=fa1.mybase;
+			})
+			.controller("son2",function($scope,po1){
+				$scope.base=po1.base;
+			})
+		</script>		
+	</body>
+</html>

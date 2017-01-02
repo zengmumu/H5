@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html ng-app="movieApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<!--<link rel="stylesheet" href="css/animate.min.css" />-->
+		<link rel="stylesheet" href="css/ng-animation.css" />
+		<style>
+			body{ font-family: "微软雅黑"; background-color:#f0f0f0;}
+			.container{ width: 1200px; margin-left: auto; margin-right:auto;}
+			.no-padding{ padding: 0;}
+			.no-margin{margin: 0;}
+			.img-thumbnail{ width: 40%;}
+			.title{ font-size: 36px; color: dodgerblue;}
+			.header{ margin: 40px 0;}
+			.mlist{ box-shadow: 0 1px 4px #ccc; cursor: pointer;background-color:#fafafa; padding: 10px;}
+			.mlist:hover{ background-color:#fff;}
+			.mlist ul{ padding-left: 10px; font-size: 16px; width: 60%;}
+			.m-title{ font-size: 22px; margin-bottom: 15px; width: 100%; white-space: nowrap; text-overflow:ellipsis ; overflow: hidden;}
+			.movieIndex{ position: absolute; right: 10px;bottom: 10px; color: #ccc;}
+/*.ng-enter{ transition:all 1s ease; transform: scale(1.3,1.3); opacity: 0;}
+.ng-enter.ng-enter-active{ transform: scale(1,1); opacity: 1;}
+.ng-leave{transition: 0.1s  all; opacity: 1; }
+.ng-leave.ng-leave-active{
+opacity: 0;
+}
+
+.ng-enter-stagger,.ng-leave-stagger{
+	 transition-delay: 0.1s;
+	 transition-duration: 0;
+}*/
+/*.ng-enter{ animation:zoomIn 1s both ease-in;}
+.ng-leave{ animation:fadeOut 0.5 both ease-in;}
+.ng-move{ animation:zoomIn 0.5 both ease;}*/
+		</style>
+	</head>
+	<body ng-controller="movieCtrl">
+		<div class="container" >
+			<div class="row header">
+			<div class="col-md-4 col-xs-2 no-padding">
+				<form action="" class="form-inline">
+					<div class="form-group">
+						<div class="input-group">
+							<div class="input-group-addon">
+								<span class="glyphicon glyphicon-film"></span>
+							</div>
+							<input type="text" class="form-control" ng-model="movieKeyword"/>
+							<div class="input-group-addon">
+								<span class="glyphicon glyphicon-search"></span>
+							</div>
+						</div>
+						<div class="input-group">
+							<select name="" id="" class="form-control">
+								 <option value="">类别</option>
+							</select>
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="col-md-4 col-xs-2">
+				<h1 class="text-center title no-margin">电影票房榜</h1>
+			</div>
+			<div class="col-md-4 col-xs-2 text-right no-padding">
+				<form action="" class="form-inline">
+					<div class="form-group">
+						<div class="input-group">
+							<div class="input-group-addon">
+								<span class="glyphicon glyphicon-sort-by-attributes"></span>
+							</div>
+							<select name="" id="" class="form-control">
+								 <option value="">选择票房</option>
+							</select>
+							<div class="input-group-addon">
+								<span class="glyphicon glyphicon-search"></span>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<!--movie-->
+		<div class="row">
+			<div class="col-md-4 col-xs-2 img-rounded mlist repeater spin-toggle" ng-repeat="movie in movies|filter:{MovieName:movieKeyword}">
+				<img src="http://www.cbooo.cn/{{movie.MovieImg}}" alt="" class="img-thumbnail pull-left"
+data-placement="right"
+data-content="电影名称:{{movie.MovieName}}"
+data-toggle="modal"
+data-target="#currentModal"
+onmouseover="$(this).popover('show')"
+onmouseout="$(this).popover('hide')"
+ng-click="getCurrentMovie(movie)"
+
+  />
+				<ul class="pull-left list-unstyled">
+					<li class="m-title">{{movie.MovieName}}</li>
+					<li class="">平均票价：￥{{movie.AvgPrice}}</li>
+					<li class="">场均人次：{{movie.AvpPeoPle}}人</li>
+					<li class="">单日票房：{{movie.BoxOffice|number:0}}万</li>
+					<li class="">总票房   ：{{movie.SumBoxOffice|number:0}}万 </li>
+				</ul>
+				<span class="movieIndex">{{$index+1}}</span>
+				
+			</div>
+		</div>
+		</div>
+		
+<!--modal-->
+<div id="currentModal" class="modal fade text-center" role="dialog" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button class="close" data-dismiss="modal"><span>&times;</span></button>
+				<h4 class="modal-title">
+					{{currentMoive.MovieName}}
+				</h4>
+			</div>
+			<div class="modal-body">
+				<img ng-src="http://www.cbooo.cn/{{currentMoive.MovieImg}}" alt="" class="img-rounded" />
+			</div>
+		</div>
+	</div>
+	
+</div>
+			<script src="js/jquery-1.8.3.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+	
+		<script src="js/angular.min.js"></script>
+		<script src="js/angular-animate.min.js"></script>
+		<script>
+		var app=angular.module("movieApp",['ngAnimate'])
+.controller("movieCtrl",function($scope,$http){
+	
+  $http.get("js/day.json")
+ .success(function(res){ 	
+ 	$scope.movies=res.data1;
+ });//success
+$scope.getCurrentMovie=function(movie){
+
+      $scope.currentMoive = movie;
+//    console.log( $scope.currentMoive);
+     
+}
+})//controller ed
+		</script>
+	</body>
+</html>

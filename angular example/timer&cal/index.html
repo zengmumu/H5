@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<!--<link rel="stylesheet" href="css/animate.min.css" />-->
+		<link rel="stylesheet" href="css/ng-animation.css" />
+		<style>
+			body {
+				font-family: "微软雅黑";
+				background-color: #f0f0f0;
+			}
+			
+			.container {
+				width: 1200px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			
+			.no-padding {
+				padding: 0;
+			}
+			
+			.no-margin {
+				margin: 0;
+			}
+			div{ font-size: 24px;}
+		
+			
+		</style>
+	</head>
+
+	<body ng-controller="mainCtrl">
+	
+	<div class="ng-cloak">当前的时间为:{{clock.now|date:'yyyy/MM/dd HH:mm:ss'}}</div>
+		<script src="js/jquery-1.8.3.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+
+		<script src="js/angular.min.js"></script>
+		<script>
+		angular.module("myapp",[])
+		.controller("mainCtrl",function($scope){
+			$scope.clock={now:new Date()};
+			var update=function(){
+				$scope.clock.now=new Date();
+			}
+			setInterval(function(){
+				$scope.$apply(update);
+//			update();
+			},1000)
+			//　$apply()方法可以在angular框架之外执行angular JS的表达式，例如：DOM事件、setTimeout、XHR或其他第三方的库。这仅仅是个开始，水还有很深，欢迎大家一起来deep dive！
+		})
+		
+		</script>
+
+	</body>
+
+</html>

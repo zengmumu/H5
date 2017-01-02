@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<script type="text/javascript" src="js/angular.min.js"></script>
+		<script src="js/myTip.js"></script>
+		<style>
+			.son{ border: 1px solid green; padding: 50px;}
+		</style>
+	</head>
+	<body>
+		<div ng-controller="mainCtrl">	
+			<my-tip></my-tip>
+		
+			<h2 ng-click="myTip.tip('myother','success')">tip2</h2>
+		<my-start rating="rating"></my-start>
+		</div>
+		<script>
+			angular.module("myApp",["myTip"])
+			 
+			.controller("mainCtrl",["$scope","myTip",function($scope,myTip){
+				$scope.myTip=myTip;
+				$scope.myTip.tip("hello","danger");
+				$scope.rating=4;
+			}])
+			.directive("myStart",function(){
+				return {
+					restrict:"ECMA",
+					template:'<span><i ng-click="setRating($index)" ng-mouseout="resetRating()" ng-mouseover="setTempRating($index)" ng-repeat="item in ratingData" class="glyphicon" ng-class="{\'glyphicon-star\':item.start,\'glyphicon-star-empty\':!item.start}"></i></span>',
+					scope:{
+						rating:"="
+					},
+					link:function(scope,elem,attr){
+						scope.ratingData=[];
+						for(var i=0;i<5;i++){
+							var obj={};
+							if(i<scope.rating){
+								obj.start=true;
+								
+							}else{
+								obj.start=false;
+							}
+							scope.ratingData.push(obj);
+						}
+						scope.setTempRating=function(index){
+							for(var i=0;i<5;i++){							
+								if(i<=index){
+									scope.ratingData[i].start=true;				
+								}else{
+									scope.ratingData[i].start=false;
+								}
+							
+							}
+						
+						}
+						scope.resetRating=function(){
+							for(var i=0;i<5;i++){							
+								if(i<scope.rating){
+									scope.ratingData[i].start=true;				
+								}else{
+									scope.ratingData[i].start=false;
+								}
+							
+							}
+						}
+						scope.setRating=function(index){
+							for(var i=0;i<5;i++){	
+								scope.rating=index+1;
+								if(i<scope.rating){
+									scope.ratingData[i].start=true;				
+								}else{
+									scope.ratingData[i].start=false;
+								}
+							
+							}
+							
+						}
+					}
+				}
+			})
+			
+		
+		</script>	
+	</body>
+</html>

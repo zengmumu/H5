@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<script type="text/javascript" src="js/angular.min.js">
+		
+			
+		</script>
+		<style>
+			.son{ border: 1px solid green; padding: 50px;}
+		</style>
+	</head>
+	<body>
+		<div ng-controller="mainCtrl">	
+			
+		
+		<alert-bar class="alert_bar" msg="tipservice.msg" type="tipservice.type"></alert-bar>
+		</div>
+		<script>
+			angular.module("myApp",[])
+			 
+			.controller("mainCtrl",["$scope","TipService",function($scope,TipService){
+				TipService.setMsg("Hello","success");
+				$scope.tipservice=TipService;
+			
+				
+			}])
+			.directive("alertBar",function(){
+				return {
+					restrict:"EA",
+					template:
+						'<div class="alert alert-{{type || \'info\'}}" ng-show="msg">'+
+						    '<button type="button" class="close"  ng-click="hideAlert()">'+
+						        '<span class="glyphicon glyphicon-remove"></span>'+
+						    '</button>'+
+	    				'{{msg}}'+
+						'</div>',
+					scope:{
+						msg:"=",
+						type:"="
+					},
+					link:function(scope,elem,attr){
+						scope.hideAlert=function(){
+							scope.msg=null;
+							scope.type=null;
+						}
+					}
+				}
+			})
+			.factory("TipService",function(){
+				return{
+					msg: null,
+					type: null,
+					setMsg:function(msg,type){
+						this.msg=msg;
+						this.type=type;
+						console.log(this.msg);
+					},
+					clear:function(){
+						this.msg=null;
+						this.type=null;
+					}
+					
+				}
+			})
+		
+		</script>	
+	</body>
+</html>

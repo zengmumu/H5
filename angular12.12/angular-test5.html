@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		
+		<script src="js/angular.min.js"></script>
+	
+		<!---->
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<style>
+			@-webkit-keyframes slideOut {
+				from { opacity: 1;  -webkit-transform: translateX(0);}				
+				to{opacity: 1; -webkit-transform: translateX(150%) -webkit-rotate(35deg);}
+			}
+			@keyframes slideOut {
+				from { opacity: 1;  transform: translateX(0);}				
+				to{opacity: 1;      transform: translateX(150%) rotate(35deg);}
+			}
+			
+			
+			@-webkit-keyframes slideIn {
+				from { opacity: 0;  -webkit-transform: translateX(-300%);}
+				
+				to{opacity: 1; -webkit-transform: translateX(0);}
+			}
+			@keyframes slideIn {
+				from { opacity: 0;  transform: translateX(-300%);}
+				
+				to{opacity: 1; transform: translateX(0);}
+			}
+			
+			.list-group-item{ position: relative;}
+			.list-group-item.ng-leave{-webkit-animation: slideOut 1s ease;animation: slideOut 1s ease;}
+			.list-group-item.ng-enter{-webkit-animation: slideIn 1s ease;animation: slideIn 1s ease;}
+			
+			.list-group-item.ng-enter-stagger,.list-group-item.ng-leave-stagger{
+				-webkit-animation-delay: 0.1s;
+				animation-delay: 0.1s;
+				
+			}
+			/*.ng-leave-active .ng-enter-active*/
+		</style>
+	</head>
+	<body ng-controller="mainCtrl">
+		
+		<div class="container">
+			<h1>model</h1>
+			
+			
+		</div>
+		<script>
+			angular.module("myApp",[""])
+			.controller("mainCtrl",["$scope",function($scope){
+//				$scope.hideModel=function(){
+//					ngModel.close($scope.model);
+//				}
+//				$scope.model=ngModel.publicMethods.open("tpls/model.html",{scope:$scope});
+			}])
+		</script>
+	</body>
+</html>

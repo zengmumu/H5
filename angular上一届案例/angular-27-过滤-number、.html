@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="script/angular.min.js"></script>
+		<script src="script/jquery-2.2.1.min.js"></script>
+		<script src="script/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		
+	</head>
+	<body>	
+	
+	<div class="container" ng-controller="myCtrl">
+			<div class="row">
+				<p>{{123456789|number}}</p>
+				<p>{{123456789|number:3}}</p>
+				<p>{{123456789|currency}}</p>
+				<p>{{123456789|currency:'rmb'}}</p>
+				<p>default:{{today}}</p>
+				<p>medium:{{today|date:'medium'}}</p>
+				<p>short:{{today|date:'short'}}</p>
+				<p>fullDate:{{today|date:'fullDate'}}</p>
+				<p>fullDate:{{today|date:'fullDate'}}</p>
+				<p>mediumDate:{{today|date:'mediumDate'}}</p>
+				<p>shortDate:{{today|date:'shortDate'}}</p>
+				
+
+
+
+       
+        <p>
+            mediumTime:{{ today | date:'mediumTime'}}
+        </p>
+
+        <p>
+            shortTime:{{ today | date:'shortTime'}}
+        </p>
+
+        <p>
+            year:
+            {{today | date : 'y'}}
+            {{today | date : 'yy'}}
+            {{today | date : 'yyyy'}}
+        </p>
+        <p>
+            month:
+            {{today | date : 'M'}}
+            {{today | date : 'MM'}}
+            {{today | date : 'MMM'}}
+            {{today | date : 'MMMM'}}
+        </p>
+        <p>
+            day:
+            {{today | date : 'd'}}
+            Day in month {{today | date : 'dd'}}
+            Day in week {{today | date : 'EEEE'}}
+            {{today | date : 'EEE'}}
+        </p>
+
+        <p>
+            hour:
+            {{today | date : 'HH'}}
+            {{today | date : 'H'}}
+            {{today | date : 'hh'}}
+            {{today | date : 'h'}}
+        </p>
+
+        <p>
+            minute:
+            {{today | date : 'mm'}}
+            {{today | date : 'm'}}
+        </p>
+
+        <p>
+            second:
+            {{today | date : 'ss'}}
+            {{today | date : 's'}}
+            {{today | date : '.sss'}}
+        </p>
+
+        <p>
+            {{today | date : 'y-MM-d H:m:s'}}
+        </p>
+				<p>{{today|date:'y-MM-d H:m:s'}}</p>
+			</div>
+		</div>
+	<script>
+		var app=angular.module("myapp",[])
+				.controller("myCtrl",["$scope",function($scope){
+					$scope.today=new Date();
+
+				}])
+	</script>		
+	</body>
+</html>

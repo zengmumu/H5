@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<!--<link rel="stylesheet" href="css/animate.min.css" />-->
+		<link rel="stylesheet" href="css/ng-animation.css" />
+		<style>.
+			body {
+				font-family: "微软雅黑";
+				background-color: #f0f0f0;
+			}
+			
+			.container {
+				width: 1200px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			
+			.no-padding {
+				padding: 0;
+			}
+			
+			.no-margin {
+				margin: 0;
+			}
+			
+			div {
+				font-size: 14px;
+			}
+			
+			.citylist>div {
+				border: 1px solid #ccc;
+				margin-left: -1px;
+				margin-bottom: -1px;
+				padding-top: 15px;
+				padding-bottom: 15px;
+				cursor: pointer;
+			}
+			
+			.citylist>div.active {
+				background-color: #fff;
+				color: green;
+			}
+			.glyphicon-ok,.suc{ color:lawngreen;}
+			.glyphicon-remove,.dan{ color: palevioletred;}
+			input.ng-valid.ng-dirty{ border-color: lightgreen;}
+			input.ng-invalid.ng-dirty{ border-color:lightpink;}
+		</style>
+	</head>
+
+	<body ng-controller="mainCtrl">
+		<div class="container">
+		<div class="row">
+			<form action="" class="form-inline">
+				<div class="form-group">
+					<label >请选择省</label>
+					<select name="" id="" class="form-control"
+					 ng-options="v.province for v in chinaCities"
+					 ng-model="curProvince"
+					 ng-change="setPro(curProvince)">
+						<option value="">请选择</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label >选择市</label>
+					<select name="" id="" class="form-control"
+					ng-options="v.city for v in curProvince.cities"
+					ng-model="curCity">
+						<option value="">请选择</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label >选择区</label>
+					<select name="" id="" class="form-control"
+					ng-options="v for v in curCity.areas"
+					ng-model="curArea">
+						<option value="">请选择</option>
+					</select>
+				</div>
+			</form>
+		</div>
+		</div>
+		<script src="js/jquery-1.8.3.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+
+		<script src="js/angular.min.js"></script>
+		
+		<script>
+			angular.module("myapp", [])
+				.controller("mainCtrl", function($scope) {
+				$scope.chinaCities = [
+    { py: 'sh', province: '上海', cities: [{city:'上海',areas:['浦东新区','黄浦区','青浦区','卢湾区','闸北区','静安区']}] },
+    { py: 'bj', province: '北京', cities: [{city:'北京',areas:['东城区','西城区','崇文区','宣武区','朝阳区']}] },
+    { py: 'hb', province: '湖北', cities: [{city:'武汉',areas:['江岸区','江汉区','硚口区','武昌区','洪山区']},{city:'襄阳',areas:['襄城区','樊城区','襄州区','枣阳市','南漳县','保康县','老河口市']}] }
+  ];
+  //设置默认
+  $scope.curProvince=$scope.chinaCities[0];
+  $scope.curCity=$scope.curProvince.cities[0];
+  $scope.curArea=$scope.curCity.areas[0];
+  $scope.setPro=function(province){
+  	$scope.curCity=province.cities[0];
+  $scope.curArea=$scope.curCity.areas[0];
+  }
+				})
+		</script>
+
+	</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<script type="text/javascript" src="js/angular.min.js">
+			
+		</script>
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<div ng-controller="mainCtrl" class="container">
+			<div class="row">
+				<div class="col-md-3">
+					省：
+					<select
+						class="form-control"l
+						name="" id="" 
+						ng-model="currentProvince"
+						ng-options="item.name  for item in address"
+						ng-change="setCurrentProvince(currentProvince)"
+						>
+					</select>
+				</div>
+				<div class="col-md-3">
+					市：
+					<select
+						class="form-control"
+						name="" id="" 
+						ng-model="currentCity"
+						ng-options="item.name  for item in currentProvince.city"
+						ng-change="setCurrentCity(currentCity)"
+						>
+					</select>
+				</div>
+				<div class="col-md-3">
+					区/县：
+					<select
+						class="form-control"
+						name="" id="" 
+						ng-model="area"
+						ng-options="item  for item in currentCity.area"
+						
+						>
+					</select>
+				</div>
+			</div>
+			{{currentProvince.name}}{{currentCity.name}}{{area}}
+		</div>
+		
+		<script >
+			angular.module("myApp",[])
+			.controller("mainCtrl",["$scope","$http",function($scope,$http){
+				$http.get("js/data.json")
+				// 通过ajax get方法获取收据
+				.success(function(res){
+				// res 成功后拿到数据	
+					$scope.address=res;
+					// 把数据挂再scope 可以双向绑定
+					$scope.currentProvince=$scope.address[0];
+					// 设定默认省
+					$scope.currentCity=$scope.currentProvince.city[0];	
+					// 设定默认市
+					$scope.area=$scope.currentCity.area[0];
+					// 设定默认区
+				})
+				$scope.setCurrentProvince=function(p){
+					// 当省发生改变时
+//					
+				    $scope.currentCity=$scope.currentProvince.city[0];
+				    // 设定默认市
+				    $scope.area=$scope.currentCity.area[0];
+				    // 设定默认区
+					
+					
+				}
+				$scope.setCurrentCity=function(c){
+					
+					$scope.area=$scope.currentCity.area[0];
+					 // 设定默认区
+					
+					
+				}
+			}])
+		</script>	
+	</body>
+</html>

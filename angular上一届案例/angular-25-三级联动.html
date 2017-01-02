@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="script/angular.min.js"></script>
+		<script src="script/jquery-2.2.1.min.js"></script>
+		<script src="script/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		
+	</head>
+	<body>
+	<div class="container" ng-controller="myCtrl">
+		<div class="row">
+			<form action="" class="form form-inline">
+				<div class="form-group">
+					<label>选择省</label>
+					<select name="" id=""  class="form-control" ng-model="currentP" ng-options="p.province for p in chinaCities" ng-change="setCurrentP(currentP)">
+						<option value="">--请选择--</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label>选择市</label>
+					<select class="form-control" ng-model="currentC" ng-options="c.city for c in currentP.cities" ng-change="setCurrentC(currentC)">
+						<option value="">--请选择--</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label>选择县</label>
+					<select class="form-control" ng-model="currentA" ng-options="a for a in currentC.areas">
+						<option value="">--请选择--</option>
+					</select>
+				</div>
+				<div>{{currentP|json}}</div>
+				<div>{{currentC|json}}</div>
+				<div>{{currentA}}</div>
+			</form>
+			
+			
+			
+			
+			
+		</div>
+	</div>
+
+
+	<script>
+		var app=angular.module("myapp",[])
+				.controller("myCtrl",["$scope",function($scope) {
+					$scope.chinaCities = [
+						{
+							py: 'sh',
+							province: '上海',
+							cities: [{city: '上海', areas: ['浦东新区', '黄浦区', '青浦区', '卢湾区', '闸北区', '静安区']}]
+						},
+						{py: 'bj', province: '北京', cities: [{city: '北京', areas: ['东城区', '西城区', '崇文区', '宣武区', '朝阳区']}]},
+						{
+							py: 'hb',
+							province: '湖北',
+							cities: [{city: '武汉', areas: ['江岸区', '江汉区', '硚口区', '武昌区', '洪山区']}, {
+								city: '襄阳',
+								areas: ['襄城区', '樊城区', '襄州区', '枣阳市', '南漳县', '保康县', '老河口市']
+							}]
+
+
+						}];
+					$scope.currentP=$scope.chinaCities[0];
+					$scope.currentC=$scope.currentP.cities[0];
+					$scope.currentA=$scope.currentC.areas[0];
+					$scope.setCurrentP=function(p){
+						$scope.currentP=p;
+						$scope.currentC=$scope.currentP.cities[0];
+						$scope.currentA=$scope.currentC.areas[0];
+					}
+					$scope.setCurrentC=function(c){
+						$scope.currentC=c;
+						$scope.currentA=$scope.currentC.areas[0];
+					}
+					
+					
+					
+
+
+				}])
+	</script>
+	</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html >
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/angular.min.js"></script>
+	</head>
+	<body>
+		<div ng-app ng-init="name='Hello World!'">
+			<h1>{{name}}</h1>
+			<div ng-init="price=5;num=3">
+				<p>{{price*num}}</p>
+			</div>
+			<div ng-init="arr=['angular','react','Vue','backbone']">
+					<h2>{{arr[1]}}</h2>
+			</div>
+		</div>
+	</body>
+</html>

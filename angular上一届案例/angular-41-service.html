@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<script src="script/angular.min.js"></script>
+		<script src="script/jquery-2.2.1.min.js"></script>
+		<script src="script/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+	</head>
+	<body ng-controller="mainCtrl">
+		<h1>factory  service 区别</h1>	
+	<script>
+		angular.module("myapp",[])
+		
+		.provider("po1",function(){//数据的提供者
+				this.$get=function(){
+					console.log("provider 被执行了")
+						return {"base":15}
+				}
+			
+		})
+		.factory("fa1",function(){
+			//return  {"val":88};
+			//  return  [1,3,5,7];
+			return  "我爱我的祖国";
+		})
+		.service("se1",function(){
+//			return {"val":"I love China"}
+			//return "you bibi  u do u can";
+			this.getName=function(){return "你不会";}
+			this.getAge=function(){return  "懂"};
+			
+		}) 
+		.constant('APP_KEY', 'a1s2d3f4')
+		.value("version","1.14")
+		.controller("mainCtrl",function($scope,fa1,se1,APP_KEY,version){
+			
+			console.log(fa1);//我爱我的祖国
+			console.log(se1);
+			console.log(se1.getName());
+			console.log(se1.getAge());
+			console.log(APP_KEY);//a1s2d3f4
+			console.log(version);//1.14
+		})
+		
+		
+	</script>
+	</body>
+	
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<script type="text/javascript" src="js/angular.min.js">
+			
+		</script>
+		<style>
+		.f18{ font-size: 18px;}
+		.success{ background-color:limegreen;color:#fff;}
+		.danger{ background-color:orangered;color:#fff;}	
+		</style>
+	</head>
+	<body>
+		<div ng-controller="mainCtrl" class="container">
+		
+		<p class="f18 {{myclass}}">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident voluptas aperiam distinctio odio tempora mollitia illo laudantium deserunt dolore animi sit velit quidem quae voluptatibus nobis recusandae eligendi autem reprehenderit!</p>
+		<p class="f18" ng-class="myclass2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium voluptatibus expedita omnis aliquid sed eum quasi pariatur corrupti iste inventore labore ea facilis excepturi magnam nostrum dolore quos sint facere.</p>		
+		<p
+			ng-class="{'text-success':flag,'f18':flag2}"
+			>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae sint ut suscipit quasi officiis ipsam neque pariatur laborum omnis laudantium dicta voluptatem fugiat error necessitatibus eveniet voluptatibus libero inventore nulla.</p>	
+			<button ng-click="flag=!flag">切换颜色</button>
+			<button ng-click="flag2=!flag2">切换大小</button>
+	<h4>数组判断</h4>
+	<div class="box" 
+		ng-class="{true:'success',false:'danger'}[flag]" ng-click="flag=!flag" >this is line</div>
+		</div>
+		
+		<script >
+			angular.module("myApp",[])
+			.controller("mainCtrl",["$scope",function($scope){
+				$scope.myclass="text-success";
+				$scope.myclass2="text-primary ";
+				$scope.flag=false;
+				$scope.flag2=true;
+			}])
+		</script>	
+	</body>
+</html>

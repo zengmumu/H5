@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/angular.min.js">			
+		</script>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<style>
+		
+		</style>
+	</head>
+	<body>
+		<div ng-controller="mainCtrl" class="container">
+			<h1>中超联赛2016</h1>
+			<div class="col-md-3">
+				全局模糊查询
+				<input type="text" class="form-control" ng-model="search.$" />
+			</div>
+			<div class="col-md-3">
+				轮次
+				<!--search 开头对象都是要 去做过滤的-->
+				<select name="" id="" class="form-control" ng-model="search.Round" ng-options="v.value as v.name for v in uniqueRound">
+					
+					
+				</select>
+			</div>
+			<div class="col-md-3">
+				日期
+				<select name="" id="" class="form-control" ng-model="search.date" ng-options="v.value as v.name for v in uniqueDate">
+					
+					
+				</select>
+			</div>
+			<table class="table table-border table-striped table-hover">
+				<tr>
+					<td ng-repeat="(k,v) in cls_header">
+						{{v}}
+					</td>
+				</tr>
+				<!-- item in cls _data 循环行-->
+				<tr ng-repeat="item in cls_data ">
+					<!-- (k,v) in cls_header 循环列-->
+					<td ng-repeat="(k,v) in cls_header">
+						{{item[k]}}
+					</td>
+				</tr>
+				
+			</table>
+			<ul class=" pagination">
+				<li ng-repeat="item in pageArray track by $index" ng-click="setPageArray(item)"  ng-class="{'active':item==currentPage}" ><a href="">{{item+1}}</a></li>
+				
+			</ul>
+			
+			
+		</div>
+		
+		<script>
+			angular.module("myApp",[])
+			 
+			.controller("mainCtrl",["$scope","$http",function($scope,$http){
+			
+			$scope.cls_header={Round:"轮次",Team1:"主场",Team2:"客场",MatchCity:"城市",Situation:"球场",date:"日期",status_cn:"状态"}
+			// header 头部
+			$scope.pageArray=[];
+			$scope.currentPage=0;
+			$http.get("js/csl-data.json")//获取数据
+			.success(function(res){
+				$scope.cls_data=res;
+				//中超所有数据利于 双向绑定			
+				$scope.listAll=$scope.cls_data.length;
+				//总长度				
+				$scope.pageNum=5;
+				$scope.pageLen=Math.ceil($scope.listAll/$scope.pageNum);
+				
+				
+				$scope.halfPageShow=3;//显示条码的一长度
+				$scope.setPageArray($scope.currentPage);
+			})
+			$scope.setPageArray=function(current){
+				$scope.currentPage=current;
+				$scope.pageArray=[];
+				if(current<$scope.halfPageShow){
+					for(var i=0;i<7;i++){
+						$scope.pageArray.push(i);
+					}
+				}else if(current>=$scope.pageLen-$scope.halfPageShow){
+					  for(var i=$scope.pageLen-$scope.halfPageShow-3;i<$scope.pageLen;i++){
+					  	$scope.pageArray.push(i);
+					  }
+					
+				}else{
+						      
+					for(var i=current-3;i<=current+3;i++){
+						$scope.pageArray.push(i);
+					}
+				}
+				// 如果没有第一页 unshif 第一页 
+				// 如果没有最后一页 push 最后一页
+				if($scope.pageArray.indexOf(0)==-1){
+					$scope.pageArray.unshift(0);
+				}
+				if($scope.pageArray.indexOf($scope.pageLen-1)==-1){
+					$scope.pageArray.push($scope.pageLen-1);
+				}
+				
+				
+			}
+			
+		
+			
+				
+			}])
+			
+		</script>	
+	</body>
+</html>

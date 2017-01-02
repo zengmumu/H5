@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/angular.min.js">
+			
+		</script>
+		<style>
+			.son{ border: 1px solid green; padding: 50px;}
+		</style>
+	</head>
+	<body>
+		<div ng-controller="mainCtrl">	
+			<p>rating:{{rating}}</p>
+			<ng-stepper attr1="rating"></ng-stepper>
+		</div>
+		
+		<script>
+			angular.module("myApp",[])
+			 
+			.controller("mainCtrl",["$scope",function($scope){
+				$scope.rating=40;
+				
+			}])
+			.directive("ngStepper",function(){
+				return {
+					"restrict":"ECMA",
+					"template":
+						'<button ng-click="decrement()">-</button>'+
+						'<div>{{value}}</div>'+
+						'<button  ng-click="increment()">+</button>',
+					link:function(scope,elem,attr){
+						
+						scope.increment=function(){
+							scope.value++;
+						}
+						scope.decrement=function(){
+							scope.value--;
+						}
+					},
+					scope:{
+						value:"=attr1"
+					}
+					
+				}
+			})
+		</script>	
+	</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="ydApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<script src="js/angular.min.js"></script>
+		<script src="js/angular-route.js"></script>
+	</head>
+	<body ng-controller="ydCtrl">
+		<div class="container">
+			<ul class="navbar-nav list-unstyled">
+				<li><a href="#/home">首页</a></li>
+				<li><a href="#/search">搜索</a></li>
+				
+			</ul>
+		</div>
+		<div class="container">
+			<div ng-view>
+				
+			</div>
+		</div>
+		<script>
+			angular.module("ydApp",["ngRoute"])
+			.controller("ydCtrl",["$scope","$routeParams",function($scope,$routeParams){
+				
+			}])
+			.config(function($routeProvider){
+				$routeProvider
+				.when("/home",{templateUrl:"tpls/home.html"})
+				.when("/search",{templateUrl:"tpls/search.html"})
+				.when("/stadium/:id",{templateUrl:"tpls/stadium.html"})
+				.otherwise({redirectTo:"/home"})
+				
+			})
+			.controller("stadiumCtrl",["$scope","$routeParams",function($scope,$routeParams){
+				$scope.stadium_id=$routeParams.id;
+			}])
+		</script>
+	</body>
+</html>

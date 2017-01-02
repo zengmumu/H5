@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<!--<link rel="stylesheet" href="css/animate.min.css" />-->
+		<link rel="stylesheet" href="css/ng-animation.css" />
+		<style>
+			body {
+				font-family: "微软雅黑";
+				background-color: #f0f0f0;
+			}
+			
+			.container {
+				width: 1200px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			
+			.no-padding {
+				padding: 0;
+			}
+			
+			.no-margin {
+				margin: 0;
+			}
+			
+			.order-list li {
+				padding: 4px 8px;
+			}
+			
+			.order-list a {
+				height: 40px;
+				width: 40px;
+				line-height: 40px;
+				text-align: center;
+				display: block;
+				padding: 0;
+			}
+			
+			.order-list a:hover,
+			.order-list a.active {
+				background-color: #d9534f;
+				border-color: #d43f3a;
+				color: #fff;
+				font-weight: bold;
+			}
+			
+			.thumbnail img{ height: 85px;}
+			.match-vs .match-area{ background-image:url(images/grass-bg.png); color: #fff; text-shadow: 0 2px 1px #080808; overflow: hidden;}
+			.match-area a{ color: #fff; text-decoration: none; font-size: 16px; display: block; margin: 20px auto;}
+			.match-area a:hover{ text-decoration: underline; text-shadow: none;}
+			.news-link a{ font-size: 14px; display: inline;}
+		</style>
+	</head>
+
+	<body ng-controller="mainCtrl">
+		<div class="container">
+			<div class="row">
+				<h1 class="title text-center success">2016年中超联赛赛程表</h1>
+			</div>
+			<div class="row">
+				<div class="col-xs-1">
+					<button class="btn btn-danger">轮次</button>
+				</div>
+				<ul class="col-xs-11 list-unstyled list-inline order-list">
+					<li ng-repeat="i in getNumber(30) track by $index" ng-click="getMatchList($index+1)" data-toggle="tooltip" data-placement="top" 
+						title="{{'第'+($index+1)+'轮'}}">
+						<a href="" class="btn btn-default" ng-bind="$index+1" ng-class="{'active':curMatchTime==$index+1}"></a>
+					</li>
+				</ul>
+			</div>
+			<div class="row">
+				<div class="col-xs-6 col-md-3 text-center match-vs" ng-repeat="v in matchList">
+					<div class="thumbnail match-area">
+						<div class="row">
+							<span ng-bind="v.date"></span>
+							<span ng-bind="getWeekName(v.date)"></span>
+							<span ng-bind="v.time"></span>
+						</div>
+						<div class="row">
+							<span ng-bind="v.MatchCity + ' ' + v.Situation"></span>
+						</div>
+						<div class="row">
+							<div class="col-xs-5">
+								<img ng-src="{{v.Flag1}}" />
+								<a href="{{v.Url1}}" target="_blank" ng-bind="v.Team1"></a>
+							</div>
+							<div class="col-xs-2">
+								<span ng-bind="v.Score1"></span>
+								<span>VS</span>
+								<span ng-bind="v.Score2"></span>
+							</div>
+							<div class="col-xs-5">
+								<img ng-src="{{v.Flag2}}" />
+								<a href="{{v.Url2}}" target="_blank" ng-bind="v.Team2"></a>
+							</div>
+						</div>
+						<div class="row news-link">
+							<a href="{{v.LiveUrl}}" target="_blank"  ng-if="v.LiveUrl"> 视频直播 </a>&nbsp;&nbsp;&nbsp;
+							<a href="{{v.ImgUrl}}" target="_blank"   ng-if="v.ImgUrl"> 高清图集  </a>
+							
+							
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--math-vs ed-->
+		</div>
+		<script src="js/jquery-1.8.3.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+
+		<script src="js/angular.min.js"></script>
+		<script src="js/angular-animate.min.js"></script>
+		<script>
+			var app=angular.module("myapp",[])
+			.controller("mainCtrl",["$scope","$http",function($scope,$http){
+				$scope.getNumber=function (num){
+					 return new Array(num);
+				}
+		$scope.curMatchTime=1;
+		$scope.getMatchList=function(round){
+			$scope.curMatchTime=round;
+			//$http.get("data.php?round="+round)
+			$http.get("js/round.json")
+			.success(function(data){
+			$scope.matchList=data.result.data;
+			console.log($scope.matchList);		
+		   })//get ed;		
+		}//get MathList ed;
+		$scope.getMatchList(11);	
+		$scope.getWeekName=function (date){
+			date=new Date(date);
+			var day=date.getDay();
+			var week="日一二三四五六".split("");
+			var result="周"+week[day];
+			return result;
+		}
+			
+			}])
+		$(function() { $('[data-toggle="tooltip"]').tooltip(); });
+
+		</script>
+
+	</body>
+
+</html>

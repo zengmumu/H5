@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/angular.min.js">
+			
+		</script>
+		<style>
+			.son{ border: 1px solid green; padding: 50px;}
+		</style>
+	</head>
+	<body>
+		<div ng-controller="mainCtrl">
+			<input type="text" ng-model="myL" />
+			<p>{{myL}}</p>
+			<p>改变了多少次:{{times}}</p>
+			
+		</div>
+		
+		<script>
+			angular.module("myApp",[])
+			.controller("mainCtrl",["$scope","$interval",function($scope,$interval){
+			$scope.myL="lover";
+			$scope.times=0;
+			console.log($scope);
+			$scope.$watch("myL",function(old,news){
+				$scope.times++;
+				console.log(old+"----"+news);
+				
+			})
+				
+				
+			}])
+		</script>	
+	</body>
+</html>

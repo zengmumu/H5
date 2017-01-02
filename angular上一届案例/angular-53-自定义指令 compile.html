@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="script/angular.min.js"></script>
+		<script src="script/jquery-2.2.1.min.js"></script>
+		<script src="script/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/animate.min.css" />
+		<script src="script/angular-animate.min.js"></script>		
+	</head>
+		</head>
+	<body ng-controller="mainCtrl">
+		<div class="container">
+			<my-tag></my-tag>
+			<my-tag></my-tag>
+		</div>
+	</body>
+	<script>
+		angular.module("myapp",[])
+		.controller("mainCtrl",function($scope){
+		
+		})
+		.directive("myTag",function(){
+			return{
+				restrict:"ECMA",
+				template:"<div>我是div</div>",
+				
+				link:function(scope,elem,attrs,ctrl){
+					console.log("link");
+				},
+				controller:function($scope){
+					//alert("我是alert");
+					$scope.data="我是数据"
+					console.log("controller")
+				},
+				compile:function(elem,attrs){
+					console.log("指令编译前");
+					
+				
+					//alert("compile 执行");
+					elem.append("<span>我是在编译前添加的内容</span>");
+/*					return{
+						pre:function(scope,elem,attrs,contrl){
+							console.log("指令开始编译");
+								
+							
+						},
+						post:function(scope,elem,attrs,contrl){
+							
+							console.log("指令开始编译结束");
+						},
+					}//return ed*/
+					return function(scope,elem,attrs,contrl){
+						console.log("我就是link")
+					}
+				}
+				
+			}
+		})
+		
+		
+		
+	</script>
+</html>

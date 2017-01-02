@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="script/angular.min.js"></script>
+	</head>
+	<body>
+		<h1>当前时间</h1>
+		<div ng-controller="timeCtrl">
+			{{data.date|date:"yyyy年MM月dd日 hh:mm:ss"}}
+		</div>
+    <script>
+//	  	function timeCtrl($scope){
+//	  		$scope.data={date:new Date()};
+//	  		setInterval(function(){
+//	  			$scope.$apply(function(){
+//	  				$scope.data.date=new Date();
+//	  			})	
+//	  		})
+//	  	}
+	  	
+	  	function timeCtrl($scope){
+	  		$scope.data={data:new Date()};
+	  		setInterval(function(){
+	  			$scope.$apply(function(){
+	  				$scope.data.date=new Date();
+	  			})
+	  		})
+	  	}
+    </script>
+	</body>
+</html>

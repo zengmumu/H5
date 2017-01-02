@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<script type="text/javascript" src="js/angular.min.js">
+	
+			
+		</script>
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<div ng-controller="mainCtrl" class="container">
+			<h1>表头排序</h1>
+			<div class="row">
+				<div class="col-md-3">
+					全局模糊搜索：<input type="text" ng-model="searchInfo.$"  class="form-control"/>
+				</div>
+				<div class="col-md-3">
+					搜索姓名：<input type="text" ng-model="searchInfo.name"  class="form-control"/>
+				</div>
+				<div class="col-md-3">
+					搜索得分：<input type="text" ng-model="searchInfo.score"  class="form-control"/>
+				</div>
+				<div class="col-md-3">
+					按成绩阶段：
+					<select name="" id="" ng-model="level" class="form-control">
+						<option value="0">全部</option>
+						<option value="60">大于60</option>
+						<option value="70">大于70</option>
+						<option value="80">大于80</option>
+						<option value="90">大于90</option>
+					</select>
+				</div>
+				
+			</div>
+			<table class="table tab-border table-striped table-hover">
+				<tr>
+					<td>序号</td>
+					<td ng-click="orderWay=!orderWay;sortField='name'">姓名
+						<i class="glyphicon glyphicon-arrow-up" ng-show="!orderWay&&sortField=='name'"></i>
+						<i class="glyphicon glyphicon-arrow-down" ng-show="orderWay&&sortField=='name'"></i>
+					</td>
+					<td ng-click="orderWay=!orderWay;sortField='sex'">性别
+						<i class="glyphicon glyphicon-arrow-up" ng-show="!orderWay&&sortField=='sex'"></i>
+						<i class="glyphicon glyphicon-arrow-down" ng-show="orderWay&&sortField=='sex'"></i>
+					</td>
+					<td ng-click="orderWay=!orderWay;sortField='age'">年龄
+						<i class="glyphicon glyphicon-arrow-up" ng-show="!orderWay&&sortField=='age'"></i>
+						<i class="glyphicon glyphicon-arrow-down" ng-show="orderWay&&sortField=='age'"></i>
+					</td>
+					<td ng-click="orderWay=!orderWay;sortField='score'">
+						成绩
+						<i class="glyphicon glyphicon-arrow-up" ng-show="!orderWay&&sortField=='score'"></i>
+						<i class="glyphicon glyphicon-arrow-down" ng-show="orderWay&&sortField=='score'"></i>
+					</td>
+				</tr>
+				<tr ng-repeat="item in data|orderBy:sortField:orderWay|filter:searchInfo|filter:filterLevel">
+					<td>{{$index+1}}</td>
+					<td>{{item.name}}</td>
+					<td>{{item.sex}}</td>
+					<td>{{item.age}}</td>
+					<td>{{item.score}}</td>
+				</tr>
+			</table>
+			
+		</div>
+		
+		<script>
+			angular.module("myApp",[])
+			.controller("mainCtrl",["$scope",function($scope){
+				 $scope.data = [
+		            { name: "张明明", sex: "女", age: 24, score: 9 },
+		            { name: "李清思", sex: "女", age: 27, score: 87 },
+		            { name: "刘小华", sex: "男", age: 28, score: 86 },
+		             { name: "李清", sex: "女", age: 25, score: 70 },
+		            { name: "刘华", sex: "男", age: 28, score: 56 },
+		            { name: "陈忠忠", sex: "男", age: 23, score: 97 }
+		            ];
+				$scope.sortField="score";
+				$scope.orderWay=true;
+				$scope.level=0;
+				$scope.searchInfo={name:'',score:''};
+				$scope.filterLevel=function(e){
+					return e.score>=$scope.level;
+				}
+			}])
+		</script>	
+	</body>
+</html>

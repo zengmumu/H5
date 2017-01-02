@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<!--<link rel="stylesheet" href="css/animate.min.css" />-->
+		<link rel="stylesheet" href="css/ng-animation.css" />
+		<style>
+			body {
+				font-family: "微软雅黑";
+				background-color: #f0f0f0;
+			}
+			
+			.container {
+				width: 1200px;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			
+			.no-padding {
+				padding: 0;
+			}
+			
+			.no-margin {
+				margin: 0;
+			}
+			
+			div {
+				font-size: 14px;
+			}
+			
+			.citylist>div {
+				border: 1px solid #ccc;
+				margin-left: -1px;
+				margin-bottom: -1px;
+				padding-top: 15px;
+				padding-bottom: 15px;
+				cursor: pointer;
+			}
+			
+			.citylist>div.active {
+				background-color: #fff;
+				color: green;
+			}
+			.glyphicon-ok,.suc{ color:lawngreen;}
+			.glyphicon-remove,.dan{ color: palevioletred;}
+			input.ng-valid.ng-dirty{ border-color: lightgreen;}
+			input.ng-invalid.ng-dirty{ border-color:lightpink;}
+		</style>
+	</head>
+
+	<body ng-controller="mainCtrl">
+		<div class="container">
+			
+		<div class="row">
+			<h1 class="text-center">2016年中超联赛积分榜</h1>
+			<table class="table table-bordered table-hover tab-strip">
+				<tr>
+					<th  ng-repeat="(k, v) in cslTableHead" class="text-center" ng-click="sortArrBy(k)">
+						<label ng-bind="v" ></label>
+						<span class="glyphicon  glyphicon-arrow-up" ng-show="sortKey == k && desc"></span>
+          <span class="glyphicon glyphicon-arrow-down" ng-show="sortKey == k && !desc"></span>
+
+					</th>
+				</tr>
+				<tr ng-repeat="v in cslMatchList | sortFilter:sortKey:desc">
+					<td ng-repeat="(key, value) in cslTableHead" ng-bind="v[key]" class="text-center" ></td>
+				</tr>
+			</table>
+		</div>
+		</div>
+		<script src="js/jquery-1.8.3.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+
+		<script src="js/angular.min.js"></script>
+		
+		<script>
+			angular.module("myapp", [])
+				.controller("mainCtrl", function($scope,$http) {
+				 $scope.cslTableHead = {
+      team_order: '名次', team_cn: '队名', score: '积分', count: '场次', win: '胜', draw: '平', lose: '负', goal: '进球', losegoal: '失球', truegoal: '净胜球' };
+				$http.get("js/data.json")
+				.success(function(res){
+					console.log(res);
+					$scope.cslMatchList=res.result.data;
+				})
+			//sort
+			$scope.sortArrBy=function(key){
+				
+				
+				 $scope.sortKey = key;
+        $scope.desc = !$scope.desc;
+//      alert( $scope.desc);
+
+			}
+				})
+		.filter("sortFilter",function(){
+			return function(arr,key,desc){
+				return arr.sort(function (a,b){
+					if(desc){return b[key]-a[key]}else{
+						return a[key]-b[key];
+					}
+					//a-b输出从小到大排序，b-a输出从大到小排序。
+				})
+			}
+		})
+		
+		/* var arrSimple2=new Array(1,8,7,6);
+       arrSimple2.sort(function(a,b){
+        //    return b-a});
+        document.writeln(arrSimple2.join());
+   
+    解释：a,b表示数组中的任意两个元素，若return > 0 b前a后；reutrn < 0 a前b后；a=b时存在浏览器兼容
+    简化一下：a-b输出从小到大排序，b-a输出从大到小排序。*/
+		</script>
+
+	</body>
+
+</html>

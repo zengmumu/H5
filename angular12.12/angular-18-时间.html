@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/angular.min.js">
+			
+		</script>
+		<style>
+			.son{ border: 1px solid green; padding: 50px;}
+		</style>
+	</head>
+	<body>
+		<div ng-controller="mainCtrl">
+			<p>{{mydate|date:'yyyy年MM月dd日 HH:mm:ss'}}</p>
+			
+		</div>
+		
+		<script>
+			angular.module("myApp",[])
+			.controller("mainCtrl",["$scope","$interval",function($scope,$interval){
+				//$timeout;
+			    $scope.mydate=new Date();
+			  
+			    	$interval(function(){
+			    		$scope.mydate=new Date();
+			    	},1000)
+			   /*
+					setInterval(function(){
+						  $scope.$apply(function(){
+							$scope.mydate=new Date();
+						 })
+						
+					},1000)*/
+				
+				
+			}])
+		</script>	
+	</body>
+</html>

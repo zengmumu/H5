@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/angular.min.js">
+		
+			
+		</script>
+		<script type="text/javascript" src="components/ngModel/comment.js">
+			
+		</script>
+		<link rel="stylesheet" href="components/ngModel/ngModel.css" />
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<div ng-controller="mainCtrl">
+			<h1>ng-repeat</h1>
+			<input type="text" ng-model="newItem"/><button ng-click="add()">添加</button>
+			<ul>
+				<li ng-repeat= "item in data track by $index">{{item}}</li>
+			</ul>
+			<h1 ng-click="showModel()">show</h1>
+			<h1 ng-click="showModel2()">show2</h1>
+		</div>
+		
+		<script >
+			angular.module("myApp",["comment"])
+			.controller("mainCtrl",["$scope","ngModel",function($scope,ngModel){
+				$scope.data=["Angular","React","Vue","ReactNatvie","backbone"]
+				$scope.add=function(){
+					$scope.data.push($scope.newItem);
+				}
+				$scope.hideModel=function(){
+//					alert($scope.model.id);
+					ngModel.close($scope.model.id);
+				}
+				$scope.showModel=function(){
+					
+				console.log(ngModel);
+				$scope.model=ngModel.open("tpls/model.html",{scope:$scope});
+				}
+				$scope.showModel2=function(){
+					
+				
+				$scope.model2=ngModel.open("tpls/model2.html",{scope:$scope});
+				}
+				}])
+		</script>	
+	</body>
+</html>

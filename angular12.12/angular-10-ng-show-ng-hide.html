@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="js/angular.min.js">
+			
+		</script>
+		<style>
+			
+		</style>
+	</head>
+	<body>
+		<div ng-controller="mainCtrl">
+			<h1>ng-show ng-hide ng-if</h1>
+			<button ng-click="flag=!flag"> toggle</button>
+			<!--<p ng-show="flag">this is a line</p>-->
+			<p ng-hide="flag">this is a line tobe hide</p>
+			<p ng-if="flag">I am if</p>
+		</div>
+		
+		<script >
+			angular.module("myApp",[])
+			.controller("mainCtrl",["$scope",function($scope){
+				$scope.flag = true;
+			}])
+		</script>	
+	</body>
+</html>

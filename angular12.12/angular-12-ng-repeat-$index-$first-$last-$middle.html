@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<script type="text/javascript" src="js/angular.min.js">
+			
+		</script>
+		<style>
+			.table-striped>tbody>tr.bgActive{ background-color: dodgerblue; color: #fff;}
+		</style>
+	</head>
+	<body>
+		<div ng-controller="mainCtrl" class="container">
+			<div class="row">
+				<h1>ng-repeat</h1>
+				<input type="text" ng-model="newItem"/><button ng-click="add()">添加</button>
+				<table class="tab table-condensed table-bordered table-striped table-hover">
+					<tr><td>序号</td><td>内容</td><td>第一个</td><td>中间</td> <td>最后一个</td></tr>
+					<tr  
+						ng-repeat= "item in data track by $index"
+						ng-class-odd="''"
+						ng-class-even="''"
+						ng-click="setCurrent($index)"
+						ng-class="{'bgActive':$index==current}"
+						>
+						<td>{{$index+1}}</td>
+						<td>{{item}}</td>
+						<td>{{$first}}</td>
+						<td>{{$middle}}</td>
+						<td>{{$last}}</td>
+					</tr>
+				</table>
+			</div>
+				
+			
+			
+		</div>
+		
+		<script >
+			angular.module("myApp",[])
+			.controller("mainCtrl",["$scope",function($scope){
+				$scope.data=["Angular","React","Vue","ReactNatvie","backbone"]
+				$scope.add=function(){
+					$scope.data.push($scope.newItem);
+				}
+				$scope.setCurrent=function(num){
+					$scope.current=num;
+				}
+			}])
+		</script>	
+	</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="script/angular.min.js"></script>
+		<script src="script/angular-route.min2.js"></script>
+		<script src="script/jquery-2.2.1.min.js"></script>
+		<script src="script/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		
+	</head>
+	<body>	
+	
+		<div class="container" ng-controller="mainCtrl">
+			<div class="nav">
+				<a href="#/">首页</a>
+				<a href="#/book/">图书</a>
+				<a href="#/game/">游戏</a>
+			</div>
+			<div ng-view>
+				
+			</div>
+		</div>
+		<script>
+			var app=angular.module("myapp",["ngRoute"])
+			.config(function($routeProvider){
+				$routeProvider
+				.when("/",{template:"<div>这里是首页内容</div>"})
+				.when("/book/",{template:"<div>这里是图书内容</div>"})
+				.when("/game/",{template:"<div>这里是游戏内容</div>"})
+				.otherwise({
+					redirectTo:"/"
+				})
+			})
+			.controller("mainCtrl",["$scope",function(){
+				
+			}])
+			
+	
+		</script>		
+	</body>
+</html>

@@ -1,0 +1,20 @@
+.pop-mask{
+	position: fixed;
+	
+	height:100%;
+	width:100%;
+	background-color:rgba(0,0,0,.4);
+	z-index: 100;
+	left:0;
+	top:0;
+	
+}
+.ng-model-content{
+	background-color: #fff;
+	position:fixed;
+	left:20%;
+	top:20%;
+	right:20%;
+	bottom:20%;
+	z-index: 1000;
+}

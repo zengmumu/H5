@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="ydApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<script src="js/angular.min.js"></script>
+		<script src="js/angular-route.js"></script>
+	</head>
+	<body ng-controller="ydCtrl">
+		<div class="container">
+			<h1>transclude</h1>
+			<my-tag>
+					
+			</my-tag>
+			
+		</div>
+		
+		<script>
+			angular.module("ydApp",[])
+			.controller("ydCtrl",["$scope",function($scope,$http){
+				
+				
+			}])
+			.directive("myTag",[function(){
+				return {
+					restrict:"EA",
+					template:
+					'<div><button>love</button>'
+					+'<span>love Angular</span> </div> ',
+					transclude:true,
+				
+					
+					
+				}
+			}])
+			.directive("sonTag",[function(){
+				return{
+					restrict:"EA",
+					template:'<button class="btn btn-danger">danger</button>',
+				
+				}
+			}])
+		
+		</script>
+	</body>
+</html>

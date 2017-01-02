@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="script/angular.min.js"></script>
+		<script src="script/jquery-2.2.1.min.js"></script>
+		<script src="script/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/animate.min.css" />
+		<script src="script/angular-animate.min.js"></script>		
+	</head>
+		</head>
+	<body ng-controller="mainCtrl">
+		<div class="container">
+			<my-tag></my-tag>
+			<my-tag></my-tag>
+		</div>
+	</body>
+	<script>
+		angular.module("myapp",[])
+		.controller("mainCtrl",function($scope){
+		
+		})
+		.directive("myTag",function(){
+			return{
+				restrict:"ECMA",
+				template:'<div><p ng-repeat="x in data track by $index"> {{x}}</p><p><my-btn></my-btn></p></div>',
+				
+				link:function(scope,elem,attrs,ctrl){
+					console.log("link");
+				},
+				controller:function($scope){
+					//alert("我是alert");
+					$scope.data=["numu","zql","caicai","大黄"];
+					console.log("controller");
+					this.addData=function(s){
+						$scope.$apply(function(){
+							$scope.data.push(s);	
+						})
+					}
+				},
+				 controllerAs:"linkCtrl",
+				
+				
+			}
+		})
+		.directive("myBtn",function(){
+			return {
+				restrict:"ECMA",
+				template:'<div><input type="text" ng-model="msg"><button class="btn">添加</button></div>',
+				replace:true,
+				require:"^myTag",
+				
+				link:function(scope,elem,attrs,ctrl){
+					
+			/*	elem.find("button").on("click",function(){
+						ctrl.addData(scope.msg)
+					})*/
+					$(elem).find(".btn").on("click",function(){
+						ctrl.addData(scope.msg);
+					})
+				}
+			}
+		})
+		
+		
+		
+	</script>
+</html>

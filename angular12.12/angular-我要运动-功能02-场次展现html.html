@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html ng-app="ydApp" >
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<script src="js/angular.min.js"></script>
+		<script src="js/angular-route.js"></script>
+		<style>
+		.f-col{ 
+			float: left;
+			display:block; 
+			height: 45px; 
+			line-height: 35px;
+			width: 80px; 
+			text-align: center; 
+			border:1px solid #e0e0e0; 
+			margin-right: 3px;
+			cursor: pointer;
+			}
+		.ordered{ background-color:#edc9ad ; cursor: not-allowed;}
+		.f-row{ clear: both; margin-bottom: 5px;}
+		.f-col span{ margin: 0; padding: 0; display: inline-block;}
+		.selected{
+			color: green;
+			text-align:center;
+		}
+		.col-xs-1 .f-col{ border: none; clear: both; font-size: 12px; width: 80px; text-align: right; position: relative;left:-30px;}
+		.no-border{ border:none;}
+		.col-xs-11{ overflow: auto;}
+		/*.col-wrap{ width: 2000px;}*/
+		</style>
+		
+	</head>
+	<body >
+		<div class="container" ng-controller="stadiumCtrl" >
+			<div class="row">
+				<div class="col-md-9">
+					<!--循环 fields 里面有多少行-->
+					
+					  <div class="col-xs-1">
+					  		<span class="f-col"   ></span>
+					  		<span class="f-col"  ng-repeat="item in fields" >{{item.field_name}}号场地 </span>
+					  </div>
+					  <div class="col-xs-11">
+					  	<div class="col-wrap" style="width:{{Swidth}}px;" id="mywrap">
+					  		<span class="f-col no-border"  ng-repeat="item in fields[0].field_resource"   mydirect >{{item.start_period}} </span>
+						  	<div class="f-row" ng-repeat="item in fields" >
+						  	<!--循环  fields 里面的item 有多少列 根据col.resource_status 的状态给不同的class ordered  free selected -->
+							  	<span class="f-col"
+							  		 ng-repeat="col in item.field_resource"
+							  		 ng-click="setSelected(col)"				  		 ng-class="{'ordered':col.resource_status=='ordered','free':col.resource_status=='free','selected':col.selected}"
+							  		  >
+							  		  <!--如果是free 状态 并且没有选中就 显示 钱数 如果是选中状态就 显示 勾 默认 不选中-->
+							  		  <span ng-if="col.resource_status=='free'&&!col.selected">{{col.price/100}}元</span>
+							  		  <i class="glyphicon glyphicon-ok" ng-if="col.selected"></i>
+							  		
+							  	</span>
+						  	</div>
+						  </div>
+					  </div>
+				</div>
+				<div class="col-md-3"></div>
+			</div>
+			
+		</div>	
+		
+		
+		<script>
+			var app=angular.module("ydApp",[])
+			.controller("stadiumCtrl",["$scope","$http",function($scope,$http){
+				// 获取数据
+			$http.get("http://platform-api.1yd.me/api/stadiums/7480/field_resources?date=2016-12-22")
+				.success(function(res){
+					$scope.fields=res; 
+					// 当加载成功后把数据挂载到scope
+					console.log($scope.fields);
+					$scope.Swidth=83*res[0].field_resource.length;
+					
+					
+					
+					
+				})
+				$scope.offset=(new Date().getHours()-8)*83;
+				
+				$scope.setSelected=function(col){
+					if(col.resource_status=="ordered"){
+						return;
+					}
+					col.selected=!col.selected;
+					//单击切换该格子的selected属性 （勾与不不对勾）
+				}
+				
+			}])
+			.directive("mydirect",function(){
+				return {
+					restrict:"ECA",
+					link:function(scope,elem,attr){
+						if(scope.$last){
+							document.querySelector(".col-xs-11").scrollLeft=scope.offset;
+						}
+					}
+				}
+			})
+		
+			
+		
+			
+			
+			
+			
+			
+		
+		</script>
+	</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="script/angular.min.js"></script>
+		<script src="script/jquery-2.2.1.min.js"></script>
+		<script src="script/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<style>
+			h1{background: skyblue;font-size: 40px;}
+		</style>
+	</head>
+	<body>
+	<div class="container" ng-controller="myCtrl">
+		<div class="row">
+			<h1>选择全国</h1>
+			<form  action="" class="form form-inline  ">
+				<div class="form-group">
+					<label >选择省</label>
+					<select name="" id="" class="form-control" ng-model="currentP" ng-options="p.name for p in chinaCities" ng-change="setCurrentP(currentP)">
+						<option value="">--请选择--</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label >选择市</label>
+					<select name="" id="" class="form-control" ng-model="currentC" ng-options="c.name for c in currentP.city" ng-change="setCurrentC(currentC)">
+						<option value="">--请选择--</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label >选择区县</label>
+					<select name="" id="" class="form-control" ng-model="currentA" ng-options=" a for a in currentC.area">
+						<option value="">--请选择--</option>
+					</select>
+				</div>
+				<div>{{currentP|json}}</div>
+				<div>{{currentC|json}}</div>
+				<div>{{currentA}}</div>
+			</form>
+		</div>
+	</div>
+
+
+	<script>
+		var app=angular.module("myapp",[])
+				.controller("myCtrl",["$scope","$http",function($scope,$http) {
+					$http.get("script/data.json").success(function(res){
+						$scope.chinaCities=res;
+						console.log($scope.chinaCities[0]);
+//						$scope.chinaCities=res;
+						$scope.currentP=$scope.chinaCities[0];
+						$scope.currentC=$scope.currentP.city[0];
+						$scope.currentA=$scope.currentC.area[0];
+					
+						})
+					$scope.setCurrentP=function(p){
+						$scope.currentP=p;
+						$scope.currentC=$scope.currentP.city[0];
+						$scope.currentA=$scope.currentC.area[0];
+					}
+					$scope.setCurrentC=function(c){
+						$scope.currentC=c;
+						$scope.currentA=$scope.currentC.area[0];
+					}
+
+
+
+
+				}])
+	</script>
+	</body>
+</html>

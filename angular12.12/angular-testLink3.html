@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<script type="text/javascript" src="js/angular.min.js">
+		
+			
+		</script>
+		<style>
+			.son{ border: 1px solid green; padding: 50px;}
+		</style>
+	</head>
+	<body>
+		<div ng-controller="mainCtrl">	
+			
+		
+		<alert-bar class="alert_bar" message="tipService.message" type="tipService.type"></alert-bar>
+		</div>
+		<script>
+			angular.module("myApp",[])
+			 
+			.controller("mainCtrl",["$scope","TipService",function($scope,TipService){				
+				TipService.setMessage('登录成功', 'success');
+				$scope.tipService = TipService;
+				
+			}])
+			.directive('alertBar',[function(){
+
+  return {
+    restrict: 'EA',
+    templateUrl: 'tpls/alert.html',
+    scope : {
+      message : "=",
+      type : "="
+    },
+    link: function(scope, element, attrs){
+alert("good");
+      scope.hideAlert = function() {
+        scope.message = null;
+        scope.type = null;
+      };
+
+    }
+  };
+}])
+.factory('TipService', ['$timeout', function($timeout) {
+  return {
+    message : null,
+    type : null,
+    setMessage : function(msg,type){
+
+      this.message = msg;
+      this.type = type;
+ 	  console.log(this.message);
+      //提示框显示最多3秒消失
+      var _self = this;
+      $timeout(function(){
+          _self.clear();
+      },10000);
+    },
+    clear : function(){
+      this.message = null;
+      this.type = null;
+    }
+  };
+}]);
+		</script>	
+	</body>
+</html>

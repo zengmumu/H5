@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="ydApp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" />
+		<script src="js/angular.min.js"></script>
+		<script src="js/angular-route.js"></script>
+		<script src="components/alert/ng-alert.js"></script>
+	</head>
+	<body ng-controller="ydCtrl">
+		<div class="container">
+			<alert></alert>
+			<button class="btn btn-success" ng-click="alertServer.setMsg('登陆成功','danger')">登陆</button>
+			<button class="btn btn-success" ng-click="alertServer.setMsg('注册成功','success')">注册成功</button>
+		</div>	
+
+		
+		<script>
+			angular.module("ydApp",["ng-alert"])
+			.controller("ydCtrl",["$scope","alertServer",function($scope,alertServer){
+				$scope.alertServer=alertServer;	
+			
+			}])
+			
+			
+		
+		</script>
+	</body>
+</html>

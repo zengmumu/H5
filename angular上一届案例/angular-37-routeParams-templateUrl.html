@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<script src="script/angular.min.js"></script>
+		<script src="script/angular-route.min2.js"></script>
+		<script src="script/jquery-1.8.3.min.js"></script>
+		<script src="script/bootstrap.min.js"></script>
+		<script src="script/controller/booklistCtrl.js"></script>
+		<script src="script/controller/detailCtrl.js"></script>
+		<link rel="stylesheet" href="style/bootstrap.min.css"/>
+		<style>
+			body{padding-top: 60px;}
+		</style>
+		
+	</head>
+	<body ng-controller="mainCtrl">
+		<nav class="navbar navbar-inverse  navbar-fixed-top">
+			<div class="container">
+				<ul class="nav navbar-nav">
+					
+					<li ng-repeat="item in navData" ng-class="{'active':$index==aNum}" ng-click="setNum($index)"><a href="{{item.url}}">{{item.name}}</a></li>
+					
+				</ul>
+				
+			</div>
+		</nav>
+	
+		<div ng-view>
+		
+		</div>
+		{{aNum}}
+	</div>
+
+	<script>
+	//Route 路由
+	//routeProvider 路由提供者   路由服务
+	//template 模板
+	//when		当
+	//otherwise	其他的话
+	//redirectTo	重定向
+	var app=angular.module("myapp",["ngRoute","booklist","detail"])
+	.config(function($routeProvider){
+		$routeProvider
+		.when("/",{templateUrl:"tpl/booklist.html"})
+		.when("/book/",{templateUrl:"tpl/booklist.html"})
+		.when("/game/",{templateUrl:"tpl/gamelist.html"})
+		.when("/view/:id",{templateUrl:"tpl/detail.html"})
+		.otherwise({
+			redirectTo:"/"
+		})
+	})
+	.controller("mainCtrl",["$scope",function($scope){
+		$scope.aNum=0;
+		$scope.navData=[{name:"首页",url:"#/"},{name:"图书",url:"#/book/"},{name:"游戏",url:"#/game/"}];
+		$scope.setNum=function(num){
+			$scope.aNum=num;
+		}
+		
+	}])
+			
+		
+	</script>
+	</body>
+</html>

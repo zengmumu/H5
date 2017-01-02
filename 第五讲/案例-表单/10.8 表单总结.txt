@@ -1,0 +1,49 @@
+表单 form
+
+	input
+		type属性
+		     text 		文本框
+		     password 		密码框
+		     submit		提交按钮
+		     checkbox		多选
+		     radio		单选
+		     file		文件
+		     reset		重置
+		     button 		按钮
+--------------------------------------------html5
+		     number             数字
+		     range		范围
+		     email		邮箱
+		     url		网址
+	             date	        日期
+		     time       	时间
+		     color		颜色
+		name 属性 	名称
+		id   属性        id
+                value 		 值
+		checked  选中    checkbox  radio
+		selected 选择    select
+------------------------------------------ html5常用属性
+	        placeholder	提示文本
+		pattern		规定格式
+		required	必填
+		autofocus	默认获得鼠标焦点
+ 		min max step    最小 最大 步进   用在  number range
+		novalidate      不验证
+                
+                     
+		
+	textarea  文本区域       rows 行  cols 列
+
+
+	select    选择框
+		option 选择项目    selected 默认选择
+	label    文本标签    
+		<label><input>标签名</label>
+		<label for="表单id">标签名</label>
+
+
+form 属性   action 提交数据去哪儿
+	    method 提交方法  get   post  看见带？ 说明是 get方法
+<button> 按钮
+

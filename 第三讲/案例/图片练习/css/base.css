@@ -1,0 +1,30 @@
+﻿@charset "utf-8";
+/* CSS Document */
+/*清除默认*/
+html, body, div,  h1, h2, h3, h4, h5, h6, p,  a, font, img,sub, sup, b, u, i, center, dl, dt, dd, ol, ul, li{margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%;}
+ul,ol,li,dt,dd,dl{ list-style:none;}
+em{font-style:normal; font-weight:normal;}/*font-style  文字样式   normal 正常     font-weight：nonrmal   位置粗细正常*/
+h1, h2, h3, h4, h5, h6 { font-size:100%; font-weight:normal;}/*font-size:100%; 文字大小 和body 一样   */
+body{
+font-family :"Microsoft YaHei",simSun,simHei; font-size:12px;/*font-family 文字的字体 Micsoft YaHei",simSun,simHei; 微软雅黑 宋体 黑体  font-size:字体大小;*/
+}
+
+/*顶部的提示信息*/
+.top-Info{ height:30px; line-height:30px; background-color:#3d4749;}  /* height 高  ；ling-height 行间距;       background-color 颜色*/
+.infoList{ width:1000px; margin:0 auto;}   /*width 宽; margin:0 auto 居中的意思*/
+.infoList li{ float:right; color:#485d6e;}  /*float:right 横着向右边靠齐*/
+.infoList li a{ color:#fff; text-decoration:none;} /*color:#ffffff  颜色白色 text-decoration:none;  不要下划线*/ 
+.infoList li a:hover{ text-decoration:underline;} /* a:hover  鼠标放在上面的时候   text-decoration:underline; 要一个下划线 */
+
+/*导航*/
+.nav{ height:90px; width:1000px; margin:0 auto;}
+.nav h1{ float:left;}
+
+.nav ul{ float:right;}
+.nav ul li{ float:left; width:115px; text-align:center; height:90px; }
+.nav ul li a{ color:#555; font-size:18px; text-decoration:none; margin-top:26px; display:block;}
+.nav ul li span{ font-size:12px;}
+
+
+
+.nav ul li .active{ color:#4270a2;}

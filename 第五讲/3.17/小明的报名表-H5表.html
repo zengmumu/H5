@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	/*行内块级元素：可以设置宽高但是不和自动换行*/
+	/*display：inline-block；*/
+	label[for]{display: block;}
+	input[type="text"],input[type="password"]
+	,input[type="submit"]{ width: 220px; height: 35px; line-height: 35px; box-sizing:border-box; margin-top: 3px;}
+	</style>
+</head>
+<body>
+<h1>小明的报名表</h1>
+	<form action="http://www.baidu.com"  method="" novalidate>
+		<p><label for="uname">用户名:</label>
+			<input type="text" name="uname" id="" placeholder="邮箱/手机号/用户名" value="小明" autofocus>
+		</p>
+		<p>
+			<label for="upass">*密码:</label>
+			<input type="password" name="upass" id="">
+		</p>
+		<p>
+			<label for="upass2">确认密码:</label>
+			<input type="password" name="upass" id="">
+		</p>
+		<p>
+			<label for="">爱好:</label>
+			 <label ><input type="checkbox" name="love">唱歌 </label>
+			 <label ><input type="checkbox" name="love">跳舞 </label>
+			 <label ><input type="checkbox" name="love">游泳 </label>
+			  <label ><input type="checkbox" name="love">看书 </label>
+			  <label ><input type="checkbox" name="love" checked>玩手机 </label>
+
+		</p>
+		<p>
+			<label for="">性别</label>
+			<label ><input type="radio" name="sex" checked>男 </label>
+			<label ><input type="radio" name="sex">女 </label>
+			<label ><input type="radio" name="sex" disabled>保密 </label>
+		</p>
+		<p><label for="">上传照片</label>
+			<input type="file">
+		</p>
+		<p><label for="">学历</label>
+		<select name="" id="">
+			<option value="">大专1</option>
+			<option value="">本科</option>
+			<option value="">研究生</option>
+			<option value="" selected>博士</option>
+		</select>
+		</p>
+		<p><label for="">出生年月</label>
+			<input type="date" value="2015-03-17"  />
+		</p>
+		<p><label for="">月</label>
+			<input type="month"  />
+		</p>
+		<p><label for="">周</label>
+			<input type="week"  />
+		</p>
+		<p><label for="">时间</label>
+			<input type="time"  />
+		</p>
+		<p><label for="">邮箱</label>
+			<input type="email">
+		</p>
+		<p><label for="">个人网址</label>
+			<input type="url">
+		</p>
+		<p>
+			<label for="">体重</label>
+			<input type="number" value="45" step="1" min="1" max="1000"> kg
+		</p>
+		<p><label for="">范围</label>
+			<input type="range" min="1" max="200">
+		</p>
+		<p><label for="">喜欢的颜色</label>
+			<input type="color" value="#ffff00">
+		</p>
+		<p><label for="">电话号码</label>
+			<input type="text" pattern="1[0-9]{10}$">
+		</p>
+
+
+
+		<p><label for="">个人签名</label>
+		<textarea name="" id="" cols="30" rows="10"></textarea>
+		</p>
+		<input type="submit" value="马上报名">
+		<input type="reset" value="重置">
+		<button disabled> 同意</button>
+	</form>
+</body>
+</html>

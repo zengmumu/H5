@@ -1,0 +1,8 @@
+@charset "utf-8";
+/* CSS Document */
+/*清除默认*/
+html, body, div,  h1, h2, h3, h4, h5, h6, p,  a, font, img,sub, sup, b, u, i, center, dl, dt, dd, ol, ul, li{margin: 0; padding: 0; border: 0; outline: 0; font-size: 100%;}
+ul,ol,li,dt,dd,dl{ list-style:none;}
+em{font-style:normal; font-weight:normal;}
+h1, h2, h3, h4, h5, h6 { font-size:100%; font-weight:normal;}
+

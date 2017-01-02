@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+/*[1]清零*/
+*{ margin:0; padding: 0;}
+ul,ol{list-style: none;}
+img{ border: none; vertical-align: top;}
+/*[2] 设置整体的文字 大小 颜色*/
+body{ font-family: "Microsoft YaHei";}
+/*[3] 布局*/
+.header{ height: 90px;}
+.container{ width: 1000px; margin-left: auto; margin-right: auto;}
+/*[4] 分区与排列*/
+.logo{ float: left;}
+.main-nav{ float: right; border-right: 1px dashed #aaa;}
+.main-nav li{ float: left; width: 120px; text-align: center; border-left: 1px dashed #aaa;  height: 90px;}
+/*[5详细的调]*/
+.main-nav span{ display: block; font-size: 12px;}
+.main-nav a{ display: block;  padding-top: 25px; height: 62px; text-decoration: none; color: #53555C;}
+.main-nav a:hover{ color: #14B1DB; border-bottom: 3px solid  #14B1DB; }
+.main-nav .on{color: #14B1DB; border-bottom: 3px solid  #14B1DB;}
+
+
+	</style>
+
+</head>
+<body>
+<!-- div.header>div.container>(h2.logo>a>img[src="images/logo.png"])+ul.main-nav>li*4>a>{首页$}+span>{Home$} -->
+<div class="header">
+	<div class="container">
+		<h2 class="logo"><a href=""><img src="images/logo.png" alt=""></a></h2>
+		<ul class="main-nav">
+			<li><a href="">首页1<span>Home1</span></a></li>
+			<li><a href="" class="on">首页2<span>Home2</span></a></li>
+			<li><a href="">首页3<span>Home3</span></a></li>
+			<li><a href="">首页4<span>Home4</span></a></li>
+		</ul>
+	</div>
+</div>
+
+<!-- . class名称
+> 子元素
+# id名称
++ 兄弟元素
+{} 文本内容
+$第增
+（） 编组
+[]属性
+*该元素的个数 -->
+ 	
+</body>
+</html>

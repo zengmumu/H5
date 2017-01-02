@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>导航页面</title>
+	<style>
+	*{ margin: 0; padding: 0;}
+	/*清除浏览器默认的间距*/
+	ul{ list-style: none;}
+	/*清除默认的项目符合*/
+	img{ border:0;}
+	/*清除图片默认边框  下ie里面 a里面的图片会默认添加边框*/
+	body{ font-family: "微软雅黑"}
+	.container{ margin-left: auto; margin-right: auto; width:1000px;}
+	/*左右两边间距自动（让块级元素居中）*/
+	.header{ height: 90px;}
+	.logo{ float:left;}
+	.main-nav{ float: right; border-right: 1px dashed #aaa;}
+	.main-nav li{ float:left; width: 120px; border-left: 1px dashed #aaa; text-align: center; height: 90px;}
+	.main-nav span{ display: block; font-size: 12px;}
+	.main-nav a{display:block; text-decoration: none; color: #363A43; font-size: 18px;
+		padding-top: 25px; height: 62px;
+	}
+	.main-nav a:hover,.main-nav .active{ color: #23C8D5; border-bottom: 3px solid #23C8D5; }
+	
+	</style>
+</head>
+<body>
+<!-- Emmet -->
+<!-- >子元素
++兄弟元素
+{} 设置内容
+（） 编组
+* 乘   
+[]属性
+$ 递增 数字 
+ctrl+/
+ctrl+shift+C 颜色面板
+ -->
+
+	<div class="header">
+		<div class="container">
+		<h2 class="logo"><a href=""><img src="images/logo.png" height="60" width="360" alt=""></a></h2>
+		<ul class="main-nav">
+			<li><a href="">首页1<span>HOME1</span></a></li>
+			<li><a href="" class="active">账号管理<span>ACCOUNT</span></a></li>
+			<li><a href="">首页3<span>HOME3</span></a></li>
+			<li><a href="">首页4<span>HOME4</span></a></li>
+		</ul>
+		</div>
+	</div>
+</body>
+</html>

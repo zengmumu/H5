@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	/*行内块级元素：可以设置宽高但是不和自动换行*/
+	/*display：inline-block；*/
+	label{display: block;}
+	input{ width: 220px; height: 35px; line-height: 35px; box-sizing:border-box; margin-top: 3px;}
+	input[type="submit"]{ width: 80px;}
+	</style>
+</head>
+<body>
+<h1>百度搜索</h1>
+	<form action="https://www.baidu.com/s" target="bai">
+		
+		<input type="text" name="wd"/>
+		<input type="submit" value="搜索">
+	</form>
+	<iframe src="" frameborder="0" name="bai" width="100%" height="2000"></iframe>
+	
+</body>
+</html>

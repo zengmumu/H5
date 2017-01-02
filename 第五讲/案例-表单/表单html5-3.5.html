@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>webrx-title</title>
+<meta name="description" content="简介">
+<meta name="keywords" content="关键字">
+<link rel="stylesheet" type="text/css" href="index.css"/>
+<script src=""></script>
+</head>
+
+<body>
+<h1>地狗登录</h1>
+<form action="http://www.baidu.com" method="get" novalidate>
+  <p> 用户名:
+    <input type="text" placeholder="请输入用户名" autofocus/>
+  </p>
+  <p> 密&nbsp;&nbsp;码:
+    <input type="password" placeholder="请输入密码"/>
+  </p>
+  
+  <p>
+  爱好： <label><input type="checkbox" name="love" checked="cehecked"/>看书</label>    <label><input type="checkbox" name="love"/>游泳</label>
+        <input type="checkbox" name="love" id="l3"><label for="l3">学习</label>
+  </p>
+  <p>
+  	性别： <label for="sex1">男</label><input type="radio" id="sex1" name="sex"/>
+           <label for="sex2">女</label><input type="radio" id="sex2" name="sex"/>
+         <label for="sex3">保密</label><input type="radio" id="sex3" checked="checked" name="sex"/>
+  </p>
+  <p>出生年: <select>
+  
+  <option>1992</option>
+   <option>1993</option>
+    <option selected="selected">1996</option>
+     <option>1997</option>
+      <option>1998</option>
+       <option>1999</option>
+       <!--<script>
+       for(var i=1900;i<2015;i++){
+		   document.write(' <option>'+i+'</option>');
+		   }
+       </script>-->
+  </select></p>
+  <p>上传图像 <input type="file"/></p>
+  <p>留言：
+  <textarea placeholder="留言" cols="30" rows="5">
+  </textarea>
+  </p>
+  <p>*手机:<input type="text" required pattern="[0-9]{11}"/></p>
+  <p>*邮箱：<input type="email"/></p>
+  <p>*个人网址：<input type="url"/></p>
+  <p>年龄：<input type="number" value="18" step="2" max="200" min="0"/></p>
+  <p>范围：<input type="range" min="1" max="100" value="60"/></p>
+  <p>生日：<input type="date"/></p>
+   <p>时间：<input type="time"/></p>
+   
+  <p>喜欢颜色：<input type="color" value="#ffff00"></p>
+    <input type="submit" value="登录"/>
+    
+  </p>
+  <p><input type="button" value="按钮"/></p>
+</form>
+</body>
+</html>

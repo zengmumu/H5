@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>按钮背景</title>
+
+<style type="text/css">
+body{ background:#333;}
+.navi{ width:250px; 
+background:url(a_03.jpg) repeat-x;  /*给一个背景图片 X方向平铺*/
+height:235px; 
+padding-top:20px; /*.navi 到 a 之间的距离[父元素边框 与子元素的边框距离 默认是0]*/}
+
+
+a{display:block;/*行转块  让每个a单独占一行*/
+color:#FFF; /*颜色*/
+text-decoration:none; /*没有下划线*/
+height:36px; width:210px; /*高 宽   背景图片的大小*/
+background:url(a_11.jpg) no-repeat;/*给一个背景图片  不平铺*/
+text-align:center; /*文字在A里面居中*/
+line-height:36px;/*让文字在 a里面 上下居中  必须要给过高度*/
+margin-bottom:5px; /*a 与 a 之间的距离  下*/
+margin-left:auto; /* 左右  到父亲的边界距离  a 左右到 navi 的距离 自动【居中】 */
+margin-right:auto;}
+
+
+a:hover{ background:url(a_09.jpg) no-repeat; /* 当鼠标放在链接上时 换一张图片*/
+color:#333;}
+
+</style>
+
+</head>
+
+<body>
+<div class="navi">
+<a href="#">安卓</a>
+<a href="#">手机</a>
+<a href="#">苹果</a>
+<a href="#">电脑</a>
+<a href="#">大家电</a>
+</div>
+</body>
+</html>

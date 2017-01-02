@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/mui.css" />
+		<script src="js/vue.js"></script>
+			<!--<script src="js/hammer.js"></script>-->
+		<script src="js/mui.js"></script>
+		<!--<script src="js/vue-touch.js"></script>-->
+	
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		
+		<style>
+			li.edit input{display: inline-block;}
+			li.edit .todoItem{ display: none;}
+			li input{ display: none;}
+			li.compeleted .todoItem{ color: gray; text-decoration: line-through;}
+			.delete{ float: right; margin-right:65px; opacity: 0; cursor: pointer; }
+			.mui-table-view-cell:hover .delete{ opacity: 1;}
+			.delete:hover{color: orangered;}
+			li.edit .delete,li.edit .mui-btn { display: none;}
+			
+		</style>
+	</head>
+	<body>
+		<div id="app" class="mui-content-padded">
+			<input 
+				type="text" 
+				v-model="newTodo.title"
+				@keyup.enter="addNewTodo()"
+				/>			
+			<ul class="mui-table-view">
+				<li v-for="item in toDoList"
+					class="mui-table-view-cell"
+					@dblclick="editTodo(item)" 
+					
+					:class="{edit:item==currentTodo,compeleted:item.compeleted}"
+					>
+					<span class="todoItem">{{item.title}}</span>
+					<span>
+						<input type="text" 
+							v-model="currentTodo.title"
+							@keyup.enter="doneEditTodo(item)"
+							@blur="doneTodo(item)"
+							v-focus-todo="item==currentTodo"
+							 />
+					   
+						
+					</span>
+					
+					 <button @click="doneTodo(item)" class="mui-btn">{{item.compeleted?'取消':'完成'}}</button>
+					 <span @click="removeTodo(item)" class="delete mui-icon mui-icon-closeempty mui-right"></span>
+				</li>
+			</ul>
+			
+		</div>
+		<script>
+		
+			
+
+		
+		var toDoLocalStorage={
+			save:function(data){
+				window.localStorage.setItem("mytoDoList",JSON.stringify(data))
+			},
+			fetch:function(){
+				return JSON.parse(localStorage.getItem("mytoDoList")||"[]");
+			}
+		}
+			
+			new Vue({
+				el:"#app",
+				data:{
+					mydata:"Hello Vue ！",
+					newTodo:{title:"Vue"},
+					currentTodo:{title:"Angular"},
+					toDoList:toDoLocalStorage.fetch()
+				},
+				methods:{
+					addNewTodo:function(){
+						this.toDoList.unshift({"title":this.newTodo.title,compeleted:false});
+						this.newTodo.title="";
+					},
+					removeTodo:function(item){
+						this.toDoList.splice(this.toDoList.indexOf(item),1);
+					},
+					editTodo:function(item){
+						this.currentTodo=item;
+					},
+					doneEditTodo:function(item){
+						item.title=this.currentTodo.title;
+						this.currentTodo={};
+						
+					},
+					doneTodo:function(item){
+						if(item.compeleted){
+							item.compeleted=false;	
+						}else{
+							item.compeleted=true;
+						}
+						
+					},
+//					onTap:function(item){
+//						console.log(item);
+//					}
+				},
+				directives:{
+					focusTodo:function(el,value){
+						//console.log(el,value);
+						if(value){
+							el.focus();
+						}
+					}
+				},
+				watch:{
+					toDoList:{
+						handler:function(toDoList){
+							console.log("发生改变");
+							toDoLocalStorage.save(toDoList)
+						},
+						deep:true
+					}
+				}
+				
+			})
+		</script>
+	</body>
+</html>

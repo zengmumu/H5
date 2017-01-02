@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/vue.js"></script>
+		<style>
+			li.edit input{display: inline-block;}
+			li.edit .todoItem{ display: none;}
+			li input{ display: none;}
+			li.compeleted .todoItem{ color: gray; text-decoration: line-through;}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<input 
+				type="text" 
+				v-model="newTodo.title"
+				@keyup.enter="addNewTodo()"
+				/>			
+			<ul>
+				<li v-for="item in toDofilter"
+					:class="{edit:item==currentTodo,compeleted:item.compeleted}"
+					>
+					<span @dblclick="editTodo(item)" class="todoItem">{{item.title}}</span>
+					<span>
+						<input type="text" 
+							v-model="currentTodo.title"
+							@keyup.enter="doneEditTodo(item)"
+							@blur="doneTodo(item)"
+							v-focus-todo="item==currentTodo"
+							 />
+					    <button @click="doneTodo(item)">{{item.compeleted?'取消':'完成'}}</button>
+						<button @click="removeTodo(item)">删除</button>
+					</span>
+				</li>
+			</ul>
+			<button @click="setShow('all')">({{toDoList.length}})所有</button>
+			<button  @click="setShow('compeleted')">({{compeletedNumber}})已经完成</button>
+		</div>
+		<script>
+		var filterTodo={
+			all:function(data){
+				return data;
+			},
+			compeleted:function(data){
+			 return data.filter(function(elem){
+			 		return  elem.compeleted
+			 })
+				
+			}
+		}
+		
+		var toDoLocalStorage={
+			save:function(data){
+				window.localStorage.setItem("mytoDoList",JSON.stringify(data))
+			},
+			fetch:function(){
+				return JSON.parse(localStorage.getItem("mytoDoList")||"[]");
+			}
+		}
+			
+			new Vue({
+				el:"#app",
+				data:{
+					mydata:"Hello Vue ！",
+					newTodo:{title:"Vue"},
+					currentTodo:{title:"Angular"},
+					toDoList:toDoLocalStorage.fetch(),
+					show:'all'
+				},
+				methods:{
+					addNewTodo:function(){
+						this.toDoList.unshift({"title":this.newTodo.title,compeleted:false});
+						this.newTodo.title="";
+					},
+					removeTodo:function(item){
+						this.toDoList.splice(this.toDoList.indexOf(item),1);
+					},
+					editTodo:function(item){
+						this.currentTodo=item;
+					},
+					doneEditTodo:function(item){
+						item.title=this.currentTodo.title;
+						this.currentTodo={};
+						
+					},
+					doneTodo:function(item){
+						if(item.compeleted){
+							item.compeleted=false;	
+						}else{
+							item.compeleted=true;
+						}
+						
+					},
+					setShow:function(str){
+						this.show=str;
+					}
+				},
+				directives:{
+					focusTodo:function(el,value){
+						//console.log(el,value);
+						if(value){
+							el.focus();
+						}
+					}
+				},
+				watch:{
+					toDoList:{
+						handler:function(toDoList){
+							console.log("发生改变");
+							toDoLocalStorage.save(toDoList)
+						},
+						deep:true
+					}
+				},
+				computed:{
+					toDofilter:function(){
+						return filterTodo[this.show](this.toDoList);
+						//return filterTodo.all(this.todoList);
+						//return filterTodo.compeleted(this.todoList);
+					},
+					compeletedNumber:function(){
+						return filterTodo.compeleted(this.toDoList).length
+					}
+					
+				}
+				
+			})
+		</script>
+	</body>
+</html>

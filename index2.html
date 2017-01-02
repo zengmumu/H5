@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<input type="text" v-model="newTodo.title" />			
+			<p>{{newTodo.title}}</p>
+			<p v-text="newTodo.title"></p>
+			<a href="" v-bind:title="newTodo.title">Vue</a>
+			
+		</div>
+		<script>
+			
+			new Vue({
+				el:"#app",
+				data:{
+					mydata:"Hello Vue ！",
+					newTodo:{title:"Vue"}
+				},
+				methods:{}
+			})
+		</script>
+	</body>
+</html>

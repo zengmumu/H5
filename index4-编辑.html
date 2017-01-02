@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<input 
+				type="text" 
+				v-model="newTodo.title"
+				@keyup.enter="addNewTodo()"
+				/>			
+			<ul>
+				<li v-for="item in toDoList"					
+					>
+					<div @dblclick="editTodo(item)">{{item.title}}</div>
+					<div>
+						<input type="text" v-model="currentTodo.title" />
+						<button @click="removeTodo(item)">删除</button>
+					</div>
+				</li>
+			</ul>
+			
+		</div>
+		<script>
+			
+			new Vue({
+				el:"#app",
+				data:{
+					mydata:"Hello Vue ！",
+					newTodo:{title:"Vue"},
+					currentTodo:{title:"Angular"},
+					toDoList:[{title:"Vue"},{title:"Angular"},{title:"react"}]
+				},
+				methods:{
+					addNewTodo:function(){
+						this.toDoList.unshift({"title":this.newTodo.title});
+						this.newTodo.title="";
+					},
+					removeTodo:function(item){
+						this.toDoList.splice(this.toDoList.indexOf(item),1);
+					},
+					editTodo:function(item){
+						this.currentTodo=item;
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

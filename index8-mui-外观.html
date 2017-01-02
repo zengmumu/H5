@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/mui.css" />
+		<script src="js/vue.js"></script>
+		<script src="js/mui.js"></script>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style>
+			li.edit input{display: inline-block;}
+			li.edit .todoItem{ display: none;}
+			li input{ display: none;}
+			li.compeleted .todoItem{ color: gray; text-decoration: line-through;}
+			.deleteIcon { float: right; margin-right: 65px;}
+		</style>
+	</head>
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			
+			<h1 class="mui-title">Todos</h1>
+		</header>
+		<div id="app" class="mui-content-padded mui-content">
+			<input 
+				type="text" 
+				v-model="newTodo.title"
+				@keyup.enter="addNewTodo()"
+				/>			
+			<ul class="mui-table-view">
+				<li v-for="item in toDofilter"
+					class="mui-table-view-cell"
+					:class="{edit:item==currentTodo,compeleted:item.compeleted}"
+					>
+					<div class="mui-slider-left mui-disabled">
+						<a class="mui-btn mui-btn-red" @click="removeTodo(item)">删除</a>
+					    <a class="mui-btn mui-btn-yellow" @click="doneTodo(item,$event)">{{item.compeleted?'取消':'完成'}}</a>
+					</div>
+					<div class="mui-slider-right mui-disabled">
+						<a class="mui-btn mui-btn-red" @click="removeTodo(item)">删除</a>
+					</div>
+					<div class="mui-slider-handle">
+						<span @dblclick="editTodo(item)" class="todoItem">{{item.title}}</span>
+						<span>
+							<input type="text" 
+								v-model="currentTodo.title"
+								@keyup.enter="doneEditTodo(item)"
+								@blur="doneTodo(item)"
+								v-focus-todo="item==currentTodo"
+								 />
+						   
+							
+						</span>
+						<!--<span @click="removeTodo(item)" class="deleteIcon mui-icon mui-icon-closeempty"></span>
+						 <button  class="mui-btn" @click="doneTodo(item)">{{item.compeleted?'取消':'完成'}}</button>-->
+					</div>
+				</li>
+			</ul>
+			<p class="mui-content-padded">
+			<button @click="setShow('all')" class="mui-btn ">({{toDoList.length}})所有</button>
+			<button  @click="setShow('compeleted')" class="mui-btn-positive">({{compeletedNumber}})已经完成</button>
+		</div>
+		</p>
+		<script>
+		mui.init();
+		var filterTodo={
+			all:function(data){
+				return data;
+			},
+			compeleted:function(data){
+			 return data.filter(function(elem){
+			 		return  elem.compeleted
+			 })
+				
+			}
+		}
+		
+		var toDoLocalStorage={
+			save:function(data){
+				window.localStorage.setItem("mytoDoList",JSON.stringify(data))
+			},
+			fetch:function(){
+				return JSON.parse(localStorage.getItem("mytoDoList")||"[]");
+			}
+		}
+			
+			var myVue=new Vue({
+				el:"#app",
+				data:{
+					mydata:"Hello Vue ！",
+					newTodo:{title:"Vue"},
+					currentTodo:{title:"Angular"},
+					toDoList:toDoLocalStorage.fetch(),
+					show:'all'
+				},
+				methods:{
+					addNewTodo:function(){
+						this.toDoList.unshift({"title":this.newTodo.title,compeleted:false});
+						this.newTodo.title="";
+					},
+					removeTodo:function(item){
+						
+						this.toDoList.splice(this.toDoList.indexOf(item),1);
+						mui.swipeoutClose(event.target.parentNode.parentNode);
+					},
+					removeBytext:function(text){
+						var _self=this;
+						
+						this.toDoList.forEach(function(item,index){
+							if(item.title==text){
+								
+								_self.toDoList.splice(index,1);
+								
+							}
+						})
+						mui.swipeoutClose(event.target.parentNode.parentNode);
+					},
+					editTodo:function(item){
+						this.currentTodo=item;
+					},
+					doneEditTodo:function(item){
+						
+						item.title=this.currentTodo.title;
+						this.currentTodo={};
+						
+					},
+					doneTodo:function(item,event){
+						console.log(this);
+						if(item.compeleted){
+							item.compeleted=false;	
+						}else{
+							item.compeleted=true;
+						}
+						console.log(event.target.parentNode.parentNode);
+						mui.swipeoutClose(event.target.parentNode.parentNode);
+						
+					},
+					setShow:function(str){
+						this.show=str;
+					}
+				},
+				directives:{
+					focusTodo:function(el,value){
+						//console.log(el,value);
+						if(value){
+							el.focus();
+						}
+					}
+				},
+				watch:{
+					toDoList:{
+						handler:function(toDoList){
+							console.log("发生改变");
+							toDoLocalStorage.save(toDoList)
+						},
+						deep:true
+					}
+				},
+				computed:{
+					toDofilter:function(){
+						return filterTodo[this.show](this.toDoList);
+						//return filterTodo.all(this.todoList);
+						//return filterTodo.compeleted(this.todoList);
+					},
+					compeletedNumber:function(){
+						return filterTodo.compeleted(this.toDoList).length
+					}
+					
+				}
+				
+			})
+			
+	mui('#app').on('slideleft', '.mui-table-view-cell', function(event) {
+					var elem = this;
+					//myVue.removeTodo();
+					var text=elem.querySelector(".todoItem").innerText;
+					console.log(myVue.$data);
+					var btnArray = ['确认', '取消'];
+					mui.confirm('确认删除该条记录？', '请确认', btnArray, function(e) {
+						if (e.index == 0) {
+							myVue.removeBytext(text);
+							
+							
+						} else {
+							setTimeout(function() {
+								mui.swipeoutClose(elem);
+							}, 0);
+						}
+					});
+				});
+			
+		</script>
+	</body>
+</html>

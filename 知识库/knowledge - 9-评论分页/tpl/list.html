@@ -1,0 +1,6 @@
+<div ng-controller="listCtrl">
+	<ul class="list-group">
+		<li class="list-group-item" ng-repeat="item in listData track by item.id"><a href="#/view/{{item.id}}">{{item.title}}</a></li>
+	</ul>
+	<page-break url="http://127.0.0.1/list.php?all=1&typeid={{typeid}}" url2="http://127.0.0.1/list.php" query="typeid"></page-break>
+</div>

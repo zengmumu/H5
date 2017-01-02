@@ -1,0 +1,7 @@
+<div>
+	<ul class="pagination">
+		<li ng-click="pre()"><a href="">上一页</a></li>
+		<li ng-class="{'active':current==$index}" ng-repeat="item in pageBreakData track by $index"><a>{{item}}</a></li>
+		<li ng-click="next()"><a href="">下一页</a></li>
+	</ul>
+</div>

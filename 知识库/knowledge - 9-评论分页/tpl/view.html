@@ -1,0 +1,14 @@
+<div ng-controller="viewCtrl">
+		<h1 class="text-center">{{viewData.title}}</h1>
+		<div ng-bind-html="getTrustHtml(viewData.body)">
+			
+		</div>
+		<h2>评论</h2>
+		<div>
+			<div class="commentItem" ng-repeat="item in listData">
+				<div class="commmentMsg">{{item.msg}}</div>
+			</div>
+			<page-break url="http://127.0.0.1/getComment.php?all=1&aid={{aid}}" url2="http://127.0.0.1/getComment.php" query="aid"></page-break>
+		</div>
+		<comment-tag></comment-tag>
+</div>

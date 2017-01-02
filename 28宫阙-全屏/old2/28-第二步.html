@@ -1,0 +1,242 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>webrx-title</title>
+<meta name="description" content="简介">
+<meta name="keywords" content="关键字">
+<style>
+* {
+	margin: 0;
+	padding: 0;
+}
+ul {
+	list-style: none;
+}
+body {
+	font-family: "宋体";
+	font-size: 12px;
+	padding-top: 135px;
+}
+header, section, article {
+	display: block;
+}
+a {
+	color: #fff;
+	text-decoration: none;
+}
+a:hover {
+	color: #A4090B;
+}
+.on {
+	color: #A4090B;
+}
+.pa {
+	position: absolute;
+}
+.auto-img {
+	width: 100%;
+	height: auto;
+	z-index: -1;
+	left: 0;
+	top: 0;
+}
+.sc {
+	text-align: center;
+	position: relative;
+}
+header {
+	height: 135px;
+	background-color: #000;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 100;
+}
+.full {
+	width: 1900px;
+	height: 860px;
+}
+.b_links {
+	padding-top: 50px;
+}
+.b_links li {
+	display: inline-block;
+	padding-left: 30px;
+	padding-right: 30px;
+	cursor: pointer;
+}
+.b_links li span {
+	display: inline-block;
+	height: 77px;
+	width: 77px;
+	background-image: url(img/index/nav2/n1/n.png);
+	margin-bottom: 20px;
+	position: relative;
+}
+.b_links li span:before {
+	content: "";
+	position: absolute;
+	left: -10px;
+	top: -10px;
+	background-image: url(img/index/nav2/zz.png);
+	width: 97px;
+	height: 97px;
+	display: none;
+}
+.b_links li span:hover:before {
+	display: inline-block;
+}
+.sc-title {
+	padding-top: 130px;
+}
+.a_container, .a_section, .after {
+	position: relative;
+}
+.a_s_fan {
+	right: 3em;
+	top: 3em;
+}
+.a_qian {
+	position: absolute;
+	left: 3em;
+	top: 50%;
+}
+.a_hou {
+	position: absolute;
+	right: 3em;
+	top: 50%;
+}
+.a_section {
+	overflow: hidden;
+}
+.tabs {
+	width: 756px;
+	height:auto;
+	margin: 50px auto;
+	background-image: url(img/info/info1/in1/bg.png);
+}
+tabs:after{ content:""; clear:both; height:0; visibility:hidden; display:block;}
+.tab {
+	padding-top: 80px;
+}
+.tab-inner-title li {
+	display: inline-block;
+	height: 35px;
+	line-height: 35px;
+	width: 35px;
+	color: #fff;
+}
+.a_s2 .tab-inner-title  li {
+width:120px; float:none;
+display:inline-block;
+padding-top:20px;
+color:#fff;
+	}
+.tab-inner-title li.on {
+	color: #A4090B;
+}
+
+/*tabs tabs-title*/
+.tabs-title{ width: 756px; height:105px; margin:0 auto;}
+
+.tabs-title li{ float:left; width:251px; height:105px;}
+
+.tabs-title li.l1{ background-image:url(img/info/info1/in2/nav/in_01.png)}
+.tabs-title li.l2{ background-image:url(img/info/info1/in2/nav/in_02.png)}
+.tabs-title li.l3{ background-image:url(img/info/info1/in2/nav/in_03.png)}
+.tabs-title li.l1.on{ background-image:url(img/info/info1/in2/nav/in_01_h.png)}
+.tabs-title li.l2.on{ background-image:url(img/info/info1/in2/nav/in_02_h.png)}
+.tabs-title li.l3.on{ background-image:url(img/info/info1/in2/nav/in_03_h.png)}
+</style>
+</head>
+
+<body>
+<header></header>
+<article>
+  <section class="sc sc1 full">
+    <div class="before full"> <img src="img/index/bg_03.jpg" class="pa auto-img"/>
+      <h3 class="sc-title"><img src="img/index/bg_03-1.png"></h3>
+      <ul class="b_links">
+        <li><span></span><br/>
+          <img src="img/index/nav2/n1/nt1.png"></li>
+        <li><span></span><br/>
+          <img src="img/index/nav2/n1/nt2.png"></li>
+        <li><span></span><br/>
+          <img src="img/index/nav2/n1/nt3.png"></li>
+        <li><span></span><br/>
+          <img src="img/index/nav2/n1/nt4.png"></li>
+      </ul>
+      <!-- sc1-links- ed--> 
+    </div>
+    <!-- before ed-->
+    <div class="after full" style="display:none;"> <img src="img/nav/n_03.png" class="a_qian pa"/> <img src="img/nav/n_01.png" class="a_hou pa"/>
+      <div class="a_container">
+        <div class="a_section a_s1 full" style="display:none"> <img src="img/info/info1/in1/bg_02.jpg" class="pa auto-img"/>
+          <p class="a_s_fan pa"><img src="img/info/info1/in1/title.jpg"/><img src="img/nav/fan.jpg"/></p>
+          <div class="tabs">
+            <div class="tab">
+              <p><img src="img/info/info1/in1/in01.png"/></p>
+              <div class="tab_inner">
+                <div class="tab-in-tab" ><img src="img/info/info1/in1/in02.png"></div>
+                <!-- tab-in-tab ed-->
+                <div class="tab-in-tab"  style="display:none;"><img src="img/info/info1/in1/in02_01.png"></div>
+                <ul class="tab-inner-title">
+                  <li class="on">1</li>
+                  <li>2</li>
+                </ul>
+                <!-- tab-inner-title ed-->
+                <p><img src="img/info/info1/in1/in03.png"/></p>
+              </div>
+              <!-- tab-inner ed--> 
+              
+            </div>
+            <!-- a_s1 tabs tab  tab ed--> 
+          </div>
+          <!-- a_s1 tabs ed--> 
+        </div>
+        <!-- a_s1 ed-->
+       <div class="a_section a_s2 full" > <img src="img/info/info1/in2/bg_02.jpg" class="pa auto-img"/>
+          <p class="a_s_fan pa"><img src="img/info/info1/in2/title.jpg"/><img src="img/nav/fan.jpg"/></p>
+          <div class="tabs">
+          		<div class="tab" >
+                	<div class="tab-in-tab" style="display:none;">
+                    <img src="img/info/info1/in2/in_01.png">
+                    </div>
+                    <div class="tab-in-tab" >  <img src="img/info/info1/in2/in_02.png"></div>
+                    <div class="tab-in-tab"  style="display:none;">  <img src="img/info/info1/in2/in_03.png"></div>
+                    <div class="tab-in-tab"  style="display:none;">  <img src="img/info/info1/in2/in_04.png"></div>
+                    
+                </div> <!-- tabs tab ed-->
+                <ul class="tab-inner-title">
+                <li class="on">教育</li>
+                 <li >休闲</li>
+                <li >商业配套</li>
+                 <li >交通</li>
+                </ul>
+         
+          </div>
+           <div class="tabs" style="display:none;">
+            <img src="img/info/info1/in2/in2_03.png"/>
+          </div>
+           <div class="tabs" style="display:none;" >
+              <img src="img/info/info1/in2/in3_03.png"/>
+          </div>
+          <!-- a_s2 tabs ed--> 
+          <ul class="tabs-title">
+          	<li class="l1 on"></li>
+            <li class="l2"></li>
+            <li class="l3"></li>
+          </ul>
+        </div>
+        
+        <!-- a_s2 ed--> 
+      </div>
+      <!-- a_containered--> 
+    </div>
+    <!-- after ed--> 
+  </section>
+</article>
+</body>
+</html>

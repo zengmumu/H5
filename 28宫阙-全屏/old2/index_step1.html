@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>webrx-title</title>
+<meta name="description" content="简介">
+<meta name="keywords" content="关键字">
+<link rel="stylesheet" type="text/css" href="css/base.css"/>
+<script >
+window.onload=init;
+function init(){
+var slider=document.getElementById("slider");
+var dis=1920;
+var thum=document.getElementById("thum");
+var thums=thum.getElementsByTagName("li");
+thums[0].onclick=function(){
+ slider.style.left=0;
+ thums[0].className="on";
+ thums[1].className="";
+ thums[2].className="";
+
+}
+thums[1].onclick=function(){
+ slider.style.left="-1920px";
+ thums[0].className="";
+ thums[1].className="on";
+ thums[2].className="";
+
+}
+thums[2].onclick=function(){
+ slider.style.left="-3840px";
+ thums[0].className="";
+ thums[1].className="";
+ thums[2].className="on";
+
+}
+
+
+function move(){
+var le=parseInt(slider.style.left);
+ if(le<=-1920*2){
+    le=1920;
+ }
+ if(le==0){
+    thums[0].className="";
+ thums[1].className="on";
+ thums[2].className="";
+
+ }
+  if(le==-1920){
+    thums[0].className="";
+ thums[1].className="";
+ thums[2].className="on";
+
+ }
+ if(le==1920){
+    thums[0].className="on";
+ thums[1].className="";
+ thums[2].className="";
+
+ }
+
+    slider.style.left=le-dis+"px";
+id=setTimeout(move,2000);
+   
+}
+var id=setTimeout(move,2000);
+    slider.onmouseover=function(){
+
+        clearTimeout(id);
+    } 
+    slider.onmouseout=function(){
+       id=setTimeout(move,2000); 
+    }
+    } 
+
+
+
+</script>
+
+<style>
+
+</style>
+</head>
+
+<body>
+<header class="que_header">
+	<div class="container clearfix">
+<h1><img src="images/icon.png"/></h1>
+<ul>
+    <li class="item1"><a href=" ">首页</a></li>
+    <li class="item2"><a href="">城市与别墅</a></li>
+    <li class="item3"><a href="">别墅与中国</a></li>
+    <li class="item4"><a href="">别墅与园林</a></li>
+    <li class="item5"><a href="">别墅大社区</a></li>
+    <li class="item6"><a href="">梵街产品</a></li>
+</ul>
+
+</div>
+</header>
+<div class="banner">
+<div class="wrap">
+    <ul id="slider" style="left:0px;">
+        <li class="b1"><a href=""><img src="images/moveImg/in_01.jpg" alt=""></a></li>
+        <li class="b2"><a href=""><img src="images/moveImg/in_02.jpg" alt=""></a></li>
+        <li class="b3"><a href=""><img src="images/moveImg/in_03.jpg" alt=""></a></li>
+    </ul>
+
+</div>
+<ul id="thum">
+    <li id="thum_1" class="on"></li>
+    <li id="thum_2"></li>
+    <li id="thum_3"></li>
+</ul>
+</div>
+<div class="screen2">
+    <div class="contentDom">
+    <div class="info" style="width: 1920px; height: 816px;">
+        <img src="images/bg_03-1.png"/>
+<div class="indexOper" >
+<img src="images/nav2/n1/n.png">
+              <ul>
+                <li><img class="zz" src="images/nav2/zz.png" ><img src="images/nav2/n1/nt1.png"></li>
+                <li><img class="zz" src="images/nav2/zz.png" ><img src="images/nav2/n1/nt2.png"></li>
+                 <li><img class="zz" src="images/nav2/zz.png" ><img src="images/nav2/n1/nt3.png"></li>
+                  <li><img class="zz" src="images/nav2/zz.png" ><img src="images/nav2/n1/nt4.png"></li>
+              </ul>
+            </div>
+</div>
+    </div>
+    <div class="infoContentDom"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<html><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>28阙</title>
+<style type="text/css">
+.make {
+	width: 100%;
+	color: #424242;
+	padding-bottom: 100px;
+}
+.make form table {
+	font-size: 13px;
+	width: 502px;
+	height: 350px;
+	text-align: left;
+}
+input[type=reset], input[type=button] {
+	width: 86px;
+	height: 25px;
+	border: 0px;
+	background: #232323;
+	color: #EAEAEA;
+	font-weight: bold;
+	cursor: pointer;
+	vertical-align: middle;
+}
+</style>
+</head>
+<link href="css/common.css" tppabs="http://www.28que.com/css/common.css" type="text/css" rel="stylesheet" />
+<link href="css/info.css" tppabs="http://www.28que.com/css/info.css" type="text/css" rel="stylesheet" />
+</style>
+<script language="javascript" src="js/kendo/jquery-1.10.2.min.js" tppabs="http://www.28que.com/js/kendo/jquery-1.10.2.min.js"></script>
+<script language="javascript">
+var hideBar=true;
+$(document).ready(function(e) {
+	$("#ok").click(function() {
+        if(_verify()){
+			$("#form1").submit();
+		}
+    });
+});
+function erro(data)
+{
+	alert(data);
+}
+function _verify(){
+	
+	if($("#makeName").val()=="")
+	{
+		erro("请输入姓名!");
+		$("#makeName").focus();
+		return;
+	}else{
+		var namez=/^[\u0391-\uFFE5]+$/;
+		if(namez.test($("#makeName").val())&&$("#makeName").val().length>1){
+			
+			}else{
+				erro("姓名输入错误!");
+				$("#makeName").focus();
+						return;
+			}
+	}
+	
+	if($("#makePhone").val()=="")
+	{
+		erro("请输入电话!");
+		$("#makePhone").focus();
+				return;
+	}else{
+		var patrn= /^1[3|5|8][0-9]\d{8}$/;
+		if(patrn.test($("#makePhone").val())){
+			
+			}else{
+				erro("电话输入错误!");
+				
+				$("#makePhone").focus();
+						return;
+			}
+	}
+	
+	if($("#makeEmall").val()=="")
+	{
+		erro("请输入E-MAIL!");
+		
+		$("#makeEmall").focus();
+				return;
+	}else{
+		var mailz=/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+		if(mailz.test($("#makeEmall").val())){
+			
+			}else{
+				erro("E-MAIL输入错误!");
+				$("#makeEmall").focus();
+						return;
+			}
+	}
+	
+
+	return true;
+}
+</script>
+<body>
+<div class="contentBody">
+  <div class="zixunContent"><img style="margin-left:10px;" src="img/icon1.png" tppabs="http://www.28que.com/img/icon1.png"/>
+    <div class="zixunInfo">
+      <div class="zxminContent"><img src="img/in_03.jpg" tppabs="http://www.28que.com/img/in_03.jpg"/><img style="margin-top:27px;" src="img/vip_03.jpg" tppabs="http://www.28que.com/img/vip_03.jpg"/></div>
+      <div class="zxminContent" style="border-top:2px solid #4F4F4F;padding-top:30px;">
+        <div class="left">
+          <div class="leftInfo">
+            <div class="make">
+              <form id="form1" action="http://www.28que.com/admin/base64.php" method="post">
+              	<input name="VIP" type="hidden" value="tj" />
+                <table border="0" cellpadding="0" cellspacing="11" >
+                  <tr>
+                    <td colspan="2">称&nbsp;&nbsp;谓:
+                      <input type="radio" checked="checked" name="cenwei" value="男"/>
+                      先生
+                      <input type="radio" name="cenwei" value="女"/>
+                      女士</td>
+                  </tr>
+                  <tr>
+                    <td>姓&nbsp;&nbsp;名:
+                      <input type="text" id="makeName"  name="name"/></td>
+                    <td>电 话:
+                      <input type="text" id="makePhone" name="phone"/></td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">E-MAIL:
+                      <input type="text" id="makeEmall" name="email"/></td>
+                  </tr>
+                  <tr>
+                    <td colspan="2" style="border-bottom:1px solid #9D937D">选择您感兴趣的物业:
+                      <input type="radio" name="tenement" checked="checked" value="商业"/>
+                      商业
+                      <input type="radio" name="tenement" value="住宅"/>
+                      住宅
+                      <input type="radio" name="tenement" value="写字楼"/>
+                      写字楼  面积区间
+                      <select name="area">
+                        <option value="0-50 m²">0-50m²</option>
+                        <option value="50-100 m²">50-100m²</option>
+                        <option value="100-150 m²">100-150m²</option>
+                        <option value="150-200 m²">150-200m²</option>
+                        <option value="200-300 m²">200-300m²</option>
+                        <option value="300-500 m²">300-500m²</option>
+                      </select></td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">预约登记
+                      <textarea id="makepreregistration" style="width:445px;margin-top:5px;height:80px;" name="content"></textarea></td>
+                  </tr>
+                  <tr>
+                    <td colspan="2"><input   id="xieyi" type="radio" name="isdirect" value="接受"/>
+                      接受电子邮件直投</td>
+                  </tr>
+                  <tr>
+                    <td colspan="2"><input id="ok" type="button" value="确认提交"/>
+                      <input type="reset" id="reset" value="重新填写"/></td>
+                  </tr>
+                </table>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="right"><a href="zixun.php.htm" tppabs="http://www.28que.com/zixun.php">
+          <div>新闻资讯</div>
+          </a><a href="vip.php.htm" tppabs="http://www.28que.com/vip.php">
+          <div class="tfocus">VIP预约</div>
+          </a><img style="margin-top:104px;" src="img/in_10.jpg" tppabs="http://www.28que.com/img/in_10.jpg"/></div>
+      </div>
+      <div class="zxminContent" style="border-top:1px solid #4F4F4F;padding-top:30px; text-align:center;margin-top:40px;"><img src="img/in_14.jpg" tppabs="http://www.28que.com/img/in_14.jpg"/></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

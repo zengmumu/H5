@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<link rel="stylesheet" href="demo/css/jquery.fullPage.css" />
+	<style type="text/css">
+		.section{ background-image: url(upload/img/s1.jpg); background-size: cover;}
+		.s2{ background-image: url(upload/img/s2.jpg); }
+		.s3{ background-image: url(upload/img/s3.jpg); }
+		.s4{ background-image: url(upload/img/s4.jpg); }
+		.s5{ background-image: url(upload/img/s5.jpg); }
+		.s6{ background-image: url(upload/img/s6.jpg); }
+		.s7{ background-image: url(upload/img/s7.jpg); }
+		.s8{ background-image: url(upload/img/s8.jpg); }
+		h3{ font-size:50px; color: #fff; text-align: center;}
+		.s2 h3{ left:-200%; transition:all 1s; position: relative;}
+		#menu{ height: 70px; line-height:70px; width: 100%; position: fixed; top: 0 left:0; background-color:rgba(5,40,0,.3) ; z-index: 1000000;}
+		#menu li{ float: left; color: #fff; width: 120px;}
+		ul{ list-style: none;}
+	</style>
+</head>
+<body>
+	<div id="menu">
+		<ul>
+			
+			<li data-menuanchor="page1"><a href="#page1">link1</a></li>
+			<li data-menuanchor="page2"><a href="#page2">link2</a></li>
+			<li data-menuanchor="page3"><a href="#page3">link3</a></li>
+			<li data-menuanchor="page4"><a href="#page4">link4</a></li>
+			<li data-menuanchor="page5"><a href="#page5">link5</a></li>
+			<li data-menuanchor="page6"><a href="#page6">link6</a></li>
+			<li data-menuanchor="page7"><a href="#page7">link7</a></li>
+			<li data-menuanchor="page8"><a href="#page8">link8</a></li>				
+			
+		</ul>
+	</div>
+	<div id="main">
+		<div class="section s1">
+			
+			<div class="slide"><h3>第二屏的第一屏</h3></div>
+		<div class="slide"><h3>第二屏的第二屏</h3></div>
+		<div class="slide"><h3>第二屏的第三屏</h3></div>
+		</div>
+		<div class="section s2">
+			<h3>this is h32</h3>
+			<p>this is p 2</p>
+		</div>
+		<div class="section s3">
+			<h3>this is h33</h3>
+			<p>this is p 3</p>
+		</div>
+		<div class="section s4">
+			<h3>this is h34</h3>
+			<p>this is p 4</p>
+		</div>
+		<div class="section s5">
+			<h3>this is h35</h3>
+			<p>this is p 5</p>
+		</div>
+		<div class="section s6">
+			<h3>this is h36</h3>
+			<p>this is p 6</p>
+		</div>
+		<div class="section s7">
+			<h3>this is h37</h3>
+			<p>this is p 7</p>
+		</div>
+		<div class="section s8">
+			<h3>this is h38</h3>
+			<p>this is p 8</p>
+		</div>
+	</div>
+	
+	<script src="js/jquery-1.8.3.min.js"></script>
+	<script src="js/jquery.fullPage.js"></script>
+	<script>
+		$(function(){
+			$("#main").fullpage({
+				sectionsColor:['#1bbc9b', '#4BBFC3', '#7BAABE', '#f90',"#ff6644","yellow","green"],
+				continuousVertical: true ,
+				afterLoad: function(anchorLink, index){
+				if(index==2){
+					$(".s2 h3").css("left","0")
+				
+				}//if ed 
+				},//afterload ed
+				onLeave: function(index, direction){
+				if(index==2){
+				$(".s2 h3").css("left","-200%")	
+				}
+					
+				},//onLeave
+				'navigation': true,
+				anchors: ['page1', 'page2', 'page3', 'page4','page5','page6','page7','page8'],
+				menu: '#menu',
+				'navigationTooltips': ['提示1', '提示2'],//小圆点的提示文本
+
+
+				
+			});
+		})
+	</script>
+</body>
+</html>

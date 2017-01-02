@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>webrx-title</title>
+<meta name="description" content="简介">
+<meta name="keywords" content="关键字">
+<style>
+	*{ margin:0; padding:0;}
+	ul{ list-style:none;}
+	body{ font-family:"宋体"; font-size:12px; padding-top:135px;}
+	header,section,article{ display:block;}
+	a{ color:#fff; text-decoration:none;}
+	a:hover{ color:#A4090B;}
+	.on{ color:#A4090B;}
+	.pa{ position:absolute;}
+	.auto-img{width:100%; height:auto; z-index:-1; left:0; top:0;}
+	
+	.sc{ text-align:center; position:relative;}
+	header{ height:135px; background-color:#000; position:fixed; top:0; left:0; width:100%; z-index:100;}
+	.full{ width:1900px; height:860px;}	
+	.b_links { padding-top:50px;}
+	.b_links li{ display:inline-block; padding-left:30px; padding-right:30px; cursor:pointer;}
+	.b_links li span{ display:inline-block; height:77px; width:77px;  background-image:url(img/index/nav2/n1/n.png); margin-bottom:20px; position:relative;}
+	.b_links li span:before{ content:""; position:absolute; left:-10px; top:-10px; background-image:url(img/index/nav2/zz.png); width:97px; height:97px; display:none;}
+		.b_links li span:hover:before{ display:inline-block;}
+	.sc-title{ padding-top:130px;}
+	
+</style>
+</head>
+
+<body>
+	<header></header>
+    <article>
+    	<section class="sc sc1 full">
+        	<div class="before full">
+            <img src="img/index/bg_03.jpg" class="pa auto-img"/>
+            	<h3 class="sc-title"><img src="img/index/bg_03-1.png"></h3>
+                <ul class="b_links">
+                		<li><span></span><br/><img src="img/index/nav2/n1/nt1.png"></li>
+                        <li><span></span><br/><img src="img/index/nav2/n1/nt2.png"></li>
+                        <li><span></span><br/><img src="img/index/nav2/n1/nt3.png"></li>
+                        <li><span></span><br/><img src="img/index/nav2/n1/nt4.png"></li>
+                </ul><!-- sc1-links- ed-->
+            </div><!-- before ed-->
+            <div class="after full" style="display:none"></div><!-- after ed-->
+        </section>
+    </article>
+</body>
+</html>

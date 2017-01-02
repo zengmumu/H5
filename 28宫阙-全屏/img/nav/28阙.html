@@ -1,0 +1,420 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0021)http://www.28que.com/ -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head runat="server"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css" title="audiojs">        .audiojs audio { position: absolute; left: -1px; }         .audiojs { width: 460px; height: 36px; background: #404040; overflow: hidden; font-family: monospace; font-size: 12px;           background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #444), color-stop(0.5, #555), color-stop(0.51, #444), color-stop(1, #444));           background-image: -moz-linear-gradient(center top, #444 0%, #555 50%, #444 51%, #444 100%);}         .audiojs .play-pause { width: 25px; height: 40px; padding: 4px 6px; margin: 0px; float: left; overflow: hidden; border-right: 1px solid #000; }         .audiojs p { display: none; width: 25px; height: 40px; margin: 0px; cursor: pointer; }         .audiojs .play { display: block; }         .audiojs .scrubber { position: relative; float: left; width: 280px; background: #5a5a5a; height: 14px; margin: 10px; border-top: 1px solid #3f3f3f; border-left: 0px; border-bottom: 0px; overflow: hidden; }         .audiojs .progress { position: absolute; top: 0px; left: 0px; height: 14px; width: 0px; background: #ccc; z-index: 1;           background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ccc), color-stop(0.5, #ddd), color-stop(0.51, #ccc), color-stop(1, #ccc));           background-image: -moz-linear-gradient(center top, #ccc 0%, #ddd 50%, #ccc 51%, #ccc 100%); }         .audiojs .loaded { position: absolute; top: 0px; left: 0px; height: 14px; width: 0px; background: #000;           background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #222), color-stop(0.5, #333), color-stop(0.51, #222), color-stop(1, #222));           background-image: -moz-linear-gradient(center top, #222 0%, #333 50%, #222 51%, #222 100%); }         .audiojs .time { float: left; height: 36px; line-height: 36px; margin: 0px 0px 0px 6px; padding: 0px 6px 0px 12px; border-left: 1px solid #000; color: #ddd;}         .audiojs .time em { padding: 0px 2px 0px 0px; color: #f9f9f9; font-style: normal; }         .audiojs .time strong { padding: 0px 0px 0px 2px; font-weight: normal; }         .audiojs .error-message { float: left; display: none; margin: 0px 10px; height: 36px; width: 400px; overflow: hidden; line-height: 36px; white-space: nowrap; color: #fff;           text-overflow: ellipsis; -o-text-overflow: ellipsis; -icab-text-overflow: ellipsis; -khtml-text-overflow: ellipsis; -moz-text-overflow: ellipsis; -webkit-text-overflow: ellipsis; }         .audiojs .error-message a { color: #eee; text-decoration: none; padding-bottom: 1px; border-bottom: 1px solid #999; white-space: wrap; }                 .audiojs .play { background: url("js/kendo/audiojs/player-graphics.gif") -2px -1px no-repeat; }         .audiojs .loading { background: url("js/kendo/audiojs/player-graphics.gif") -2px -31px no-repeat; }         .audiojs .error { background: url("js/kendo/audiojs/player-graphics.gif") -2px -61px no-repeat; }         .audiojs .pause { background: url("js/kendo/audiojs/player-graphics.gif") -2px -91px no-repeat; }                 .playing .play, .playing .loading, .playing .error { display: none; }         .playing .pause { display: block; }                 .loading .play, .loading .pause, .loading .error { display: none; }         .loading .loading { display: block; }                 .error .time, .error .play, .error .pause, .error .scrubber, .error .loading { display: none; }         .error .error { display: block; }         .error .play-pause p { cursor: auto; }         .error .error-message { display: block; }</style>
+
+<title>28阙</title>
+<link href="./28阙_files/common.css" type="text/css" rel="stylesheet"><script language="javascript" src="./28阙_files/jquery-1.10.2.min.js"></script><script src="./28阙_files/jquery.mousewheel.js"></script><script language="javascript" src="./28阙_files/audio.min.js"></script><script language="javascript" src="./28阙_files/public.js"></script><script language="javascript">
+function showsss(classid){
+	$.ajax({
+		type: "POST",
+		url: "inajax.php",
+		data: 'classid='+classid,
+		success: function(msg) {
+			//alert(msg);
+	
+			$(".page4LiInfoDom").html(msg);
+	$(".page4LiInfoDom .page4LiInfoContent div.pageInfo").css({"width":wWidth,"height":hHeight});
+	$(".pageLeft").click(function(e) {
+        _pageInfoJian();
+    });
+	$(".pageRight").click(function(e) {
+        _pageInfoAdd();
+    });
+	
+	$(".page4Info ul li").each(function(index, element) {
+        var t=$(this);
+		t.click(function(e) {
+            _initpageInfoUl();
+        });
+    });
+			_initpageInfoUl();
+		}
+	});
+}
+</script></head>
+
+
+
+
+
+
+<body style="width: 1920px;">
+<div class="header maxContent">
+  <div class="minContent headerInfo"><img style="left:0em;position:absolute;left:0em;" src="./28阙_files/icon.png">
+    <ul>
+      <li><a href="javascript:" class="">首页</a></li>
+      <li><a href="javascript:" class="">城市与别墅</a></li>
+      <li><a href="javascript:" class="">别墅与中国</a></li>
+      <li><a href="javascript:" class="">别墅与园林</a></li>
+      <li><a href="javascript:" class="navFocus">别墅大社区</a></li>
+      <li><a href="javascript:" class="">梵街产品</a></li>
+    </ul>
+  </div>
+</div>
+<div class="rightOperDom" style="display: none;"><a href="http://www.28que.com/old/" target="_blank"><img src="./28阙_files/n_02.jpg"></a><a href="http://www.28que.com/vip.php" target="_blank"><img src="./28阙_files/n_03.jpg"></a><a href="http://www.28que.com/zixun.php" target="_blank"><img src="./28阙_files/n_04.jpg"></a><a href="javascript:" target="_blank"><img src="./28阙_files/n_05.jpg"></a><a href="javascript:" target="_blank"><img src="./28阙_files/n_06.jpg"></a></div>
+<div class="pageContent maxContent">
+  <ul class="pageDom">
+    <li class="page" style="width: 1920px; height: 951px;">
+      <div class="contentDom">
+        <ul class="indexPageContent">
+          <li style="opacity: 0; display: none;"><img class="bg" src="./28阙_files/bg_02.jpg" style="height: 951px; width: 1920px; margin-top: 0px;">
+            <div class="infoDom" style="background:none;">
+              <div class="info" style="width: 1920px; height: 816px;"><img src="./28阙_files/bg_02-1.png"></div>
+            </div>
+          </li>
+          <li style="display: none; opacity: 0.306242206773949;"><img class="bg" src="./28阙_files/in_01.jpg" style="height: 951px; width: 1920px; margin-top: 0px;">
+            <div class="infoDom">
+              <div class="info" style="width: 1920px; height: 816px;"><img src="./28阙_files/in_01-1.png"></div>
+            </div>
+          </li>
+          <li style="display: inline-block; opacity: 1;"><img class="bg" src="./28阙_files/in_02.jpg" style="height: 951px; width: 1920px; margin-top: 0px;">
+            <div class="infoDom">
+              <div class="info" style="width: 1920px; height: 816px;"><img src="./28阙_files/in_02-1.png"></div>
+            </div>
+          </li>
+          <li style="display: none; opacity: 0;"><img class="bg" src="./28阙_files/in_03.jpg" style="height: 951px; width: 1920px; margin-top: 0px;">
+            <div class="infoDom">
+              <div class="info" style="width: 1920px; height: 816px;"><img src="./28阙_files/in_03-2.png"><img src="./28阙_files/in_03-1.png"></div>
+            </div>
+          </li>
+        </ul>
+        <div style="clear:both;"></div>
+        <div class="pageBox"><div style="background: rgb(196, 196, 196);"></div><div style="background: rgb(196, 196, 196);"></div><div style="background: rgb(0, 0, 0);"></div><div style="background: rgb(196, 196, 196);"></div></div>
+        <div class="maxContent" style="text-align:center;position:absolute;bottom:15px;left:0em;z-index:15;"><img src="./28阙_files/up.png"></div>
+      </div>
+    </li>
+    <li class="page" style="width: 1920px; height: 951px;">
+      <div class="contentDom"><img class="bg" src="./28阙_files/bg_03.jpg" style="height: 951px; width: 1920px; margin-top: 0px;">
+        <div class="infoDom">
+          <div class="info" style="width: 1920px; height: 816px;"><img src="./28阙_files/bg_03-1.png">
+            <div class="indexOper" style="width:537px;"><img src="./28阙_files/n.png">
+              <ul>
+                <li><img class="zz" src="./28阙_files/zz.png"><img src="./28阙_files/nt1.png"></li>
+                <li><img class="zz" src="./28阙_files/zz.png"><img src="./28阙_files/nt2.png"></li>
+                <li><img class="zz" src="./28阙_files/zz.png"><img src="./28阙_files/nt3.png"></li>
+                <li><img class="zz" src="./28阙_files/zz.png"><img src="./28阙_files/nt4.png"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="infoContentDom" style="height: 951px;">
+        <div class="leftPageOper"><img src="./28阙_files/n_01.png"></div>
+        <div class="rightPageOper"><img src="./28阙_files/n_03.png"></div>
+        <ul class="infoPage" style="width: 7680px;">
+          <li class="infoInfoDom" style="width: 1920px;"><img class="bg" src="./28阙_files/bg_02(1).jpg" style="height: 951px; width: 1920px; margin-top: 0px;">
+            <div class="oper"><img src="./28阙_files/title.jpg"><img src="./28阙_files/fan.jpg" class="back"></div>
+            <div class="infoDom">
+              <div class="info" style="width: 1920px; height: 816px;">
+                <div class="page1InfoDom">
+                  <div style="padding:51px 0px 26px;"><img src="./28阙_files/in01.png"></div>
+                  <div><img id="page1OperInfoImg" src="./28阙_files/in02.png"></div>
+                  <div class="page1Oper">
+                    <div onclick="_initpage1Oper(0)" class="focus">1</div>
+                    <div onclick="_initpage1Oper(1)">2</div>
+                  </div>
+                  <div><img src="./28阙_files/in03.png"></div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="infoInfoDom" style="width: 1920px;"><img class="bg" src="./28阙_files/bg_02(2).jpg" style="height: 951px; width: 1920px; margin-top: 0px;">
+            <div class="oper"><img src="./28阙_files/title(1).jpg"><img src="./28阙_files/fan.jpg" class="back"></div>
+            <div class="infoDom">
+              <div class="info" style="width: 1920px; height: 816px;">
+                <div class="page2InfoDom">
+                  <div><img id="page2_1Info" style="margin-top:34px;" src="./28阙_files/in_01.png">
+                    <div class="page2_1InfoOper">
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                      <div></div>
+                    </div>
+                  </div>
+                  <div><img src="./28阙_files/in2_03.png"></div>
+                  <div><img src="./28阙_files/in3_03.png"></div>
+                </div>
+                <div class="page2Oper"><img src="./28阙_files/in_01_h.png"><img src="./28阙_files/in_02.png"><img src="./28阙_files/in_03.png"></div>
+              </div>
+            </div>
+          </li>
+          <li class="infoInfoDom" style="width: 1920px;"><img class="bg" src="./28阙_files/bg_02(3).jpg" style="height: 951px; width: 1920px; margin-top: 0px;">
+            <div class="oper"><img src="./28阙_files/title(2).jpg"><img src="./28阙_files/fan.jpg" class="back"></div>
+            <div class="infoDom">
+              <div class="info" style="width: 1920px; height: 816px;"><img src="./28阙_files/in_03(1).png"></div>
+            </div>
+          </li>
+          <li class="infoInfoDom" style="width: 1920px;"><img class="bg" src="./28阙_files/bg_02(4).jpg" style="height: 951px; width: 1920px; margin-top: 0px;">
+            <div class="oper"><img src="./28阙_files/title(3).jpg"><img src="./28阙_files/fan.jpg" class="back"></div>
+            <div class="infoDom">
+              <div class="info" style="width: 1920px; height: 816px;"><img src="./28阙_files/in_03(2).png"></div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </li>
+    <li class="page" style="width: 1920px; height: 951px;">
+      <div class="contentDom"><img class="bg" src="./28阙_files/bg_04.jpg" style="height: 951px; width: 1920px; margin-top: 0px;">
+        <div class="infoDom">
+          <div class="info left" style="padding-left: 298px; width: 1920px; height: 816px; text-align: left;"><img src="./28阙_files/bg_04-1.png"><br>
+            <img class="jin" src="./28阙_files/jin.jpg"></div>
+        </div>
+      </div>
+      <div class="infoContentDom" style="height: 951px;"> <img class="bg" src="./28阙_files/bg_01.jpg" style="height: 951px; width: 1920px; margin-top: 0px;">
+        <div class="oper"><img src="./28阙_files/title(4).jpg"><img src="./28阙_files/fan.jpg" class="back"></div>
+        <div class="infoDom">
+          <div class="info" style="width: 1920px; height: 816px;">
+            <div class="page3Info"> <img src="./28阙_files/bg_02.png">
+              <div class="inline" style="vertical-align:top;text-align:left;"><img src="./28阙_files/bg_03.png">
+                <div class="page3InfoOper"><img onclick="_initPage3Oper(0)" src="./28阙_files/bg_07.jpg"><img onclick="_initPage3Oper(1)" style="margin-left:7px;" src="./28阙_files/bg_04(1).jpg"></div>
+                <img id="page3InfoOperImg" src="./28阙_files/bg_07-2.png">
+                <div class="page1Oper" style="text-align:left;">
+                  <div onclick="_initpage3_1Oper(0)" class="focus">1</div>
+                  <div onclick="_initpage3_1Oper(1)">2</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="page" style="width: 1920px; height: 951px;">
+      <div class="contentDom"><img class="bg" src="./28阙_files/bg_05.jpg" style="height: 951px; width: 1920px; margin-top: 0px;">
+        <div class="infoDom">
+          <div class="info right" style="padding-right: 298px; width: 1920px; height: 816px; text-align: right;"><img src="./28阙_files/bg_05-1.png"><br>
+            <img style="margin-right:87px;" class="jin" src="./28阙_files/jin.jpg"></div>
+        </div>
+      </div>
+      <div class="infoContentDom" style="height: 951px;"> <img class="bg" src="./28阙_files/bg_02(5).jpg" style="height: 951px; width: 1920px; margin-top: 0px;">
+        <div class="oper"><img src="./28阙_files/title(5).jpg"><img src="./28阙_files/fan.jpg" class="back"></div>
+        <div class="infoDom">
+          <div class="info" style="width: 1920px; height: 816px;">
+            <div class="page4Info">
+              <ul>
+                <li onclick="showsss(&#39;6&#39;);"><img src="./28阙_files/n_01.jpg"></li>
+                <li onclick="showsss(&#39;7&#39;);"><img src="./28阙_files/n_02(1).jpg"></li>
+                <li onclick="showsss(&#39;8&#39;);"><img src="./28阙_files/n_03(1).jpg"></li>
+                <li onclick="showsss(&#39;9&#39;);"><img src="./28阙_files/n_04(1).jpg"></li>
+                <li onclick="showsss(&#39;10&#39;);"><img src="./28阙_files/n_05(1).jpg"></li>
+                <li onclick="showsss(&#39;11&#39;);"><img src="./28阙_files/n_06(1).jpg"></li>
+                <li onclick="showsss(&#39;12&#39;);"><img src="./28阙_files/n_07.jpg"></li>
+                <li onclick="showsss(&#39;13&#39;);"><img src="./28阙_files/n_08.jpg"></li>
+              </ul>
+              <img style="margin-top:23px;" src="./28阙_files/bTitle.png"> </div>
+          </div>
+        </div>
+      </div>
+    </li>
+    <li class="page" style="width: 1920px; height: 951px;">
+      <div class="contentDom"><img class="bg" src="./28阙_files/bg_06.jpg" style="height: 951px; width: 1920px; margin-top: 0px;">
+        <div class="infoDom">
+          <div class="info" style="width: 1920px; height: 816px;"><img src="./28阙_files/bg_06-1.png">
+            <div class="indexOper" style="width:385px;"><img src="./28阙_files/n1.png">
+              <ul>
+                <li><img class="zz" src="./28阙_files/zz.png" style="opacity: 0;"><img src="./28阙_files/nt1(1).png"></li>
+                <li><img class="zz" src="./28阙_files/zz.png" style="opacity: 0;"><img src="./28阙_files/nt2(1).png"></li>
+                <li><img class="zz" src="./28阙_files/zz.png" style="opacity: 0;"><img src="./28阙_files/nt3(1).png"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="infoContentDom" style="height: 951px; display: block;">
+        <div class="leftPageOper"><img src="./28阙_files/n_01.png"></div>
+        <div class="rightPageOper"><img src="./28阙_files/n_03.png"></div>
+        <ul class="infoPage" style="width: 5760px; left: -1920px;">
+          <li class="infoInfoDom" style="width: 1920px;"><img class="bg" src="./28阙_files/bg_03(1).jpg" style="height: 951px; width: 1920px; margin-top: 0px;">
+            <div class="oper"><img src="./28阙_files/title(6).jpg"><img src="./28阙_files/fan.jpg" class="back"></div>
+            <div class="infoDom">
+              <div class="info" style="width: 1920px; height: 816px;"><img src="./28阙_files/bg_02-1(1).png"><a href="http://www.28que.com/img/quweiBig.jpg" target="_blank"><img style="vertical-align:top;margin-top:159px;" src="./28阙_files/bg_02-3.jpg"></a></div>
+            </div>
+          </li>
+          <li class="infoInfoDom" style="width: 1920px;"><img class="bg" src="./28阙_files/bg_03(1).jpg" style="height: 951px; width: 1920px; margin-top: 0px;">
+            <div class="oper"><img src="./28阙_files/title1.jpg"><img src="./28阙_files/fan.jpg" class="back"></div>
+            <div class="infoDom">
+              <div class="info" style="width: 1920px; height: 816px;">
+                <div class="page5Info">
+                  <div style="left:68px;top:218px;" class="page5Oper" onclick="showsss(&#39;1&#39;);"><img src="./28阙_files/nav1.png"></div>
+                  <div style="left:605px;top:110px;" class="page5Oper" onclick="showsss(&#39;2&#39;);"><img src="./28阙_files/nav2.png"></div>
+                  <div style="left:752px;top:-16px;" class="page5Oper" onclick="showsss(&#39;3&#39;);"><img src="./28阙_files/nav3.png"></div>
+                  <div style="left:823px;top:72px;" class="page5Oper" onclick="showsss(&#39;4&#39;);"><img src="./28阙_files/nav4.png"></div>
+                  <div style="left:1030px;top:388px;" class="page5Oper" onclick="showsss(&#39;5&#39;);"><img src="./28阙_files/nav5.png"></div>
+                  <img src="./28阙_files/bg_03-1(1).png"></div>
+              </div>
+            </div>
+          </li>
+          <li class="infoInfoDom" style="width: 1920px;"><img class="bg" src="./28阙_files/bg_04(2).jpg" style="height: 951px; width: 1920px; margin-top: 0px;">
+            <div class="oper"><img src="./28阙_files/title2.jpg"><img src="./28阙_files/fan.jpg" class="back"></div>
+            <div class="infoDom">
+              <div class="info" style="width: 1920px; height: 816px;"><img src="./28阙_files/in_03(3).png"></div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </li>
+    <li class="page" style="width: 1920px; height: 951px;">
+      <div class="contentDom"><img class="bg" src="./28阙_files/bg_07(1).jpg" style="height: 951px; width: 1920px; margin-top: 0px;">
+        <div class="infoDom">
+          <div class="info" style="width: 1920px; height: 816px;"><img src="./28阙_files/bg_07-1.png">
+            <div class="indexOper" style="width:385px;"><img src="./28阙_files/n2.png">
+              <ul>
+                <li><img class="zz" src="./28阙_files/zz.png" style="opacity: 0;"><img src="./28阙_files/nt1(2).png"></li>
+                <li><img class="zz" src="./28阙_files/zz.png" style="opacity: 0;"><img src="./28阙_files/nt2(2).png"></li>
+                <li><img class="zz" src="./28阙_files/zz.png" style="opacity: 0;"><img src="./28阙_files/nt3(2).png"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="infoContentDom" style="height: 951px; display: none;">
+        <div class="leftPageOper"><img src="./28阙_files/n_01.png"></div>
+        <div class="rightPageOper"><img src="./28阙_files/n_03.png"></div>
+        <ul class="infoPage" style="width: 5760px; left: -3840px;">
+          <li class="infoInfoDom" style="width: 1920px;"><img class="bg" src="./28阙_files/bg_02(6).jpg" style="height: 951px; width: 1920px; margin-top: 0px;">
+            <div class="oper"><img src="./28阙_files/title(7).jpg"><img src="./28阙_files/fan.jpg" class="back"></div>
+            <div class="infoDom">
+              <div class="info" style="width: 1920px; height: 816px;">
+                <div class="page6Info"><img style="position:absolute;left:0em;top:0em;" src="./28阙_files/hxLTitle_03.png">
+                  <div class="page6InfoOperInfo">
+                    <div class="page6content"><img src="./28阙_files/hxInfo_03.jpg"></div>
+                    <div class="page6InfoOperInfoTitle"><img src="./28阙_files/hxInfo_04.jpg">
+                      <div class="page6InfoClose"><img src="./28阙_files/hxInfo_07.jpg"></div>
+                    </div>
+                  </div>
+                  <div class="page6InfoContent">
+                    <div style="display: none;">
+                      <div style="left:124px;top:357px;" class="page6InfoOper"><img data-src="img/info/info5/hxInfo_03.jpg" class="page6contenthide"><img data-src="img/info/info5/hxInfo_04.jpg" class="page6InfoOperInfoTitlehide"></div>
+                      <div style="left:304px;top:137px;" class="page6InfoOper"><img data-src="img/info/info5/hx/h2/h.png" class="page6contenthide"><img data-src="img/info/info5/hxInfo_04.jpg" class="page6InfoOperInfoTitlehide"></div>
+                      <div style="left:424px;top:307px;" class="page6InfoOper"></div>
+                      <div style="left:547px;top:146px;" class="page6InfoOper"></div>
+                      <img src="./28阙_files/h.png"></div>
+                    <div style="display: none;">
+                      <div style="left:288;top:327px;" class="page6InfoOper"></div>
+                      <div style="left:389px;top:79px;" class="page6InfoOper"></div>
+                      <img src="./28阙_files/h(1).png"></div>
+                    <div style="display: block;">
+                      <div style="left:129px;top:129px;" class="page6InfoOper"></div>
+                      <div style="left:353px;top:307px;" class="page6InfoOper"></div>
+                      <div style="left:547px;top:203px;" class="page6InfoOper"></div>
+                      <img src="./28阙_files/h(2).png"></div>
+                    <div style="display: none;">
+                      <div style="left:225px;top:219px;" class="page6InfoOper"></div>
+                      <div style="left:266px;top:92px;" class="page6InfoOper"></div>
+                      <div style="left:496px;top:237px;" class="page6InfoOper"></div>
+                      <img src="./28阙_files/h(3).png"></div>
+                    <div style="display: none;"><img src="./28阙_files/h(4).png"></div>
+                  </div>
+                  <div class="page6Oper">
+                    <div style="z-index:5"><img src="./28阙_files/nav1(1).png">
+                      <div style="color: rgb(199, 199, 199);">3F</div>
+                    </div>
+                    <div style="z-index:4"><img src="./28阙_files/nav2(1).png">
+                      <div style="color: rgb(199, 199, 199);">2F</div>
+                    </div>
+                    <div style="z-index:3"><img src="./28阙_files/nav3_h.png">
+                      <div style="color: rgb(70, 70, 70);">1F</div>
+                    </div>
+                    <div style="z-index:2"><img src="./28阙_files/nav4(1).png">
+                      <div style="color: rgb(199, 199, 199);">-1F</div>
+                    </div>
+                    <div style="z-index:1"><img src="./28阙_files/nav5(1).png">
+                      <div style="color: rgb(199, 199, 199);">整体</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="infoInfoDom" style="width: 1920px;"><img class="bg" src="./28阙_files/bg_02(6).jpg" style="height: 951px; width: 1920px; margin-top: 0px;">
+            <div class="oper"><img src="./28阙_files/title1(1).jpg"><img src="./28阙_files/fan.jpg" class="back"></div>
+            <div class="infoDom">
+              <div class="info" style="width: 1920px; height: 816px;">
+                <div class="page7Info">
+                  <div><img class="page7PreOper" src="./28阙_files/oper1.jpg" style="margin-right:9px;"><img class="page7NextOper" src="./28阙_files/oper2_h.jpg"></div>
+                  <div class="page7InfoContent">
+                    <ul style="width: 1140px; display: none;">
+                      <li><a href="http://www.28que.com/img/info/info5/hx/prehx/h1_h.jpg" target="_blank"><img src="./28阙_files/h1.jpg"></a></li>
+                      <li style="border: 5px solid rgb(209, 209, 209);"><a href="http://www.28que.com/img/info/info5/hx/prehx/h2_h.jpg" target="_blank"><img src="./28阙_files/h2.jpg"></a></li>
+                      <li style="border: 5px solid rgb(209, 209, 209);"><a href="http://www.28que.com/img/info/info5/hx/prehx/h3_h.jpg" target="_blank"><img src="./28阙_files/h3.jpg"></a></li>
+                    </ul>
+                    <ul style="width: 2280px;">
+                      <li style="border: 5px solid rgb(209, 209, 209);"><a href="http://www.28que.com/img/info/info5/hx/nexthx/h1_h.jpg" target="_blank"><img src="./28阙_files/h1(1).jpg"></a></li>
+                      <li style="border: 5px solid rgb(209, 209, 209);"><a href="http://www.28que.com/img/info/info5/hx/nexthx/h2_h.jpg" target="_blank"><img src="./28阙_files/h2(1).jpg"></a></li>
+                      <li style="border: 5px solid rgb(209, 209, 209);"><a href="http://www.28que.com/img/info/info5/hx/nexthx/h3_h.jpg" target="_blank"><img src="./28阙_files/h3(1).jpg"></a></li>
+                      <li><a href="http://www.28que.com/img/info/info5/hx/nexthx/h4_h.jpg" target="_blank"><img src="./28阙_files/h4.jpg"></a></li>
+                      <li><a href="http://www.28que.com/img/info/info5/hx/nexthx/h5_h.jpg" target="_blank"><img src="./28阙_files/h5.jpg"></a></li>
+                      <li><a href="http://www.28que.com/img/info/info5/hx/nexthx/h6_h.jpg" target="_blank"><img src="./28阙_files/h6.jpg"></a></li>
+                    </ul>
+                  </div>
+                  <img class="page7Next" src="./28阙_files/next.jpg"> <img class="page7InfoBTitle" src="./28阙_files/hxBxTitle.png"> </div>
+              </div>
+            </div>
+          </li>
+          <li class="infoInfoDom" style="width: 1920px;"><img class="bg" src="./28阙_files/bg_02(6).jpg" style="height: 951px; width: 1920px; margin-top: 0px;">
+            <div class="oper"><img src="./28阙_files/title2(1).jpg"><img src="./28阙_files/fan.jpg" class="back"></div>
+            <div class="infoDom">
+              <div class="info" style="width: 1920px; height: 816px;">
+                <div class="page8Info">
+                  <div class="page8InfoContentDom">
+                    <img src="./28阙_files/1409029167ChVMa.jpeg">                  </div>
+                  <div style="position:relative;"><img class="page8LeftOper" src="./28阙_files/left.png"><img class="page8RightOper" src="./28阙_files/right.png">
+                    <div class="page8InfoContent" style="margin:4px 0px 32px;">
+                      <ul style="width: 2854px;">
+                        <li><img src="./28阙_files/1409029167ChVMa.jpeg"></li><li><img src="./28阙_files/1409029167jmEaX.jpeg"></li><li><img src="./28阙_files/1409029167mRzUD.jpeg"></li><li><img src="./28阙_files/1409029167EaQHM.jpeg"></li><li><img src="./28阙_files/1409029167aNYTj.jpeg"></li><li><img src="./28阙_files/1409029167gBqAH.jpeg"></li><li><img src="./28阙_files/1409029167hvQph.jpeg"></li><li><img src="./28阙_files/1409029167RRBqj.jpeg"></li><li><img src="./28阙_files/1409029115nbKuM.jpeg"></li><li><img src="./28阙_files/1409029115mhJti.jpeg"></li><li><img src="./28阙_files/1409029115eKQue.jpeg"></li><li><img src="./28阙_files/1409029115vTWvi.jpeg"></li><li><img src="./28阙_files/1409029115nrMvJ.jpeg"></li><li><img src="./28阙_files/1409029115IUULd.jpeg"></li><li><img src="./28阙_files/1409029115RBhSf.jpeg"></li><li><img src="./28阙_files/1409029115sbsKH.jpeg"></li><li><img src="./28阙_files/1409029115NGDNB.jpeg"></li><li><img src="./28阙_files/1409029115VLpUG.jpeg"></li><li><img src="./28阙_files/1409029062IiCDm.jpeg"></li><li><img src="./28阙_files/1409029062giNyr.jpeg"></li><li><img src="./28阙_files/1409029062jVPGC.jpeg"></li><li><img src="./28阙_files/1409029062usrVf.jpeg"></li><li><img src="./28阙_files/1409029062mCKNE.jpeg"></li><li><img src="./28阙_files/1409029062JvWxG.jpeg"></li><li><img src="./28阙_files/1409029062HQFXq.jpeg"></li><li><img src="./28阙_files/1409029062dkdRP.jpeg"></li><li><img src="./28阙_files/1409029062CcevR.jpeg"></li><li><img src="./28阙_files/1409029062lIQsr.jpeg"></li>                      </ul>
+                    </div>
+                  </div>
+                  <img src="./28阙_files/sjtBtitle.png"> </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+  <div style="clear:both;"></div>
+</div>
+<div class="maxContent" style="height:33px;left:0em;text-align:center;background:#E6E6E6;padding:37px 0px 58px 0px;"><img src="./28阙_files/address.png"></div>
+<div class="page4LiInfoDom" style="height: 951px; display: block;">
+  <div class="pageZz"></div>
+
+  <div class="page4LiInfoContent">
+
+    <div class="oper" style="top:28px;">
+
+      <div class="inline pageInfoRightTitle">
+
+      <img id="pageInfoRightTitle" src="./28阙_files/946656000vIDkq.jpeg"></div>
+
+      <img onclick="_closePageInfo()" class="close" src="./28阙_files/close.jpg"></div>
+
+    <div class="pageInfo" style="width: 1920px; height: 951px;">
+
+      <div class="pageInfoUlDom"> <img class="pageLeft" src="./28阙_files/left(1).png"> <img class="pageRight" src="./28阙_files/right(1).png">
+
+        <div class="pageInfoUl">
+
+          <ul style="width: 918px;">
+
+          <li style="width: 918px;"><img src="./28阙_files/1409026794pMBKD.jpeg"></li>
+          </ul>
+
+        </div>
+
+      </div>
+
+      <img id="pageInfoBTitle" style="margin:28px 0px 20px;" src="./28阙_files/946655999ycMwV.jpeg"> <br>
+      <img style="display:none;" src="./28阙_files/n_04.png">
+
+      <div class="pageCount">1/1</div>
+
+    </div>
+
+  </div>
+
+</div>
+<div id="Music" style="display:none;">
+  <div class="audiojs playing" classname="audiojs" id="audiojs_wrapper0"><audio autoplay="" loop="" src="http://28que.com/video/sound1.mp3"></audio>          <div class="play-pause">             <p class="play"></p>             <p class="pause"></p>             <p class="loading"></p>             <p class="error"></p>           </div>           <div class="scrubber">             <div class="progress" style="width: 0px;"></div>             <div class="loaded" style="width: 0px;"></div>           </div>           <div class="time">             <em class="played">00:40</em>/<strong class="duration">01:45</strong>           </div>           <div class="error-message"></div></div>
+</div>
+
+
+</body></html>

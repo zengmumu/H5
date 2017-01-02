@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>fullPage.js — 基本演示_dowebok</title>
+<link rel="stylesheet" href="css/jquery.fullPage.css">
+<link rel="stylesheet" href="css/lightbox.css">
+<style>
+*{ margin:0; padding:0;}
+ul{ list-style:none;}
+.section{ background-size:cover; text-align: center;}
+.section1 { background: url(images/img/s1.jpg) 50%;}
+.section2 { background:url(images/img/s2.jpg)  50%;}
+.section3 { background: url(images/img/s3.jpg)  50%;}
+.section4 { background: url(images/img/s4.jpg)  50%;}
+.section5 { background: url(images/img/s5.jpg)  50%;}
+.section6 { background: url(images/img/s6.jpg)  50%;}
+.section7 { background: url(images/img/s7.jpg)  50%;}
+.header{ width:100%;  height:70px; position:fixed; left:0; top:0; z-index:1000; background-color:rgba(0,0,0,.4); display: none;}
+#menu{ width:1000px; margin:0 auto; }
+#menu li,.menu li{ float:left; height:70px; line-height:70px; width:120px; text-align:center; }
+#menu li a,.menu li a{ display:block; color: #fff; text-decoration: none; }
+#menu li a:hover,#menu li.active a,.menu li a:hover{ height: 67px; border-bottom:3px solid rgb(153,127,75); background-color: rgba(16,80,60,.3); line-height: 40px;}
+.fp-tableCell{ vertical-align: top;}
+.section2 h3{ margin-top: 5%; position: relative; left: 120%;}
+.box{ width: 250px;height:190px; padding: 10px; background-color: rgba(0,0,0,.4); border-radius: 4px;}
+.box li{ width: 48%; float: left; height: 48%;}
+.box li:nth-child(1),.box li:nth-child(3){ margin-right: 4%;}
+.box li:nth-child(1),.box li:nth-child(2){ margin-bottom: 4%;}
+.box li a{ width: 94%; height: 94%; border:2px solid #fff; display: block; overflow: hidden; transition:all 1s ease;} 
+.box li a:hover{ transform:scale(1.2,1.2);}
+.box li a img{ height: 100%; width: auto;}
+.section2 .box{ position:absolute; right: 15%; bottom: -50%;}
+.top{ height: 70px; line-height: 70px; background-color: rgb(11,30,54);}
+.top .logo{ float: left; width: 30%; background-color: #000; height: 100%; line-height: 60px;}
+.top .logo img{ height: 100%; height: 50px; width: auto; vertical-align:middle;}
+.prenext{ width: 112px; height:65px; position: fixed; left:50%; bottom:50px; background:url(images/gd_03.png) no-repeat center center;  z-index: 250; cursor: pointer;}
+.pre{ background-image: url("images/gdd_03.png")}
+</style>
+<script src="js/jquery-1.8.3.min.js"></script>
+<script src="js/jquery.fullPage.min.js"></script>
+<script src="js/lightbox.js"></script>
+<script>
+$(function(){
+	$('#xianren').fullpage({
+		anchors: ['page1', 'page2', 'page3', 'page4','page5','page6','page7'],
+		menu: '#menu',
+		'navigation': true,
+		'navigationTooltips': ["首页","世外桃源","源生原味","星星作伴","创想意境","闲云圣景","活动"],
+	afterLoad: function(anchorLink, index){
+		if(index==2){
+			$('.section2').find('h3').delay(0).animate({
+					left: '0'
+				}, 1500);
+			  $(".section2 .box").animate({"bottom":"15%"},1000);
+
+		}
+		if(index==1){$(".header").hide();}else{
+		$(".header").show();	
+		}
+		if(index==7){
+			$(".prenext").removeClass("next").addClass("pre")
+			$(".prenext").bind("click",$.fn.fullpage.moveSectionUp)
+			$(".prenext").unbind("click",$.fn.fullpage.moveSectionDown)
+		}else{
+			$(".prenext").removeClass("pre").addClass("next")
+            $(".prenext").unbind("click",$.fn.fullpage.moveSectionUp)
+			$(".prenext").bind("click",$.fn.fullpage.moveSectionDown)
+		}
+	},
+	onLeave: function(index, direction){
+		if(index==2){
+			$('.section2').find('h3').delay(0).animate({
+					left: '120%'
+				}, 1500);
+			  $(".section2 .box").animate({"bottom":"-50%"},1000);
+
+		}
+	}//afterLoad；
+
+		});
+	
+// $(".next").bind("click",function(){
+
+// $.fn.fullpage.moveSectionDown();
+// 	})
+
+
+			
+	
+	
+});
+</script>
+</head>
+
+<body>
+<div class="header">
+<ul id="menu">
+	<li data-menuanchor="page1" class="active"><a href="#page1">第一屏</a></li>
+	<li data-menuanchor="page2"><a href="#page2">第二屏</a></li>
+	<li data-menuanchor="page3"><a href="#page3">第三屏</a></li>
+	<li data-menuanchor="page4"><a href="#page4">第四屏</a></li>
+	<li data-menuanchor="page5"><a href="#page5">第5屏</a></li>
+	<li data-menuanchor="page6"><a href="#page6">第6屏</a></li>
+	<li data-menuanchor="page7"><a href="#page7">第7屏</a></li>
+</ul>
+
+</div>
+<div class="prenext next"></div>
+<div id="xianren">
+	<div class="section section1">
+	<div class="top">
+	<h2 class="logo"><a href=""><img src="images/logo-1_03.png" alt=""></a></h2>
+	<ul class="menu">
+        <li data-menuanchor="page1"  class="active"><a href="#page1">链接1</a></li>
+        <li data-menuanchor="page2"><a href="#page2">链接2</a></li>
+        <li  data-menuanchor="page3"><a href="#page3">链接3</a></li>
+        <li  data-menuanchor="page4"><a href="#page4">链接4</a></li>
+        <li  data-menuanchor="page5"><a href="#page5">链接5</a></li>
+        <li  data-menuanchor="page6"><a href="#page6">链接6</a></li>
+        <li data-menuanchor="page7" ><a href="#page7">链接7</a></li>
+    </ul>
+    </div>
+		<h3>第一屏</h3>
+		
+	</div>
+	<div class="section section2">
+			<h3><img src="images/01_03.png"></h3>
+			<ul class="box">
+				<li><a href="images/img/s4.jpg" data-lightbox="s2"><img src="upload/20141106133043.jpg" alt=""></a></li>
+				<li><a href="images/img/s5.jpg"  data-lightbox="s2"><img src="upload/20141106133101.jpg" alt=""></a></li>
+				<li><a href="images/img/s6.jpg"  data-lightbox="s2"><img src="upload/20141106133106.jpg" alt=""></a></li>
+				<li><a href="images/img/s7.jpg"  data-lightbox="s2"><img src="upload/20141106133111.jpg" alt=""></a></li>
+			</ul>
+	</div>
+	<div class="section section3">
+		<h3>第三屏</h3>
+	</div>
+    <div class="section section4">
+		<h3>第4屏</h3>
+	</div>
+    <div class="section section5">
+		<h3>第5屏</h3>
+	</div>
+    <div class="section section6">
+		<h3>第6屏</h3>
+	</div>
+    <div class="section section7">
+		<h3>第7屏</h3>
+        <p>这是最后一屏</p>
+	</div>
+	
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<a href="http://www.dowebok.com/" style="display: none;">dowebok</a>
+<a href="http://www.dowebok.com/77.html" style="display: none;">jQuery全屏滚动插件fullPage.js</a>
+
+</body>
+</html>

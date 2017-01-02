@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="css/jquery.fullPage.css" rel="stylesheet">
+<link href="css/lightbox.css" rel="stylesheet">
+<style>
+ul,li{ list-style: none;}
+*{ margin: 0; padding: 0;}
+.section{ text-align: center;}
+.section1{ background-image: url(images/img/s1.jpg); background-size: cover;} 
+.section2{ background-image: url(images/img/s2.jpg); background-size: cover;} 
+.section3{ background-image: url(images/img/s3.jpg); background-size: cover;} 
+.section4{ background-image: url(images/img/s4.jpg); background-size: cover;} 
+.section5{ background-image: url(images/img/s5.jpg); background-size: cover;} 
+.section6{ background-image: url(images/img/s6.jpg); background-size: cover;} 
+.section7{ background-image: url(images/img/s7.jpg); background-size: cover;} 
+.header{ width: 100%; height: 60px; background-color: rgba(0,0,0,.3); line-height: 60px; position: fixed;left:0;top:0; z-index: 1000;}
+#menu{ width: 1000px; margin: 0 auto;}
+#menu li { float: left; width:120px; text-align: center;}
+#menu li a{ color: #f0f0f0; text-decoration: none; display: block; height: 60px;}
+#menu li a:hover,#menu li.active a{ background-color: rgba(5,88,70,.8); height: 56px; border-bottom: 4px solid rgb(192,149,86); line-height:40px;}
+#fp-nav ul li .fp-tooltip{ background-color: rgba(0,0,0,.6); padding: 10px; width: 120px; border-radius: 4px; overflow: visible; top:-10px;}
+#fp-nav ul li .fp-tooltip:after{ content: "";
+display: block;
+width: 0;
+height: 0;
+border: 6px solid transparent;
+border-left-color: rgba(0,0,0,.6);
+position: absolute;
+right: 0px;
+top: 50%;
+transform: translate(12px,-50%);
+z-index: 10000;}
+/*#fp-nav ul li a.active+.fp-tooltip{ opacity: .7;}*/
+.fp-tableCell{ vertical-align: top;}
+.section2 h3{ margin-top: 5%; left:120%; position: relative;}
+.box{ width: 250px;height:190px; padding: 10px; background-color: rgba(0,0,0,.4); border-radius: 4px;}
+.box li{ width: 48%; float: left; height: 48%;}
+.box li:nth-child(1),.box li:nth-child(3){ margin-right: 4%;}
+.box li:nth-child(1),.box li:nth-child(2){ margin-bottom: 4%;}
+.box li a{ width: 94%; height: 94%; border:2px solid #fff; display: block; overflow: hidden; transition:all 1s ease;} 
+.box li a:hover{ transform:scale(1.2,1.2);}
+.box li a img{ height: 100%; width: auto;}
+.section2 .box{ position:absolute; right: 15%; bottom: -50%;}
+</style>
+
+</head>
+<body>
+<div class="header">
+    <ul id="menu">
+        <li data-menuanchor="page1"  class="active"><a href="#page1">链接1</a></li>
+        <li data-menuanchor="page2"><a href="#page2">链接2</a></li>
+        <li  data-menuanchor="page3"><a href="#page3">链接3</a></li>
+        <li  data-menuanchor="page4"><a href="#page4">链接4</a></li>
+        <li  data-menuanchor="page5"><a href="#page5">链接5</a></li>
+        <li  data-menuanchor="page6"><a href="#page6">链接6</a></li>
+        <li data-menuanchor="page7" ><a href="#page7">链接7</a></li>
+    </ul>
+</div>
+<div id="xianren">
+<div class="section section1">
+    <h3>这是第1屏幕</h3>
+</div>
+<div class="section section2">
+    <h3><img src="images/01_03.png"></h3>
+    <div class="box">
+        <li><a href="images/img/s4.jpg" data-lightbox="s2"><img src="upload/20141106133043.jpg" alt=""></a></li>
+        <li><a href="images/img/s5.jpg" data-lightbox="s2"><img src="upload/20141106133101.jpg" alt=""></a></li>
+        <li><a href="images/img/s6.jpg" data-lightbox="s3"><img src="upload/20141106133106.jpg" alt=""></a></li>
+        <li><a href="images/img/s7.jpg" data-lightbox="s3"><img src="upload/20141106133111.jpg" alt=""></a></li>
+    </div>
+</div>
+<div class="section section3">
+    <h3>这是第3屏幕</h3>
+</div>
+<div class="section section4">
+    <h3>这是第4屏幕</h3>
+</div>
+<div class="section section5">
+    <h3>这是第5屏幕</h3>
+</div>
+<div class="section section6">
+    <h3>这是第6屏幕</h3>
+</div>
+<div class="section section7">
+    <h3>这是第7屏幕</h3>
+</div>
+</div>
+<!-- xianren ed -->
+<script src="js/jquery-1.8.3.min.js"></script>  
+<script src="js/jquery.fullPage.js"></script> 
+<script src="js/lightbox.js"></script> 
+<script>
+$(function(){
+$("#xianren").fullpage({
+    sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE', '#f90','red','blue','gold'],
+    anchors: ['page1','page2','page3','page4','page5','page6','page7'],
+    menu: '#menu',
+    'navigation': true,
+    'navigationTooltips': ["首页","世外桃源","源生原味","星星作伴","创想意境","闲云圣景","活动"],
+    afterLoad: function(anchorLink, index){
+
+        if(index==2){
+            $(".section2 h3").animate({"left":"0"},600);
+            $(".section2 .box").animate({"bottom":"15%"},1000);
+       
+        }//if ed
+
+    },//afterload ed
+    onLeave: function(index, direction){
+         if(index==2){
+            $(".section2 h3").animate({"left":"120%"},600);
+            $(".section2 .box").animate({"bottom":"-50%"},1000);
+        }//if ed
+
+    }//onleave
+
+});//fullpage ed
+
+
+})//jquery ed
+</script>
+</body>
+</html>

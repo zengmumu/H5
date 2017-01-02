@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="css/jquery.fullPage.css" />
+		<script src="demo/js/jquery-1.8.3.min.js"></script>
+		<script src="demo/js/jquery.fullPage.js"></script>
+		<style>
+				*{ padding: 0; margin: 0;}
+				ul{ list-style: none;}
+				a{text-decoration: none;}
+			.section{ background-image: url(images/s1.jpg); background-size: cover;}
+			.s2{background-image: url(images/s2.jpg);}
+			.s3{background-image: url(images/s3.jpg);}
+			.s4{background-image: url(images/s4.jpg);}
+			.s5{background-image: url(images/s5.jpg);}
+			.s6{background-image: url(images/s6.jpg);}
+			.s7{background-image: url(images/s7.jpg);}
+			.s8{background-image: url(images/s8.jpg);}
+			#menu{ height: 50px; line-height: 50px; background-color: rgba(0,0,0,.6); position: fixed;top:0; left:0;width: 100%; z-index: 10000;}
+			#menu li{ float: left; width: 12%;}
+			#menu a{ display: block; height: 50%;text-align: center;}
+			#menu .active a,#menu a:hover{ border-bottom:3px solid yellow; color: yellow;}
+			.container{ width: 1200px; margin: 0 auto;}
+			
+			.s2 .fp-tableCell{ vertical-align: top; text-align: center; padding-top:80px ;}
+			.s2 .title{ position: relative;left:-200%; }
+			.slide h3{ font-size: 48px; color: #fff; text-align: center;}
+		</style>
+	</head>
+	<body>
+		<div id="menu">
+		<ul >
+			<li data-menuanchor="page1" ><a href="#page1">第1屏</a></li>
+			<li data-menuanchor="page2" ><a href="#page2">第2屏</a></li>
+			<li data-menuanchor="page3" ><a href="#page3">第3屏</a></li>
+			<li data-menuanchor="page4" ><a href="#page4">第4屏</a></li>
+			<li data-menuanchor="page5" ><a href="#page5">第5屏</a></li>
+			<li data-menuanchor="page6" ><a href="#page6">第6屏</a></li>
+			<li data-menuanchor="page7" ><a href="#page7">第7屏</a></li>
+			<li data-menuanchor="page8" ><a href="#page8">第8屏</a></li>
+		</ul>
+		</div>
+		
+			<div class="main" id="main">
+				<div class="section s1">
+		<div class="slide"><h3>第二屏的第一屏</h3></div>
+		<div class="slide"><h3>第二屏的第二屏</h3></div>
+		<div class="slide"><h3>第二屏的第三屏</h3></div>
+				</div>
+				<div class="section s2">
+					<div class="container">
+						<img src="images/01_03.png" alt="" class="title" />
+					</div>
+				</div>
+				<div class="section s3">s3</div>
+				<div class="section s4">s4</div>
+				<div class="section s5">s5</div>
+				<div class="section s6">s6</div>
+				<div class="section s7">s7</div>
+				<div class="section s8">s8</div>
+			</div>
+			<div id="menu2">menu2</div>
+			<script>
+						$(function(){
+							
+							$('#main').fullpage({
+'anchors': ['page1', 'page2', 'page3', 'page4','page5','page6','page7','page8'],
+'navigation': true,
+'navigationPosition': 'right',
+'menu': '#menu',
+'navigationTooltips': ['提示1', '提示2', '提示3'],
+afterLoad: function(anchorLink, index){
+	if(index==2){
+		$(".s2 .title").animate({"left":0},600);
+	}
+},//afterload
+onLeave: function(index, direction){
+				if(index==2){
+				$(".s2 .title").css("left","-200%")	
+				}
+					
+			},
+fixedElements:"#menu2"
+
+							});
+
+						})
+				
+			</script>
+	</body>
+</html>

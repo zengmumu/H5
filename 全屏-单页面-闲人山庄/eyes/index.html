@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<script src="js/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+	<style type="text/css">
+		* {
+			margin: 0px;
+			padding: 0px;
+		}
+		
+		body,
+		html {
+			width: 100%;
+			height: 100%;
+		}
+		
+		.box,.box1 {
+			position: relative;
+			width: 100px;
+			height: 100px;
+			border: 1px solid #000;
+			border-radius: 50%;
+			left: 50%;
+			margin-left: -150px;
+			top: 50%;
+			margin-top: -150px;
+		}
+		
+		.zhu,.zhu2 {
+			position: absolute;
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			background: #000;
+			left: 50%;
+			margin-left: -15px;
+			top: 50%;
+			margin-top: -15px;
+		}
+		.box1 {
+			margin-left: 100px;
+			margin-top: 0px;
+		}
+		.mouth1{
+			position: relative;
+			text-align: center;
+			line-height: 25px;
+			width: 50px;
+			height: 25px;
+			/*background: #CCCCCC;*/
+			top:50%;
+			left: 50%;
+		}
+		.mouth{
+			display: inline-block;
+			width: 50px;
+			height: 25px;
+			background: red;
+			border-radius: 0px 0px 30px 30px;	
+			transition: all 0.5s;	
+			}
+		.mouth1:hover .mouth{
+			width: 15px;
+			height: 15px;
+			border-radius:50% ;cursor: pointer;
+		}
+	</style>
+
+	<body>
+		<div class="box">
+			<div class="zhu">
+
+			</div>
+		</div>
+		<div class="box1">
+			<div class="zhu2">
+
+			</div>
+		</div>
+		
+		<div class="mouth1">
+			<span class="mouth"></span>
+		</div>
+	</body>
+	<script type="text/javascript">
+		hah($(".zhu"),$(".box"));
+		hah($(".zhu2"),$(".box1"));
+		function hah(zhu,box) {
+			var $zhu = zhu;
+			var $box=box;
+
+			var eye = {
+				
+				x: $zhu.offset().left,
+				y: $zhu.offset().top,
+				w: $zhu.width(),
+				h: $zhu.height()
+			}
+			var yb = {
+				zbx: $zhu.offset().left + $zhu.width() / 2,
+				zby: $zhu.offset().top + $zhu.height() / 2,
+				w: $box.width(),
+				h: $box.height()
+			}
+			var m = {
+				x: 0,
+				y: 0
+			}
+			var R = yb.w / 2 - eye.w / 2;
+
+			$(window).mousemove(function() {
+				m.x = event.pageX;
+				m.y = event.pageY;
+				if((yb.zbx - m.x) * (yb.zbx - m.x) + (yb.zby - m.y) * (yb.zby - m.y) >= R* R) {
+					zuo(m.x, m.y);
+				} else {
+					eye.x = m.x - eye.w / 2;
+					eye.y = m.y - eye.h / 2;
+				}
+
+				$zhu.offset({
+					left: eye.x,
+					top: eye.y
+				})
+			})
+
+			function zuo(mx, my) {
+				var angle = Math.atan2(mx - yb.zbx, my - yb.zby);
+				eye.x = R * Math.sin(angle) + yb.zbx - eye.w / 2;
+				eye.y = R * Math.cos(angle) + yb.zby - eye.h / 2;
+			}
+		}
+	</script>
+
+</html>

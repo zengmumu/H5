@@ -1,0 +1,217 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style>
+* {
+	margin: 0;
+	padding: 0;
+}
+.fi {
+	position: fixed;
+	height: 50px;
+	line-height: 50px;
+	background-color: #fefefe;
+	width: 100%;
+	top: 0;
+	left: 0;
+}
+ul {
+	list-style: none;
+}
+body {
+	background-color: #f0f0f0;
+	padding-top: 50px;
+}
+.fi .container {
+	width: 1000px;
+	margin: 0 auto;
+}
+.container ul li {
+	float: left;
+	width: 120px;
+	text-align: center;
+}
+/*电梯*/
+.elevator li {
+width: 30px;
+height: 30px;
+line-height: 30px;
+text-align: center;
+overflow: hidden;
+margin-top: -1px;
+cursor: pointer;
+}
+
+.elevator li a {
+display: block;
+width: 30px;
+height: 30px;
+margin: 0 auto;
+color: #625351;
+font-size: 14px;
+font-family: Arial;
+background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAMAAAAM7l6QAAAAGXRFW…AAAB5JREFUeNpiYIIABhTIyAQXxgtGpUelR6VpKw0QYACUOgb65Nz92gAAAABJRU5ErkJggg==) 0 0 no-repeat;
+}
+.elevator li a:hover,.elevator li.current a {
+color: #fff;
+text-decoration: none;
+background: #c81623;
+}
+
+.elevator li .etitle {
+display: none;
+width: 30px;
+height: 30px;
+color: #fff;
+font-size: 12px;
+}
+
+.ho {
+	background-color: #ff3;
+}
+
+
+.sc{ width:1920px; height:951px; background:url(upload/img/20141105134745t1_02.jpg) no-repeat center center; background-size:100%  auto; clear:both; margin:0; padding:0;}
+.s2{ background-image:url(upload/img/20141105134918t2_02.jpg)}
+.s3{ background-image:url(upload/img/20141105135106t3_02.jpg);}
+.s4{ background-image:url(upload/img/20141105135123t4_02.jpg)}
+.s5{ background-image:url(upload/img/20141105135145t5_02.jpg)}
+.s6{ background-image:url(upload/img/20141105135202t6_02.jpg)}
+
+.container{ width:900px; margin:0 auto; height:100%; position:relative;}
+.pics{ position:absolute; top:50%; right:0; width:260px; height:180px; background-color:rgba(0,0,0,.70); border-radius:6px; padding:8px; }
+.pics *,.pics{box-sizing:border-box;}
+.pics li { width:50%;  height:auto; box-sizing:border-box; float:left; padding:5px;}
+.pics li a{ border:2px solid #fff; transition: all 1s ease; display:block; width:100%; height:auto;}
+.pics li a img{ width:100%; height:auto;}
+.pics li a:hover{ transform:scale(1.2,1.2);}
+
+</style>
+<link type="text/css" rel="stylesheet" href="css/lightbox.css">
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/jquery.mousewheel.js"></script>
+<script type="text/javascript" src="js/lightbox.js"></script>
+
+<script type="text/javascript">
+$(function(){
+	
+	var bh=$(window).height();
+	$(".sc").css("height",bh);//设置每一个div的高度为一屏幕
+	$(window).resize(function(){
+		 bh=$(window).height();
+	$(".sc").css("height",bh);//设置每一个div的高度为一屏幕
+		})
+	
+	
+	/*设置每一个 sc的高度*/
+
+$(".fi ul li").click(function(){//单击谁 让屏幕滚动到相应的位置
+$(".fi ul .ho").removeClass("ho");
+$(this).addClass("ho");
+	var num=$(".fi ul li").index($(this));//得出当前单击的是第几个
+	$("body,html").animate({"scrollTop":num*bh},600);//动画滚动到第几屏幕
+	
+	})
+	
+$("#elevator ul li").click(function(){
+	$("#elevator ul li.current").removeClass("current");
+$(this).addClass("current");
+	var num=$("#elevator ul li").index($(this));//得出当前单击的是第几个
+	$("body,html").animate({"scrollTop":num*bh},600);//动画滚动到第几屏幕
+	
+	})
+$(window).scroll(function(){
+	
+	var top=$("body,html").scrollTop();//滚动的距离
+	
+	$(".sc").each(function(index, element) {
+        var i=index;
+		var sctop=$(".sc:eq("+i+")").offset().top;//求第二div离页面最顶端的距离
+			if(top>=sctop-50){
+		$("#elevator li.current").removeClass("current");
+		$("#elevator li:eq("+i+")").addClass("current");
+		$(".fi li.ho").removeClass("ho");
+		$(".fi li:eq("+i+")").addClass("ho");
+		}
+    });
+
+	})
+	var page=0
+	$("body").mousewheel(function(event){
+	 //console.log(event.deltaY)
+	   event.preventDefault();//阻止默认事件
+page+=event.deltaY*-1;
+ console.log(page);
+if(page>=7){page=6;return ;}
+if(page<=-1){page=0;return ;}
+	 $("body,html").animate({"scrollTop":page*bh},600);
+	
+		});
+
+
+	
+	
+	})
+</script>
+</head>
+
+<body>
+<div class="fi">
+  <div class="container">
+    <ul>
+      <li class="ho">第一屏</li>
+      <li>第二屏</li>
+      <li>第三屏</li>
+      <li>第四屏</li>
+      <li>第五屏</li>
+      <li>第六屏</li>
+      <li>第7屏</li>
+    </ul>
+  </div>
+</div>
+<div class="sc s1">
+  <h1>1</h1>
+</div>
+<div class="sc s2">
+ 	<div class="container">
+    			<div class="pics">
+                	<ul>
+                    		<li><a href="upload/img/20141105135229t8_02.jpg" data-lightbox="demo" title="this is my box"><img src="upload/20141106133043.jpg"/></a></li>
+                            <li><a href="upload/img/20141105135213t7_02.jpg"  data-lightbox="demo"><img src="upload/20141106133101.jpg"/></a></li>
+                            <li><a href="upload/img/20141105135202t6_02.jpg"  data-lightbox="demo" ><img src="upload/20141106133106.jpg"/></a></li>
+                            <li><a href="upload/img/20141105134745t1_02.jpg"  data-lightbox="demo" ><img src="upload/20141106133111.jpg"/></a></li>
+                    </ul>
+                </div>
+    </div>
+</div>
+<div class="sc s3">
+  <h1>3</h1>
+</div>
+<div class="sc s4">
+  <h1>4</h1>
+</div>
+<div class="sc s5">
+  <h1>5</h1>
+</div>
+<div class="sc s6">
+  <h1>6</h1>
+</div>
+<div class="sc s7">
+  <h1>7</h1>
+</div>
+<div id="elevator" class="elevator" style="z-index: 5; position: fixed; left: 312px; top: 125px; display: block;">
+  <ul>
+    <li class="handler current"><a href="javascript:;">1F</a></li>
+    <li class="handler" ><a href="javascript:;">2F</a></li>
+    <li class="handler" ><a href="javascript:;">3F</a></li>
+    <li class="handler" ><a href="javascript:;">4F</a></li>
+    <li class="handler" ><a href="javascript:;">5F</a></li>
+    <li class="handler " ><a href="javascript:;">6F</a></li>
+    <li class="handler" ><a href="javascript:;">7F</a></li>
+    
+  </ul>
+</div>
+</body>
+</html>

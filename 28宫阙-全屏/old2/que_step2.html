@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Examples</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="css/que.css" rel="stylesheet">
+<style>
+body{ font-family:"sim song"; font-size:12px;}
+.sc_before {
+	width: 100%;
+	height: 100%;
+}
+.sc_before #slider_sc1 {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.screen {
+	position: relative;
+	height: 900px;
+}
+#slider_sc1 li {
+	position: relative;
+	text-align: center;
+	padding-top: 150px;
+}
+.p_ab {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	display: block;
+	z-index: -1;
+}
+.full {
+	height: 860px;
+	width: 1900px;
+}
+.text_center {
+	text-align: center;
+}
+.text_hidden {
+	text-indent: -9999em;
+}
+.sc1_before_links ul {
+	text-align: center;
+	margin-top: 5em;
+}
+.sc1_before_links ul li {
+	display: inline-block;
+	margin-left: 3em;
+	margin-right: 3em;
+}
+.sc1_before_links ul li span {
+	display: inline-block;
+	background-image: url(img/index/nav2/n1/n.png);
+	width: 77px;
+	height: 77px;
+	text-indent: -9999em;
+	margin-bottom: 2em;
+	position: relative;
+}
+.sc1_before_links ul li span:before {
+	content: "";
+	width: 97px;
+	height: 97px;
+	position: absolute;
+	left: -10px;
+	top: -10px;
+	background-image: url(img/index/nav2/zz.png);
+	display: none;
+}
+.sc1_before_links ul li span:hover:before {
+	display: inline-block;
+}
+.sc_after{ position:relative; overflow:hidden;}
+.after_title{ position:absolute; right:3em; top:3em; z-index:100;}
+.after_qian{ position:absolute; left:3em; top:50%; z-index:100;}
+.after_hou{ position:absolute; right:3em; top:50%; z-index:100;}
+.sc1_se1_table,.sc1_se2_table{ background-image:url(img/info/info1/in1/bg.png); width:756px; height:417px; margin:0 auto; margin-top:185px;}
+.tabs_in{ text-align:center; padding-top:50px;}
+.tabs_in_title{ width:80%; margin:25px auto; clear:both;}
+.tabs_in_title li{ color:#fff; width:130px; text-align:center; float:left;}
+.tabs_in_title .on{ color:#CC090C;}
+.tabstitle{ width:756px; height:105px; margin:0 auto;}
+.sc1_section2 .tabstitle li{ width:251px; float:left;}
+.sc1_section2 .tabstitle li.l1.on{background-image:url("img/info/info1/in2/nav/in_01_h.png");}
+.sc1_section2 .tabstitle li.l1{background-image:url("img/info/info1/in2/nav/in_01.png");}
+.sc1_section2 .tabstitle li.l2{background-image:url("img/info/info1/in2/nav/in_02.png");}
+.sc1_section2 .tabstitle li.l3{background-image:url("img/info/info1/in2/nav/in_03.png");}
+.sc1_section2 .tabstitle li.l2.on{background-image:url("img/info/info1/in2/nav/in_02_h.png");}
+.sc1_section2 .tabstitle li.l3.on{background-image:url("img/info/info1/in2/nav/in_03_h.png");}
+.sc1_se1_table .tabs_in_title{ text-align:center;}
+.sc1_se1_table .tabs_in_title li{ display:inline-block; width:25px; height:25px; border-radius:25px; float:none;}
+.after_sc{ float:left; position:relative;}
+.after_wrap{ position:relative;}
+</style>
+<script src="js/kendo/jquery-1.10.2.min.js"></script>
+<script>
+$(function(){
+	var sw=$(window).width();
+	var sh=$(window).height();
+	$(".full").css({"width":sw,"height":sh-135});
+var now=0;
+	$(".sc_links ul li").click(function(){
+		var num=$(".sc_links ul li").index($(this));
+		var sc=$(".screen").has($(this));
+		 sc.children(".sc_after").fadeIn("fast");
+		  var pa=sc.children(".sc_after").find(".after_wrap");
+		  animate_after(pa,num);
+		  now=num;
+		 sc.children(".sc_before").fadeOut("fast");
+
+		})
+		
+	$(".after_title").click(function(){
+		$(this).parent().fadeOut("fast");
+		$(this).parent().siblings(".sc_before").fadeIn("fast");
+		})
+	$(".after_wrap").css({"width":sw*2});
+	
+
+	$(".after_wrap").css("width",	$(".after_wrap").len*sw);
+	$(".after_wrap").attr({"now":0,"len":$(".after_wrap").children("div").length});
+
+	$(".after_hou").click(function(){			
+	var pa=$(this).parent().find(".after_wrap");
+	  now++;
+		   if( now>= pa.children("div").length){now=0}	
+		animate_after(pa,now)
+		  		})
+				
+	$(".after_qian").click(function(){			
+	var pa=$(this).parent().find(".after_wrap");
+	  now--;
+		   if( now<0){	now= pa.children("div").length-1}	
+		   animate_after(pa,now);		
+		  		})
+		function animate_after(pa,now){
+				pa.animate({left:-1*now*sw},600);	
+			}
+			
+			
+	
+	})
+</script>
+</head>
+<body>
+<header class="que-header">
+  <div class="container">
+    <h1 id="logo"><a href=""><img src="images/icon.png" alt=""></a></h1>
+    <ul id="que-nav">
+      <li><a href="">首页</a></li>
+      <li><a href="">城市与别墅</a></li>
+      <li><a href="">别墅与中国</a></li>
+      <li><a href=""> 别墅与园林</a></li>
+      <li><a href="">别墅大社区</a></li>
+      <li><a href="">梵街产品</a></li>
+    </ul>
+  </div>
+</header>
+<article>
+  <section class="screen sc1">
+    <div class="sc_before">
+      <ul id="slider_sc1">
+        <li class="full v_middle" style="display:none;"><img class="p_ab full_sc" src="images/bg_02.jpg"><img src="images/bg_02-1.png"></li>
+        <li class="full v_middle"><img class="p_ab full_sc" src="images/moveImg/in_01.jpg"><img src="images/moveImg/in_02-1.png"></li>
+      </ul>
+    </div>
+  </section>
+  <section class="screen sc2">
+    <div class="sc_before"> <img class="p_ab full" src="img/index/bg_03.jpg">
+      <p class="text_center"><img src="img/index/bg_03-1.png"></p>
+      <div class="sc1_before_links  sc_links">
+        <ul class="text-center">
+          <li class="sc1_li1"><span> 地理位置</span><br/>
+            <img src="img/index/nav2/n1/nt1.png"/></li>
+          <li class="sc1_li2"><span>周边配套</span><br/>
+            <img src="img/index/nav2/n1/nt2.png"/></li>
+          <li class="sc1_li3"><span>别墅与山</span><br/>
+            <img src="img/index/nav2/n1/nt3.png"/></li>
+          <li class="sc1_li4"><span>地缘优势</span><br/>
+            <img src="img/index/nav2/n1/nt4.png"/></li>
+        </ul>
+      </div>
+    </div><!--before ed-->
+    <div class="sc_after full "  style="display:none;">
+    <p class="after_title"> <img src="img/info/info1/in1/title.jpg"> <img class="" src="img/nav/fan.jpg"></p>
+      <img class="after_qian" src="img/nav/n_03.png">
+      <img class="after_hou" src="img/nav/n_03.png">
+      <div class="after_wrap">
+      <div class="sc1_section1 after_sc  full " >
+        <img class="p_ab full" src="img/info/info1/in1/bg_02.jpg">
+        	<div class="tab sc1_se1_table">
+        		<div class="tabs">
+              <div class="tabs_in"  ><img src="img/info/info1/in1/in01.png"/><br/><img src="img/info/info1/in1/in02.png"/></div>
+              
+               <div class="tabs_in"style="display:none;" ><img src="img/info/info1/in1/in01.png"/><br/><img src="img/info/info1/in1/in02_01.png"/></div>
+                        <ul class="tabs_in_title">
+                        		<li class="on">1</li>
+                                <li>2</li>                              
+                        </ul>
+                  </div>
+                  
+                  <div class="tabs_in_title" style="text-align:center"><img src="img/info/info1/in1/in03.png"/></div>
+              </div>
+      </div>
+    <div class="sc1_section2  after_sc  full" >
+     <img class="p_ab full" src="img/info/info1/in2/bg_02(2).jpg">
+     	<div class="tab sc1_se2_table">
+        		<div class="tabs">
+               			<div class="tabs_in">
+                        <img src="img/info/info1/in1/in_01 (1).png"/>
+                        </div>
+                        <div class="tabs_in" style="display:none;"><img src="img/info/info1/in1/in_02.png"/></div>
+                        <div class="tabs_in" style="display:none;"><img src="img/info/info1/in1/in_03.png"/></div>
+                        <ul class="tabs_in_title">
+                        		<li class="on">教育</li>
+                                <li>商业配套与周边服务</li>
+                                <li>休闲</li>
+                                 <li>交通</li>
+                        </ul>
+                </div>
+                	<div class="tabs">
+                </div>
+                	<div class=" tabs">
+                </div>
+        </div>
+          <ul class="tabstitle">
+                        		<li class="li1 on "><img src="img/info/info1/in2/nav/in_01_h.png"></li>
+                                <li  class=" li2 on"><img src="img/info/info1/in2/nav/in_02.png"></li>
+                                <li  class=" li3 on"><img src="img/info/info1/in2/nav/in_03.png"></li>
+                          
+                        </ul>
+   
+    </div>
+    </div>
+    </div><!--after ed>
+   </section>
+</article>
+</body>
+</html>

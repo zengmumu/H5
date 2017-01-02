@@ -1,0 +1,59 @@
+
+
+a, a:visited {
+    color: #9EB4CA;
+    text-decoration: none;
+}
+
+h1, h2, h3 .gallery {
+    text-align: center;
+}
+
+
+
+.gallery:after {
+    content: '';
+    display: block;
+    height: 2px;
+    margin: .5em 0 1.4em;
+  
+}
+
+.gallery img {
+    height: 100%;
+}
+
+.gallery a {
+    width: 100px;
+    height: 70px;
+    display: inline-block;
+    overflow: hidden;
+    margin: 4px 6px;
+    box-shadow: 0 0 4px -1px #000;
+    border: 3px solid white;
+}
+
+.baguetteBoxOne {
+    width: 470px;
+    /* margin: 40px auto 0 auto; */
+    /* margin: 389px auto 0 755px; */
+
+    /*background-color: red;*/
+    position: relative;
+    left: 67%;
+    top: 63%;
+}
+.fd-1{
+    width: 240px;
+
+
+    height: 172px;
+}
+
+.fd-tou{
+    background-color: #0A0B0B;
+
+    opacity: 0.8;
+    padding: 7px;
+    border-radius: 5px;
+}

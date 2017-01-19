@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<style>
+		.scroll{
+			position: absolute;
+			top:0;
+			left:0;
+			right:0;
+			bottom:0;
+			border:1px solid red;
+			overflow: hidden;
+		}
+		.has-header{
+			top:45px;
+		}
+		.scroll-wrapper{
+			transform: translateY(0px);
+		}
+		.item{ height: 43px; border-bottom: 1px solid #e0e0e0; line-height: 43px;  position: relative;}
+		.item-content{ height: 100%; width: 100%; position: absolute; background-color: #fff;}
+		.item-opitons{
+			position: absolute;
+			right:0 ;
+		}
+	</style>
+</head>
+<body>
+	<div  class="scroll has-header" >
+		<div class="list">
+			<div class="item">this is item 1</div>
+			<div class="item">
+				<div class="item-content">this is item 2</div>
+				<div class="item-options">
+					<button>我是按钮</button>
+				</div>
+			</div>
+			<div class="item">this is item 3</div>
+			<div class="item">this is item 4</div>
+			<div class="item">this is item 5</div>
+			<div class="item">this is item 6</div>
+			<div class="item">this is item 7</div>
+			<div class="item">this is item 8</div>
+			<div class="item">this is item 9</div>
+			<div class="item">this is item 10</div>
+			<div class="item">this is item 11</div>
+			<div class="item">this is item 12</div>
+			<div class="item">this is item 13</div>
+			<div class="item">this is item 14</div>
+			<div class="item">this is item 15</div>
+			<div class="item">this is item 16</div>
+			<div class="item">this is item 17</div>
+			<div class="item">this is item 18</div>
+			<div class="item">this is item 19</div>
+			<div class="item">this is item 20</div>
+			<div class="item">this is item 21</div>
+			<div class="item">this is item 22</div>
+			<div class="item">this is item 23</div>
+			<div class="item">this is item 24</div>
+			<div class="item">this is item 25</div>
+			<div class="item">this is item 26</div>
+			<div class="item">this is item 27</div>
+			<div class="item">this is item 28</div>
+			<div class="item">this is item 29</div>
+			<div class="item">this is item 30</div>
+			<div class="item">this is item 31</div>
+			<div class="item">this is item 32</div>
+			<div class="item">this is item 33</div>
+			<div class="item">this is item 34</div>
+			<div class="item">this is item 35</div>
+			<div class="item">this is item 36</div>
+			<div class="item">this is item 37</div>
+			<div class="item">this is item 38</div>
+			<div class="item">this is item 39</div>
+			<div class="item">this is item 40</div>
+			<div class="item">this is item 41</div>
+			<div class="item">this is item 42</div>
+			<div class="item">this is item 43</div>
+			<div class="item">this is item 44</div>
+			<div class="item">this is item 45</div>
+			<div class="item">this is item 46</div>
+			<div class="item">this is item 47</div>
+			<div class="item">this is item 48</div>
+			<div class="item">this is item 49</div>
+			<div class="item">this is item 50</div>
+			<div class="item">this is item 51</div>
+			<div class="item">this is item 52</div>
+			<div class="item">this is item 53</div>
+			<div class="item">this is item 54</div>
+			<div class="item">this is item 55</div>
+			<div class="item">this is item 56</div>
+			<div class="item">this is item 57</div>
+			<div class="item">this is item 58</div>
+			<div class="item">this is item 59</div>
+			<div class="item">this is item 60</div>
+			<div class="item">this is item 61</div>
+			<div class="item">this is item 62</div>
+			<div class="item">this is item 63</div>
+			<div class="item">this is item 64</div>
+			<div class="item">this is item 65</div>
+			<div class="item">this is item 66</div>
+			<div class="item">this is item 67</div>
+			<div class="item">this is item 68</div>
+			<div class="item">this is item 69</div>
+			<div class="item">this is item 70</div>
+			<div class="item">this is item 71</div>
+			<div class="item">this is item 72</div>
+			<div class="item">this is item 73</div>
+			<div class="item">this is item 74</div>
+			<div class="item">this is item 75</div>
+			<div class="item">this is item 76</div>
+			<div class="item">this is item 77</div>
+			<div class="item">this is item 78</div>
+			<div class="item">this is item 79</div>
+			<div class="item">this is item 80</div>
+			<div class="item">this is item 81</div>
+			<div class="item">this is item 82</div>
+			<div class="item">this is item 83</div>
+			<div class="item">this is item 84</div>
+			<div class="item">this is item 85</div>
+			<div class="item">this is item 86</div>
+			<div class="item">this is item 87</div>
+			<div class="item">this is item 88</div>
+			<div class="item">this is item 89</div>
+			<div class="item">this is item 90</div>
+			<div class="item">this is item 91</div>
+			<div class="item">this is item 92</div>
+			<div class="item">this is item 93</div>
+			<div class="item">this is item 94</div>
+			<div class="item">this is item 95</div>
+			<div class="item">this is item 96</div>
+			<div class="item">this is item 97</div>
+			<div class="item">this is item 98</div>
+			<div class="item">this is item 99</div>
+			<div class="item">this is item 100</div>
+		</div>
+	
+	</div>
+	<script>
+		function Scroller(opt){	
+			this.outer=opt.dom;
+			this.init();
+		}
+		Scroller.prototype.init=function(){
+			
+			this.renderDom();
+			this.bindDom();
+		}
+		Scroller.prototype.renderDom=function(){
+			this.elem=document.createElement("div");
+			this.elem.className="scroll-wrapper";
+			this.elem.innerHTML=this.outer.innerHTML;
+			this.elem.style.transform="translateY(0px)";
+			this.outer.innerHTML="";
+			this.outer.appendChild(this.elem);	
+		}
+		Scroller.prototype.bindDom=function(){
+			var main=this;
+			this.elem.addEventListener("touchstart",startHd,false);
+			this.elem.addEventListener("touchmove",moveHd,false);
+			this.elem.addEventListener("touchend",endHd,false);
+			
+			this.elem.addEventListener("mousedown",startHd,false);
+//			this.elem.addEventListener("mousemove",moveHd,false);
+			this.elem.addEventListener("mouseup",endHd,false);
+			this.elem.addEventListener("mousewheel",wheelHd,false);
+			
+			var startY=0;//点击开始是纪录y距离
+			var offsetY=0;//偏差的y距离
+			var str=main.elem.style.transform;				
+			var oldTransY;
+			var startT=0;
+			var offT=0;
+			function startHd(event){
+				
+				startY=event.targetTouches?event.targetTouches[0].pageY:event.clientY;
+				var str=main.elem.style.transform;	
+				oldTransY=parseFloat(str.substring(11,str.length-1));
+				startT=new Date().getTime();
+				main.elem.addEventListener("mousemove",moveHd,false);
+			}
+			function moveHd(event){
+				main.elem.style.transition="";
+				var endY=event.targetTouches?event.targetTouches[0].pageY:event.clientY;
+				offsetY=endY-startY;											
+				main.elem.style.transform="translateY("+(oldTransY+offsetY)+"px)";
+				
+			}
+			function endHd(event){
+				offT=new Date().getTime()-startT;
+				main.elem.style.transition="all .7s ease-in-out";
+				var speed=(400-offT)/50;
+				if(speed<=1){speed=1;}				
+				main.elem.style.transform="translateY("+parseInt(oldTransY+offsetY*speed)+"px)";
+				var str=main.elem.style.transform;
+				var transY=parseFloat(str.substring(11,str.length-1));
+				if(transY>0){
+					main.elem.style.transform="translateY("+0+"px)";
+				}
+				var canDis=main.outer.offsetHeight-main.elem.offsetHeight;			
+				if(transY<canDis){					
+					main.elem.style.transform="translateY("+(canDis)+"px)";
+				}	
+				main.elem.removeEventListener("mousemove",moveHd,false);
+			}
+			function wheelHd(event){
+				var str=main.elem.style.transform;
+				var transY=parseInt(str.substring(11,str.length-1));
+				
+				main.elem.style.transform="translateY("+(transY+event.deltaY/-10)+"px)";
+			}
+			Scroller.prototype.scrollTo=function(offT){
+				this.elem.style.transform="translateY("+(offT)+"px)";
+				
+			}
+			Scroller.prototype.scrollBy=function(offT){
+				var str=main.elem.style.transform;
+				var transY=parseFloat(str.substring(11,str.length-1));
+				this.elem.style.transform="translateY("+(transY+offT)+"px)";
+			}
+			
+			
+		}
+		
+		var elem=document.querySelector(".scroll");
+		new Scroller({"dom":elem})
+	</script>
+</body>
+</html>

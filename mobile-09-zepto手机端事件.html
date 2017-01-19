@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style>
+			*{ margin: 0;
+			padding: 0;}
+			.bar-header{ 
+				height: 43px;
+				line-height: 43px;
+				text-align: center;
+				}
+			.scroll{
+				position: absolute;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				top:0;
+				overflow: hidden;
+				border: 1px solid red;
+			}
+			.has-header{
+				top:43px;
+			}
+			.item{ 
+				position: relative;
+				padding-left: 10px;
+				padding-right: 10px;
+				height: 43px;
+				line-height: 43px;
+				border-bottom:1px solid #e0e0e0;
+				}
+				.item-content{
+					position: absolute;
+					left: 0;
+					top:0;
+					width: 100%;
+					height: 43px;
+					z-index: 100;
+					padding-left: 10px;
+					padding-right: 10px;
+					background-color: #fff;
+					transition: all 0.7s ease;
+				}
+				.item-options-right{
+					right:0;
+					top:0;
+					height: 43px;
+					position: absolute;
+				}
+				.item-options-right *{
+					padding-left:15px;
+					padding-right: 15px;
+					height: 43px;
+					line-height: 43px;
+					
+				}
+				.delete{ background-color: orangered; color: #fff; float:left;}
+				.top{ background-color: #333; color: #fff;float:left;}
+		</style>
+		<script src="script/zepto.js"></script>
+	</head>
+	<body>
+		<div class="bar-header">
+			<h3 class="title">手机事件</h3>
+		</div>
+		<div class="scroll has-header">
+			<div class="list">
+				<div class="item">
+					<div class="item-content">this is item 1</div>
+					<div class="item-options-right item-options">
+						<div class="delete">删除</div>
+						<div class="top">置顶</div>
+					</div>
+					
+				</div>
+				<div class="item">
+					<div class="item-content">this is item 2</div>
+					<div class="item-options-right item-options">
+						<div class="delete">删除</div>
+						<div class="top">置顶</div>
+					</div>
+					
+				</div>
+				<div class="item">this is item 3</div>
+				<div class="item">this is item 4</div>
+				<div class="item">this is item 5</div>
+				<div class="item">this is item 6</div>
+				<div class="item">this is item 7</div>
+				<div class="item">this is item 8</div>
+				<div class="item">this is item 9</div>
+				<div class="item">this is item 10</div>
+				<div class="item">this is item 11</div>
+				<div class="item">this is item 12</div>
+				<div class="item">this is item 13</div>
+				<div class="item">this is item 14</div>
+				<div class="item">this is item 15</div>
+				<div class="item">this is item 16</div>
+				<div class="item">this is item 17</div>
+				<div class="item">this is item 18</div>
+				<div class="item">this is item 19</div>
+				<div class="item">this is item 20</div>
+				<div class="item">this is item 21</div>
+				<div class="item">this is item 22</div>
+				<div class="item">this is item 23</div>
+				<div class="item">this is item 24</div>
+				<div class="item">this is item 25</div>
+				<div class="item">this is item 26</div>
+				<div class="item">this is item 27</div>
+				<div class="item">this is item 28</div>
+				<div class="item">this is item 29</div>
+				<div class="item">this is item 30</div>
+				<div class="item">this is item 31</div>
+				<div class="item">this is item 32</div>
+				<div class="item">this is item 33</div>
+				<div class="item">this is item 34</div>
+				<div class="item">this is item 35</div>
+				<div class="item">this is item 36</div>
+				<div class="item">this is item 37</div>
+				<div class="item">this is item 38</div>
+				<div class="item">this is item 39</div>
+				<div class="item">this is item 40</div>
+				<div class="item">this is item 41</div>
+				<div class="item">this is item 42</div>
+				<div class="item">this is item 43</div>
+				<div class="item">this is item 44</div>
+				<div class="item">this is item 45</div>
+				<div class="item">this is item 46</div>
+				<div class="item">this is item 47</div>
+				<div class="item">this is item 48</div>
+				<div class="item">this is item 49</div>
+				<div class="item">this is item 50</div>
+				
+			</div>
+		</div>
+		<script>
+		//	tap —元素tap的时候触发。
+		//singleTap and doubleTap — 这一对事件可以用来检测元素上的单击和双击。(如果你不需要检测单击、双击，使用 tap 代替)。
+		//longTap — 当一个元素被按住超过750ms触发。
+		//swipe, swipeLeft, swipeRight, swipeUp, swipeDown — 当元素被划过时触发。(可选择给定的方向)
+		$(function(){
+			$(".item").on("longTap",function(){
+				$(this).fadeOut();
+			})
+			//给 list 添加事件   左滑动    选择器为item-content
+			$(".list").on("swipeLeft",".item-content",function(e){
+				$(".item-content").css("transform","translateX("+0+"px)");
+				//1 判断他的兄弟元素的宽
+				//2 向左移动这么宽				
+				var opw=$(this).siblings(".item-options-right").width();				
+				$(this).css("transform","translateX("+(opw+20)*-1+"px)");
+				
+			})
+			$(".list").on("swipeRight",".item-content",function(e){		
+				$(this).css("transform","translateX("+0+"px)");
+			})
+		
+			$(".list").on("click",".item-options-right .delete",function(){
+				$(this).parents(".item").remove();
+			})
+			$(".list").on("click",".item-options-right .top",function(){
+				// parent 父亲元素
+				// parents 父辈元素
+				$(this).parent().siblings(".item-content").css("transform","translateX("+0+"px)");
+				var dom=$(this).parents(".item").clone(true);
+				$(this).parents(".item").remove();
+				$(".list").prepend(dom);
+				
+			})
+			
+		})
+
+		</script>
+	</body>
+</html>

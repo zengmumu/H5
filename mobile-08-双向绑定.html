@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style>
+			*{ margin: 0;
+			padding: 0;}
+			.bar-header{ 
+				height: 43px;
+				line-height: 43px;
+				text-align: center;
+				border-bottom: 1px solid #e0e0e0;
+				}
+			.scroll,.content,.side{
+				position: absolute;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				top:0;
+				overflow: hidden;
+				/*border: 1px solid red;*/
+				border-right: 1px solid #e0e0e0;
+			}
+			.has-header{
+				top:43px;
+			}
+			.item{ 
+				padding-left: 10px;
+				padding-right: 10px;
+				height: 43px;
+				line-height: 43px;
+				border-bottom:1px solid #e0e0e0;
+				}
+			.item-divider{
+				height: 29px;
+				line-height: 29px;
+				background-color: #f0f0f0;
+			}
+			.side-wraper{
+				width: 95px;
+				float: left;
+				position: absolute;
+				top:0;
+				left:0;
+				bottom:0;
+			}
+			.scroll-wrapper{
+				overflow: hidden;
+				position: absolute;
+				top:0;
+				left:95px;
+				right:0;
+				bottom:0;
+			}
+			.active{ background: #e0e0e0;}
+			
+		</style>
+	</head>
+	<body>
+		<div class="bar-header">
+			<h3 class="title">手机事件</h3>
+		</div>
+		
+		<div class="content has-header">
+			<div class="side-wraper">
+				<div class="side">
+					<div class="list">
+						<div class="item active title1">title1</div>
+						<div class="item title2">title2</div>
+						<div class="item title3">title3</div>
+						<div class="item title4">title4</div>
+						<div class="item title5">title5</div>
+						<div class="item title6">title6</div>
+						<div class="item title7">title7</div>
+						<div class="item title8">title8</div>
+						<div class="item title9">title9</div>
+						<div class="item title10">title10</div>					
+					</div>
+				</div>
+			</div>
+			<div class="scroll-wrapper">
+					<div class="scroll">
+						<div class="list">
+				<div class="item item-divider title1">title1</div>			
+				<div class="item">this is item 1</div>
+				<div class="item">this is item 2</div>
+				<div class="item">this is item 3</div>
+				<div class="item">this is item 4</div>
+				<div class="item">this is item 5</div>
+				<div class="item">this is item 6</div>
+				<div class="item">this is item 7</div>
+				<div class="item">this is item 8</div>
+				<div class="item">this is item 9</div>
+				<div class="item">this is item 10</div>
+				<div class="item item-divider title2">title1</div>	
+				<div class="item">this is item 11</div>
+				<div class="item">this is item 12</div>
+				<div class="item">this is item 13</div>
+				<div class="item">this is item 14</div>
+				<div class="item">this is item 15</div>
+				<div class="item">this is item 16</div>
+				<div class="item">this is item 17</div>
+				<div class="item">this is item 18</div>
+				<div class="item">this is item 19</div>
+				<div class="item">this is item 20</div>
+				<div class="item item-divider title3">title3</div>	
+				<div class="item">this is item 21</div>
+				<div class="item">this is item 22</div>
+				<div class="item">this is item 23</div>
+				<div class="item">this is item 24</div>
+				<div class="item">this is item 25</div>
+				<div class="item">this is item 26</div>
+				<div class="item">this is item 27</div>
+				<div class="item">this is item 28</div>
+				<div class="item">this is item 29</div>
+				<div class="item">this is item 30</div>
+				<div class="item item-divider title4">title4</div>	
+				<div class="item">this is item 31</div>
+				<div class="item">this is item 32</div>
+				<div class="item">this is item 33</div>
+				<div class="item">this is item 34</div>
+				<div class="item">this is item 35</div>
+				<div class="item">this is item 36</div>
+				<div class="item">this is item 37</div>
+				<div class="item">this is item 38</div>
+				<div class="item">this is item 39</div>
+				<div class="item">this is item 40</div>
+				<div class="item item-divider title5">title5</div>	
+				<div class="item">this is item 41</div>
+				<div class="item">this is item 42</div>
+				<div class="item">this is item 43</div>
+				<div class="item">this is item 44</div>
+				<div class="item">this is item 45</div>
+				<div class="item">this is item 46</div>
+				<div class="item">this is item 47</div>
+				<div class="item">this is item 48</div>
+				<div class="item">this is item 49</div>
+				<div class="item">this is item 50</div>
+				<div class="item item-divider title6">title6</div>	
+				<div class="item">this is item 51</div>
+				<div class="item">this is item 52</div>
+				<div class="item">this is item 53</div>
+				<div class="item">this is item 54</div>
+				<div class="item">this is item 55</div>
+				<div class="item">this is item 56</div>
+				<div class="item">this is item 57</div>
+				<div class="item">this is item 58</div>
+				<div class="item">this is item 59</div>
+				<div class="item">this is item 60</div>
+				<div class="item item-divider title7">title7</div>	
+				<div class="item">this is item 61</div>
+				<div class="item">this is item 62</div>
+				<div class="item">this is item 63</div>
+				<div class="item">this is item 64</div>
+				<div class="item">this is item 65</div>
+				<div class="item">this is item 66</div>
+				<div class="item">this is item 67</div>
+				<div class="item">this is item 68</div>
+				<div class="item">this is item 69</div>
+				<div class="item">this is item 70</div>
+				<div class="item item-divider title8">title8</div>	
+				<div class="item">this is item 71</div>
+				<div class="item">this is item 72</div>
+				<div class="item">this is item 73</div>
+				<div class="item">this is item 74</div>
+				<div class="item">this is item 75</div>
+				<div class="item">this is item 76</div>
+				<div class="item">this is item 77</div>
+				<div class="item">this is item 78</div>
+				<div class="item">this is item 79</div>
+				<div class="item">this is item 80</div>
+				<div class="item item-divider title9">title9</div>	
+				<div class="item">this is item 81</div>
+				<div class="item">this is item 82</div>
+				<div class="item">this is item 83</div>
+				<div class="item">this is item 84</div>
+				<div class="item">this is item 85</div>
+				<div class="item">this is item 86</div>
+				<div class="item">this is item 87</div>
+				<div class="item">this is item 88</div>
+				<div class="item">this is item 89</div>
+				<div class="item">this is item 90</div>
+				<div class="item item-divider title10">title10</div>	
+				<div class="item">this is item 91</div>
+				<div class="item">this is item 92</div>
+				<div class="item">this is item 93</div>
+				<div class="item">this is item 94</div>
+				<div class="item">this is item 95</div>
+				<div class="item">this is item 96</div>
+				<div class="item">this is item 97</div>
+				<div class="item">this is item 98</div>
+				<div class="item">this is item 99</div>
+				<div class="item">this is item 100</div>
+			</div>
+					</div>
+			</div>
+			</div>
+			
+		
+		<script>
+//-----------------创建的插件-----------------------------------
+			function Scroller(opt){
+				this.outer=opt.el;//最外面的一层
+				this.init()	
+				this.Event=new Event("on-scroll");// 自定义了一个事件
+				
+			}
+			Scroller.prototype.init=function(){
+//				console.log("初始化")
+				this.renderDom()
+				this.bindDom()
+			}
+			Scroller.prototype.renderDom=function(){
+//				console.log("渲染")
+				// 创建一个wrappert
+				this.dom=document.createElement("div");//创建div
+				this.dom.className="scroll-wraper";//设置class
+				this.dom.innerHTML=this.outer.innerHTML;//设置内容
+				this.dom.style.transform="translateY(0px)";
+				this.outer.innerHTML="";//请空里面的内容
+				this.outer.appendChild(this.dom);//创建的内容插入到最外层里面
+			}
+			Scroller.prototype.bindDom=function(){
+				var main=this;//把this 传给main
+				// 添加开始touch 事件
+				this.dom.addEventListener("touchstart",startHd,false);
+				this.dom.addEventListener("touchmove",moveHd,false);
+				this.dom.addEventListener("touchend",endHd,false);
+				// 添加鼠标事件
+				this.dom.addEventListener("mousedown",startHd,false);
+//				this.dom.addEventListener("mousemove",moveHd,false);
+				this.dom.addEventListener("mouseup",endHd,false);
+				// 添加滚轮事件
+				this.dom.addEventListener("mousewheel",wheelHd,false)
+				//01 记录开始点击的区域
+				var startY;
+				//02 记录移动了多少的距离
+				var offsetY;
+				//03 记录 之前的 this.dom 的 translateY值
+				var oldTranslateY;
+				// 加速  时间差
+				// 03 记录开始的时间
+				var startT;
+				// 04 记录时间差
+				var offTime;
+				
+				function startHd(event){
+					// 关闭动画
+					main.dom.style.transition="";
+					//clientY 窗口中鼠标的位置
+					startY=event.targetTouches?event.targetTouches[0].pageY:event.clientY;
+					//获取当前的滚动值
+					oldTranslateY=main.getScrollY();
+					startT=new Date().getTime();// 获取当前的时间戳
+//					console.log(startY);
+					main.dom.addEventListener("mousemove",moveHd,false);
+				}
+				function moveHd(event){
+					// 打开动画
+					
+					var nowY=event.targetTouches?event.targetTouches[0].pageY:event.clientY;
+					offsetY=nowY-startY;
+					// 设置滚动值是 偏移的距离加上 之前滚动的距离
+					main.scrollTo(offsetY+oldTranslateY);
+					
+				}
+				function wheelHd (event){
+					
+					oldTranslateY=main.getScrollY();
+					offsetY=event.deltaY/-2;					
+					main.scrollTo(offsetY+oldTranslateY);
+					endHd(event);
+				}
+				function endHd(event){
+					main.dom.removeEventListener("mousemove",moveHd,false);
+					// 打开动画
+					main.dom.style.transition="all 0.7s ease-in-out";
+					// 获得时间差
+					offTime=new Date().getTime()-startT;
+					// 加速度
+					var speed=(400-offTime)/20;
+					if(speed<=1){speed=1};
+					main.scrollTo(oldTranslateY+speed*offsetY);
+					// 位置判断 1，不能大于0， 不能小于outer高-this.dom的高
+					var scrollY=main.getScrollY();
+					if(scrollY>0){
+						main.scrollTo(0);
+					}
+					var canscroll=main.outer.offsetHeight-main.dom.offsetHeight;
+					if(scrollY<canscroll){
+						
+						if(canscroll<=0){
+							main.scrollTo(canscroll);	
+						}else{
+							main.scrollTo(0);
+						}
+					}
+					setTimeout(function(){
+						main.Event.scrollY=main.getScrollY();//给事件带了一个scrollY属性
+						main.outer.dispatchEvent(main.Event);
+					},701)
+					// 发送一个事件
+					
+				}
+				
+			}
+		// 获取元素的 当前滚动值
+		Scroller.prototype.getScrollY=function(){
+			var str=this.dom.style.transform;		
+			return parseInt(str.substr(11));
+		}
+		// 在现有的基础上滚动 距离
+		Scroller.prototype.scrollBy=function(num){
+			this.dom.style.transition="all 0.7s ease-in-out";
+			var nowY=this.getScrollY();
+			this.scrollTo(nowY+num);
+		}
+		// 设置元素的 滚动位置
+		Scroller.prototype.scrollTo=function(num){	
+//			this.dom.style.transition="all 0.7s ease-in-out";
+			this.dom.style.transform="translateY("+num+"px)";
+			var main=this;
+			setTimeout(function(){
+				main.dom.style.transition="";	
+			},700)
+		}
+			
+			
+//-----------------调用插件-----------------------------------			
+			var scroll=document.querySelector(".scroll");
+			var content=new Scroller({el:scroll})
+			var side=document.querySelector(".side");
+			new Scroller({el:side})
+
+	var sideItems=document.querySelectorAll(".side .item");
+	for(var i=0;i<sideItems.length;i++){
+		
+		sideItems[i].addEventListener("click",function(){			
+			var str=this.innerHTML;
+			// 拿到该元素对应 item
+			var elem=document.querySelector(".scroll ."+str);
+			// 求该元素距离顶部的位置
+			var disTop=-elem.getBoundingClientRect().top+43;
+			// content 滚动 这个距离			
+			content.scrollBy(disTop);
+			// 删除active
+			// 1，找到active 的元素
+			var oldActive=document.querySelector(".side .active");
+			oldActive.classList.remove("active");	
+			// 添加active
+			this.classList.add("active");
+			//item()
+			//length 属性
+			//toggle() 
+			//contains() 支持一个类名字符串参数
+		})
+		
+	}
+	//-------------------------------------
+	scroll.addEventListener("on-scroll",checkScroll,false)
+	function checkScroll(e){
+		// 1 title 谁滚动的距离小于0;
+		// 2 添加class 和删除class
+		var dividers = document.querySelectorAll(".scroll .item-divider");
+		var points=[];
+		for(var i=0; i<dividers.length;i++){
+			// 拿到当前的位置
+			var offT=dividers[i].getBoundingClientRect().top-43;
+			points.push(Math.abs(offT));
+//			console.log(offT,dividers[i]);
+		}
+		// 求最小值
+		var min=Math.min.apply(null,points);
+		// 求最小值的位置
+		var index=points.indexOf(min);
+//		dividers[index-1].innerHTML;
+		//去掉class
+		var oldActive=document.querySelector(".side .active");
+			oldActive.classList.remove("active");
+		// 添加class
+		sideItems[index].classList.add("active");
+		
+	}
+	
+		</script>
+	</body>
+</html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)http://www.baobao.io/2016/07/19/h5-skills/ -->
+<html lang="zh" class=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    
+    <title>手机移动端WEB资源整合 | </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="meta基础知识H5页面窗口自动调整到设备宽度，并禁止用户缩放页面
+1&amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no&amp;quot; /&amp;gt;
+忽略将页面中的数字识别为电话">
+<meta property="og:type" content="article">
+<meta property="og:title" content="手机移动端WEB资源整合">
+<meta property="og:url" content="https://www.baobao.io/2016/07/19/h5-skills/index.html">
+<meta property="og:site_name" content="">
+<meta property="og:description" content="meta基础知识H5页面窗口自动调整到设备宽度，并禁止用户缩放页面
+1&amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no&amp;quot; /&amp;gt;
+忽略将页面中的数字识别为电话">
+<meta property="og:updated_time" content="2016-07-19T14:52:52.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="手机移动端WEB资源整合">
+<meta name="twitter:description" content="meta基础知识H5页面窗口自动调整到设备宽度，并禁止用户缩放页面
+1&amp;lt;meta name=&amp;quot;viewport&amp;quot; content=&amp;quot;width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no&amp;quot; /&amp;gt;
+忽略将页面中的数字识别为电话">
+    
+
+    
+
+    
+
+    <link rel="stylesheet" href="./手机移动端WEB资源整合_files/font-awesome.min.css">
+    <link rel="stylesheet" href="./手机移动端WEB资源整合_files/styles.css">
+    <link rel="stylesheet" href="./手机移动端WEB资源整合_files/styles(1).css">
+
+    <link rel="stylesheet" href="./手机移动端WEB资源整合_files/style.css">
+
+    <script src="./手机移动端WEB资源整合_files/hm.js"></script><script src="./手机移动端WEB资源整合_files/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="./手机移动端WEB资源整合_files/jquery.fancybox.css">
+    
+    
+    
+
+
+<style type="text/css">.fancybox-margin{margin-right:17px;}</style><link type="text/css" rel="stylesheet" href="./手机移动端WEB资源整合_files/embed.bluebox.css">
+<style type="text/css">
+#main{
+	    margin: 50px auto !important;
+    display: block !important;
+    float: none;
+}
+
+#ds-thread #ds-reset .ds-comment-body p {
+  white-space: pre;
+}
+
+#ds-thread #ds-reset .ds-comment-body p br, #ds-thread #ds-reset .ds-meta, #ds-thread #ds-reset .ds-comments-info, #ds-thread #ds-reset .ds-post-options .ds-sync {
+  display: none;
+}
+
+#ds-thread #ds-reset li.ds-post:first-child {
+  border-top: 0;
+}
+</style></head>
+<body>
+   
+       
+<!--<script src="./手机移动端WEB资源整合_files/insight.js"></script>-->
+
+
+
+            
+            <section id="main"><article id="post-h5-skills" class="article article-type-post" itemscope="" itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            手机移动端WEB资源整合
+        </h1>
+    
+
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h2 id="meta基础知识"><a href="http://www.baobao.io/2016/07/19/h5-skills/#meta基础知识" class="headerlink" title="meta基础知识"></a>meta基础知识</h2><p>H5页面窗口自动调整到设备宽度，并禁止用户缩放页面</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" /&gt;</div></pre></td></tr></tbody></table></figure>
+<p>忽略将页面中的数字识别为电话号码</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta name="format-detection" content="telephone=no" /&gt;</div></pre></td></tr></tbody></table></figure>
+<p>忽略Android平台中对邮箱地址的识别</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta name="format-detection" content="email=no" /&gt;</div></pre></td></tr></tbody></table></figure>
+<p>当网站添加到主屏幕快速启动方式，可隐藏地址栏，仅针对ios的safari</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;meta name="apple-mobile-web-app-capable" content="yes" /&gt;</div><div class="line">&lt;!-- ios7.0版本以后，safari上已看不到效果 --&gt;</div></pre></td></tr></tbody></table></figure>
+<p>将网站添加到主屏幕快速启动方式，仅针对ios的safari顶端状态条的样式</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;meta name="apple-mobile-web-app-status-bar-style" content="black" /&gt;</div><div class="line">&lt;!-- 可选default、black、black-translucent --&gt;</div></pre></td></tr></tbody></table></figure>
+<h3 id="viewport模板"><a href="http://www.baobao.io/2016/07/19/h5-skills/#viewport模板" class="headerlink" title="viewport模板"></a>viewport模板</h3><p><code>viewport</code> 模板——通用</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta charset="utf-8"&gt;</div><div class="line">&lt;meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport"&gt;</div><div class="line">&lt;meta content="yes" name="apple-mobile-web-app-capable"&gt;</div><div class="line">&lt;meta content="black" name="apple-mobile-web-app-status-bar-style"&gt;</div><div class="line">&lt;meta content="telephone=no" name="format-detection"&gt;</div><div class="line">&lt;meta content="email=no" name="format-detection"&gt;</div><div class="line">&lt;title&gt;标题&lt;/title&gt;</div><div class="line">&lt;link rel="stylesheet" href="index.css"&gt;</div><div class="line">&lt;/head&gt;</div><div class="line"> </div><div class="line">&lt;body&gt;</div><div class="line">这里开始内容</div><div class="line">&lt;/body&gt;</div><div class="line"> </div><div class="line">&lt;/html&gt;</div></pre></td></tr></tbody></table></figure>
+<p><code>viewport</code> 模板 – <code>target-densitydpi=device-dpi</code>，android 2.3.5以下版本不支持</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta charset="utf-8"&gt;</div><div class="line">&lt;meta name="viewport" content="width=750, user-scalable=no, target-densitydpi=device-dpi"&gt;&lt;!-- width取值与页面定义的宽度一致 --&gt;</div><div class="line">&lt;meta content="yes" name="apple-mobile-web-app-capable"&gt;</div><div class="line">&lt;meta content="black" name="apple-mobile-web-app-status-bar-style"&gt;</div><div class="line">&lt;meta content="telephone=no" name="format-detection"&gt;</div><div class="line">&lt;meta content="email=no" name="format-detection"&gt;</div><div class="line">&lt;title&gt;标题&lt;/title&gt;</div><div class="line">&lt;link rel="stylesheet" href="index.css"&gt;</div><div class="line">&lt;/head&gt;</div><div class="line"> </div><div class="line">&lt;body&gt;</div><div class="line">这里开始内容</div><div class="line">&lt;/body&gt;</div><div class="line"> </div><div class="line">&lt;/html&gt;</div></pre></td></tr></tbody></table></figure>
+<p>参考案例：<a href="http://action.weixin.qq.com/payact/readtemplate?t=mobile/2015/wxzfsht/index_tmpl" target="_blank" rel="external">http://action.weixin.qq.com/payact/readtemplate?t=mobile/2015/wxzfsht/index_tmpl</a></p>
+<h2 id="常见问题"><a href="http://www.baobao.io/2016/07/19/h5-skills/#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="移动端如何定义字体-font-family"><a href="http://www.baobao.io/2016/07/19/h5-skills/#移动端如何定义字体-font-family" class="headerlink" title="移动端如何定义字体 font-family"></a>移动端如何定义字体 <code>font-family</code></h3><p>中文字体使用系统默认即可，英文用 <code>Helvetica</code></p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">/* 移动端定义字体的代码 */</div><div class="line">body{font-family:Helvetica;}</div></pre></td></tr></tbody></table></figure>
+<p>参考《<a href="http://www.cnblogs.com/PeunZhang/p/3592096.html" target="_blank" rel="external">移动端使用字体的思考</a>》</p>
+<h3 id="移动端字体单位-font-size-选择-px-还是-rem"><a href="http://www.baobao.io/2016/07/19/h5-skills/#移动端字体单位-font-size-选择-px-还是-rem" class="headerlink" title="移动端字体单位 font-size 选择 px 还是 rem"></a>移动端字体单位 <code>font-size</code> 选择 <code>px</code> 还是 <code>rem</code></h3><p>对于只需要适配少部分手机设备，且分辨率对页面影响不大的，使用 <code>px</code> 即可</p>
+<p>对于需要适配各种移动设备，使用 <code>rem</code>，例如只需要适配iPhone和iPad等分辨率差别比较挺大的设备</p>
+<p><code>rem</code> 配置参考：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">html{font-size:10px}</div><div class="line">@media screen and (min-width:321px) and (max-width:375px){html{font-size:11px}}</div><div class="line">@media screen and (min-width:376px) and (max-width:414px){html{font-size:12px}}</div><div class="line">@media screen and (min-width:415px) and (max-width:639px){html{font-size:15px}}</div><div class="line">@media screen and (min-width:640px) and (max-width:719px){html{font-size:20px}}</div><div class="line">@media screen and (min-width:720px) and (max-width:749px){html{font-size:22.5px}}</div><div class="line">@media screen and (min-width:750px) and (max-width:799px){html{font-size:23.5px}}</div><div class="line">@media screen and (min-width:800px){html{font-size:25px}}</div></pre></td></tr></tbody></table></figure>
+<h3 id="移动端-touch-事件-区分-webkit-和-winphone"><a href="http://www.baobao.io/2016/07/19/h5-skills/#移动端-touch-事件-区分-webkit-和-winphone" class="headerlink" title="移动端 touch 事件(区分 webkit 和 winphone)"></a>移动端 <code>touch</code> 事件(区分 <code>webkit</code> 和 <code>winphone</code>)</h3><p>当用户手指放在移动设备在屏幕上滑动会触发的 <code>touch</code> 事件</p>
+<p>以下支持 <code>webkit</code></p>
+<ul>
+<li><code>touchstart</code>——当手指触碰屏幕时候发生。不管当前有多少只手指</li>
+<li><code>touchmove</code>——当手指在屏幕上滑动时连续触发。通常我们再滑屏页面，会调用 <code>event</code> 的 <code>preventDefault()</code> 可以阻止默认情况的发生：阻止页面滚动</li>
+<li><code>touchend</code>——当手指离开屏幕时触发</li>
+<li><code>touchcancel</code>——系统停止跟踪触摸时候会触发。例如在触摸过程中突然页面 <code>alert()</code>一个提示框，此时会触发该事件，这个事件比较少用</li>
+</ul>
+<p>TouchEvent</p>
+<ul>
+<li><code>touches</code>：屏幕上所有手指的信息</li>
+<li><code>targetTouches</code>：手指在目标区域的手指信息</li>
+<li><code>changedTouches</code>：最近一次触发该事件的手指信息</li>
+</ul>
+<p><code>touchend</code>时，<code>touches</code> 与 <code>targetTouches</code> 信息会被删除，<code>changedTouches</code> 保存的最后一次的信息，最好用于计算手指信息</p>
+<p>参数信息(<code>changedTouches[0]</code>)</p>
+<ul>
+<li><code>clientX</code>、<code>clientY</code> 在显示区的坐标</li>
+<li><code>target</code>：当前元素</li>
+</ul>
+<p>参考：<a href="https://developer.mozilla.org/en-US/docs/Web/API/TouchEvent" target="_blank" rel="external">https://developer.mozilla.org/en-US/docs/Web/API/TouchEvent</a></p>
+<p>以下支持winphone 8</p>
+<ul>
+<li><code>MSPointerDown</code>——当手指触碰屏幕时候发生。不管当前有多少只手指</li>
+<li><code>MSPointerMove</code>——当手指在屏幕上滑动时连续触发。通常我们再滑屏页面，会调用css的 <code>html{-ms-touch-action: none;}</code> 可以阻止默认情况的发生：阻止页面滚动</li>
+<li><code>MSPointerUp</code>——当手指离开屏幕时触发</li>
+</ul>
+<h3 id="移动端-click-屏幕产生-200-300-ms-的延迟响应"><a href="http://www.baobao.io/2016/07/19/h5-skills/#移动端-click-屏幕产生-200-300-ms-的延迟响应" class="headerlink" title="移动端 click 屏幕产生 200-300 ms 的延迟响应"></a>移动端 <code>click</code> 屏幕产生 <code>200-300 ms</code> 的延迟响应</h3><p>移动设备上的web网页是有 <code>300ms</code> 延迟的，玩玩会造成按钮点击延迟甚至是点击失效。</p>
+<p>以下是历史原因，来源一个公司内一个同事的分享：</p>
+<p>2007年苹果发布首款iphone上IOS系统搭载的safari为了将适用于PC端上大屏幕的网页能比较好的展示在手机端上，使用了双击缩放(<code>double tap to zoom</code>)的方案，比如你在手机上用浏览器打开一个PC上的网页，你可能在看到页面内容虽然可以撑满整个屏幕，但是字体、图片都很小看不清，此时可以快速双击屏幕上的某一部分，你就能看清该部分放大后的内容，再次双击后能回到原始状态。</p>
+<p>双击缩放是指用手指在屏幕上快速点击两次，iOS 自带的 Safari 浏览器会将网页缩放至原始比例。</p>
+<p>原因就出在浏览器需要如何判断快速点击上，当用户在屏幕上单击某一个元素时候，例如跳转链接 <code>&lt;a href=”#”&gt;&lt;/a&gt;</code>，此处浏览器会先捕获该次单击，但浏览器不能决定用户是单纯要点击链接还是要双击该部分区域进行缩放操作，所以，捕获第一次单击后，浏览器会先Hold一段时间t，如果在t时间区间里用户未进行下一次点击，则浏览器会做单击跳转链接的处理，如果t时间里用户进行了第二次单击操作，则浏览器会禁止跳转，转而进行对该部分区域页面的缩放操作。那么这个时间区间t有多少呢？在IOS safari下，大概为300毫秒。这就是延迟的由来。造成的后果用户纯粹单击页面，页面需要过一段时间才响应，给用户慢体验感觉，对于web开发者来说是，页面js捕获click事件的回调函数处理，需要300ms后才生效，也就间接导致影响其他业务逻辑的处理。</p>
+<p>解决方案：</p>
+<ul>
+<li><code>fastclick</code> 可以解决在手机上点击事件的300ms延迟</li>
+<li><code>zepto</code> 的 <code>touch</code> 模块，<code>tap</code> 事件也是为了解决在 <code>click</code> 的延迟问题</li>
+</ul>
+<p>触摸事件的响应顺序</p>
+<ol>
+<li>ontouchstart</li>
+<li>ontouchmove</li>
+<li>ontouchend</li>
+<li>onclick</li>
+</ol>
+<p>解决300ms延迟的问题，也可以通过绑定 <code>ontouchstart</code> 事件，加快对事件的响应</p>
+<h3 id="什么是-Retina-显示屏，带来了什么问题"><a href="http://www.baobao.io/2016/07/19/h5-skills/#什么是-Retina-显示屏，带来了什么问题" class="headerlink" title="什么是 Retina 显示屏，带来了什么问题"></a>什么是 <code>Retina</code> 显示屏，带来了什么问题</h3><p><code>retina</code>：一种具备超高像素密度的液晶屏，同样大小的屏幕上显示的像素点由1个变为多个，如在同样带下的屏幕上，苹果设备的 <code>retina</code> 显示屏中，像素点1个变为4个</p>
+<p>在高清显示屏中的位图被放大，图片会变得模糊，因此移动端的视觉稿通常会设计为传统PC的2倍</p>
+<p>那么，前端的应对方案是：</p>
+<p>设计稿切出来的图片长宽保证为偶数，并使用 <code>backgroud-size</code> 把图片缩小为原来的1/2</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">//例如图片宽高为：200px*200px，那么写法如下</div><div class="line">.css{width:100px;height:100px;background-size:100px 100px;}</div></pre></td></tr></tbody></table></figure>
+<p>其它元素的取值为原来的1/2，例如视觉稿40px的字体，使用样式的写法为20px</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.css{font-size:20px}</div></pre></td></tr></tbody></table></figure>
+<p>参考《<a href="http://www.cnblogs.com/PeunZhang/p/3441110.html" target="_blank" rel="external">高清显示屏原理及设计方案</a>》</p>
+<h3 id="ios系统中元素被触摸时产生的半透明灰色遮罩怎么去掉"><a href="http://www.baobao.io/2016/07/19/h5-skills/#ios系统中元素被触摸时产生的半透明灰色遮罩怎么去掉" class="headerlink" title="ios系统中元素被触摸时产生的半透明灰色遮罩怎么去掉"></a>ios系统中元素被触摸时产生的半透明灰色遮罩怎么去掉</h3><p>ios用户点击一个链接，会出现一个半透明灰色遮罩, 如果想要禁用，可设置 <code>-webkit-tap-highlight-color</code> 的 <code>alpha</code> 值为0，也就是属性值的最后一位设置为0就可以去除半透明灰色遮罩</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">a,button,input,textarea{-webkit-tap-highlight-color: rgba(0,0,0,0;)}</div></pre></td></tr></tbody></table></figure>
+<h3 id="部分android系统中元素被点击时产生的边框怎么去掉"><a href="http://www.baobao.io/2016/07/19/h5-skills/#部分android系统中元素被点击时产生的边框怎么去掉" class="headerlink" title="部分android系统中元素被点击时产生的边框怎么去掉"></a>部分android系统中元素被点击时产生的边框怎么去掉</h3><p>android用户点击一个链接，会出现一个边框或者半透明灰色遮罩, 不同生产商定义出来额效果不一样，可设置 <code>-webkit-tap-highlight-color</code> 的 <code>alpha</code> 值为0去除部分机器自带的效果</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">a,button,input,textarea{</div><div class="line">  -webkit-tap-highlight-color: rgba(0,0,0,0;)</div><div class="line">  -webkit-user-modify:read-write-plaintext-only;</div><div class="line">}</div></pre></td></tr></tbody></table></figure>
+<p><code>-webkit-user-modify</code> 有个副作用，就是输入法不再能够输入多个字符</p>
+<p>另外，有些机型去除不了，如小米2</p>
+<p>对于按钮类还有个办法，不使用 <code>a</code> 或者 <code>input</code> 标签，直接用div标签</p>
+<p>参考《<a href="http://xn--androida-r39lv4co2cc0ykjse41cb1as71mo7ee4zt11g931a/" target="_blank" rel="external">如何去除android上a标签产生的边框</a>》</p>
+<p>winphone系统 <code>a</code>、<code>input</code> 标签被点击时产生的半透明灰色背景怎么去掉</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta name="msapplication-tap-highlight" content="no"&gt;</div></pre></td></tr></tbody></table></figure>
+<h3 id="webkit表单元素的默认外观怎么重置"><a href="http://www.baobao.io/2016/07/19/h5-skills/#webkit表单元素的默认外观怎么重置" class="headerlink" title="webkit表单元素的默认外观怎么重置"></a>webkit表单元素的默认外观怎么重置</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.css{-webkit-appearance:none;}</div></pre></td></tr></tbody></table></figure>
+<h3 id="webkit表单输入框-placeholder-的颜色值能改变么"><a href="http://www.baobao.io/2016/07/19/h5-skills/#webkit表单输入框-placeholder-的颜色值能改变么" class="headerlink" title="webkit表单输入框 placeholder 的颜色值能改变么"></a>webkit表单输入框 <code>placeholder</code> 的颜色值能改变么</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">input::-webkit-input-placeholder{color:#AAAAAA;}</div><div class="line">input:focus::-webkit-input-placeholder{color:#EEEEEE;}</div></pre></td></tr></tbody></table></figure>
+<h3 id="webkit表单输入框-placeholder-的文字能换行么"><a href="http://www.baobao.io/2016/07/19/h5-skills/#webkit表单输入框-placeholder-的文字能换行么" class="headerlink" title="webkit表单输入框 placeholder 的文字能换行么"></a>webkit表单输入框 <code>placeholder</code> 的文字能换行么</h3><p>ios可以，android不行~</p>
+<p>在 <code>textarea</code> 标签下都可以换行~</p>
+<h3 id="IE10（winphone8）表单元素默认外观如何重置"><a href="http://www.baobao.io/2016/07/19/h5-skills/#IE10（winphone8）表单元素默认外观如何重置" class="headerlink" title="IE10（winphone8）表单元素默认外观如何重置"></a>IE10（winphone8）表单元素默认外观如何重置</h3><p>禁用 <code>select</code> 默认下拉箭头</p>
+<p><code>::-ms-expand</code> 适用于表单选择控件下拉箭头的修改，有多个属性值，设置它隐藏 (<code>display:none</code>) 并使用背景图片来修饰可得到我们想要的效果。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">select::-ms-expand {</div><div class="line">  display: none;</div><div class="line">}</div></pre></td></tr></tbody></table></figure>
+<h3 id="禁用-radio-和-checkbox-默认样式"><a href="http://www.baobao.io/2016/07/19/h5-skills/#禁用-radio-和-checkbox-默认样式" class="headerlink" title="禁用 radio 和 checkbox 默认样式"></a>禁用 <code>radio</code> 和 <code>checkbox</code> 默认样式</h3><p><code>::-ms-check</code> 适用于表单复选框或单选按钮默认图标的修改，同样有多个属性值，设置它隐藏 (<code>display:none</code>) 并使用背景图片来修饰可得到我们想要的效果。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">input[type=radio]::-ms-check,</div><div class="line">input[type=checkbox]::-ms-check {</div><div class="line">  display: none;</div><div class="line">}</div></pre></td></tr></tbody></table></figure>
+<h3 id="禁用PC端表单输入框默认清除按钮"><a href="http://www.baobao.io/2016/07/19/h5-skills/#禁用PC端表单输入框默认清除按钮" class="headerlink" title="禁用PC端表单输入框默认清除按钮"></a>禁用PC端表单输入框默认清除按钮</h3><p>当表单文本输入框输入内容后会显示文本清除按钮，<code>::-ms-clear</code> 适用于该清除按钮的修改，同样设置使它隐藏 (<code>display:none</code>) 并使用背景图片来修饰可得到我们想要的效果。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">input[type=text]::-ms-clear,</div><div class="line">input[type=tel]::-ms-clear,</div><div class="line">input[type=number]::-ms-clear {</div><div class="line">  display: none;</div><div class="line">}</div></pre></td></tr></tbody></table></figure>
+<h3 id="禁止ios-长按时不触发系统的菜单，禁止ios和android长按时下载图片"><a href="http://www.baobao.io/2016/07/19/h5-skills/#禁止ios-长按时不触发系统的菜单，禁止ios和android长按时下载图片" class="headerlink" title="禁止ios 长按时不触发系统的菜单，禁止ios和android长按时下载图片"></a>禁止ios 长按时不触发系统的菜单，禁止ios和android长按时下载图片</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.css{-webkit-touch-callout: none}</div></pre></td></tr></tbody></table></figure>
+<h3 id="禁止ios和android用户选中文字"><a href="http://www.baobao.io/2016/07/19/h5-skills/#禁止ios和android用户选中文字" class="headerlink" title="禁止ios和android用户选中文字"></a>禁止ios和android用户选中文字</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">.css{-webkit-user-select:none}</div></pre></td></tr></tbody></table></figure>
+<p>参考《<a href="http://www.cnblogs.com/PeunZhang/p/3522603.html" target="_blank" rel="external">如何改变表单元素的外观(for Webkit and IE10)</a>》</p>
+<h3 id="打电话发短信写邮件怎么实现"><a href="http://www.baobao.io/2016/07/19/h5-skills/#打电话发短信写邮件怎么实现" class="headerlink" title="打电话发短信写邮件怎么实现"></a>打电话发短信写邮件怎么实现</h3><p>打电话</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;a href="tel:0755-10086"&gt;打电话给:0755-10086&lt;/a&gt;</div></pre></td></tr></tbody></table></figure>
+<p>发短信，winphone系统无效</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;a href="sms:10086"&gt;发短信给: 10086&lt;/a&gt;</div></pre></td></tr></tbody></table></figure>
+<p>写邮件，可参考《<a href="http://www.cnblogs.com/PeunZhang/p/4952783.html" target="_blank" rel="external">移动web页面给用户发送邮件的方法</a>》</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;a href="mailto:peun@foxmail.com"&gt;peun@foxmail.com&lt;/a&gt;</div></pre></td></tr></tbody></table></figure>
+<h3 id="模拟按钮-hover-效果"><a href="http://www.baobao.io/2016/07/19/h5-skills/#模拟按钮-hover-效果" class="headerlink" title="模拟按钮 hover 效果"></a>模拟按钮 <code>hover</code> 效果</h3><p>移动端触摸按钮的效果，可明示用户有些事情正要发生，是一个比较好体验，但是移动设备中并没有鼠标指针，使用css的 <code>hover</code> 并不能满足我们的需求，还好国外有个激活css的 <code>active</code> 效果，代码如下，</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta charset="utf-8"&gt;</div><div class="line">&lt;meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport"&gt;</div><div class="line">&lt;meta content="yes" name="apple-mobile-web-app-capable"&gt;</div><div class="line">&lt;meta content="black" name="apple-mobile-web-app-status-bar-style"&gt;</div><div class="line">&lt;meta content="telephone=no" name="format-detection"&gt;</div><div class="line">&lt;meta content="email=no" name="format-detection"&gt;</div><div class="line">&lt;style type="text/css"&gt;</div><div class="line">a{-webkit-tap-highlight-color: rgba(0,0,0,0);}</div><div class="line">.btn-blue{display:block;height:42px;line-height:42px;text-align:center;border-radius:4px;font-size:18px;color:#FFFFFF;background-color: #4185F3;}</div><div class="line">.btn-blue:active{background-color: #357AE8;}</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line"> </div><div class="line">&lt;div class="btn-blue"&gt;按钮&lt;/div&gt;</div><div class="line"> </div><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">document.addEventListener("touchstart", function(){}, true)</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></tbody></table></figure>
+<h3 id="兼容性ios5-、部分android-4-、winphone-8"><a href="http://www.baobao.io/2016/07/19/h5-skills/#兼容性ios5-、部分android-4-、winphone-8" class="headerlink" title="兼容性ios5+、部分android 4+、winphone 8"></a>兼容性ios5+、部分android 4+、winphone 8</h3><p>要做到全兼容的办法，可通过绑定 <code>ontouchstart</code> 和 <code>ontouchend</code> 来控制按钮的类名</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta charset="utf-8"&gt;</div><div class="line">&lt;meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport"&gt;</div><div class="line">&lt;meta content="yes" name="apple-mobile-web-app-capable"&gt;</div><div class="line">&lt;meta content="black" name="apple-mobile-web-app-status-bar-style"&gt;</div><div class="line">&lt;meta content="telephone=no" name="format-detection"&gt;</div><div class="line">&lt;meta content="email=no" name="format-detection"&gt;</div><div class="line">&lt;style type="text/css"&gt;</div><div class="line">a{-webkit-tap-highlight-color: rgba(0,0,0,0);}</div><div class="line">.btn-blue{display:block;height:42px;line-height:42px;text-align:center;border-radius:4px;font-size:18px;color:#FFFFFF;background-color: #4185F3;}</div><div class="line">.btn-blue-on{background-color: #357AE8;}</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line"> </div><div class="line">&lt;div class="btn-blue"&gt;按钮&lt;/div&gt;</div><div class="line"> </div><div class="line">&lt;script type="text/javascript"&gt;</div><div class="line">var btnBlue = document.querySelector(".btn-blue");</div><div class="line">btnBlue.ontouchstart = function(){</div><div class="line">this.className = "btn-blue btn-blue-on"</div><div class="line">}</div><div class="line">btnBlue.ontouchend = function(){</div><div class="line">this.className = "btn-blue"</div><div class="line">}</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></tbody></table></figure>
+<h3 id="屏幕旋转的事件和样式"><a href="http://www.baobao.io/2016/07/19/h5-skills/#屏幕旋转的事件和样式" class="headerlink" title="屏幕旋转的事件和样式"></a>屏幕旋转的事件和样式</h3><p>事件</p>
+<p><code>window.orientation</code>，取值：正负90表示横屏模式、0和180表现为竖屏模式；</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">window.onorientationchange = function(){</div><div class="line">  switch(window.orientation){</div><div class="line">    case -90:</div><div class="line">    case 90:</div><div class="line">      alert("横屏:" + window.orientation);</div><div class="line">      break;</div><div class="line">    case 0:</div><div class="line">    case 180:</div><div class="line">      alert("竖屏:" + window.orientation);</div><div class="line">      break;</div><div class="line">  }</div><div class="line">}</div></pre></td></tr></tbody></table></figure>
+<p>样式</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//竖屏时使用的样式</div><div class="line">@media all and (orientation:portrait) {</div><div class="line">  .css{ }</div><div class="line">}</div></pre></td></tr></tbody></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//横屏时使用的样式</div><div class="line">@media all and (orientation:landscape) {</div><div class="line">  .css{ }</div><div class="line">}</div></pre></td></tr></tbody></table></figure>
+<h3 id="audio-元素和-video-元素在ios和andriod中无法自动播放"><a href="http://www.baobao.io/2016/07/19/h5-skills/#audio-元素和-video-元素在ios和andriod中无法自动播放" class="headerlink" title="audio 元素和 video 元素在ios和andriod中无法自动播放"></a><code>audio</code> 元素和 <code>video</code> 元素在ios和andriod中无法自动播放</h3><p>应对方案：触屏即播</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$('html').one('touchstart',function(){</div><div class="line">  audio.play();</div><div class="line">});</div></pre></td></tr></tbody></table></figure>
+<p>可参考《<a href="http://www.cnblogs.com/PeunZhang/archive/2013/02/05/2893093.html" target="_blank" rel="external">无法自动播放的 <code>audio</code> 元素</a>》</p>
+<h3 id="摇一摇功能"><a href="http://www.baobao.io/2016/07/19/h5-skills/#摇一摇功能" class="headerlink" title="摇一摇功能"></a>摇一摇功能</h3><p><code>HTML5 deviceMotion</code>：封装了运动传感器数据的事件，可以获取手机运动状态下的运动加速度等数据。</p>
+<h3 id="手机拍照和上传图片"><a href="http://www.baobao.io/2016/07/19/h5-skills/#手机拍照和上传图片" class="headerlink" title="手机拍照和上传图片"></a>手机拍照和上传图片</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;input type=”file”&gt;的accept 属性</div><div class="line"> </div><div class="line">&lt;!-- 选择照片 --&gt;</div><div class="line">&lt;input type=file accept="image/*"&gt;</div><div class="line">&lt;!-- 选择视频 --&gt;</div><div class="line">&lt;input type=file accept="video/*"&gt;</div></pre></td></tr></tbody></table></figure>
+<p>使用总结：</p>
+<ul>
+<li>ios 有拍照、录像、选取本地图片功能</li>
+<li>部分android只有选取本地图片功能</li>
+<li>winphone不支持</li>
+<li><code>input</code> 控件默认外观丑陋</li>
+</ul>
+<h3 id="微信浏览器用户调整字体大小后页面矬了，怎么阻止用户调整"><a href="http://www.baobao.io/2016/07/19/h5-skills/#微信浏览器用户调整字体大小后页面矬了，怎么阻止用户调整" class="headerlink" title="微信浏览器用户调整字体大小后页面矬了，怎么阻止用户调整"></a>微信浏览器用户调整字体大小后页面矬了，怎么阻止用户调整</h3><p>原因</p>
+<p>android侧是复写了 <code>layoutinflater</code> 对 <code>textview</code> 做了统一处理</p>
+<p>ios侧是修改了 <code>body.style.webkitTextSizeAdjust</code> 值</p>
+<p>解决方案：</p>
+<p>android使用以下代码，该接口只在微信浏览器下有效(感谢jationhuang同学提供)</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line">* 页面加入这段代码可使Android机器页面不再受到用户字体缩放强制改变大小</div><div class="line">* 但是会有一个1秒左右的延迟，期间可以考虑通过loading展示</div><div class="line">* 仅供参考</div><div class="line">*/</div><div class="line">(function(){</div><div class="line">  if (typeof(WeixinJSBridge) == "undefined") {</div><div class="line">    document.addEventListener("WeixinJSBridgeReady", function (e) {</div><div class="line">      setTimeout(function(){</div><div class="line">        WeixinJSBridge.invoke('setFontSizeCallback',{"fontSize":0}, function(res) {</div><div class="line">          alert(JSON.stringify(res));</div><div class="line">        });</div><div class="line">      },0);</div><div class="line">    });</div><div class="line">  } else {</div><div class="line">    setTimeout(function(){</div><div class="line">      WeixinJSBridge.invoke('setFontSizeCallback',{"fontSize":0}, function(res) {</div><div class="line">        alert(JSON.stringify(res));</div><div class="line">      });</div><div class="line">    },0);</div><div class="line">  }</div><div class="line">})();</div></pre></td></tr></tbody></table></figure>
+<h3 id="ios使用-webkit-text-size-adjust-禁止调整字体大小"><a href="http://www.baobao.io/2016/07/19/h5-skills/#ios使用-webkit-text-size-adjust-禁止调整字体大小" class="headerlink" title="ios使用 -webkit-text-size-adjust 禁止调整字体大小"></a>ios使用 <code>-webkit-text-size-adjust</code> 禁止调整字体大小</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">body{-webkit-text-size-adjust: 100%!important;}</div></pre></td></tr></tbody></table></figure>
+<p>最好的解决方案：</p>
+<p>整个页面用 <code>rem</code> 或者百分比布局</p>
+<h3 id="消除-transition-闪屏"><a href="http://www.baobao.io/2016/07/19/h5-skills/#消除-transition-闪屏" class="headerlink" title="消除 transition 闪屏"></a>消除 <code>transition</code> 闪屏</h3><p>网络都是这么写的，但我并没有测试出来</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">.css{</div><div class="line">  /*设置内嵌的元素在 3D 空间如何呈现：保留 3D*/</div><div class="line">  -webkit-transform-style: preserve-3d;</div><div class="line">  /*（设置进行转换的元素的背面在面对用户时是否可见：隐藏）*/</div><div class="line">  -webkit-backface-visibility: hidden;</div><div class="line">}</div></pre></td></tr></tbody></table></figure>
+<h3 id="开启硬件加速-解决页面闪白-保证动画流畅"><a href="http://www.baobao.io/2016/07/19/h5-skills/#开启硬件加速-解决页面闪白-保证动画流畅" class="headerlink" title="开启硬件加速 解决页面闪白 保证动画流畅"></a>开启硬件加速 解决页面闪白 保证动画流畅</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">.css {</div><div class="line">  -webkit-transform: translate3d(0, 0, 0);</div><div class="line">  -moz-transform: translate3d(0, 0, 0);</div><div class="line">  -ms-transform: translate3d(0, 0, 0);</div><div class="line">  transform: translate3d(0, 0, 0);</div><div class="line">}</div></pre></td></tr></tbody></table></figure>
+<p>参考《<a href="http://www.cnblogs.com/PeunZhang/p/3510083.html" target="_blank" rel="external">用CSS开启硬件加速来提高网站性能</a>》</p>
+<h3 id="取消-input-在ios下，输入的时候英文首字母的默认大写"><a href="http://www.baobao.io/2016/07/19/h5-skills/#取消-input-在ios下，输入的时候英文首字母的默认大写" class="headerlink" title="取消 input 在ios下，输入的时候英文首字母的默认大写"></a>取消 <code>input</code> 在ios下，输入的时候英文首字母的默认大写</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;input autocapitalize="off" autocorrect="off" /&gt;</div></pre></td></tr></tbody></table></figure>
+<h3 id="android-上去掉语音输入按钮"><a href="http://www.baobao.io/2016/07/19/h5-skills/#android-上去掉语音输入按钮" class="headerlink" title="android 上去掉语音输入按钮"></a>android 上去掉语音输入按钮</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">input::-webkit-input-speech-button {display: none}</div></pre></td></tr></tbody></table></figure>
+<h3 id="android-2-3-bug"><a href="http://www.baobao.io/2016/07/19/h5-skills/#android-2-3-bug" class="headerlink" title="android 2.3 bug"></a>android 2.3 bug</h3><ul>
+<li><code>@-webkit-keyframes</code> 需要以0%开始100%结束，0%的百分号不能去掉</li>
+<li><code>after</code> 和 <code>before</code> 伪类无法使用动画 <code>animation</code></li>
+<li><code>border-radius</code> 不支持 <code>%</code> 单位</li>
+<li><code>translate</code> 百分比的写法和 <code>scale</code> 在一起会导致失效，例如 <code>-webkit-transform: translate(-50%,-50%) scale(-0.5, 1)</code></li>
+</ul>
+<h3 id="android-4-x-bug"><a href="http://www.baobao.io/2016/07/19/h5-skills/#android-4-x-bug" class="headerlink" title="android 4.x bug"></a>android 4.x bug</h3><ul>
+<li>三星 Galaxy S4中自带浏览器不支持 <code>border-radius</code> 缩写</li>
+<li>同时设置 <code>border-radius</code> 和背景色的时候，背景色会溢出到圆角以外部分</li>
+<li>部分手机(如三星)，<code>a</code> 链接支持鼠标 <code>:visited</code> 事件，也就是说链接访问后文字变为紫色</li>
+<li>android无法同时播放多音频 <code>audio</code></li>
+</ul>
+<p>参考《<a href="https://github.com/yisibl/blog/issues/2" target="_blank" rel="external"><code>border-radius</code> 移动之伤</a>》</p>
+<h3 id="设计高性能CSS3动画的几个要素"><a href="http://www.baobao.io/2016/07/19/h5-skills/#设计高性能CSS3动画的几个要素" class="headerlink" title="设计高性能CSS3动画的几个要素"></a>设计高性能CSS3动画的几个要素</h3><ul>
+<li>尽可能地使用合成属性 <code>transform</code> 和 <code>opacity</code> 来设计CSS3动画，不使用 <code>position</code> 的 <code>left</code> 和 <code>top</code> 来定位</li>
+<li>利用 <code>translate3D</code> 开启GPU加速</li>
+</ul>
+<p>参考《<a href="http://www.html5rocks.com/en/tutorials/speed/high-performance-animations/" target="_blank" rel="external">High Performance Animations</a>》</p>
+<h3 id="fixed-bug"><a href="http://www.baobao.io/2016/07/19/h5-skills/#fixed-bug" class="headerlink" title="fixed bug"></a>fixed bug</h3><ul>
+<li>ios下 <code>fixed</code> 元素容易定位出错，软键盘弹出时，影响 <code>fixed</code> 元素定位</li>
+<li>android下 <code>fixed</code> 表现要比iOS更好，软键盘弹出时，不会影响 <code>fixed</code> 元素定位</li>
+<li>ios4下不支持 <code>position:fixed</code></li>
+</ul>
+<p>解决方案</p>
+<p>可用 <code>isroll.js</code>，暂无完美方案</p>
+<p>参考</p>
+<p>《<a href="https://github.com/maxzhang/maxzhang.github.com/issues/2" target="_blank" rel="external">移动端web页面使用 <code>position:fixed</code> 问题总结</a>》</p>
+<p>《<a href="http://www.cnblogs.com/PeunZhang/archive/2013/06/14/3117589.html" target="_blank" rel="external">使用 <code>iScroll.js</code> 解决ios4下不支持 <code>position:fixed</code> 的问题</a>》</p>
+<h3 id="如何阻止windows-Phone的默认触摸事件"><a href="http://www.baobao.io/2016/07/19/h5-skills/#如何阻止windows-Phone的默认触摸事件" class="headerlink" title="如何阻止windows Phone的默认触摸事件"></a>如何阻止windows Phone的默认触摸事件</h3><p>winphone下默认触摸事件事件使用 <code>e.preventDefault</code> 是无效的</p>
+<p>目前解决方法是使用样式来禁用</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">html{-ms-touch-action: none;}/* 禁止winphone默认触摸事件 */</div></pre></td></tr></tbody></table></figure>
+<p>参考</p>
+<p>《<a href="http://stackoverflow.com/questions/13396297/windows-phone-8-touch-support" target="_blank" rel="external">Windows phone 8 touch support</a>》</p>
+<h3 id="播放视频不全屏"><a href="http://www.baobao.io/2016/07/19/h5-skills/#播放视频不全屏" class="headerlink" title="播放视频不全屏"></a>播放视频不全屏</h3><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;!--</div><div class="line">1.ios7+支持自动播放</div><div class="line">2.支持Airplay的设备（如：音箱、Apple TV)播放</div><div class="line">x-webkit-airplay="true"</div><div class="line">3.播放视频不全屏</div><div class="line">webkit-playsinline="true"</div><div class="line">--&gt;</div><div class="line">&lt;video x-webkit-airplay="true" webkit-playsinline="true" preload="auto" autoplay src="http://"&gt;&lt;/video&gt;</div></pre></td></tr></tbody></table></figure>
+<h3 id="常用的移动端框架"><a href="http://www.baobao.io/2016/07/19/h5-skills/#常用的移动端框架" class="headerlink" title="常用的移动端框架"></a>常用的移动端框架</h3><p>zepto.js</p>
+<p>语法与 <code>jquery</code> 几乎一样，会 <code>jquery</code> 基本会 <code>zepto</code>~</p>
+<p>最新版本已经更新到1.16</p>
+<p>官网：<a href="http://zeptojs.com/" target="_blank" rel="external">http://zeptojs.com/</a></p>
+<p>中文(非官网)：<a href="http://www.css88.com/doc/zeptojs_api/" target="_blank" rel="external">http://www.css88.com/doc/zeptojs_api/</a></p>
+<h3 id="常使用的扩展模块："><a href="http://www.baobao.io/2016/07/19/h5-skills/#常使用的扩展模块：" class="headerlink" title="常使用的扩展模块："></a>常使用的扩展模块：</h3><p>浏览器检测：<a href="https://github.com/madrobby/zepto/blob/master/src/detect.js" target="_blank" rel="external">https://github.com/madrobby/zepto/blob/master/src/detect.js</a></p>
+<p>tap事件：<a href="https://github.com/madrobby/zepto/blob/master/src/touch.js" target="_blank" rel="external">https://github.com/madrobby/zepto/blob/master/src/touch.js</a></p>
+<h3 id="iscroll-js"><a href="http://www.baobao.io/2016/07/19/h5-skills/#iscroll-js" class="headerlink" title="iscroll.js"></a>iscroll.js</h3><p>解决页面不支持弹性滚动，不支持 <code>fixed</code> 引起的问题~</p>
+<p>实现下拉刷新，滑屏，缩放等功能~</p>
+<p>最新版本已经更新到5.0</p>
+<p>官网：<a href="http://cubiq.org/iscroll-5" target="_blank" rel="external">http://cubiq.org/iscroll-5</a></p>
+<h3 id="underscore-js"><a href="http://www.baobao.io/2016/07/19/h5-skills/#underscore-js" class="headerlink" title="underscore.js"></a>underscore.js</h3><p>笔者没用过，不过听说好用，推荐给大家~</p>
+<p>该库提供了一整套函数式编程的实用功能，但是没有扩展任何JavaScript内置对象。</p>
+<p>最新版本已经更新到1.8.2</p>
+<p>官网：<a href="http://underscorejs.org/" target="_blank" rel="external">http://underscorejs.org/</a></p>
+<h3 id="滑屏框架"><a href="http://www.baobao.io/2016/07/19/h5-skills/#滑屏框架" class="headerlink" title="滑屏框架"></a>滑屏框架</h3><p>适合上下滑屏、左右滑屏等滑屏切换页面的效果</p>
+<ul>
+<li><a href="https://github.com/peunzhang/slip.js" target="_blank" rel="external">slip.js</a></li>
+<li><a href="https://github.com/peunzhang/iSlider" target="_blank" rel="external">iSlider.js</a></li>
+<li><a href="https://github.com/peunzhang/fullpage" target="_blank" rel="external">fullpage.js</a></li>
+</ul>
+<h3 id="flex布局"><a href="http://www.baobao.io/2016/07/19/h5-skills/#flex布局" class="headerlink" title="flex布局"></a>flex布局</h3><p><code>flex</code> 布局目前可使用在移动中，并非所有的语法都全兼容，但以下写法笔者实践过，效果良好~</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">/* ============================================================</div><div class="line">flex：定义布局为盒模型</div><div class="line">flex-v：盒模型垂直布局</div><div class="line">flex-1：子元素占据剩余的空间</div><div class="line">flex-align-center：子元素垂直居中</div><div class="line">flex-pack-center：子元素水平居中</div><div class="line">flex-pack-justify：子元素两端对齐</div><div class="line">兼容性：ios 4+、android 2.3+、winphone8+</div><div class="line">============================================================ */</div><div class="line">.flex{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}</div><div class="line">.flex-v{-webkit-box-orient:vertical;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;}</div><div class="line">.flex-1{-webkit-box-flex:1;-webkit-flex:1;-ms-flex:1;flex:1;}</div><div class="line">.flex-align-center{-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;}</div><div class="line">.flex-pack-center{-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;}</div><div class="line">.flex-pack-justify{-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;}</div></pre></td></tr></tbody></table></figure>
+<p>示例：两端对齐</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">&lt;meta charset="utf-8"&gt;</div><div class="line">&lt;meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport"&gt;</div><div class="line">&lt;meta content="yes" name="apple-mobile-web-app-capable"&gt;</div><div class="line">&lt;meta content="black" name="apple-mobile-web-app-status-bar-style"&gt;</div><div class="line">&lt;meta content="telephone=no" name="format-detection"&gt;</div><div class="line">&lt;meta content="email=no" name="format-detection"&gt;</div><div class="line">&lt;style type="text/css"&gt;</div><div class="line">/* ============================================================</div><div class="line">flex：定义布局为盒模型</div><div class="line">flex-v：盒模型垂直布局</div><div class="line">flex-1：子元素占据剩余的空间</div><div class="line">flex-align-center：子元素垂直居中</div><div class="line">flex-pack-center：子元素水平居中</div><div class="line">flex-pack-justify：子元素两端对齐</div><div class="line">兼容性：ios 4+、android 2.3+、winphone8+</div><div class="line">============================================================ */</div><div class="line">.flex{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}</div><div class="line">.flex-v{-webkit-box-orient:vertical;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;}</div><div class="line">.flex-1{-webkit-box-flex:1;-webkit-flex:1;-ms-flex:1;flex:1;}</div><div class="line">.flex-align-center{-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;}</div><div class="line">.flex-pack-center{-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;}</div><div class="line">.flex-pack-justify{-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;}</div><div class="line">&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line"> </div><div class="line">&lt;div class="flex flex-pack-justify"&gt;</div><div class="line">&lt;div&gt;模块一&lt;/div&gt;</div><div class="line">&lt;div&gt;模块二&lt;/div&gt;</div><div class="line">&lt;div&gt;模块三&lt;/div&gt;</div><div class="line">&lt;div&gt;模块四&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div><div class="line"> </div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></tbody></table></figure>
+<p>使用注意：<code>flex</code> 下的子元素必须为块级元素，非块级元素在android2.3机器下 <code>flex</code> 失效</p>
+<p>参考：</p>
+<p><a href="http://the-echoplex.net/flexyboxes/" target="_blank" rel="external">flexyboxes</a></p>
+<p><a href="http://www.w3cplus.com/css3/old-flexbox-and-new-flexbox.html" target="_blank" rel="external">“老”的Flexbox和“新”的Flexbox</a></p>
+<p><a href="http://www.w3cplus.com/css3/advanced-cross-browser-flexbox.html" target="_blank" rel="external">跨浏览器的Flexbox</a></p>
+<h3 id="FastClick"><a href="http://www.baobao.io/2016/07/19/h5-skills/#FastClick" class="headerlink" title="FastClick"></a>FastClick</h3><p>消除在移动浏览器上触发 <code>click</code> 事件与一个物理Tap(敲击)之间的300延迟</p>
+<p>参考《<a href="https://github.com/ftlabs/fastclick" target="_blank" rel="external">FastClick</a>》</p>
+<p>转载：<a href="http://peunzhang.cnblogs.com/" target="_blank" rel="external">http://peunzhang.cnblogs.com/</a></p>
+
+        
+        </div>
+       
+    </div>
+    
+ 
+
+
+    
+</article>
+
+
+  
+
+</section>
+            
+          
+   
+   
+        
+  
+
+
+
+    
+        <script src="./手机移动端WEB资源整合_files/jquery.fancybox.pack.js"></script>
+    
+
+
+<!-- Custom Scripts -->
+<script src="./手机移动端WEB资源整合_files/main.js"></script>
+
+    </div>
+
+</body></html>

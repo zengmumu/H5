@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html ng-app="lbsApp" ng-controller="lbsCtrl">
+	<head>
+		<meta charset="UTF-8">
+		<title>地图开发</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="static/css/ionic.css" />	
+		<style>
+		
+		</style>
+	</head>
+	<body>
+		<div class="bar bar-header">
+			
+			<h1 class="title">地图选址</h1>
+			
+		</div>
+		
+		<ion-content class="has-header" on-scroll="checkPosition()">
+		<div class="list">
+			<div class="item item-input">
+				<a class="icon ion-location placeholder-icon"
+					ng-click="changeLocation()"
+					href=" http://m.amap.com/picker/?keywords=写字楼,小区,学校&zoom=15&center={{lonlat[0]}},{{lonlat[1]}}&radius=1000&total=20&key=5efbda3075d474c2aa578775121667f0"
+					></a>
+				<input type="text" ng-model="regeocode.formattedAddress"/>
+				
+			</div>
+			<div class="item item-input">
+				<label class="input-label text-right">选址省</label>
+				<input type="text" ng-model="regeocode.addressComponent.province" />
+			</div>
+			<div class="item item-input">
+				<label class="input-label text-right">选址市</label>
+				<input type="text" ng-model="regeocode.addressComponent.city" />
+			</div>
+			<div class="item item-input">
+				<label class="input-label text-right">选址区县</label>
+				<input type="text" ng-model="regeocode.addressComponent.district" />
+			</div>
+			<div class="item item-input">
+				<label class="input-label text-right">选址街道</label>
+				<input type="text" ng-model="regeocode.addressComponent.township" />
+			</div>
+			
+		</div>
+		
+			
+		</ion-content>
+		<script src="http://webapi.amap.com/maps?v=1.3&key=5efbda3075d474c2aa578775121667f0"></script>
+		<script src="lib/ionic.bundle.min.js"></script>	
+		<script>
+			angular.module("lbsApp",["ionic"])
+			.controller("lbsCtrl",["$scope",function($scope){
+				$scope.regeocode={};
+				$scope.lonlat=[100,200];
+				$scope.regeocode.formattedAddress="正在定位中"
+//				获取当前的经纬度
+				navigator.geolocation.getCurrentPosition(function(location){
+					$scope.$apply=function(){
+						
+						$scope.lonlat=[location.coords.longitude,location.coords.latitude]
+					}
+					AMap.plugin('AMap.Geocoder',function(){
+       					var geocoder = new AMap.Geocoder({});        				
+        				geocoder.getAddress([location.coords.longitude,location.coords.latitude],function(status,result){
+             				 if(status=='complete'){              				
+                				
+                				$scope.$apply(function(){
+                					$scope.regeocode=result.regeocode;	
+                					console.info($scope.regeocode)
+                				})
+                				
+                				
+             				 }
+            		}) //getAddress
+				})// plgin ed
+			})// getCurrentPosition ed
+				
+			}])
+				
+		</script>
+	</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html ng-app="lbsApp" ng-controller="lbsCtrl">
+	<head>
+		<meta charset="UTF-8">
+		<title>地图开发</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="static/css/ionic.min.css" />	
+		<style>
+			.ABCList{ 
+				width: 24px; 
+				position: fixed; 
+				right: 10px;
+				top:45px; 
+				z-index: 1200;
+				text-align: center;
+				}
+			.ABCList li{
+				height: 24px;
+				border-radius: 12px;
+				line-height: 24px;
+			}
+			.active{ background-color: orangered; color: #fff;}
+			@media  (max-width: 320px) {
+				.ABCList li{
+				height: 20px;
+				width: 20px;
+				line-height: 20px;
+				border-radius: 10px;
+				font-size: 14px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="bar bar-header">
+			<button>{{regeocode.addressComponent.city}}</button>
+			<h1 class="title">请选择城市</h1>
+			
+		</div>
+		<ul class="ABCList">
+			<li ng-repeat="item in keys" ng-click="scrollP(item)" ng-class="{'active':item==currentItem}">{{item}}</li>
+		</ul>
+		<ion-content class="has-header" on-scroll="checkPosition()">
+			
+			<div class="list" ng-repeat="item in cityList" ng-show="item.citys.length">
+				<div class="item item-divider {{item.key}}">{{item.key}}</div>
+				<div class="item" ng-repeat="city in item.citys">{{city.city}}</div>				
+			</div>
+		
+			
+		</ion-content>
+		<script src="http://webapi.amap.com/maps?v=1.3&key=5efbda3075d474c2aa578775121667f0"></script>
+		<script src="lib/ionic.bundle.min.js"></script>	
+		<script>
+			angular.module("lbsApp",["ionic"])
+			.controller("lbsCtrl",["$scope","$http","$ionicScrollDelegate",function($scope,$http,$ionicScrollDelegate){
+				$scope.regeocode={addressComponent:{}};
+				$scope.regeocode.addressComponent.city="正在定位中"
+				$scope.currentItem="A";
+/*				$scope.cityList=[
+				  {key:"A",citys:["安乡","安阳","安庆"]},
+				  {key:"B",citys:["北京","包头","保定"]}
+				  ]*/
+				 $scope.cityList=[];
+				$scope.keys="ABCDEFGHIJKLMNOPQRSTUVWXYZ".split('');
+				console.log($scope.keys);
+				$http.get("service/cityList.json")
+				.success(function(res){
+					console.log(res);
+					// 1,遍历 res.citys
+					// 2,如果citys里面的city 的pinyin 的首的首字母的大写he keys一样就push到 对应的citys里面
+//					var t=new Date().getTime();
+					for(var i=0;i<$scope.keys.length;i++){
+						var obj={};
+						obj.key=$scope.keys[i];
+						obj.citys=[];
+						for(var j=0;j<res.citys.length;j++){
+							// 获取到城市的首字母并转换为大写
+							var cap=res.citys[j].pinyin.charAt(0).toUpperCase();
+							// 和当前需要被push到cityList 里面的对象的key做对比
+							if(cap==obj.key){
+								// 如果是则被push 到当前对象的citys里面
+								obj.citys.push(res.citys[j]);
+								
+//								res.citys.splice(j,1);
+							}
+						}
+						// 总共有26个对象，会被push到大的cityList里面
+						$scope.cityList.push(obj);
+						
+					}
+//					console.log(new Date().getTime()-t);//优化后时间测试
+				})
+				$scope.scrollP=function(item){
+					$scope.currentItem=item;
+					// 1，盘item 对应的 .item-divider 距离顶的距离
+					// 2， ion-content 滚动 这个距离
+					var elem=document.querySelector("."+item);
+					// getBoundingClientRect() 元素距离 页面上下左右的距离
+					var offT=elem.getBoundingClientRect().top;
+					$ionicScrollDelegate.scrollBy(0,offT-45,true);
+					
+					
+				}
+				// 1,谁滚动到最上面 谁就是currentItem
+				$scope.checkPosition=function(){
+//					var t=new Date().getTime();
+					//谁滚动到最上面 谁距离顶部的距离小于45
+					var dividers=document.querySelectorAll(".item-divider");
+					var current="";
+					for(var i=0;i<dividers.length;i++){
+						var offT=dividers[i].getBoundingClientRect().top;	
+						
+						if(offT<45){
+							current=dividers[i].innerHTML;							
+						}else{
+							break;
+						}
+					}
+				
+					$scope.$apply(function(){
+						$scope.currentItem=current;
+					})
+				
+				}
+				
+				
+			var map;
+			if(navigator.geolocation){
+				// 浏览器 .地址位置.
+				navigator.geolocation.getCurrentPosition(function(location){				
+					 AMap.plugin('AMap.Geocoder',function(){
+       					var geocoder = new AMap.Geocoder({});        				
+        				geocoder.getAddress([location.coords.longitude,location.coords.latitude],function(status,result){
+             				 if(status=='complete'){              				
+                				
+                				$scope.$apply(function(){
+                					$scope.regeocode=result.regeocode;	
+                				})
+                				/*document.getElementById("city").innerHTML=result.regeocode.addressComponent.city;
+                				document.getElementById("add").innerHTML=result.regeocode.formattedAddress;*/
+                				
+             				 }
+            			})
+        			});	
+				})//getCurrentPosition
+			}// if
+			
+				
+			}])
+			
+		</script>
+	
+	</body>
+</html>

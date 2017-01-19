@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#container{ height: 500px; width: 800px;}
+		</style>
+	</head>
+	<script src="http://webapi.amap.com/maps?v=1.3&key=5efbda3075d474c2aa578775121667f0"></script>
+	<body>
+		<div id="container">
+			
+		</div>
+		<p id="city">定位中...</p>
+		<p id="add">定位中...</p>
+		
+		<script>
+		
+		
+		/*1. coords.latitude：估计纬度
+　　		2. coords.longitude：估计经度
+　　		3. coords.altitude：估计高度
+　　		4. coords.accuracy：所提供的以米为单位的经度和纬度估计的精确度
+　　		5. coords.altitudeAccuracy：所提供的以米为单位的高度估计的精确度
+　　		6. coords.heading： 宿主设备当前移动的角度方向，相对于正北方向顺时针计算
+　		7. coords.speed：以米每秒为单位的设备的当前对地速度*/
+/*		var q=new Promise(function(resolve,reject){
+			if(navigator.geolocation){					
+					navigator.geolocation.getCurrentPosition(function(location){						
+						if(location.coords.longitude){
+							resolve([location.coords.longitude,location.coords.latitude]);	
+						}else{
+							 reject({err:"定位失败"});
+						}
+						
+					})
+			}else{
+				reject({err:"定位失败"});
+			}
+		})
+		q.then(
+			function(res){ alert(res)}
+			
+		).catch(function(err){
+			alert(err);
+		})*/
+
+			//浏览器 。地址位置（H5）
+			var map;
+			if(navigator.geolocation){
+				// 浏览器 .地址位置.
+				navigator.geolocation.getCurrentPosition(function(location){
+					console.info(location.coords.longitude,location.coords.latitude);
+					map = new AMap.Map('container', {
+					    resizeEnable: true,
+					    zoom:16,
+					    center: [location.coords.longitude,location.coords.latitude]       
+					});
+					map.plugin(["AMap.ToolBar"], function() {
+	           			 map.addControl(new AMap.ToolBar());
+	       			 });
+       			 
+	       			 var marker = new AMap.Marker({
+//				        icon : 'http://vdata.amap.com/icons/b18/1/2.png',//24px*24px
+				        position : [location.coords.longitude,location.coords.latitude],
+				        offset : new AMap.Pixel(-12,-12),
+				        map : map
+					});
+					 AMap.plugin('AMap.Geocoder',function(){
+       					var geocoder = new AMap.Geocoder({
+          			
+        				});
+        				
+        				geocoder.getAddress([location.coords.longitude,location.coords.latitude],function(status,result){
+             				 if(status=='complete'){
+                				console.info(result);
+                				document.getElementById("city").innerHTML=result.regeocode.addressComponent.city;
+                				document.getElementById("add").innerHTML=result.regeocode.formattedAddress;
+             				 }
+            			})
+        			});	
+				})//getCurrentPosition
+			}// if
+			
+		</script>
+	</body>
+</html>

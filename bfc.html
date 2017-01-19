@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style>
+			.container,.container div{ height:600px;}
+			.aside{ width: 150px; float: left; background-color: #eee;}
+			.auto{ overflow: hidden; background-color: #11C1F3;}
+			.p50{ width: 50%; float: left; background-color:#999;}
+			.p30{ width: 30%; float: left; background-color:orange;}
+			.auto .auto{ background: darksalmon;}
+			.auto .auto .auto{ background-color: orangered;}
+	</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="aside">aside 150px</div>
+			<div class="auto">
+					<div class="p50">50%</div>
+					<div class="auto">
+						<div class="p30">30%</div>
+						<div class="auto">auto</div>
+					</div>
+			</div>
+		</div>
+	</body>
+</html>

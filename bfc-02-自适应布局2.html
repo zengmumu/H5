@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>BFC</title>
+		<style>
+			.aside,.content,.content div{
+				height:400px;
+			}
+			.aside{ 
+				float:left;
+				width: 150px;
+				background-color: orange;
+				
+				}
+			.content{
+				background-color: orangered;
+				
+				overflow:hidden;
+			}
+			.w300{ 
+				width: 300px;
+				background-color: deepskyblue;
+				float: left;
+				}
+			.auto{
+				overflow: hidden;
+				background-color: cornflowerblue;
+			}
+			.p40{
+				float: left;
+				width: 40%;
+				background-color: greenyellow;
+			}
+			.a-auto{
+				overflow: hidden;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="aside">aside 250</div>
+		<div class="content">
+			<div class="w300">
+				300
+			</div>
+			<div class="auto">
+				<div class="p40">
+					剩下40%
+				</div>
+				<div class="a-auto">
+					自动
+				</div>
+			</div>
+		</div>
+		
+	</body>
+</html>

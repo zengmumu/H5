@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>BFC</title>
+		<style>
+			.aside,.content{
+				height:400px;
+			}
+			.aside{ 
+				float:left;
+				width: 250px;
+				background-color: orange;
+				
+				}
+			.content{
+				background-color: orangered;
+				height: 500px;
+				overflow:hidden;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="aside">aside 250</div>
+		<div class="content">
+			content
+			1，overflow 不会visible 是bfc
+			<br />
+			2，两个bfc 不会发送重叠
+		</div>
+		
+	</body>
+</html>

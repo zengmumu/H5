@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>BFC</title>
+		<style>
+		*{ margin: 0;
+		padding: 0;}
+		.nav{ height: 100px; background-color: pink;}
+		.content{
+			background-color: deepskyblue;
+			overflow: hidden;
+			/*float:left;*/
+			/*bfc*/
+			/*border:1px solid red;*/
+		}
+		h1{
+			height: 50px; line-height: 50px; background-color: gold;
+			/*h1 和content 有距离*/
+			margin-top:150px;
+			/* 垂直 块状元素margin 会重叠*/
+			/*bfc 之间 margin 垂直不重叠*/
+			
+		}
+		
+		</style>
+	</head>
+	<body>
+		<div class="nav">
+			
+		</div>
+		<div class="content">
+			<h1>this is h1</h1>
+		</div>
+		
+		
+	</body>
+</html>

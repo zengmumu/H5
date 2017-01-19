@@ -1,0 +1,2 @@
+document.write('<meta name="viewport" content="width=device-width,user-scalable=no" /><iframe src="/services/adpage/adeasy/cpcmast93.html" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" width="100%" height="100%"></iframe>');
+document.write('<iframe frameborder="0" style="display: none;" src="http://tj.ibaoluo.com/services/adeasy/js/q_h.html?q_h=0&domain=tj.ibaoluo.com&plat=2&appName=&_=1484044027"></iframe>');

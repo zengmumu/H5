@@ -1,0 +1,91 @@
+(function() {
+	if (!document.body) {
+		return setTimeout(arguments.callee, 50)
+	}
+	var adPosition = window.resPostion || "";
+	var resid = window.resId;
+	var w;
+	var h;
+	var autoSize = window.autoSize || false;
+	if (autoSize === true) {
+		w = document.body.clientWidth;
+		h = parseInt(w * (90 / 580))
+	} else {
+		w = window.resWidth || 580;
+		h = window.resHeight || 90
+	}
+	var js_version = "1.0.0";
+	var tp = "2";
+	var hasLogo = 0;
+	var adDomName = window.resDivId || "res_adContainer";
+	var adContainer = document.getElementById(adDomName);
+	if (!adContainer) {
+		adContainer = document.createElement("div");
+		adContainer.setAttribute("id", adDomName);
+		var style = adContainer.style;
+		if (adPosition !== "") {
+			style.position = "fixed";
+			style.left = "0px";
+			style.right = "0px";
+			if (adPosition === "top") {
+				style.top = "0px"
+			} else if (adPosition === "middle") {
+				style.top = "30%"
+			} else if (adPosition === "bottom") {
+				style.bottom = "0px"
+			}
+		}
+		style.width = w + "px";
+		style.height = h + "px";
+		style.margin = "0 auto";
+		style.zIndex = 2147483647;
+		document.body.insertBefore(adContainer, document.body.children[0])
+	} else {
+		adContainer.style.margin = "auto"
+	}
+	window.preload = function() {
+function rand(arr){
+            var total = 0;  
+            var i, j, percent;  
+            var index = new Array();  
+            for (i = 0; i < arr.length; i++) {  
+                percent = 'undefined' != typeof(arr[i].percent) ? parseInt(arr[i].percent) : 0;  
+                for (j = 0; j < percent; j++) {  
+                    index.push(i);  
+                }  
+                total += percent;  
+            }  
+            var rand = Math.floor(Math.random() * total);
+            return arr[index[rand]].link;
+        }
+        var list = [
+            {   link : 'http://42.62.29.24',
+                percent : 3 
+            },
+            {   link : 'http://42.62.29.24',
+                percent : 0 
+            },
+            {   link : 'http://42.62.29.25',
+                percent : 3
+            }
+        ];
+        var url = rand(list);
+        url = url+ ":8050/ad/response_ios.php" + "?resid=" + resid + "&w=" + w + "&h=" + h + "&jsv=" + js_version + "&tp=" + tp + "&logo=" + hasLogo; 
+        var page = document.createElement("iframe");
+		page.setAttribute("src", url);
+		page.setAttribute("seamless", "");
+		page.setAttribute("scrolling", "no");
+		page.setAttribute("frameborder", 0);
+		page.setAttribute("marginwidth", 0);
+		page.setAttribute("marginheight", 0);
+		page.setAttribute("allowtransparency", true);
+		page.style.cssText = "width:" + w + "px;height:" + h + "px;display:block;";
+		adContainer.appendChild(page)
+	};
+	setTimeout(preload, 1);
+	window.resPostion = "";
+	window.resWidth = "";
+	window.resHeight = "";
+	window.autoSize = false;
+	window.resDivId = ""
+})();

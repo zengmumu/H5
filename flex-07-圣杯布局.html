@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		*{ margin: 0; padding: 0; box-sizing: border-box;}
+			.container {
+				display: flex;
+				flex-direction:column;		
+				height: 100vh;				
+			}
+			.content{ 
+				background: lightpink; 
+				flex: 1;
+				display: flex;
+				}
+			.nav{ flex-basis: 60px;}
+			.footer{ flex-basis: 120px; background-color: darksalmon;}
+			.aside{ background-color: #8A2BE2; flex-basis: 150px;}
+			.right{ background-color: lightcoral; flex-basis: 300px;}
+			.con{ flex:1;}
+		
+			
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="nav">nav</div>
+			<div class="content">
+				<div class="aside">aside</div>
+					<div class="con">content</div>
+				<div class="right">right</div>
+			</div>
+			<div class="footer">footer</div>
+		</div>
+	</body>
+</html>
